@@ -1,0 +1,27 @@
+<%- include("partials/head.ejs") %>
+
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/flash.ejs") %>
+
+    <div id="content">
+      <h1><%= recipe.title %></h1>
+      <img src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
+      <p>servings: <%= recipe.servings %></p>
+      <p>cook time: <%= recipe.time %></p>
+      <h2>ingredients: </h2>
+      <ul>
+        <% recipe.ingredients.forEach((ingredient) => { %>
+          <li name="ingredients"><%= ingredient %></li><br />
+        <% }) %>
+      </ul>
+      <h2>directions: </h2>
+      <ol>
+        <% recipe.directions.forEach((direction) => { %>
+          <li name="directions"><%= direction %></li><br />
+        <% }) %>
+      </ol>
+    </div>
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

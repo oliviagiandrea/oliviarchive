@@ -1,0 +1,18 @@
+<div id="flashes">
+    <% if (messages && messages.error) { %>
+       <ul class="error">
+       <% for (m of messages.error) {%>
+        <li><%= m %></li>
+        <% } %>
+       </ul>
+    <% } %>
+
+    <% if (messages && messages.info) { %>
+       <ul class="info">
+       <% for (m of messages.info) {%>
+        <li><%= m %></li>
+        <% } %>
+       </ul>
+    <% } %>
+
+</div>

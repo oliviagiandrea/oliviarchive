@@ -1,0 +1,111 @@
+:root {
+  --brown: #3d2a20;
+  --orange: #f58b00;
+  --yellow: #fce2b8;
+  --eggshell: #faf8ed;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--eggshell);
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  /* font-family: 'Concert One', cursive; */
+  font-family: 'Lemon', cursive;
+  color: var(--brown);
+}
+
+a {
+  color: var(--orange) !important;
+  font-weight: bold;
+}
+
+#flashes .info {
+  color: var(--brown); 
+}
+
+#flashes .error {
+  color: var(--orange); 
+}
+
+/* ============================================================================================ */
+/* navbar */
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0.7rem 0 0;
+  overflow: hidden;
+}
+
+.nav-logo {
+  float: left;
+}
+
+.logo {
+  height: 3rem;
+  width: 12rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.nav-icon {
+  float: right;
+  padding-top: 0.6rem;
+}
+
+.nav-item {
+  float: right;
+  padding-top: 1rem;
+}
+
+.nav-link {
+  font-family: 'Concert One', cursive;
+  display: block;
+  text-align: center;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  line-height: 100%;
+  color: var(--brown) !important;
+  letter-spacing: 0.07rem;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover:not(.active),
+.active {
+  color: var(--orange) !important;
+}
+
+/* ============================================================================================ */
+/* home page */
+
+form {
+  display: inline-block;
+  padding: 2ex;
+  border-radius: 2ex;
+}
+
+[type="submit"] {
+  font-size: 1em;
+  font-weight: normal;
+  border-radius: 0.5em;
+}
+
+fieldset {
+  display: inline-block;
+}
+
+img {
+  height: 20rem;
+  width: 20rem;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+}

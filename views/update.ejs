@@ -1,0 +1,68 @@
+<%- include("partials/head.ejs") %>
+
+  <body>
+
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/flash.ejs") %>
+
+    <div id="content">
+
+    <h1>Update Recipe</h1>
+
+    <!-- <td><%= recipe?.title || 'None specified' %></td> -->
+
+    <form method="POST" action="<%= '/update/'+recipe.id %>">
+      <table>
+        <tr>
+          <td><label for="title">title:</label></td>
+          <td>
+            <input id="title" type="text" name="title" 
+              value="<%= recipe.title %>">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="servings">servings:</label></td>
+          <td>
+            <input id="servings" type="text" name="servings"
+              value="<%= recipe.servings %>">
+            </td>
+        </tr>
+        <tr>
+          <td><label for="time">time:</label></td>
+          <td>
+            <input id="time" type="text" name="time"
+              value="<%= recipe.time %>">
+            </td>
+        </tr>
+        <tr>
+          <td><label for="ingredients">ingredients:</label></td>
+          <td>
+            <% recipe.ingredients.forEach((ingredient) => { %>
+              <input type="text" name="ingredients"
+                value="<%= ingredient %>"><br />
+            <% }) %>
+          </td>
+          <button id="addIng">add ingredient</button>
+        </tr>
+        <tr>
+          <td><label for="directions">directions:</label></td>
+          <td>
+            <% recipe.directions.forEach((direction) => { %>
+              <input type="text" name="directions"
+                value="<%= direction %>"><br />
+            <% }) %>
+          </td>
+          <button id="addDir">add step</button>
+        </tr>
+      </table>
+      <input type="submit" value="update">
+    </form>
+
+    <form method="POST" action="<%= '/delete/'+recipe.id %>">
+      <input type="submit" value="delete recipe">
+    </form>
+
+    </div>
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>
