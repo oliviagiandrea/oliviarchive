@@ -1,26 +1,25 @@
 // ======================================================================================
 
-const nav = document.querySelector(".nav");
-const searchIcon = document.querySelector("#searchIcon");
-const navOpenBtn = document.querySelector(".navOpenBtn");
-const navCloseBtn = document.querySelector(".navCloseBtn");
+const searchIcon = $("#searchIcon");
+const nav = $(".nav");
 
-searchIcon.addEventListener("click", () => {
-  nav.classList.toggle("openSearch");
-  nav.classList.remove("openNav");
-  if (nav.classList.contains("openSearch")) {
-    return searchIcon.classList.replace("fa-magnifying-glass", "fa-xmark");
+searchIcon.on("click", function() {
+  nav.toggleClass("openSearch");
+  nav.removeClass("openNav");
+  if (nav.hasClass("openSearch")) {
+    return searchIcon.removeClass("fa-magnifying-glass").addClass("fa-xmark");
   }
-  searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+  searchIcon.removeClass("fa-xmark").addClass("fa-magnifying-glass");
 });
 
-navOpenBtn.addEventListener("click", () => {
-  nav.classList.add("openNav");
-  nav.classList.remove("openSearch");
-  searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+$(".navOpenBtn").on("click", function() {
+  nav.addClass("openNav");
+  nav.removeClass("openSearch");
+  searchIcon.removeClass("fa-xmark").addClass("fa-magnifying-glass");
 });
-navCloseBtn.addEventListener("click", () => {
-  nav.classList.remove("openNav");
+
+$(".navCloseBtn").on("click", function() {
+  nav.removeClass("openNav");
 });
 
 

@@ -4,17 +4,22 @@
   <%- include("partials/navbar.ejs") %>
   <%- include("partials/flash.ejs") %>
 
-  <div id="content">
+  <div id="home">
+    <div id="gray"></div>
+    <div id="welcome">
+      <h1 class="white">find a recipe</h1>
+      <form id="searchForm" method="POST" action="/search">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" name="query" id="query" placeholder="Search titles...">
+        </div>
+        
+        <!-- <input type="submit" value="Search"> -->
+      </form>
+      <p class="white">advanced search &#62;</p>
+    </div>
     
-
-    <h1>recipes</h1>
-
-    <form id="searchForm" method="POST" action="/search">
-      <label>Title: <input name="query" id="query"></label>
-      <input type="submit" value="Search">
-    </form>
-
-    <div id="results">
+    <!-- <div id="results">
       <ul id="recipeList">
         <% recipes.forEach((recipe)=> { %>
           <li><a href="recipe/<%= recipe.id %>">
@@ -22,29 +27,29 @@
           </li>
           <% }) %>
       </ul>
-    </div>
+    </div> -->
 
     <script>
       // Define a function to render the search results as HTML
       function renderSearchResults(results) {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
+        const resultsDiv = $('#results');
+        resultsDiv.empty();
 
         if (results.length === 0) {
-          resultsDiv.textContent = 'No results found';
+          resultsDiv.text('No results found');
           return;
         }
 
-        const ul = document.createElement('ul');
-        resultsDiv.appendChild(ul);
+        const ul = $('<ul></ul>');
+        resultsDiv.append(ul);
 
         for (const result of results) {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = `recipe/${result.id}`;
-          a.textContent = result.title;
-          li.appendChild(a);
-          ul.appendChild(li);
+          const li = $('<li></li>');
+          const a = $('<a></a>');
+          a.attr('href', `recipe/${result.id}`);
+          a.text(result.title);
+          li.append(a);
+          ul.append(li);
         }
       }
 
@@ -52,7 +57,7 @@
       function handleSearchFormSubmit(event) {
         event.preventDefault();
 
-        const searchQuery = document.getElementById('query').value;
+        const searchQuery = $('#query').val();
         fetch('/search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -64,8 +69,7 @@
       }
 
       // Attach an event listener to the search form
-      const searchForm = document.getElementById('searchForm');
-      searchForm.addEventListener('submit', handleSearchFormSubmit);
+      $('#searchForm').on('submit', handleSearchFormSubmit);
     </script>
 
     <%- include("partials/footer.ejs") %>
