@@ -130,8 +130,13 @@ app.post('/search', async (req, res) => {
   const query = new RegExp(req.body.query, 'i')
   // use a regex expression to ignore case and look for partial matches
   const db = await Connection.open(mongoUri, DB)
-  // no need to handle errors here, frontend js takes care of it
-  return await db.collection(RECIPES).find({ title: { $regex: query } }).toArray()
+  try {
+    const found = await db.collection(RECIPES).find({ title: { $regex: query } }).toArray();
+    return res.json(found); // Sending the search results as JSON response
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'An error occurred during the search' });
+  }
 })
 
 const lookupRecipe = async (rid) => {
