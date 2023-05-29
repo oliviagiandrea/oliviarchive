@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3030
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(serveStatic('public'))
-app.use('/insert', express.static('uploads'));
+app.use('/new', express.static('uploads'));
 app.set('view engine', 'ejs')
 
 var storage = multer.diskStorage({
@@ -62,9 +62,9 @@ app.get('/recipe/:rid', async (req, res) => {
   return res.render('recipe.ejs', { recipe })
 })
 
-app.get('/insert', (req, res) => {
+app.get('/new', (req, res) => {
   const recipeData = { title: '', servings: '', time: '', ingredients: [], directions: [], imagePath: "" }
-  return res.render('insert.ejs', { recipe: recipeData })
+  return res.render('new.ejs', { recipe: recipeData })
 })
 
 const checkInputs = (recipeData) => {
@@ -95,14 +95,14 @@ const checkInputs = (recipeData) => {
   return errors
 }
 
-app.post('/insert', upload.single('photo'), async (req, res) => {
+app.post('/new', upload.single('photo'), async (req, res) => {
   try {
     const recipeData = req.body
     const errors = checkInputs(recipeData)
     if (errors.length > 0) {
       // re-render the page, displaying any form entry errors we found earlier
       errors.forEach((err) => req.flash('info', err))
-      return res.render('insert.ejs', { recipe: recipeData })
+      return res.render('new.ejs', { recipe: recipeData })
     }
     var fPath = (req.file.path).replace("public\\imgs\\", "")
     recipeData.imagePath = fPath
@@ -114,10 +114,13 @@ app.post('/insert', upload.single('photo'), async (req, res) => {
       { returnOriginal: false, upsert: true }
     )
     recipeData.id = rid.value.seq
+    // get rid of empty elements in ingredient and direction arrays
+    recipeData.ingredients = recipeData.ingredients.filter(n => n)
+    recipeData.directions = recipeData.directions.filter(n => n)
     const result = await db.collection(RECIPES).insertOne(recipeData)
     if (result.matchedCount === 1 && result.upsertedCount === 0) {
       req.flash('error', `Error: id ${recipeData.id} in use`)
-      return res.render('insert.ejs', { recipeData })
+      return res.render('new.ejs', { recipeData })
     }
     return res.redirect('/update/' + recipeData.id)
   } catch (err) {
@@ -157,7 +160,8 @@ app.get('/update/:rid', async (req, res) => {
 
 app.post('/update/:rid', async (req, res) => {
   const rid = parseInt(req.params.rid)
-  if (rid.toString() !== rid) {
+  console.log(req.params.rid, rid)
+  if (rid.toString() === rid) {
     req.flash('error', `non-integer recipeID in URL: ${rid}`)
     return res.redirect('/')
   }
@@ -165,10 +169,12 @@ app.post('/update/:rid', async (req, res) => {
   const recipe = {
     id: rid,
     title: req.body.title,
+    description: req.body.description,
     servings: req.body.servings,
     time: req.body.time,
-    ingredients: req.body.ingredients,
-    directions: req.body.directions
+    reference: req.body.reference,
+    ingredients: req.body.ingredients.filter(n => n),
+    directions: req.body.directions.filter(n => n)
   }
   const errors = checkInputs(recipe)
   if (errors.length > 0) {

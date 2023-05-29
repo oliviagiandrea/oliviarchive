@@ -8,7 +8,7 @@
 
     <h1>Insert Recipe</h1>
 
-    <form method="post" action="/insert" enctype="multipart/form-data">
+    <form id="new-form" method="post" action="/new" enctype="multipart/form-data">
       <fieldset>
         <legend>Recipe Data</legend>
         <table>
@@ -20,11 +20,19 @@
             </td>
           </tr>
           <tr>
+            <td><label for="description">description:</label></td>
+            <td>
+              <textarea id="description" name="description" placeholder="a short note">
+                <%= recipe.description %>
+              </textarea>
+            </td>
+          </tr>
+          <tr>
             <td><label for="servings">servings:</label></td>
             <td>
               <input id="servings" type="text" name="servings"
-                value="<%= recipe.servings %>" placeholder="3">
-              </td>
+                value="<%= recipe.servings %>" placeholder="3" />
+            </td>
           </tr>
           <tr>
             <td><label for="time">time:</label></td>
@@ -34,21 +42,26 @@
               </td>
           </tr>
           <tr>
+            <td><label for="reference">reference:</label></td>
+            <td>
+              <input id="reference" type="text" name="reference"
+                value="<%= recipe.reference %>" placeholder="https://www. ...">
+              </td>
+          </tr>
+          <tr>
             <td><label for="ingredients">ingredients:</label></td>
             <td>
               <ul id="ingredients">
-                <% if (recipe.ingredients.length >= 3) { %>
+                <% if (recipe.ingredients.length > 0) { %>
                   <% recipe.ingredients.forEach((ingredient) => { %>
                     <li><input type="text" name="ingredients"
                       value="<%= ingredient %>"></li><br />
                   <% }) %>
                 <% } else { %>
-                  <li><input type="text" name="ingredients"
-                    value="" placeholder="1 cup flour"></li><br />
-                  <li><input type="text" name="ingredients"
-                    value="" placeholder="2 tbsp sugar"></li><br />
-                  <li><input type="text" name="ingredients"
-                    value="" placeholder="1/8 tsp salt"></li><br />
+                  <% for (let i = 0; i < 10; i++) { %>
+                    <li><input type="text" name="ingredients"
+                      value="" /></li><br />
+                  <% } %>
                 <% } %>
               </ul>
               <button id="addIng">add ingredient</button>
@@ -60,16 +73,12 @@
               <ol id="directions">
                 <% if (recipe.directions.length > 0) { %>
                   <% recipe.directions.forEach((direction) => { %>
-                    <li><input type="text" name="directions"
-                      value="<%= direction %>"></li><br />
+                    <li><textarea name="directions"><%= direction %></textarea></li><br />
                   <% }) %>
                 <% } else { %>
-                  <li><input type="text" name="directions"
-                    value="" placeholder="mix dry ingredients"></li><br />
-                  <li><input type="text" name="directions"
-                    value="" placeholder="mix wet ingredients"></li><br />
-                  <li><input type="text" name="directions"
-                    value="" placeholder="cook in frying pan"></li><br />
+                  <% for (let i = 0; i < 5; i++) { %>
+                    <li><textarea name="directions" value=""></textarea></li><br />
+                  <% } %>
                 <% } %>
               </ol>
               <button id="addDir">add step</button>

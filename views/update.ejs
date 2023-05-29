@@ -5,19 +5,27 @@
     <%- include("partials/navbar.ejs") %>
     <%- include("partials/flash.ejs") %>
 
-    <div id="content">
+
 
     <h1>Update Recipe</h1>
 
     <!-- <td><%= recipe?.title || 'None specified' %></td> -->
 
-    <form method="POST" action="<%= '/update/'+recipe.id %>">
+    <form id="update-form" method="POST" action="<%= '/update/'+recipe.id %>">
       <table>
         <tr>
           <td><label for="title">title:</label></td>
           <td>
             <input id="title" type="text" name="title" 
               value="<%= recipe.title %>">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="description">description:</label></td>
+          <td>
+            <textarea id="description" name="description" placeholder="a short note">
+              <%= recipe.description %>
+            </textarea>
           </td>
         </tr>
         <tr>
@@ -35,24 +43,34 @@
             </td>
         </tr>
         <tr>
+          <td><label for="reference">reference:</label></td>
+          <td>
+            <input id="reference" type="text" name="reference"
+              value="<%= recipe?.reference || 'https://www. ...' %>">
+            </td>
+        </tr>
+        <tr>
           <td><label for="ingredients">ingredients:</label></td>
           <td>
-            <% recipe.ingredients.forEach((ingredient) => { %>
-              <input type="text" name="ingredients"
-                value="<%= ingredient %>"><br />
-            <% }) %>
+            <ul>
+              <% recipe.ingredients.forEach((ingredient) => { %>
+                <li><input type="text" name="ingredients"
+                  value="<%= ingredient %>"></li><br />
+              <% }) %>
+            </ul>
+            <button id="addIng">add ingredient</button>
           </td>
-          <button id="addIng">add ingredient</button>
         </tr>
         <tr>
           <td><label for="directions">directions:</label></td>
           <td>
-            <% recipe.directions.forEach((direction) => { %>
-              <input type="text" name="directions"
-                value="<%= direction %>"><br />
-            <% }) %>
+            <ol>
+              <% recipe.directions.forEach((direction) => { %>
+                <li><textarea name="directions"><%= direction %></textarea></li><br />
+              <% }) %>
+            </ol>
+            <button id="addDir">add step</button>
           </td>
-          <button id="addDir">add step</button>
         </tr>
       </table>
       <input type="submit" value="update">
@@ -61,8 +79,6 @@
     <form method="POST" action="<%= '/delete/'+recipe.id %>">
       <input type="submit" value="delete recipe">
     </form>
-
-    </div>
     <%- include("partials/footer.ejs") %>
   </body>
 </html>

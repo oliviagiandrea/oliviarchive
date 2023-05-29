@@ -4,19 +4,29 @@
   --orange: #f58b00;
   --yellow: #fce2b8;
   --eggshell: #faf8ed;
+
+  --purple: #23110C;
+  --d_blue: #2F385D;
+  --l_blue: #778EB9;
+  --l_green: #506930;
 }
 
 body {
-  /* font-family: 'Dosis', sans-serif; */
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  /* font-family: "Josefin Sans", sans-serif; */
   letter-spacing: 1px;
-  font-family: "Josefin Sans", sans-serif;
   background-color: var(--eggshell);
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
-  color: var(--brown);
-  font-family: "Lemon", cursive;
+  color: var(--purple);
+  /* font-family: "Lemon", cursive; */
+  /* font-family: "Caudex", sans-serif; */
+  font-family: 'Laila', sans-serif;
   margin: 0;
   vertical-align: middle;
 }
@@ -25,8 +35,16 @@ h1 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 a {
-  color: var(--red) !important;
+  color: var(--l_green) !important;
   font-weight: bold;
 }
 
@@ -39,8 +57,8 @@ p {
   color: var(--eggshell) !important;
 }
 
-.brown {
-  color: var(--brown) !important;
+.purple {
+  color: var(--purple) !important;
 }
 
 .btn {
@@ -53,42 +71,61 @@ p {
 }
 
 .btnPrimary {
-  background-color: var(--brown);
+  background-color: var(--purple);
 }
 
 .btnSecondary {
-  background-color: var(--orange);
+  background-color: var(--d_blue);
 }
 
 .btnGhost {
-  border: 1px solid var(--brown);
-  color: var(--brown) !important;
+  border: 1px solid var(--purple);
+  color: var(--purple) !important;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   width: 100vw;
 }
 
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+  width: 15%;
+  word-wrap: break-word;
+  background-color: var(--eggshell);
+  background-clip: border-box;
+  border: 1px solid var(--d_blue);
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
 
-.center {
-  justify-content: center;
-}
-
 #flashes .info {
-  color: var(--brown);
+  color: var(--purple);
 }
 
 #flashes .error {
-  color: var(--orange);
+  color: var(--d_blue);
 }
 
 /* change font of placeholder text in form inputs */
@@ -109,10 +146,12 @@ p {
   padding: 1rem 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   height: 3rem;
+  z-index: 3;
+  background-color: var(--eggshell);
 }
 
 .nav * {
-  color: var(--brown) !important;
+  color: var(--purple) !important;
 }
 
 .nav .logo {
@@ -190,7 +229,8 @@ a {
   transform: translateY(-50%);
 }
 
-.search-box input {
+.search-box input, 
+.email-box input {
   height: 100%;
   width: calc(100% - 4rem);
   border: none;
@@ -242,7 +282,7 @@ a {
     padding-top: 5rem;
     row-gap: 2rem;
     flex-direction: column;
-    background-color: var(--brown);
+    background-color: var(--purple);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     z-index: 100;
@@ -319,19 +359,22 @@ a {
   margin-top: 2rem;
 }
 
-#searchForm .search-box {
+#searchForm .search-box,
+#emailForm .email-box {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-#searchForm .search-box .search-icon {
+#searchForm .search-box .search-icon,
+#emailForm .email-box .email-icon {
   position: absolute;
   left: 0.7rem;
   font-size: 1.2rem;
 }
 
-#searchForm .search-box input[type="text"] {
+#searchForm .search-box input[type="text"],
+#emailForm .email-box input[type="text"] {
   flex: 1;
   height: 2.5rem;
   width: 15rem;
@@ -339,6 +382,29 @@ a {
 }
 
 #searchIng {
-  height: calc(100vh - 60vh - 7rem);
+  height: calc(100vh - 60vh - 9rem);
   font-size: 1.5rem;
+}
+
+.newest {
+  background-color: var(--l_blue);
+}
+
+.email {
+  background-color: var(--d_blue);
+  gap: 2rem;
+}
+
+
+
+#new-form input,
+#update-form input {
+  width: 30rem;
+  height: 2rem;
+}
+
+#new-form textarea,
+#update-form textarea {
+  width: 30rem;
+  height: 5rem;
 }

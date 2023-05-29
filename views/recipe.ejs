@@ -9,6 +9,9 @@
       <img src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
       <p>servings: <%= recipe.servings %></p>
       <p>cook time: <%= recipe.time %></p>
+      <% if (recipe.reference) { %>
+        <p>reference: <%= recipe.reference %></p>
+      <% } %>
       <h2>ingredients: </h2>
       <ul>
         <% recipe.ingredients.forEach((ingredient) => { %>

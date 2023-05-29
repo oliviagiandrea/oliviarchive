@@ -7,18 +7,37 @@
   <div class="container">
     <div id="home">
       <div id="welcome">
-        <h1>Find a Recipe</h1>
+        <h1>find a recipe</h1>
         <form id="searchForm" method="POST" action="/home-search">
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="text" name="query" id="query" placeholder="Search titles...">
           </div>
         </form>
-        <a class="brown" href="/search">Advanced Search &#62;</a>
+        <a class="purple" href="/search">advanced search &#62;</a>
       </div>
     </div>
     <div id="searchIng" class="row center">
-      <a href="/ingredients">Search Recipes by Ingredient &#62;</a>
+      <h3><a href="/ingredients">search recipes by ingredient &#62;</a></h3>
+    </div>
+    <div class="container newest">
+      <h1>Newest Recipes</h1>
+      <div class="row">
+        <div class="card">
+          <img class="card-img" alt="" src="/pancakes.jpg" />
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row email">
+      <h2 class="white">My latest recipes, right in your inbox</h2>
+      <form id="emailForm" method="POST" action="/signup">
+        <div class="email-box">
+          <i class="fa-solid fa-magnifying-glass email-icon"></i>
+          <input type="text" name="email" id="email" placeholder="Your email address">
+          <div class="btn white">Sign Up</div>
+        </div>
+      </form>
     </div>
   </div>
     
