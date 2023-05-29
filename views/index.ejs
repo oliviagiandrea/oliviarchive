@@ -17,25 +17,29 @@
         <a class="purple" href="/search">advanced search &#62;</a>
       </div>
     </div>
-    <div id="searchIng" class="row center">
+    <div id="searchIng" class="row">
       <h3><a href="/ingredients">search recipes by ingredient &#62;</a></h3>
     </div>
     <div class="container newest">
       <h1>Newest Recipes</h1>
-      <div class="row">
-        <div class="card">
-          <img class="card-img" alt="" src="/pancakes.jpg" />
-          <h3></h3>
-        </div>
+      <div class="card-row">
+        <% recipes.slice(-5).forEach((recipe)=> { %>
+          <div class="card">
+            <a href="recipe/<%= recipe.id %>">
+              <img class="card-img" alt="photo of <%= recipe.title %>" src="/imgs/<%= recipe.imagePath %>" />
+            </a>
+            <div class="card-body"><p class="card-title"><%= recipe.title %></p></div>
+          </div>
+        <% }) %>
       </div>
     </div>
     <div class="row email">
-      <h2 class="white">My latest recipes, right in your inbox</h2>
-      <form id="emailForm" method="POST" action="/signup">
+      <h2 class="white">sign up for my newsletter</h2>
+      <form id="email-form" method="POST" action="/signup">
         <div class="email-box">
           <i class="fa-solid fa-magnifying-glass email-icon"></i>
           <input type="text" name="email" id="email" placeholder="Your email address">
-          <div class="btn white">Sign Up</div>
+          <a class="btn btnGhost">Sign Up</a>
         </div>
       </form>
     </div>

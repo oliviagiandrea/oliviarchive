@@ -28,14 +28,14 @@ $(".navCloseBtn").on("click", function() {
 $('#addIng').on('click', function(event) {
   event.preventDefault();
   var $ing = $('#ingredients').one();
-  const ingredient = '<li><input type="text" name="ingredients" ></li><br />'
+  const ingredient = '<li><input type="text" name="ingredients" /></li><br />'
   $ing.append(ingredient);
 });
 
 $('#addDir').on('click', function(event) {
   event.preventDefault();
   var $dir = $('#directions').one();
-  const direction = '<li><input type="text" name="directions" ></li><br />'
+  const direction = '<li><textarea name="directions"></textarea></li><br />'
   $dir.append(direction);
 });
 

@@ -20,6 +20,7 @@ body {
   background-color: var(--eggshell);
   margin: 0;
   overflow-x: hidden;
+  text-transform: lowercase;
 }
 
 h1, h2, h3, h4 {
@@ -63,7 +64,8 @@ p {
 
 .btn {
   border-radius: 10px;
-  padding: 0.8rem;
+  padding: 0.55rem 0.7rem 0.85rem 0.7rem;
+  font-weight: 400;
 }
 
 .btn:hover {
@@ -79,8 +81,8 @@ p {
 }
 
 .btnGhost {
-  border: 1px solid var(--purple);
-  color: var(--purple) !important;
+  border: 1px solid var(--eggshell);
+  color: var(--eggshell) !important;
 }
 
 .container {
@@ -91,33 +93,47 @@ p {
   width: 100vw;
 }
 
-.row {
+.row,
+.card-row {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+.card-row {
+  align-items: stretch;
 }
 
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  height: 15%;
+  border-radius: 10px;
   width: 15%;
   word-wrap: break-word;
   background-color: var(--eggshell);
   background-clip: border-box;
-  border: 1px solid var(--d_blue);
+  align-items: stretch;
+  margin: 1%;
 }
 
 .card-img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.card-title {
+  font-family: 'Laila', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 #flashes .info {
@@ -360,21 +376,21 @@ a {
 }
 
 #searchForm .search-box,
-#emailForm .email-box {
+#email-form .email-box {
   position: relative;
   display: flex;
   align-items: center;
 }
 
 #searchForm .search-box .search-icon,
-#emailForm .email-box .email-icon {
+#email-form .email-box .email-icon {
   position: absolute;
   left: 0.7rem;
   font-size: 1.2rem;
 }
 
 #searchForm .search-box input[type="text"],
-#emailForm .email-box input[type="text"] {
+#email-form .email-box input[type="text"] {
   flex: 1;
   height: 2.5rem;
   width: 15rem;
@@ -388,14 +404,55 @@ a {
 
 .newest {
   background-color: var(--l_blue);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.newest h1 {
+  position: relative;
+}
+
+.newest h1::before,
+.newest h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 0.1rem; 
+  background-color: var(--purple); 
+  transform: translateY(-50%);
+}
+
+.newest h1::before {
+  left: 3%;
+  width: calc(100vw - 64%); 
+}
+
+.newest h1::after {
+  right: 5%;
+  width: calc(100vw - 66%); 
+}
+
+.newest .card-row {
+  margin-top: 2rem;
 }
 
 .email {
   background-color: var(--d_blue);
   gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
+#email-form .email-box input[type="text"] {
+  height: 3rem;
+  border-radius: 10px 0px 0px 10px;
+}
 
+#email-form .btnGhost {
+  border-radius: 0px 10px 10px 0px;
+  border: 2px solid var(--eggshell);
+  padding: 0.55rem 0.7rem 0.85rem 0.7rem;
+}
 
 #new-form input,
 #update-form input {

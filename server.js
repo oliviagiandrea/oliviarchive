@@ -49,8 +49,14 @@ const COUNTERS = 'counters'
 app.get('/', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
   const foundRecipes = await db.collection(RECIPES).find().toArray()
-  return res.render('index.ejs', { recipes: foundRecipes })
+  return res.render('index.ejs', { recipes: foundRecipes})
 })
+
+// async function findNewest() {
+//   const db = await Connection.open(mongoUri, DB)
+//   const newest = await db.collection(RECIPES).find().sort({ _id: -1 }).limit(5).toArray()
+//   return newest
+// }
 
 app.get('/recipe/:rid', async (req, res) => {
   const rid = parseInt(req.params.rid)
@@ -77,19 +83,19 @@ const checkInputs = (recipeData) => {
   }
   const sInt = parseInt(recipeData.servings)
   if (isNaN(sInt) || sInt.toString() !== recipeData.servings) {
-    errors.push(`(${recipeData.servings}) (servings amount) is not an integer`)
+    errors.push(`(${recipeData.servings}) (servings amount) is not an integer.`)
   }
   if (recipeData.time.length === 0) {
     errors.push('Missing Input: Please specify how long (in minutes) this recipe takes to make.')
   }
   const tInt = parseInt(recipeData.time)
   if (isNaN(tInt) || tInt.toString() !== recipeData.time) {
-    errors.push(`(${recipeData.time}) (time amount) is not an integer`)
+    errors.push(`(${recipeData.time}) (time amount) is not an integer.`)
   }
-  if (recipeData.ingredients.length === 0) {
-    errors.push('Missing Input: Please specify at least 3 ingredients.')
+  if (recipeData.ingredients[0].length === 0) {
+    errors.push('Missing Input: Please specify at least 1 ingredient.')
   }
-  if (recipeData.directions.length === 0) {
+  if (recipeData.directions[0].length === 0) {
     errors.push('Missing Input: Please specify at least 1 direction step.')
   }
   return errors
@@ -99,14 +105,18 @@ app.post('/new', upload.single('photo'), async (req, res) => {
   try {
     const recipeData = req.body
     const errors = checkInputs(recipeData)
+    console.log('checked inputs: ', errors)
     if (errors.length > 0) {
       // re-render the page, displaying any form entry errors we found earlier
       errors.forEach((err) => req.flash('info', err))
       return res.render('new.ejs', { recipe: recipeData })
     }
+    if (!req.file) {
+      req.flash('info', 'Missing Input: Please upload a recipe image.')
+      return res.render('new.ejs', { recipe: recipeData })
+    }
     var fPath = (req.file.path).replace("public\\imgs\\", "")
     recipeData.imagePath = fPath
-    console.log(recipeData)
     const db = await Connection.open(mongoUri, DB)
     const rid = await db.collection(COUNTERS).findOneAndUpdate(
       { _id: new ObjectId('64532e4de8ba3356173af515') },
@@ -160,7 +170,6 @@ app.get('/update/:rid', async (req, res) => {
 
 app.post('/update/:rid', async (req, res) => {
   const rid = parseInt(req.params.rid)
-  console.log(req.params.rid, rid)
   if (rid.toString() === rid) {
     req.flash('error', `non-integer recipeID in URL: ${rid}`)
     return res.redirect('/')

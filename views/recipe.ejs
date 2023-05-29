@@ -6,6 +6,9 @@
 
     <div id="content">
       <h1><%= recipe.title %></h1>
+      <% if (recipe.description) { %>
+        <i><%= recipe.description %></i><br />
+      <% } %>
       <img src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
       <p>servings: <%= recipe.servings %></p>
       <p>cook time: <%= recipe.time %></p>
