@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3030
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(serveStatic('public'))
-app.use('/new', express.static('uploads'));
+app.use('/insert', express.static('uploads'));
 app.set('view engine', 'ejs')
 
 var storage = multer.diskStorage({
@@ -44,6 +44,7 @@ app.use(flash())
 
 const DB = 'oliviarchive'
 const RECIPES = 'recipes'
+const ING = 'ingredients'
 const COUNTERS = 'counters'
 
 app.get('/', async (req, res) => {
@@ -68,9 +69,48 @@ app.get('/recipe/:rid', async (req, res) => {
   return res.render('recipe.ejs', { recipe })
 })
 
-app.get('/new', (req, res) => {
+app.get('/ing', async (req, res) => {
+  const db = await Connection.open(mongoUri, DB)
+  const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  return res.render('ing.ejs', { ingredients: ingredientList, ing: "" })
+})
+
+app.post('/ing', async (req, res) => {
+  let ingredient = req.body.ing
+  const db = await Connection.open(mongoUri, DB)
+  let ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  if (!ingredient) {
+    req.flash('info', 'Missing Input: Please specify at least 1 ingredient.')
+    return res.render('ing.ejs', { ingredients: ingredientList, ing: "" })
+  }
+  let result;
+  if (ingredient.includes(',')) {
+    const ingredients = ingredient.split(', ');
+    const bulkOps = ingredients.map(ing => ({
+      updateOne: {
+        filter: { name: ing },
+        update: { $setOnInsert: { name: ing } },
+        upsert: true
+      }
+    }));
+    result = await db.collection(ING).bulkWrite(bulkOps);
+  } else {
+    result = await db.collection(ING).updateOne(
+      { name: ingredient },
+      { $setOnInsert: { name: ingredient } },
+      { upsert: true }
+    );
+  }
+  ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray();
+  req.flash('info', `Successfully added ${ingredient} to ingredients collection`);
+  return res.render('ing.ejs', { ingredients: ingredientList, ing: "" });  
+})
+
+app.get('/insert', async (req, res) => {
+  const db = await Connection.open(mongoUri, DB)
+  const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
   const recipeData = { title: '', servings: '', time: '', ingredients: [], directions: [], imagePath: "" }
-  return res.render('new.ejs', { recipe: recipeData })
+  return res.render('insert.ejs', { recipe: recipeData, ingredients: ingredientList })
 })
 
 const checkInputs = (recipeData) => {
@@ -92,6 +132,12 @@ const checkInputs = (recipeData) => {
   if (isNaN(tInt) || tInt.toString() !== recipeData.time) {
     errors.push(`(${recipeData.time}) (time amount) is not an integer.`)
   }
+  if (!recipeData.categories) {
+    errors.push('Missing Input: Please specify at least 1 category.')
+  }
+  if (!recipeData.ingredientList) {
+    errors.push('Missing Input: Please specify at least 1 ingredient used.')
+  }
   if (recipeData.ingredients[0].length === 0) {
     errors.push('Missing Input: Please specify at least 1 ingredient.')
   }
@@ -101,19 +147,19 @@ const checkInputs = (recipeData) => {
   return errors
 }
 
-app.post('/new', upload.single('photo'), async (req, res) => {
+app.post('/insert', upload.single('photo'), async (req, res) => {
   try {
     const recipeData = req.body
+    console.log(recipeData)
     const errors = checkInputs(recipeData)
-    console.log('checked inputs: ', errors)
     if (errors.length > 0) {
       // re-render the page, displaying any form entry errors we found earlier
       errors.forEach((err) => req.flash('info', err))
-      return res.render('new.ejs', { recipe: recipeData })
+      return res.render('insert.ejs', { recipe: recipeData })
     }
     if (!req.file) {
       req.flash('info', 'Missing Input: Please upload a recipe image.')
-      return res.render('new.ejs', { recipe: recipeData })
+      return res.render('insert.ejs', { recipe: recipeData })
     }
     var fPath = (req.file.path).replace("public\\imgs\\", "")
     recipeData.imagePath = fPath
@@ -124,13 +170,15 @@ app.post('/new', upload.single('photo'), async (req, res) => {
       { returnOriginal: false, upsert: true }
     )
     recipeData.id = rid.value.seq
+    // remove extra spaces and empty characters from directions
+    recipeData.description = recipeData.description.trim()
     // get rid of empty elements in ingredient and direction arrays
     recipeData.ingredients = recipeData.ingredients.filter(n => n)
     recipeData.directions = recipeData.directions.filter(n => n)
     const result = await db.collection(RECIPES).insertOne(recipeData)
     if (result.matchedCount === 1 && result.upsertedCount === 0) {
       req.flash('error', `Error: id ${recipeData.id} in use`)
-      return res.render('new.ejs', { recipeData })
+      return res.render('insert.ejs', { recipeData })
     }
     return res.redirect('/update/' + recipeData.id)
   } catch (err) {

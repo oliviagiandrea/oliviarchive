@@ -22,8 +22,53 @@ $(".navCloseBtn").on("click", function() {
   nav.removeClass("openNav");
 });
 
+// ======================================================================================
+
+var checks = document.querySelectorAll("input[type=checkbox]");
+
+for(var i = 0; i < checks.length; i++){
+  checks[i].addEventListener('change', function() {
+    if(this.checked) {
+      showChildrenChecks(this);
+    } else {
+      hideChildrenChecks(this)
+    }
+  });
+}
+
+function showChildrenChecks(elm) {
+  var pN = elm.parentNode;
+  var childChecks = pN.children;
+   
+  for(var i = 0; i < childChecks.length; i++){
+    if(hasClass(childChecks[i], 'child-check')){
+      childChecks[i].classList.add("active");      
+    }
+  }
+}
+
+function hideChildrenChecks(elm) {
+  var pN = elm.parentNode;
+  var childChecks = pN.children;
+   
+  for(var i = 0; i < childChecks.length; i++){
+    if(hasClass(childChecks[i], 'child-check')){
+      childChecks[i].classList.remove("active");      
+    }
+  }  
+}
+
+function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+
 
 // ======================================================================================
+
+jQuery('#ingredientsList').multiselect({
+  columns: 1,
+  placeholder: 'select ingredients used',
+});
 
 $('#addIng').on('click', function(event) {
   event.preventDefault();

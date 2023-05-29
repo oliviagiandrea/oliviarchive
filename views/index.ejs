@@ -17,10 +17,10 @@
         <a class="purple" href="/search">advanced search &#62;</a>
       </div>
     </div>
-    <div id="searchIng" class="row">
+    <div id="searchIng" class="row center">
       <h3><a href="/ingredients">search recipes by ingredient &#62;</a></h3>
     </div>
-    <div class="container newest">
+    <div class="container newest center">
       <h1>Newest Recipes</h1>
       <div class="card-row">
         <% recipes.slice(-5).forEach((recipe)=> { %>
@@ -33,7 +33,7 @@
         <% }) %>
       </div>
     </div>
-    <div class="row email">
+    <div class="row email center">
       <h2 class="white">sign up for my newsletter</h2>
       <form id="email-form" method="POST" action="/signup">
         <div class="email-box">

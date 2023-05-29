@@ -1,0 +1,32 @@
+<%- include("partials/head.ejs") %>
+
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/flash.ejs") %>
+
+    <div id="content">
+      <h1>insert ingredient</h1>
+      <div class="row">
+        <label for="ingredientList">existing ingredients:</label>
+        <select name="ingredientList" id="ingredientList" multiple multiselect-search="true">
+          <% ingredients.forEach((ingredient)=> { %>
+            <option value="ingredient.name"><%= ingredient.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <form id="ing-form" method="post" action="/ing">
+        <fieldset>
+          <legend>add an ingredient</legend>
+          <div class="row">
+            <label for="ing">name (separate multiple with commas): </label>
+            <input id="ing" type="text" name="ing" value="<%= ing %>" placeholder="flour">
+          </div>
+        </fieldset>
+        <input type="submit" value="insert ingredient(s)" />
+      </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+
+  </html>
