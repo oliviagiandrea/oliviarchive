@@ -8,7 +8,7 @@
   --purple: #23110C;
   --d_blue: #2F385D;
   --l_blue: #778EB9;
-  --l_green: #506930;
+  --green: #506930;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   letter-spacing: 1px;
   background-color: var(--eggshell);
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   text-transform: lowercase;
 }
 
@@ -42,7 +42,7 @@ h3 {
 }
 
 a {
-  color: var(--l_green) !important;
+  color: var(--green) !important;
   font-weight: bold;
 }
 
@@ -70,11 +70,12 @@ p {
 }
 
 .btnPrimary {
-  background-color: var(--purple);
+  background-color: var(--d_blue);
+  color: var(--eggshell) !important;
 }
 
 .btnSecondary {
-  background-color: var(--d_blue);
+  background-color: var(--green);
 }
 
 .btnGhost {
@@ -86,8 +87,8 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  width: 100vw;
 }
 
 .row,
@@ -96,11 +97,13 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  max-width: 100%;
 }
 
 .center {
   justify-content: center;
-  align-items: center;
+  align-items: center !important;
+  text-align: center;
 }
 
 .card-row {
@@ -171,6 +174,10 @@ p {
 
 .nav * {
   color: var(--purple) !important;
+}
+
+.logo {
+  width: 10rem;
 }
 
 .nav .logo {
@@ -248,8 +255,7 @@ a {
   transform: translateY(-50%);
 }
 
-.search-box input, 
-.email-box input {
+.search-box input {
   height: 100%;
   width: calc(100% - 4rem);
   border: none;
@@ -355,8 +361,8 @@ a {
 }
 
 #home {
-  padding: 1rem;
   height: 60vh;
+  width: 100%;
   background-image: url('pancakes52.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -393,11 +399,15 @@ a {
 }
 
 #searchForm .search-box input[type="text"],
-#email-form .email-box input[type="text"] {
+#mce-EMAIL {
   flex: 1;
   height: 2.5rem;
   width: 15rem;
   padding: 0 0.5rem 0 2.5rem;
+  border-right: 1px solid var(--eggshell);
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
 }
 
 #searchIng {
@@ -411,7 +421,7 @@ a {
   padding-bottom: 3rem;
 }
 
-.newest h1 {
+/* .newest h1 {
   position: relative;
 }
 
@@ -433,9 +443,10 @@ a {
 .newest h1::after {
   right: 5%;
   width: calc(100vw - 66%); 
-}
+} */
 
-.newest .card-row {
+.newest .card-row,
+.categories .card-row {
   margin-top: 2rem;
 }
 
@@ -444,9 +455,10 @@ a {
   gap: 2rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  width: 100%;
 }
 
-#email-form .email-box input[type="text"] {
+#mce-EMAIL {
   height: 3rem;
   border-radius: 10px 0px 0px 10px;
 }
@@ -454,7 +466,9 @@ a {
 #email-form .btnGhost {
   border-radius: 0px 10px 10px 0px;
   border: 2px solid var(--eggshell);
-  padding: 0.55rem 0.7rem 0.85rem 0.7rem;
+  padding: 0.8rem 0.7rem 0.8rem 0.7rem;
+  height: 3rem;
+  background-color: var(--d_blue);
 }
 
 #insert-form fieldset {
@@ -475,7 +489,10 @@ a {
   height: 5rem;
 }
 
+
 .categories {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   align-items: start;
   gap: 2rem;
 }
@@ -492,4 +509,14 @@ a {
 .multiselect-dropdown {
   height: 3rem;
   width: 30rem;
+}
+
+footer {
+  background-color: var(--l_blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 4rem);
+  padding: 2rem;
 }
