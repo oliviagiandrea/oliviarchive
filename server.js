@@ -61,12 +61,15 @@ app.get('/', async (req, res) => {
 
 app.get('/recipe/:rid', async (req, res) => {
   const rid = parseInt(req.params.rid)
-  const recipe = await lookupRecipe(rid)
+  const db = await Connection.open(mongoUri, DB)
+  const recipe = await db.collection(RECIPES).findOne({ id: rid })
   if (!recipe) {
     req.flash('error', `No such recipe: ${req.params.rid}`)
     return res.redirect('/')
   }
-  return res.render('recipe.ejs', { recipe })
+  const newest = await db.collection(RECIPES).find().limit(5).toArray()
+  const similar = await db.collection(RECIPES).find({ categories: recipe.categories[0] }).limit(5).toArray()
+  return res.render('recipe.ejs', { recipe, newest, similar })
 })
 
 app.get('/ing', async (req, res) => {
@@ -175,6 +178,7 @@ app.post('/insert', upload.single('photo'), async (req, res) => {
     // get rid of empty elements in ingredient and direction arrays
     recipeData.ingredients = recipeData.ingredients.filter(n => n)
     recipeData.directions = recipeData.directions.filter(n => n)
+    recipeData.date = new Date()
     const result = await db.collection(RECIPES).insertOne(recipeData)
     if (result.matchedCount === 1 && result.upsertedCount === 0) {
       req.flash('error', `Error: id ${recipeData.id} in use`)
@@ -200,20 +204,16 @@ app.post('/search', async (req, res) => {
   }
 })
 
-const lookupRecipe = async (rid) => {
-  const db = await Connection.open(mongoUri, DB)
-  const foundRecipe = await db.collection(RECIPES).findOne({ id: rid })
-  return foundRecipe
-}
-
 app.get('/update/:rid', async (req, res) => {
   const rid = parseInt(req.params.rid)
-  const recipe = await lookupRecipe(rid)
+  const db = await Connection.open(mongoUri, DB)
+  const recipe = await db.collection(RECIPES).findOne({ id: rid })
   if (!recipe) {
     req.flash('error', `No such recipe: ${req.params.rid}`)
     return res.redirect('/')
   }
-  return res.render('update.ejs', { recipe })
+  const ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  return res.render('update.ejs', { recipe, ingredients, categories: recipe.categories })
 })
 
 app.post('/update/:rid', async (req, res) => {
@@ -223,15 +223,19 @@ app.post('/update/:rid', async (req, res) => {
     return res.redirect('/')
   }
   const db = await Connection.open(mongoUri, DB)
+  const ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
   const recipe = {
     id: rid,
     title: req.body.title,
-    description: req.body.description,
+    description: req.body.description.trim(),
     servings: req.body.servings,
     time: req.body.time,
     reference: req.body.reference,
+    categories: req.body.categories,
+    ingredientList: req.body.ingredientList,
     ingredients: req.body.ingredients.filter(n => n),
-    directions: req.body.directions.filter(n => n)
+    directions: req.body.directions.filter(n => n),
+    date: new Date()
   }
   const errors = checkInputs(recipe)
   if (errors.length > 0) {
@@ -239,7 +243,7 @@ app.post('/update/:rid', async (req, res) => {
     errors.forEach((err) => {
       req.flash('info', err)
     })
-    return res.render('update.ejs', { recipe })
+    return res.render('update.ejs', { recipe, ingredients, categories: recipe.categories })
   }
   const result = await db.collection(RECIPES).updateOne(
     { id: rid },
@@ -247,10 +251,10 @@ app.post('/update/:rid', async (req, res) => {
   )
   if (result.matchedCount === 1 && result.modifiedCount === 1) {
     flash('info', `recipe ${rid} updated`)
-    return res.render('update.ejs', { recipe })
+    return res.render('update.ejs', { recipe, ingredients, categories: recipe.categories })
   } else {
     flash('error', `error updating ${rid}: ${JSON.stringify(result)}`)
-    return res.render('update.ejs', { recipe })
+    return res.render('update.ejs', { recipe, ingredients, categories: recipe.categories })
   }
 })
 

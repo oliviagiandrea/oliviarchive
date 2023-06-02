@@ -27,6 +27,12 @@ $(".navCloseBtn").on("click", function() {
 var checks = document.querySelectorAll("input[type=checkbox]");
 
 for(var i = 0; i < checks.length; i++){
+  if(checks[i].checked) {
+    showChildrenChecks(checks[i]);
+  } 
+}
+
+for(var i = 0; i < checks.length; i++){
   checks[i].addEventListener('change', function() {
     if(this.checked) {
       showChildrenChecks(this);
@@ -59,16 +65,10 @@ function hideChildrenChecks(elm) {
 }
 
 function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 
-
 // ======================================================================================
-
-jQuery('#ingredientsList').multiselect({
-  columns: 1,
-  placeholder: 'select ingredients used',
-});
 
 $('#addIng').on('click', function(event) {
   event.preventDefault();

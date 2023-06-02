@@ -4,30 +4,69 @@
     <%- include("partials/navbar.ejs") %>
     <%- include("partials/flash.ejs") %>
 
-    <div id="content">
-      <h1><%= recipe.title %></h1>
-      <% if (recipe.description) { %>
-        <i><%= recipe.description %></i><br />
-      <% } %>
-      <img src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
-      <p>servings: <%= recipe.servings %></p>
-      <p>cook time: <%= recipe.time %></p>
-      <% if (recipe.reference) { %>
-        <p>reference: <%= recipe.reference %></p>
-      <% } %>
-      <h2>ingredients: </h2>
-      <ul>
-        <% recipe.ingredients.forEach((ingredient) => { %>
-          <li name="ingredients"><%= ingredient %></li><br />
-        <% }) %>
-      </ul>
-      <h2>directions: </h2>
-      <ol>
-        <% recipe.directions.forEach((direction) => { %>
-          <li name="directions"><%= direction %></li><br />
-        <% }) %>
-      </ol>
+    <div class="container">
+      <div class="row recipe-home">
+        <div class="col">
+          <h1><%= recipe.title %></h1>
+          <% if (recipe.description) { %>
+            <p class="description"><%= recipe.description %></p>
+          <% } %>
+          <p><%= recipe.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          }) %></p>
+          <p><%= recipe.servings %> <%= recipe.servings > 1 ? "servings" : "serving" %> &#183; <%= recipe.time %> minutes</p>
+        </div>
+        <div class="col">
+          <% if (recipe.reference) { %>
+            <img class="recipe-img" src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
+          <% } else { %>
+            <a href="<%= recipe.reference %>" target="_blank">
+              <img class="recipe-img" src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
+            </a>
+          <% } %>
+        </div>
+      </div>
+      
+      <div class="row recipe-row">
+        <div class="col ingredients-col">
+          <h2>ingredients: </h2>
+          <ul>
+            <% recipe.ingredients.forEach((ingredient) => { %>
+              <li name="ingredients"><%= ingredient %></li><br />
+            <% }) %>
+          </ul>
+        </div>
+        <div class="col directions-col">
+          <h2>directions: </h2>
+          <ol>
+            <% recipe.directions.forEach((direction) => { %>
+              <li name="directions"><%= direction %></li><br />
+            <% }) %>
+          </ol>
+        </div>
+      </div>
+
+      <%- include("partials/newest.ejs", {newest}) %>
+
+      <div class="container similar center">
+        <h1>more <%= recipe.categories[0] %> ideas</h1>
+        <div class="card-row">
+          <% similar.forEach((recipe)=> { %>
+            <div class="card">
+              <a href="recipe/<%= recipe.id %>">
+                <img class="card-img" alt="photo of <%= recipe.title %>" src="/imgs/<%= recipe.imagePath %>" />
+              </a>
+              <div class="card-body"><p class="card-title"><%= recipe.title %></p></div>
+            </div>
+          <% }) %>
+        </div>
+        <a href="/search" class="btn btnPrimary">explore all recipes</a>
+      </div>
+      <%- include("partials/footer.ejs") %>
     </div>
-    <%- include("partials/footer.ejs") %>
+
+    <%- include("partials/scripts.ejs") %>
   </body>
 </html>

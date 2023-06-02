@@ -20,30 +20,9 @@
     <div id="searchIng" class="row center">
       <h3><a href="/ingredients">search recipes by ingredient &#62;</a></h3>
     </div>
-    <div class="container newest center">
-      <h1>Newest Recipes</h1>
-      <div class="card-row">
-        <% recipes.slice(-5).forEach((recipe)=> { %>
-          <div class="card">
-            <a href="recipe/<%= recipe.id %>">
-              <img class="card-img" alt="photo of <%= recipe.title %>" src="/imgs/<%= recipe.imagePath %>" />
-            </a>
-            <div class="card-body"><p class="card-title"><%= recipe.title %></p></div>
-          </div>
-        <% }) %>
-      </div>
-    </div>
-    <div class="row email center">
-      <h2 class="white">sign up for my newsletter</h2>
-      <form id="email-form" method="POST" target="_blank" action="https://azurewebsites.us21.list-manage.com/subscribe/post?u=35c3928f32114cf195b23f859&amp;id=52636556da&amp;f_id=00e259e1f0">
-        <div class="email-box">
-          <i class="fa-solid fa-magnifying-glass email-icon"></i>
-          <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="your email address" required>
-          <input type="submit" value="sign up" name="subscribe" id="mc-embedded-subscribe" class="btn btnGhost">
-        </div>
-      </form>
-      <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-    </div>
+    
+    <%- include("partials/newest.ejs", { newest: recipes.slice(-5) }) %>
+
     <div class="container categories center">
       <h1>all recipe categories</h1>
       <div class="card-row">
@@ -80,25 +59,7 @@
       </div>
       <a class="btn btnPrimary" href="/search">explore all recipes</a>
     </div>
-    <footer>
-      <div class="col">
-        <img class="logo" alt="oliviarchive logo" src="logo.png" />
-      </div>
-      <div class="col">
-        <h2 class="white">sign up for my newsletter</h2>
-        <form id="email-form" method="POST" target="_blank" action="https://azurewebsites.us21.list-manage.com/subscribe/post?u=35c3928f32114cf195b23f859&amp;id=52636556da&amp;f_id=00e259e1f0">
-          <div class="email-box">
-            <i class="fa-solid fa-magnifying-glass email-icon"></i>
-            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="your email address" required>
-            <input type="submit" value="sign up" name="subscribe" id="mc-embedded-subscribe" class="btn btnGhost">
-          </div>
-        </form>
-        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-      </div>
-      <div class="col">
-        <a href="youtube.com" target="_blank">youtube</a>
-      </div>
-    </footer>
+    <%- include("partials/footer.ejs") %>
   </div>
     
   <!-- <div id="results">
@@ -111,7 +72,7 @@
     </ul>
   </div> -->
 
-  <%- include("partials/footer.ejs") %>
+  <%- include("partials/scripts.ejs") %>
   </body>
 
 </html>

@@ -126,8 +126,9 @@ function MultiselectDropdown(options){
     el.loadOptions=()=>{
       list.innerHTML='';
       if(el.attributes['multiselect-select-all']?.value=='true'){
-        var op=newEl('div',{class:'multiselect-dropdown-all-selector'})
+        var op=newEl('div',{class:'multiselect-dropdown-all-selector'});
         var ic=newEl('input',{type:'checkbox'});
+        ic.className = 'ing-check';
         op.appendChild(ic);
         op.appendChild(newEl('label',{text:config.txtAll}));
   
