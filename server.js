@@ -72,6 +72,17 @@ app.get('/recipe/:rid', async (req, res) => {
   return res.render('recipe.ejs', { recipe, newest, similar })
 })
 
+app.get('/print/:rid', async (req, res) => {
+  const rid = parseInt(req.params.rid)
+  const db = await Connection.open(mongoUri, DB)
+  const recipe = await db.collection(RECIPES).findOne({ id: rid })
+  if (!recipe) {
+    req.flash('error', `No such recipe: ${req.params.rid}`)
+    return res.redirect('/')
+  }
+  return res.render('print.ejs', { recipe })
+})
+
 app.get('/ing', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
   const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()

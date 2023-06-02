@@ -4,9 +4,9 @@
     <%- include("partials/navbar.ejs") %>
     <%- include("partials/flash.ejs") %>
 
-    <div class="container">
+    <div id="recipe" class="container">
       <div class="row recipe-home">
-        <div class="col">
+        <div class="col recipe-title-col">
           <h1><%= recipe.title %></h1>
           <% if (recipe.description) { %>
             <p class="description"><%= recipe.description %></p>
@@ -17,8 +17,15 @@
             day: "numeric"
           }) %></p>
           <p><%= recipe.servings %> <%= recipe.servings > 1 ? "servings" : "serving" %> &#183; <%= recipe.time %> minutes</p>
+          <div class="row center recipe-categories">
+            <% recipe.categories.forEach((category)=> { %>
+              <a href="search/<%= category %>" class="btn btnPrimary">
+                <%= category %>
+              </a>
+            <% }) %>
+          </div>
         </div>
-        <div class="col">
+        <div class="col recipe-img-col">
           <% if (recipe.reference) { %>
             <img class="recipe-img" src="/imgs/<%= recipe.imagePath %>" alt="photo of <%= recipe.title %>" />
           <% } else { %>
@@ -34,12 +41,15 @@
           <h2>ingredients: </h2>
           <ul>
             <% recipe.ingredients.forEach((ingredient) => { %>
-              <li name="ingredients"><%= ingredient %></li><br />
+              <li name="ingredients"><%= ingredient %></li>
             <% }) %>
           </ul>
         </div>
         <div class="col directions-col">
-          <h2>directions: </h2>
+          <div class="row spaced">
+            <h2>directions: </h2>
+            <div class="btn btnPrimary printBtn" onclick="window.print()">print</a>
+          </div>
           <ol>
             <% recipe.directions.forEach((direction) => { %>
               <li name="directions"><%= direction %></li><br />
