@@ -72,17 +72,6 @@ app.get('/recipe/:rid', async (req, res) => {
   return res.render('recipe.ejs', { recipe, newest, similar })
 })
 
-app.get('/print/:rid', async (req, res) => {
-  const rid = parseInt(req.params.rid)
-  const db = await Connection.open(mongoUri, DB)
-  const recipe = await db.collection(RECIPES).findOne({ id: rid })
-  if (!recipe) {
-    req.flash('error', `No such recipe: ${req.params.rid}`)
-    return res.redirect('/')
-  }
-  return res.render('print.ejs', { recipe })
-})
-
 app.get('/ing', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
   const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
@@ -184,8 +173,6 @@ app.post('/insert', upload.single('photo'), async (req, res) => {
       { returnOriginal: false, upsert: true }
     )
     recipeData.id = rid.value.seq
-    // remove extra spaces and empty characters from directions
-    recipeData.description = recipeData.description.trim()
     // get rid of empty elements in ingredient and direction arrays
     recipeData.ingredients = recipeData.ingredients.filter(n => n)
     recipeData.directions = recipeData.directions.filter(n => n)
@@ -238,7 +225,7 @@ app.post('/update/:rid', async (req, res) => {
   const recipe = {
     id: rid,
     title: req.body.title,
-    description: req.body.description.trim(),
+    notes: req.body.notes,
     servings: req.body.servings,
     time: req.body.time,
     reference: req.body.reference,

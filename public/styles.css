@@ -544,7 +544,7 @@ footer #email-form {
   margin-bottom: 1rem;
 }
 
-.recipe-home .description {
+.recipe-home .notes {
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -664,7 +664,7 @@ li[name="ingredients"] {
     width: 30%;
   }
 
-  .description,
+  .notes,
   .recipe-categories {
     display: none;
   }

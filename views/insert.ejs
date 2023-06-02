@@ -14,10 +14,8 @@
             <input id="title" type="text" name="title" value="<%= recipe.title %>" placeholder="pancakes">
           </div>
           <div class="row">
-            <label for="description">description:</label>
-            <textarea id="description" name="description" placeholder="a short note">
-              <%= recipe.description %>
-            </textarea>
+            <label for="notes">notes:</label>
+            <textarea id="notes" name="notes" placeholder="a short note"><%= recipe.notes %></textarea>
           </div>
           <div class="row">
             <label for="servings">servings:</label>
@@ -267,7 +265,7 @@
             <label for="ingredientList">ingredients used:</label>
             <select name="ingredientList" id="ingredientList" multiple multiselect-search="true">
               <% ingredients.forEach((ingredient)=> { %>
-                <option value="ingredient.name"><%= ingredient.name %></option>
+                <option value="<%= ingredient.name %>" <% if (recipe.ingredientList.includes(ingredient.name)) { %>selected<% } %>><%= ingredient.name %></option>
               <% }) %>
             </select>
           </div>
