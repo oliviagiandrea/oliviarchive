@@ -4,74 +4,260 @@
   <%- include("partials/navbar.ejs") %>
   <%- include("partials/flash.ejs") %>
 
-  <div id="home">
-    <div id="welcome">
-      <h1>find a recipe</h1>
+  <div class="container">
+    <div class="row center search">
+      <h1>search recipes</h1>
       <form id="searchForm" method="POST" action="/search">
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input type="text" name="query" id="query" placeholder="Search titles...">
+          <input type="text" name="query" id="query" placeholder="search titles...">
         </div>
-        
-        <!-- <input type="submit" value="Search"> -->
       </form>
     </div>
-    
-    <div id="results">
-      <ul id="recipeList">
-        <% recipes.forEach((recipe)=> { %>
-          <li><a href="recipe/<%= recipe.id %>">
-              <%= recipe.title %>
-          </li>
+
+    <div class="row search-row">
+      <div class="col category-col">
+        <h2>search ingredients</h2>
+        <p>show recipes with:</p>
+        <select name="ingInclude" id="ingInclude" multiple multiselect-search="true">
+          <% ingredients.forEach((ingredient)=> { %>
+            <option value="<%= ingredient.name %>"><%= ingredient.name %></option>
           <% }) %>
-      </ul>
+        </select>
+        <p>show recipes without:</p>
+        <select name="ingExclude" id="ingExclude" multiple multiselect-search="true">
+          <% ingredients.forEach((ingredient)=> { %>
+            <option value="<%= ingredient.name %>"><%= ingredient.name %></option>
+          <% }) %>
+        </select>
+        <h2>search categories</h2>
+        <fieldset>
+          <legend>categories</legend>
+          <div id="search-categories">
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="italian" value="italian"><label for="italian">italian</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="japanese" value="japanese"><label for="japanese">japanese</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="thai" value="thai"><label for="thai">thai</label>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="single_serve" value="single serve"><label for="single_serve">single serve</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="30_min" value="30 min"><label for="30_min">30 minute</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="gluten_free" value="gluten free"><label for="gluten_free">gluten free</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="dairy_free" value="dairy free"><label for="dairy_free">dairy free</label>
+              </div>
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="vegan" value="vegan"><label for="vegan">vegan</label>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="breakfast" value="breakfast"><label for="breakfast">breakfast</label>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="french_toast" value="french toast"><label for="french_toast">french toast</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="granola" value="granola"><label for="granola">granola</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="healthy_breakfasts" value="healthy breakfasts"><label for="healthy_breakfasts">healthy breakfasts</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="muffins" value="muffins"><label for="muffins">muffins</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="pancakes" value="pancakes"><label for="pancakes">pancakes</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="pastries" value="pastries"><label for="pastries">pastries</label>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="biscuits" value="biscuits"><label for="biscuits">biscuits</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="croissants" value="croissants"><label for="croissants">croissants</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="scones" value="scones"><label for="scones">scones</label>
+                  </div>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="waffles" value="waffles"><label for="waffles">waffles</label>
+                </div>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="mains" value="mains"><label for="mains">mains</label>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="soups" value="soups"><label for="soups">soups</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="salads" value="salads"><label for="salads">salads</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="pasta" value="pasta"><label for="pasta">pasta</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="pizza" value="pizza"><label for="pizza">pizza</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="poultry" value="poultry"><label for="poultry">poultry</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="seafood" value="seafood"><label for="seafood">seafood</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="beef" value="beef"><label for="beef">beef</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="tofu" value="tofu"><label for="tofu">tofu</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="vegetarian" value="vegetarian"><label for="vegetarian">vegetarian</label>
+                </div>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="sides" value="sides"><label for="sides">sides</label>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="broths" value="broths"><label for="broths">broths</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="dips" value="dips"><label for="dips">dips</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="drinks" value="drinks"><label for="drinks">drinks</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="grains" value="grains"><label for="grains">grains</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="sauces" value="sauces"><label for="sauces">sauces</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="spices" value="spices"><label for="spices">spices</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="spreads" value="spreads"><label for="spreads">spreads</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="stuffing" value="stuffing"><label for="stuffing">stuffing</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="vegetables" value="vegetables"><label for="vegetables">vegetables</label>
+                </div>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="bread" value="bread"><label for="bread">bread</label>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="sourdough" value="sourdough"><label for="sourdough">sourdough</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="wheat" value="wheat"><label for="wheat">wheat</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="white" value="white"><label for="white">white</label>
+                </div>
+              </div>
+            </div>
+            <div class="category-col">
+              <div class="parent-check">
+                <input type="checkbox" name="categories" id="desserts" value="desserts"><label for="desserts">desserts</label>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="bars" value="bars"><label for="bars">bars</label>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="blondies" value="blondies"><label for="blondies">blondies</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="brownies" value="brownies"><label for="brownies">brownies</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="protein_bars" value="protein bars"><label for="protein_bars">protein bars</label>
+                  </div>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="cakes" value="cakes"><label for="cakes">cakes</label>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="mug_cakes" value="mug cakes"><label for="mug_cakes">mug cakes</label>
+                  </div>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="choux" value="choux"><label for="choux">choux</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="cinnamon_rolls" value="cinnamon rolls"><label for="cinnamon_rolls">cinnamon rolls</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="cookies" value="cookies"><label for="cookies">cookies</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="frostings" value="frostings"><label for="frostings">frostings</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="fruit" value="fruit"><label for="fruit">fruit</label>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="cobblers" value="cobblers"><label for="cobblers">cobblers</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="crisps" value="crisps"><label for="crisps">crisps</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="crumbles" value="crumbles"><label for="crumbles">crumbles</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="fruit_bars" value="fruit bars"><label for="fruit_bars">fruit bars</label>
+                  </div>
+                  <div class="child-check">
+                    <input type="checkbox" name="categories" id="pies" value="pies"><label for="pies">pies</label>
+                    <div class="child-check">
+                      <input type="checkbox" name="categories" id="pie_crust" value="pie crust"><label for="pie_crust">pie crust</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="macarons" value="macarons"><label for="macarons">macarons</label>
+                </div>
+                <div class="child-check">
+                  <input type="checkbox" name="categories" id="quick_breads" value="quick breads"><label for="quick_breads">quick breads</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col results-col">
+        <div id="recipeList" class="card-row">
+          <% recipes.forEach((recipe)=> { %>
+            <div class="card">
+              <a href="recipe/<%= recipe.id %>">
+                <img class="card-img" alt="photo of <%= recipe.title %>" src="/imgs/<%= recipe.imagePath %>" />
+              </a>
+              <div class="card-body"><p class="card-title"><%= recipe.title %></p></div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
     </div>
 
-    <script>
-      // Define a function to render the search results as HTML
-      function renderSearchResults(results) {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
+    <%- include("partials/footer.ejs") %>
+  </div>
 
-        if (results.length === 0) {
-          resultsDiv.textContent = 'No results found';
-          return;
-        }
-
-        const ul = document.createElement('ul');
-        resultsDiv.appendChild(ul);
-
-        for (const result of results) {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = `recipe/${result.id}`;
-          a.textContent = result.title;
-          li.appendChild(a);
-          ul.appendChild(li);
-        }
-      }
-
-      // Define a function to handle the search form submission
-      function handleSearchFormSubmit(event) {
-        event.preventDefault();
-
-        const searchQuery = document.getElementById('query').value;
-        fetch('/search', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: searchQuery })
-        })
-          .then(response => response.json())
-          .then(renderSearchResults)
-          .catch(error => console.error(error));
-      }
-
-
-      // Attach an event listener to the search form
-      document.getElementById('searchForm').addEventListener('submit', handleSearchFormSubmit);
-    </script>
-
-    <%- include("partials/scripts.ejs") %>
+  <%- include("partials/scripts.ejs") %>
   </body>
 
 </html>

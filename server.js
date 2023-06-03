@@ -49,42 +49,23 @@ const COUNTERS = 'counters'
 
 app.get('/', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
-  const foundRecipes = await db.collection(RECIPES).find().toArray()
-  return res.render('index.ejs', { recipes: foundRecipes})
-})
-
-// async function findNewest() {
-//   const db = await Connection.open(mongoUri, DB)
-//   const newest = await db.collection(RECIPES).find().sort({ _id: -1 }).limit(5).toArray()
-//   return newest
-// }
-
-app.get('/recipe/:rid', async (req, res) => {
-  const rid = parseInt(req.params.rid)
-  const db = await Connection.open(mongoUri, DB)
-  const recipe = await db.collection(RECIPES).findOne({ id: rid })
-  if (!recipe) {
-    req.flash('error', `No such recipe: ${req.params.rid}`)
-    return res.redirect('/')
-  }
-  const newest = await db.collection(RECIPES).find().limit(5).toArray()
-  const similar = await db.collection(RECIPES).find({ categories: recipe.categories[0] }).limit(5).toArray()
-  return res.render('recipe.ejs', { recipe, newest, similar })
+  const recipes = await db.collection(RECIPES).find().toArray()
+  return res.render('index.ejs', { recipes })
 })
 
 app.get('/ing', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
-  const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
-  return res.render('ing.ejs', { ingredients: ingredientList, ing: "" })
+  const ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  return res.render('ing.ejs', { ingredients, ing: "" })
 })
 
 app.post('/ing', async (req, res) => {
   let ingredient = req.body.ing
   const db = await Connection.open(mongoUri, DB)
-  let ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  let ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
   if (!ingredient) {
     req.flash('info', 'Missing Input: Please specify at least 1 ingredient.')
-    return res.render('ing.ejs', { ingredients: ingredientList, ing: "" })
+    return res.render('ing.ejs', { ingredients, ing: "" })
   }
   let result;
   if (ingredient.includes(',')) {
@@ -104,47 +85,47 @@ app.post('/ing', async (req, res) => {
       { upsert: true }
     );
   }
-  ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray();
+  ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray();
   req.flash('info', `Successfully added ${ingredient} to ingredients collection`);
-  return res.render('ing.ejs', { ingredients: ingredientList, ing: "" });  
+  return res.render('ing.ejs', { ingredients, ing: "" });
 })
 
 app.get('/insert', async (req, res) => {
   const db = await Connection.open(mongoUri, DB)
-  const ingredientList = await db.collection(ING).find().sort({ name: 1 }).toArray()
-  const recipeData = { title: '', servings: '', time: '', ingredients: [], directions: [], imagePath: "" }
-  return res.render('insert.ejs', { recipe: recipeData, ingredients: ingredientList })
+  const ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  const recipe = { title: '', servings: '', time: '', ingredients: [], directions: [], imagePath: "" }
+  return res.render('insert.ejs', { recipe, ingredients })
 })
 
-const checkInputs = (recipeData) => {
+const checkInputs = (recipe) => {
   const errors = []
-  if (recipeData.title.length === 0) {
+  if (recipe.title.length === 0) {
     errors.push('Missing Input: Please specify a title.')
   }
-  if (recipeData.servings.length === 0) {
+  if (recipe.servings.length === 0) {
     errors.push('Missing Input: Please specify the amount of servings made.')
   }
-  const sInt = parseInt(recipeData.servings)
-  if (isNaN(sInt) || sInt.toString() !== recipeData.servings) {
-    errors.push(`(${recipeData.servings}) (servings amount) is not an integer.`)
+  const sInt = parseInt(recipe.servings)
+  if (isNaN(sInt) || sInt.toString() !== recipe.servings) {
+    errors.push(`(${recipe.servings}) (servings amount) is not an integer.`)
   }
-  if (recipeData.time.length === 0) {
+  if (recipe.time.length === 0) {
     errors.push('Missing Input: Please specify how long (in minutes) this recipe takes to make.')
   }
-  const tInt = parseInt(recipeData.time)
-  if (isNaN(tInt) || tInt.toString() !== recipeData.time) {
-    errors.push(`(${recipeData.time}) (time amount) is not an integer.`)
+  const tInt = parseInt(recipe.time)
+  if (isNaN(tInt) || tInt.toString() !== recipe.time) {
+    errors.push(`(${recipe.time}) (time amount) is not an integer.`)
   }
-  if (!recipeData.categories) {
+  if (!recipe.categories) {
     errors.push('Missing Input: Please specify at least 1 category.')
   }
-  if (!recipeData.ingredientList) {
+  if (!recipe.ingredientList) {
     errors.push('Missing Input: Please specify at least 1 ingredient used.')
   }
-  if (recipeData.ingredients[0].length === 0) {
+  if (recipe.ingredients[0].length === 0) {
     errors.push('Missing Input: Please specify at least 1 ingredient.')
   }
-  if (recipeData.directions[0].length === 0) {
+  if (recipe.directions[0].length === 0) {
     errors.push('Missing Input: Please specify at least 1 direction step.')
   }
   return errors
@@ -152,53 +133,39 @@ const checkInputs = (recipeData) => {
 
 app.post('/insert', upload.single('photo'), async (req, res) => {
   try {
-    const recipeData = req.body
-    console.log(recipeData)
-    const errors = checkInputs(recipeData)
+    const recipe = req.body
+    const errors = checkInputs(recipe)
     if (errors.length > 0) {
       // re-render the page, displaying any form entry errors we found earlier
       errors.forEach((err) => req.flash('info', err))
-      return res.render('insert.ejs', { recipe: recipeData })
+      return res.render('insert.ejs', { recipe })
     }
     if (!req.file) {
       req.flash('info', 'Missing Input: Please upload a recipe image.')
-      return res.render('insert.ejs', { recipe: recipeData })
+      return res.render('insert.ejs', { recipe })
     }
     var fPath = (req.file.path).replace("public\\imgs\\", "")
-    recipeData.imagePath = fPath
+    recipe.imagePath = fPath
     const db = await Connection.open(mongoUri, DB)
     const rid = await db.collection(COUNTERS).findOneAndUpdate(
       { _id: new ObjectId('64532e4de8ba3356173af515') },
       { $inc: { seq: 1 } },
       { returnOriginal: false, upsert: true }
     )
-    recipeData.id = rid.value.seq
+    recipe.id = rid.value.seq
     // get rid of empty elements in ingredient and direction arrays
-    recipeData.ingredients = recipeData.ingredients.filter(n => n)
-    recipeData.directions = recipeData.directions.filter(n => n)
-    recipeData.date = new Date()
-    const result = await db.collection(RECIPES).insertOne(recipeData)
+    recipe.ingredients = recipe.ingredients.filter(n => n)
+    recipe.directions = recipe.directions.filter(n => n)
+    recipe.date = new Date()
+    const result = await db.collection(RECIPES).insertOne(recipe)
     if (result.matchedCount === 1 && result.upsertedCount === 0) {
-      req.flash('error', `Error: id ${recipeData.id} in use`)
-      return res.render('insert.ejs', { recipeData })
+      req.flash('error', `Error: id ${recipe.id} in use`)
+      return res.render('insert.ejs', { recipe })
     }
-    return res.redirect('/update/' + recipeData.id)
+    return res.redirect('/update/' + recipe.id)
   } catch (err) {
     req.flash('error', `Error inserting recipe: ${JSON.stringify(err)}.`)
     return res.redirect('/')
-  }
-})
-
-app.post('/search', async (req, res) => {
-  const query = new RegExp(req.body.query, 'i')
-  // use a regex expression to ignore case and look for partial matches
-  const db = await Connection.open(mongoUri, DB)
-  try {
-    const found = await db.collection(RECIPES).find({ title: { $regex: query } }).toArray();
-    return res.json(found); // Sending the search results as JSON response
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'An error occurred during the search' });
   }
 })
 
@@ -266,6 +233,143 @@ app.post('/delete/:rid', async (req, res) => {
   } else {
     req.flash('error', `Error deleting ${rid}: ${JSON.stringify(deleted)}`)
     return res.redirect('/update/' + rid)
+  }
+})
+
+app.get('/recipe/:rid', async (req, res) => {
+  const rid = parseInt(req.params.rid)
+  const db = await Connection.open(mongoUri, DB)
+  const recipe = await db.collection(RECIPES).findOne({ id: rid })
+  if (!recipe) {
+    req.flash('error', `No such recipe: ${req.params.rid}`)
+    return res.redirect('/')
+  }
+  const newest = await db.collection(RECIPES).find().limit(5).toArray()
+  const similar = await db.collection(RECIPES).find({ categories: recipe.categories[0] }).limit(5).toArray()
+  return res.render('recipe.ejs', { recipe, newest, similar })
+})
+
+app.get('/search', async (req, res) => {
+  const db = await Connection.open(mongoUri, DB)
+  const recipes = await db.collection(RECIPES).find().toArray()
+  const ingredients = await db.collection(ING).find().sort({ name: 1 }).toArray()
+  return res.render('search.ejs', { recipes, ingredients })
+})
+
+app.post('/search', async (req, res) => {
+  // use a regex expression to ignore case and look for partial matches
+  const db = await Connection.open(mongoUri, DB)
+  try {
+    let found;
+    switch (true) {
+      case req.body.title?.length > 0 && req.body.categories?.length > 0 && req.body.ingInclude?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          categories: { $all: req.body.categories },
+          ingredientList: { $all: req.body.ingInclude, $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.categories?.length > 0 && req.body.ingInclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          categories: { $all: req.body.categories },
+          ingredientList: { $all: req.body.ingInclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.categories?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          categories: { $all: req.body.categories },
+          ingredientList: { $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.categories?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          categories: { $all: req.body.categories }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.ingInclude?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          ingredientList: { $all: req.body.ingInclude, $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.ingInclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          ingredientList: { $all: req.body.ingInclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') },
+          ingredientList: { $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+
+      case req.body.title?.length > 0:
+        found = await db.collection(RECIPES).find({
+          title: { $regex: new RegExp(req.body.title, 'i') }
+        }).toArray();
+        break;
+
+      case req.body.categories?.length > 0 && req.body.ingInclude?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          categories: { $all: req.body.categories },
+          ingredientList: { $all: req.body.ingInclude, $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+      
+      case req.body.categories?.length > 0 && req.body.ingInclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          categories: { $all: req.body.categories },
+          ingredientList: { $all: req.body.ingInclude }
+        }).toArray();
+        break;
+
+      case req.body.categories?.length > 0 && req.body.ingExclude?.length > 0:
+          found = await db.collection(RECIPES).find({
+            categories: { $all: req.body.categories },
+            ingredientList: { $nin: req.body.ingExclude }
+          }).toArray();
+          break;
+
+      case req.body.categories?.length > 0:
+        found = await db.collection(RECIPES).find({
+          categories: { $all: req.body.categories },
+        }).toArray();
+        break;
+
+      case req.body.ingInclude?.length > 0 && req.body.ingExclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          ingredientList: { $all: req.body.ingInclude, $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+
+      case req.body.ingInclude?.length > 0:
+        found = await db.collection(RECIPES).find({
+          ingredientList: { $all: req.body.ingInclude }
+        }).toArray();
+        break;
+
+      default:
+        // req.body.ingExclude?.length > 0
+        found = await db.collection(RECIPES).find({
+          ingredientList: { $nin: req.body.ingExclude }
+        }).toArray();
+        break;
+    }
+    return res.json(found); // sending the search results as JSON response
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'An error occurred during the search' });
   }
 })
 
