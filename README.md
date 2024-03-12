@@ -1,5 +1,5 @@
-## Next.js App Router Course - Starter
+# OLIVIARCHIVE
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+A collection of my favorite recipes, finally digitized. 
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+Built with Next.js and deployed with Vercel, since I wanted to explore both technologies. I started by following this [Learn Next.js Tutorial](https://nextjs.org/learn/dashboard-app), then customizing the code for my recipe blog. 
