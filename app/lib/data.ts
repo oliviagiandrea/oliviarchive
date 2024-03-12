@@ -1,5 +1,3 @@
-import { unstable_noStore as noStore } from 'next/cache';
-
 import { sql } from '@vercel/postgres';
 import {
   CustomerField,
@@ -11,11 +9,11 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchRevenue() {
-  // Prevents the response from being cached.
+  // Adding noStore() here prevents the response from being cached
   noStore();
-
   try {
     const data = await sql<Revenue>`SELECT * FROM revenue`;
     return data.rows;
@@ -168,7 +166,6 @@ export async function fetchInvoiceById(id: string) {
 }
 
 export async function fetchCustomers() {
-  noStore();
   try {
     const data = await sql<CustomerField>`
       SELECT
@@ -221,7 +218,6 @@ export async function fetchFilteredCustomers(query: string) {
 }
 
 export async function getUser(email: string) {
-  noStore();
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
     return user.rows[0] as User;
