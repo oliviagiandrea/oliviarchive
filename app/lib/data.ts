@@ -1,10 +1,10 @@
 import { sql } from '@vercel/postgres';
 import {
-  CustomerField,
-  CustomersTableType,
-  InvoiceForm,
-  InvoicesTable,
-  LatestInvoiceRaw,
+  IngredientField,
+  IngredientsTableType,
+  RecipeForm,
+  RecipesTable,
+  LatestRecipeRaw,
   User,
   Revenue,
 } from './definitions';
@@ -23,24 +23,24 @@ export async function fetchRevenue() {
   }
 }
 
-export async function fetchLatestInvoices() {
+export async function fetchLatestRecipes() {
   noStore();
   try {
-    const data = await sql<LatestInvoiceRaw>`
-      SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
-      FROM invoices
-      JOIN customers ON invoices.customer_id = customers.id
-      ORDER BY invoices.date DESC
+    const data = await sql<LatestRecipeRaw>`
+      SELECT recipes.amount, ingredients.name, ingredients.image_url, ingredients.email, recipes.id
+      FROM recipes
+      JOIN ingredients ON recipes.ingredient_id = ingredients.id
+      ORDER BY recipes.date DESC
       LIMIT 5`;
 
-    const latestInvoices = data.rows.map((invoice) => ({
-      ...invoice,
-      amount: formatCurrency(invoice.amount),
+    const latestRecipes = data.rows.map((recipe) => ({
+      ...recipe,
+      amount: formatCurrency(recipe.amount),
     }));
-    return latestInvoices;
+    return latestRecipes;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch the latest invoices.');
+    throw new Error('Failed to fetch the latest recipes.');
   }
 }
 
@@ -50,29 +50,29 @@ export async function fetchCardData() {
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
-    const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
-    const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
-    const invoiceStatusPromise = sql`SELECT
+    const recipeCountPromise = sql`SELECT COUNT(*) FROM recipes`;
+    const ingredientCountPromise = sql`SELECT COUNT(*) FROM ingredients`;
+    const recipeStatusPromise = sql`SELECT
          SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
-         FROM invoices`;
+         FROM recipes`;
 
     const data = await Promise.all([
-      invoiceCountPromise,
-      customerCountPromise,
-      invoiceStatusPromise,
+      recipeCountPromise,
+      ingredientCountPromise,
+      recipeStatusPromise,
     ]);
 
-    const numberOfInvoices = Number(data[0].rows[0].count ?? '0');
-    const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
-    const totalPaidInvoices = formatCurrency(data[2].rows[0].paid ?? '0');
-    const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? '0');
+    const numberOfRecipes = Number(data[0].rows[0].count ?? '0');
+    const numberOfIngredients = Number(data[1].rows[0].count ?? '0');
+    const totalPaidRecipes = formatCurrency(data[2].rows[0].paid ?? '0');
+    const totalPendingRecipes = formatCurrency(data[2].rows[0].pending ?? '0');
 
     return {
-      numberOfCustomers,
-      numberOfInvoices,
-      totalPaidInvoices,
-      totalPendingInvoices,
+      numberOfIngredients,
+      numberOfRecipes,
+      totalPaidRecipes,
+      totalPendingRecipes,
     };
   } catch (error) {
     console.error('Database Error:', error);
@@ -81,7 +81,7 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 6;
-export async function fetchFilteredInvoices(
+export async function fetchFilteredRecipes(
   query: string,
   currentPage: number,
 ) {
@@ -89,131 +89,131 @@ export async function fetchFilteredInvoices(
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
   try {
-    const invoices = await sql<InvoicesTable>`
+    const recipes = await sql<RecipesTable>`
       SELECT
-        invoices.id,
-        invoices.amount,
-        invoices.date,
-        invoices.status,
-        customers.name,
-        customers.email,
-        customers.image_url
-      FROM invoices
-      JOIN customers ON invoices.customer_id = customers.id
+        recipes.id,
+        recipes.amount,
+        recipes.date,
+        recipes.status,
+        ingredients.name,
+        ingredients.email,
+        ingredients.image_url
+      FROM recipes
+      JOIN ingredients ON recipes.ingredient_id = ingredients.id
       WHERE
-        customers.name ILIKE ${`%${query}%`} OR
-        customers.email ILIKE ${`%${query}%`} OR
-        invoices.amount::text ILIKE ${`%${query}%`} OR
-        invoices.date::text ILIKE ${`%${query}%`} OR
-        invoices.status ILIKE ${`%${query}%`}
-      ORDER BY invoices.date DESC
+        ingredients.name ILIKE ${`%${query}%`} OR
+        ingredients.email ILIKE ${`%${query}%`} OR
+        recipes.amount::text ILIKE ${`%${query}%`} OR
+        recipes.date::text ILIKE ${`%${query}%`} OR
+        recipes.status ILIKE ${`%${query}%`}
+      ORDER BY recipes.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
-    return invoices.rows;
+    return recipes.rows;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoices.');
+    throw new Error('Failed to fetch recipes.');
   }
 }
 
-export async function fetchInvoicesPages(query: string) {
+export async function fetchRecipesPages(query: string) {
   noStore();
   try {
     const count = await sql`SELECT COUNT(*)
-    FROM invoices
-    JOIN customers ON invoices.customer_id = customers.id
+    FROM recipes
+    JOIN ingredients ON recipes.ingredient_id = ingredients.id
     WHERE
-      customers.name ILIKE ${`%${query}%`} OR
-      customers.email ILIKE ${`%${query}%`} OR
-      invoices.amount::text ILIKE ${`%${query}%`} OR
-      invoices.date::text ILIKE ${`%${query}%`} OR
-      invoices.status ILIKE ${`%${query}%`}
+      ingredients.name ILIKE ${`%${query}%`} OR
+      ingredients.email ILIKE ${`%${query}%`} OR
+      recipes.amount::text ILIKE ${`%${query}%`} OR
+      recipes.date::text ILIKE ${`%${query}%`} OR
+      recipes.status ILIKE ${`%${query}%`}
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
     return totalPages;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch total number of invoices.');
+    throw new Error('Failed to fetch total number of recipes.');
   }
 }
 
-export async function fetchInvoiceById(id: string) {
+export async function fetchRecipeById(id: string) {
   noStore();
   try {
-    const data = await sql<InvoiceForm>`
+    const data = await sql<RecipeForm>`
       SELECT
-        invoices.id,
-        invoices.customer_id,
-        invoices.amount,
-        invoices.status
-      FROM invoices
-      WHERE invoices.id = ${id};
+        recipes.id,
+        recipes.ingredient_id,
+        recipes.amount,
+        recipes.status
+      FROM recipes
+      WHERE recipes.id = ${id};
     `;
 
-    const invoice = data.rows.map((invoice) => ({
-      ...invoice,
+    const recipe = data.rows.map((recipe) => ({
+      ...recipe,
       // Convert amount from cents to dollars
-      amount: invoice.amount / 100,
+      amount: recipe.amount / 100,
     }));
 
-    return invoice[0];
+    return recipe[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoice.');
+    throw new Error('Failed to fetch recipe.');
   }
 }
 
-export async function fetchCustomers() {
+export async function fetchIngredients() {
   try {
-    const data = await sql<CustomerField>`
+    const data = await sql<IngredientField>`
       SELECT
         id,
         name
-      FROM customers
+      FROM ingredients
       ORDER BY name ASC
     `;
 
-    const customers = data.rows;
-    return customers;
+    const ingredients = data.rows;
+    return ingredients;
   } catch (err) {
     console.error('Database Error:', err);
-    throw new Error('Failed to fetch all customers.');
+    throw new Error('Failed to fetch all ingredients.');
   }
 }
 
-export async function fetchFilteredCustomers(query: string) {
+export async function fetchFilteredIngredients(query: string) {
   noStore();
   try {
-    const data = await sql<CustomersTableType>`
+    const data = await sql<IngredientsTableType>`
 		SELECT
-		  customers.id,
-		  customers.name,
-		  customers.email,
-		  customers.image_url,
-		  COUNT(invoices.id) AS total_invoices,
-		  SUM(CASE WHEN invoices.status = 'pending' THEN invoices.amount ELSE 0 END) AS total_pending,
-		  SUM(CASE WHEN invoices.status = 'paid' THEN invoices.amount ELSE 0 END) AS total_paid
-		FROM customers
-		LEFT JOIN invoices ON customers.id = invoices.customer_id
+		  ingredients.id,
+		  ingredients.name,
+		  ingredients.email,
+		  ingredients.image_url,
+		  COUNT(recipes.id) AS total_recipes,
+		  SUM(CASE WHEN recipes.status = 'pending' THEN recipes.amount ELSE 0 END) AS total_pending,
+		  SUM(CASE WHEN recipes.status = 'paid' THEN recipes.amount ELSE 0 END) AS total_paid
+		FROM ingredients
+		LEFT JOIN recipes ON ingredients.id = recipes.ingredient_id
 		WHERE
-		  customers.name ILIKE ${`%${query}%`} OR
-        customers.email ILIKE ${`%${query}%`}
-		GROUP BY customers.id, customers.name, customers.email, customers.image_url
-		ORDER BY customers.name ASC
+		  ingredients.name ILIKE ${`%${query}%`} OR
+        ingredients.email ILIKE ${`%${query}%`}
+		GROUP BY ingredients.id, ingredients.name, ingredients.email, ingredients.image_url
+		ORDER BY ingredients.name ASC
 	  `;
 
-    const customers = data.rows.map((customer) => ({
-      ...customer,
-      total_pending: formatCurrency(customer.total_pending),
-      total_paid: formatCurrency(customer.total_paid),
+    const ingredients = data.rows.map((ingredient) => ({
+      ...ingredient,
+      total_pending: formatCurrency(ingredient.total_pending),
+      total_paid: formatCurrency(ingredient.total_paid),
     }));
 
-    return customers;
+    return ingredients;
   } catch (err) {
     console.error('Database Error:', err);
-    throw new Error('Failed to fetch customer table.');
+    throw new Error('Failed to fetch ingredient table.');
   }
 }
 

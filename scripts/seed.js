@@ -1,7 +1,7 @@
 const { db } = require('@vercel/postgres');
 const {
-  invoices,
-  customers,
+  recipes,
+  ingredients,
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
@@ -46,53 +46,53 @@ async function seedUsers(client) {
   }
 }
 
-async function seedInvoices(client) {
+async function seedRecipes(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-    // Create the "invoices" table if it doesn't exist
+    // Create the "recipes" table if it doesn't exist
     const createTable = await client.sql`
-    CREATE TABLE IF NOT EXISTS invoices (
+    CREATE TABLE IF NOT EXISTS recipes (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    customer_id UUID NOT NULL,
+    ingredient_id UUID NOT NULL,
     amount INT NOT NULL,
     status VARCHAR(255) NOT NULL,
     date DATE NOT NULL
   );
 `;
 
-    console.log(`Created "invoices" table`);
+    console.log(`Created "recipes" table`);
 
-    // Insert data into the "invoices" table
-    const insertedInvoices = await Promise.all(
-      invoices.map(
-        (invoice) => client.sql`
-        INSERT INTO invoices (customer_id, amount, status, date)
-        VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
+    // Insert data into the "recipes" table
+    const insertedRecipes = await Promise.all(
+      recipes.map(
+        (recipe) => client.sql`
+        INSERT INTO recipes (ingredient_id, amount, status, date)
+        VALUES (${recipe.ingredient_id}, ${recipe.amount}, ${recipe.status}, ${recipe.date})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
     );
 
-    console.log(`Seeded ${insertedInvoices.length} invoices`);
+    console.log(`Seeded ${insertedRecipes.length} recipes`);
 
     return {
       createTable,
-      invoices: insertedInvoices,
+      recipes: insertedRecipes,
     };
   } catch (error) {
-    console.error('Error seeding invoices:', error);
+    console.error('Error seeding recipes:', error);
     throw error;
   }
 }
 
-async function seedCustomers(client) {
+async function seedIngredients(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
-    // Create the "customers" table if it doesn't exist
+    // Create the "ingredients" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS customers (
+      CREATE TABLE IF NOT EXISTS ingredients (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
@@ -100,27 +100,27 @@ async function seedCustomers(client) {
       );
     `;
 
-    console.log(`Created "customers" table`);
+    console.log(`Created "ingredients" table`);
 
-    // Insert data into the "customers" table
-    const insertedCustomers = await Promise.all(
-      customers.map(
-        (customer) => client.sql`
-        INSERT INTO customers (id, name, email, image_url)
-        VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
+    // Insert data into the "ingredients" table
+    const insertedIngredients = await Promise.all(
+      ingredients.map(
+        (ingredient) => client.sql`
+        INSERT INTO ingredients (id, name, email, image_url)
+        VALUES (${ingredient.id}, ${ingredient.name}, ${ingredient.email}, ${ingredient.image_url})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
     );
 
-    console.log(`Seeded ${insertedCustomers.length} customers`);
+    console.log(`Seeded ${insertedIngredients.length} ingredients`);
 
     return {
       createTable,
-      customers: insertedCustomers,
+      ingredients: insertedIngredients,
     };
   } catch (error) {
-    console.error('Error seeding customers:', error);
+    console.error('Error seeding ingredients:', error);
     throw error;
   }
 }
@@ -164,8 +164,8 @@ async function main() {
   const client = await db.connect();
 
   await seedUsers(client);
-  await seedCustomers(client);
-  await seedInvoices(client);
+  await seedIngredients(client);
+  await seedRecipes(client);
   await seedRevenue(client);
 
   await client.end();
