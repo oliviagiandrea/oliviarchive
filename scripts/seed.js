@@ -1,20 +1,44 @@
 const { db } = require('@vercel/postgres');
 const {
-  recipes,
-  ingredients,
-  revenue,
   users,
-} = require('../app/lib/placeholder-data.js');
+  categories,
+  ratings,
+  favorites,
+} = require('./placeholder-data.js');
+const { recipes } = require('./recipes.js');
+const { ingredients } = require('./ingredients.js');
+const { recipeIngredients } = require('./recipeIngredients.js');
+const { recipeCategories } = require('./recipeCategories.js');
 const bcrypt = require('bcrypt');
+
+async function dropTables(client) {
+  try {
+    const dropTables = await client.sql`
+      DROP TABLE IF EXISTS ingredients CASCADE;
+      DROP TABLE IF EXISTS categories;
+      DROP TABLE IF EXISTS favorites;
+      DROP TABLE IF EXISTS ratings;
+      DROP TABLE IF EXISTS users;
+      DROP TABLE IF EXISTS recipes CASCADE;
+      DROP TABLE IF EXISTS recipe_ingredients;
+      DROP TABLE IF EXISTS recipe_categories;
+    `;
+
+    console.log(`Dropped tables`);
+
+    return dropTables;
+  } catch (error) {
+    console.error('Error dropping tables:', error);
+    throw error;
+  }
+}
 
 async function seedUsers(client) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "users" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS users (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(50) NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL
       );
@@ -22,7 +46,6 @@ async function seedUsers(client) {
 
     console.log(`Created "users" table`);
 
-    // Insert data into the "users" table
     const insertedUsers = await Promise.all(
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -34,7 +57,7 @@ async function seedUsers(client) {
       }),
     );
 
-    console.log(`Seeded ${insertedUsers.length} users`);
+    console.log(`Seeded ${insertedUsers.length} user(s)`);
 
     return {
       createTable,
@@ -48,30 +71,33 @@ async function seedUsers(client) {
 
 async function seedRecipes(client) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-    // Create the "recipes" table if it doesn't exist
     const createTable = await client.sql`
-    CREATE TABLE IF NOT EXISTS recipes (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    ingredient_id UUID NOT NULL,
-    amount INT NOT NULL,
-    status VARCHAR(255) NOT NULL,
-    date DATE NOT NULL
-  );
-`;
+      CREATE TABLE IF NOT EXISTS recipes (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(100) NOT NULL,
+        notes TEXT,
+        time INT NOT NULL,
+        servings INT NOT NULL,
+        calories INT NOT NULL,
+        ingredients JSONB NOT NULL,
+        directions TEXT[] NOT NULL,
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+        image_path TEXT
+      );
+    `;
 
     console.log(`Created "recipes" table`);
 
-    // Insert data into the "recipes" table
     const insertedRecipes = await Promise.all(
       recipes.map(
-        (recipe) => client.sql`
-        INSERT INTO recipes (ingredient_id, amount, status, date)
-        VALUES (${recipe.ingredient_id}, ${recipe.amount}, ${recipe.status}, ${recipe.date})
-        ON CONFLICT (id) DO NOTHING;
-      `,
-      ),
+        async (recipe) => {
+          const insertResult = await client.sql`
+            INSERT INTO recipes (id, title, notes, time, servings, calories, ingredients, directions, date, image_path)
+            VALUES (${recipe.id}, ${recipe.title}, ${recipe.notes}, ${recipe.time}, ${recipe.servings}, ${recipe.calories}, ${recipe.ingredients}, ${recipe.directions}, ${recipe.date}, ${recipe.image_path})
+            ON CONFLICT (id) DO NOTHING;
+          `;
+        }
+      )
     );
 
     console.log(`Seeded ${insertedRecipes.length} recipes`);
@@ -88,28 +114,22 @@ async function seedRecipes(client) {
 
 async function seedIngredients(client) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-    // Create the "ingredients" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS ingredients (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        image_url VARCHAR(255) NOT NULL
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(50) NOT NULL UNIQUE
       );
     `;
 
     console.log(`Created "ingredients" table`);
 
-    // Insert data into the "ingredients" table
     const insertedIngredients = await Promise.all(
       ingredients.map(
         (ingredient) => client.sql`
-        INSERT INTO ingredients (id, name, email, image_url)
-        VALUES (${ingredient.id}, ${ingredient.name}, ${ingredient.email}, ${ingredient.image_url})
-        ON CONFLICT (id) DO NOTHING;
-      `,
+          INSERT INTO ingredients (id, name)
+          VALUES (${ingredient.id}, ${ingredient.name})
+          ON CONFLICT (name) DO NOTHING;
+        `,
       ),
     );
 
@@ -125,37 +145,177 @@ async function seedIngredients(client) {
   }
 }
 
-async function seedRevenue(client) {
+async function seedCategories(client) {
   try {
-    // Create the "revenue" table if it doesn't exist
     const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS revenue (
-        month VARCHAR(4) NOT NULL UNIQUE,
-        revenue INT NOT NULL
+      CREATE TABLE IF NOT EXISTS categories (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(50) NOT NULL UNIQUE
       );
     `;
 
-    console.log(`Created "revenue" table`);
+    console.log(`Created "categories" table`);
 
-    // Insert data into the "revenue" table
-    const insertedRevenue = await Promise.all(
-      revenue.map(
-        (rev) => client.sql`
-        INSERT INTO revenue (month, revenue)
-        VALUES (${rev.month}, ${rev.revenue})
-        ON CONFLICT (month) DO NOTHING;
-      `,
+    const insertedCategories = await Promise.all(
+      categories.map(
+        (category) => client.sql`
+          INSERT INTO categories (id, name)
+          VALUES (${category.id}, ${category.name})
+          ON CONFLICT (name) DO NOTHING;
+        `,
       ),
     );
 
-    console.log(`Seeded ${insertedRevenue.length} revenue`);
+    console.log(`Seeded ${insertedCategories.length} categories`);
 
     return {
       createTable,
-      revenue: insertedRevenue,
+      categories: insertedCategories,
     };
   } catch (error) {
-    console.error('Error seeding revenue:', error);
+    console.error('Error seeding categories:', error);
+    throw error;
+  }
+}
+
+async function seedFavorites(client) {
+  try {
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS favorites (
+        recipe_id INT NOT NULL,
+        user_id INT NOT NULL,
+        PRIMARY KEY (recipe_id, user_id),
+        FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+        FOREIGN KEY (user_id) REFERENCES users(id)
+      );
+    `;
+
+    console.log(`Created "favorites" table`);
+
+    const insertedFavorites = await Promise.all(
+      favorites.map(
+        (favorite) => client.sql`
+          INSERT INTO favorites (recipe_id, user_id)
+          VALUES (${favorite.recipe_id}, ${favorite.user_id})
+          ON CONFLICT (recipe_id, user_id) DO NOTHING;
+        `,
+      ),
+    );
+
+    console.log(`Seeded ${insertedFavorites.length} favorites`);
+
+    return {
+      createTable,
+      favorites: insertedFavorites,
+    };
+  } catch (error) {
+    console.error('Error seeding favorites:', error);
+    throw error;
+  }
+}
+
+async function seedRatings(client) {
+  try {
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS ratings (
+        recipe_id INT NOT NULL,
+        user_id INT NOT NULL,
+        rating INT NOT NULL,
+        PRIMARY KEY (recipe_id, user_id),
+        FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+        FOREIGN KEY (user_id) REFERENCES users(id)
+      );
+    `;
+
+    console.log(`Created "ratings" table`);
+
+    const insertedRatings = await Promise.all(
+      ratings.map(
+        (rating) => client.sql`
+          INSERT INTO ratings (recipe_id, user_id, rating)
+          VALUES (${rating.recipe_id}, ${rating.user_id}, ${rating.rating})
+          ON CONFLICT (recipe_id, user_id) DO UPDATE
+          SET rating = EXCLUDED.rating;
+        `
+      )
+    );
+
+    console.log(`Seeded ${insertedRatings.length} ratings`);
+
+    return {
+      createTable,
+      ratings: insertedRatings,
+    };
+  } catch (error) {
+    console.error('Error seeding ratings:', error);
+    throw error;
+  }
+}
+
+async function seedRecipeIngredients(client) {
+  try {
+    const createTable = await client.sql`
+      CREATE TABLE recipe_ingredients (
+        recipe_id INT REFERENCES recipes(id),
+        ingredient_id INT REFERENCES ingredients(id),
+        PRIMARY KEY (recipe_id, ingredient_id)
+      );
+    `;
+
+    console.log(`Created "recipe_ingredients" table`);
+
+    const insertedRecipeIngredients = await Promise.all(
+      recipeIngredients.map(
+        (pairing) => client.sql`
+          INSERT INTO recipe_ingredients (recipe_id, ingredient_id)
+          VALUES (${pairing.recipe_id}, ${pairing.ingredient_id})
+          ON CONFLICT (recipe_id, ingredient_id) DO NOTHING;
+        `
+      )
+    );
+
+    console.log(`Seeded ${recipeIngredients.length} ratings`);
+
+    return {
+      createTable,
+      ratings: insertedRecipeIngredients,
+    };
+  } catch (error) {
+    console.error('Error seeding recipe_ingredients:', error);
+    throw error;
+  }
+}
+
+async function seedRecipeCategories(client) {
+  try {
+    const createTable = await client.sql`
+      CREATE TABLE recipe_categories (
+        recipe_id INT REFERENCES recipes(id),
+        category_id INT REFERENCES categories(id),
+        PRIMARY KEY (recipe_id, category_id)
+      );
+    `;
+
+    console.log(`Created "recipe_categories" table`);
+
+    const insertedRecipeCategories = await Promise.all(
+      recipeCategories.map(
+        (pairing) => client.sql`
+          INSERT INTO recipe_categories (recipe_id, category_id)
+          VALUES (${pairing.recipe_id}, ${pairing.category_id})
+          ON CONFLICT (recipe_id, category_id) DO NOTHING;
+        `
+      )
+    );
+
+    console.log(`Seeded ${recipeCategories.length} ratings`);
+
+    return {
+      createTable,
+      ratings: insertedRecipeCategories,
+    };
+  } catch (error) {
+    console.error('Error seeding recipe_categories:', error);
     throw error;
   }
 }
@@ -163,10 +323,16 @@ async function seedRevenue(client) {
 async function main() {
   const client = await db.connect();
 
+  await dropTables(client);
   await seedUsers(client);
+  await seedCategories(client);
   await seedIngredients(client);
   await seedRecipes(client);
-  await seedRevenue(client);
+  await seedFavorites(client);
+  await seedRatings(client);
+
+  await seedRecipeIngredients(client);
+  await seedRecipeCategories(client);
 
   await client.end();
 }
