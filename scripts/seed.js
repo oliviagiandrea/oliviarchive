@@ -15,7 +15,7 @@ async function dropTables(client) {
   try {
     const dropTables = await client.sql`
       DROP TABLE IF EXISTS ingredients CASCADE;
-      DROP TABLE IF EXISTS categories;
+      DROP TABLE IF EXISTS categories CASCADE;
       DROP TABLE IF EXISTS favorites;
       DROP TABLE IF EXISTS ratings;
       DROP TABLE IF EXISTS users;
@@ -117,7 +117,8 @@ async function seedIngredients(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS ingredients (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(50) NOT NULL UNIQUE
+        name VARCHAR(50) NOT NULL UNIQUE,
+        image_path TEXT
       );
     `;
 
@@ -126,8 +127,8 @@ async function seedIngredients(client) {
     const insertedIngredients = await Promise.all(
       ingredients.map(
         (ingredient) => client.sql`
-          INSERT INTO ingredients (id, name)
-          VALUES (${ingredient.id}, ${ingredient.name})
+          INSERT INTO ingredients (id, name, image_path)
+          VALUES (${ingredient.id}, ${ingredient.name}, ${ingredient.image_path})
           ON CONFLICT (name) DO NOTHING;
         `,
       ),
@@ -150,7 +151,8 @@ async function seedCategories(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS categories (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(50) NOT NULL UNIQUE
+        name VARCHAR(50) NOT NULL UNIQUE,
+        image_path TEXT
       );
     `;
 
@@ -159,8 +161,8 @@ async function seedCategories(client) {
     const insertedCategories = await Promise.all(
       categories.map(
         (category) => client.sql`
-          INSERT INTO categories (id, name)
-          VALUES (${category.id}, ${category.name})
+          INSERT INTO categories (id, name, image_path)
+          VALUES (${category.id}, ${category.name}, ${category.image_path})
           ON CONFLICT (name) DO NOTHING;
         `,
       ),

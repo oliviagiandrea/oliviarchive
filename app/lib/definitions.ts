@@ -6,33 +6,32 @@ export type User = {
 };
 
 export type Ingredient = {
-  id: string;
+  id: number;
   name: string;
-  email: string;
-  image_url: string;
+};
+
+export type Category = {
+  id: number;
+  name: string;
 };
 
 export type Recipe = {
-  id: string;
-  ingredient_id: string;
-  amount: number;
-  date: string;
-  // In TypeScript, this is called a string union type.
-  // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
-  status: 'pending' | 'paid';
-};
-
-export type Revenue = {
-  month: string;
-  revenue: number;
+  id: number;
+  title: string;
+  notes: string;
+  time: number;
+  servings: number;
+  calories: number;
+  ingredients: object;
+  directions: [string];
+  date: Date;
+  image_path: string;
 };
 
 export type LatestRecipe = {
   id: string;
-  name: string;
-  image_url: string;
-  email: string;
-  amount: string;
+  title: string;
+  image_path: string;
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
@@ -41,44 +40,39 @@ export type LatestRecipeRaw = Omit<LatestRecipe, 'amount'> & {
 };
 
 export type RecipesTable = {
-  id: string;
-  ingredient_id: string;
-  name: string;
-  email: string;
-  image_url: string;
-  date: string;
-  amount: number;
-  status: 'pending' | 'paid';
+  id: number;
+  title: string;
+  servings: number;
+  calories: number;
+  date: Date;
+  image_path: string;
 };
 
 export type IngredientsTableType = {
-  id: string;
+  id: number;
   name: string;
-  email: string;
-  image_url: string;
+  image_path: string;
   total_recipes: number;
-  total_pending: number;
-  total_paid: number;
 };
 
 export type FormattedIngredientsTable = {
-  id: string;
+  id: number;
   name: string;
-  email: string;
-  image_url: string;
+  image_path: string;
   total_recipes: number;
-  total_pending: string;
-  total_paid: string;
 };
 
 export type IngredientField = {
-  id: string;
+  id: number;
+  name: string;
+};
+
+export type CategoryField = {
+  id: number;
   name: string;
 };
 
 export type RecipeForm = {
-  id: string;
-  ingredient_id: string;
-  amount: number;
-  status: 'pending' | 'paid';
+  id: number;
+  ingredient_id: number;
 };

@@ -26,26 +26,26 @@ export default async function LatestRecipes() {
               >
                 <div className="flex items-center">
                   <Image
-                    src={recipe.image_url}
-                    alt={`${recipe.name}'s profile picture`}
+                    src={recipe.image_path}
+                    alt={`${recipe.title}'s picture`}
                     className="mr-4 rounded-full"
                     width={32}
                     height={32}
                   />
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold md:text-base">
-                      {recipe.name}
+                      {recipe.title}
                     </p>
-                    <p className="hidden text-sm text-gray-500 sm:block">
+                    {/* <p className="hidden text-sm text-gray-500 sm:block">
                       {recipe.email}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
-                <p
+                {/* <p
                   className={`${lusitana.className} truncate text-sm font-medium md:text-base`}
                 >
                   {recipe.amount}
-                </p>
+                </p> */}
               </div>
             );
           })}

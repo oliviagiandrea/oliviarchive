@@ -1,43 +1,25 @@
 import { sql } from '@vercel/postgres';
 import {
   IngredientField,
+  CategoryField,
   IngredientsTableType,
   RecipeForm,
   RecipesTable,
-  LatestRecipeRaw,
   User,
-  Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
-export async function fetchRevenue() {
-  // Adding noStore() here prevents the response from being cached
-  noStore();
-  try {
-    const data = await sql<Revenue>`SELECT * FROM revenue`;
-    return data.rows;
-  } catch (error) {
-    console.error('Database Error:', error);
-    throw new Error('Failed to fetch revenue data.');
-  }
-}
-
 export async function fetchLatestRecipes() {
   noStore();
   try {
-    const data = await sql<LatestRecipeRaw>`
-      SELECT recipes.amount, ingredients.name, ingredients.image_url, ingredients.email, recipes.id
+    const recipes = await sql`
+      SELECT recipes.title, recipes.image_path, recipes.id
       FROM recipes
-      JOIN ingredients ON recipes.ingredient_id = ingredients.id
       ORDER BY recipes.date DESC
       LIMIT 5`;
 
-    const latestRecipes = data.rows.map((recipe) => ({
-      ...recipe,
-      amount: formatCurrency(recipe.amount),
-    }));
-    return latestRecipes;
+    return recipes.rows;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest recipes.');
@@ -47,32 +29,38 @@ export async function fetchLatestRecipes() {
 export async function fetchCardData() {
   noStore();
   try {
-    // You can probably combine these into a single SQL query
-    // However, we are intentionally splitting them to demonstrate
-    // how to initialize multiple queries in parallel with JS.
     const recipeCountPromise = sql`SELECT COUNT(*) FROM recipes`;
-    const ingredientCountPromise = sql`SELECT COUNT(*) FROM ingredients`;
-    const recipeStatusPromise = sql`SELECT
-         SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
-         SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
-         FROM recipes`;
+    const mostCommonIngredientPromise = sql`
+      SELECT name
+      FROM ingredients
+      JOIN recipe_ingredients ON recipe_ingredients.ingredient_id = ingredients.id
+      GROUP BY name
+      ORDER BY COUNT(*) DESC
+      LIMIT 1
+    `;
+    const mostCommonCategoryPromise = sql`
+      SELECT name
+      FROM categories
+      JOIN recipe_categories ON recipe_categories.category_id = categories.id
+      GROUP BY name
+      ORDER BY COUNT(*) DESC
+      LIMIT 1
+    `;
 
     const data = await Promise.all([
       recipeCountPromise,
-      ingredientCountPromise,
-      recipeStatusPromise,
+      mostCommonIngredientPromise,
+      mostCommonCategoryPromise,
     ]);
 
     const numberOfRecipes = Number(data[0].rows[0].count ?? '0');
-    const numberOfIngredients = Number(data[1].rows[0].count ?? '0');
-    const totalPaidRecipes = formatCurrency(data[2].rows[0].paid ?? '0');
-    const totalPendingRecipes = formatCurrency(data[2].rows[0].pending ?? '0');
+    const mostCommonIngredient = Number(data[1].rows[0]?.name);
+    const mostCommonCategory = Number(data[2].rows[0]?.name);
 
     return {
-      numberOfIngredients,
       numberOfRecipes,
-      totalPaidRecipes,
-      totalPendingRecipes,
+      mostCommonIngredient,
+      mostCommonCategory,
     };
   } catch (error) {
     console.error('Database Error:', error);
@@ -92,20 +80,18 @@ export async function fetchFilteredRecipes(
     const recipes = await sql<RecipesTable>`
       SELECT
         recipes.id,
-        recipes.amount,
+        recipes.title,
+        recipes.notes,
+        recipes.time,
+        recipes.servings,
+        recipes.calories,
+        recipes.ingredients,
+        recipes.directions,
         recipes.date,
-        recipes.status,
-        ingredients.name,
-        ingredients.email,
-        ingredients.image_url
+        recipes.image_path
       FROM recipes
-      JOIN ingredients ON recipes.ingredient_id = ingredients.id
       WHERE
-        ingredients.name ILIKE ${`%${query}%`} OR
-        ingredients.email ILIKE ${`%${query}%`} OR
-        recipes.amount::text ILIKE ${`%${query}%`} OR
-        recipes.date::text ILIKE ${`%${query}%`} OR
-        recipes.status ILIKE ${`%${query}%`}
+        recipes.title ILIKE ${`%${query}%`}
       ORDER BY recipes.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
@@ -117,18 +103,18 @@ export async function fetchFilteredRecipes(
   }
 }
 
+// JOIN recipes_ingredients ON recipes_ingredients.recipe_id = recipes.id
+// JOIN ingredients ON recipes_ingredients.ingredient_id = ingredients.id
+// JOIN recipes_categories ON recipes_categories.recipe_id = recipes.id
+// JOIN categories ON recipes_categories.category_id = categories.id
+
 export async function fetchRecipesPages(query: string) {
   noStore();
   try {
     const count = await sql`SELECT COUNT(*)
     FROM recipes
-    JOIN ingredients ON recipes.ingredient_id = ingredients.id
     WHERE
-      ingredients.name ILIKE ${`%${query}%`} OR
-      ingredients.email ILIKE ${`%${query}%`} OR
-      recipes.amount::text ILIKE ${`%${query}%`} OR
-      recipes.date::text ILIKE ${`%${query}%`} OR
-      recipes.status ILIKE ${`%${query}%`}
+      ingredients.title ILIKE ${`%${query}%`}
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
@@ -152,13 +138,7 @@ export async function fetchRecipeById(id: string) {
       WHERE recipes.id = ${id};
     `;
 
-    const recipe = data.rows.map((recipe) => ({
-      ...recipe,
-      // Convert amount from cents to dollars
-      amount: recipe.amount / 100,
-    }));
-
-    return recipe[0];
+    return data.rows[0];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch recipe.');
@@ -175,11 +155,27 @@ export async function fetchIngredients() {
       ORDER BY name ASC
     `;
 
-    const ingredients = data.rows;
-    return ingredients;
+    return data.rows;
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all ingredients.');
+  }
+}
+
+export async function fetchCategories() {
+  try {
+    const data = await sql<CategoryField>`
+      SELECT
+        id,
+        name
+      FROM categories
+      ORDER BY name ASC
+    `;
+
+    return data.rows;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all categories.');
   }
 }
 
@@ -204,13 +200,7 @@ export async function fetchFilteredIngredients(query: string) {
 		ORDER BY ingredients.name ASC
 	  `;
 
-    const ingredients = data.rows.map((ingredient) => ({
-      ...ingredient,
-      total_pending: formatCurrency(ingredient.total_pending),
-      total_paid: formatCurrency(ingredient.total_paid),
-    }));
-
-    return ingredients;
+    return data.rows;
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch ingredient table.');

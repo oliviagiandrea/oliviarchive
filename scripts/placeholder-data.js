@@ -10,7 +10,7 @@ const users = [
 ];
 
 const categories = [
-  { "name": "mains", "id": 1 },
+  { "name": "mains", "id": 1, },
   { "name": "poultry", "id": 2 },
   { "name": "soups", "id": 3 },
   { "name": "tofu", "id": 4 },
@@ -56,19 +56,9 @@ const ratings = [
   }
 ];
 
-const recipeIngredients = {
-
-};
-
-const recipeCategories = {
-
-};
-
 module.exports = {
   users,
   categories,
   ratings, 
-  favorites,
-  recipeIngredients,
-  recipeCategories
+  favorites
 };
