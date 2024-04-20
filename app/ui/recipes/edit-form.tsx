@@ -20,7 +20,7 @@ export default function EditRecipeForm({
   ingredients: IngredientField[];
 }) {
   const initialState = { message: null, errors: {} };
-  const updateRecipeWithId = updateRecipe.bind(null, recipe.id);
+  const updateRecipeWithId = updateRecipe.bind(null, recipe.id.toString());
   const [state, dispatch] = useFormState(updateRecipeWithId, initialState);
 
   return (
@@ -62,7 +62,7 @@ export default function EditRecipeForm({
         </div>
 
         {/* Recipe Amount */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label htmlFor="amount" className="mb-2 block text-sm font-medium">
             Choose an amount
           </label>
@@ -90,10 +90,10 @@ export default function EditRecipeForm({
                 </p>
               ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Recipe Status */}
-        <fieldset>
+        {/* <fieldset>
           <legend className="mb-2 block text-sm font-medium">
             Set the recipe status
           </legend>
@@ -141,7 +141,7 @@ export default function EditRecipeForm({
                 </p>
               ))}
           </div>
-        </fieldset>
+        </fieldset> */}
 
         <div aria-live="polite" aria-atomic="true">
           {state.message ? (
