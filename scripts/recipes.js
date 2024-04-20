@@ -29,7 +29,7 @@ const recipes = [
       "Bonus tip: when flipping, keep the 'closed' side of the taco away from your spatula. That way, the taco will stay together during flipping."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/chicken_tacos.png"
+    "image_path": "/recipes/chicken_tacos.jpg"
   },
   {
     "id": 1,
@@ -59,7 +59,7 @@ const recipes = [
       "Transfer to blender in 2 batches and blend until smooth. Serve with grilled cheese!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tomato_soup.png"
+    "image_path": "/recipes/tomato_soup.jpg"
   },
   {
     "id": 2,
@@ -103,7 +103,7 @@ const recipes = [
       "Add to a large wrap, fold and toast on both sides on a hot pan. Slice in half, then grate fresh parmesan over top to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/greek_chicken_salad.png"
+    "image_path": "/recipes/greek_chicken_salad.jpg"
   },
   {
     "id": 3,
@@ -143,7 +143,7 @@ const recipes = [
       "Then assemble your burger. Toast your buns, then layer on your lettuce, patty, slaw, red onion, and top with the top of your burger bun. Enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/miso_salmon_burger_with_carrot_slaw.png"
+    "image_path": "/recipes/miso_salmon_burger_with_carrot_slaw.jpg"
   },
   {
     "id": 4,
@@ -177,7 +177,7 @@ const recipes = [
       "This is good served with roasted potatoes and vegetables. I like garlic fingerlings and broccoli."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/bourbon_brown_sugar_marinade.png"
+    "image_path": "/recipes/bourbon_brown_sugar_marinade.jpg"
   },
   {
     "id": 5,
@@ -208,7 +208,7 @@ const recipes = [
       "Remove pan from heat; stir in pasta and prosciutto, then add salt, Ricotta, and romano. Top with extra grated romano to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/strozzapreti.png"
+    "image_path": "/recipes/strozzapreti.jpg"
   },
   {
     "id": 6,
@@ -240,7 +240,7 @@ const recipes = [
       "Cook pasta according to package directions so it's done at the same time as the sauce. Drain, then scoop pasta into bowls and ladle sauce over. Top with grated parmesan to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/rustic_spaghetti_bolognese.png"
+    "image_path": "/recipes/rustic_spaghetti_bolognese.jpg"
   },
   {
     "id": 7,
@@ -272,7 +272,7 @@ const recipes = [
       "Drop by teaspoon scoop onto baking sheets. Bake for 8-10 minutes or until golden. Let cool on the baking sheet for 3 minutes to get crispy on just the outside, then let cool completely on a wire rack."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mike's_chocolate_chip_cookies.png"
+    "image_path": "/recipes/mikes_chocolate_chip_cookies.jpg"
   },
   {
     "id": 8,
@@ -301,7 +301,7 @@ const recipes = [
       "Bake at 375°F for 30 minutes until dark golden. Let cool completely before slicing, about 1 hour."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/honey_oat_wheat_bread.png"
+    "image_path": "/recipes/honey_oat_wheat_bread.jpg"
   },
   {
     "id": 9,
@@ -341,7 +341,7 @@ const recipes = [
       "Bake until a wooden toothpick inserted in the center comes out clean, about 1 hour. Cool loaf in the pan on a wire rack for 15 minutes before slicing and serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/walnut_streusel_banana_bread.png"
+    "image_path": "/recipes/walnut_streusel_banana_bread.jpg"
   },
   {
     "id": 10,
@@ -370,7 +370,7 @@ const recipes = [
       "Add in pasta, stir until coated, then serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/alfredo_pasta.png"
+    "image_path": "/recipes/alfredo_pasta.jpg"
   },
   {
     "id": 11,
@@ -398,7 +398,7 @@ const recipes = [
       "Tightly wrap the pan with a double layer of foil, then bake for 1 hour. Let rest sealed for 20 minutes before unwrapping, cutting, and serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mama's_lasagna.png"
+    "image_path": "/recipes/mamas_lasagna.jpg"
   },
   {
     "id": 12,
@@ -427,7 +427,7 @@ const recipes = [
       "Bake for 20 minutes or until carrots can be easily pierced with a fork. Serve straight from the oven."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/herbed_honey-roasted_carrots.png"
+    "image_path": "/recipes/herbed_honey_roasted_carrots.jpg"
   },
   {
     "id": 13,
@@ -460,7 +460,7 @@ const recipes = [
       "Let cool completely, cut into 16 bars, and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/lemon_bars.png"
+    "image_path": "/recipes/lemon_bars.jpg"
   },
   {
     "id": 14,
@@ -496,7 +496,7 @@ const recipes = [
       "Serve with warm rolls."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/chunky_chicken_noodle_soup.png"
+    "image_path": "/recipes/chunky_chicken_noodle_soup.jpg"
   },
   {
     "id": 15,
@@ -526,7 +526,7 @@ const recipes = [
       "Once everything is hot, assemble tacos with wraps, lettuce, cheese, then tofu and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tofu_tacos.png"
+    "image_path": "/recipes/tofu_tacos.jpg"
   },
   {
     "id": 16,
@@ -552,7 +552,7 @@ const recipes = [
       "Simmer, partially covered, for 2 hours on low heat, stirring occasionally, until thickened. Serve with pasta, sandwiches, meatballs, lasagna, etc."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/nonna's_spaghetti_sauce.png"
+    "image_path": "/recipes/nonnas_spaghetti_sauce.jpg"
   },
   {
     "id": 17,
@@ -578,7 +578,7 @@ const recipes = [
       "Once it's all cooked, flip your tamagoyaki out onto a paper towel, and roll it (pressing as you go) to shape it. Let cool for about 5 minutes before slicing into even 1-inch segments."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tamagoyaki.png"
+    "image_path": "/recipes/tamagoyaki.jpg"
   },
   {
     "id": 18,
@@ -609,7 +609,7 @@ const recipes = [
       "Serve hot!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/daddy's_buttermilk_pancakes.png"
+    "image_path": "/recipes/daddys_buttermilk_pancakes.jpg"
   },
   {
     "id": 19,
@@ -633,7 +633,7 @@ const recipes = [
       "Bake for 25 minutes or until whites of eggs are set. Serve with honeydew."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/baked_tortilla_eggs.png"
+    "image_path": "/recipes/baked_tortilla_eggs.jpg"
   },
   {
     "id": 20,
@@ -662,7 +662,7 @@ const recipes = [
       "Cover & bake at 400 for approx. 1 hour, uncover & bake for an additional 10 minutes until brown."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/vegetable_lasagna.png"
+    "image_path": "/recipes/vegetable_lasagna.jpg"
   },
   {
     "id": 21,
@@ -688,7 +688,7 @@ const recipes = [
       "Bake for 25 minutes or until potatoes can be easily pierced with a fork, stirring every 10 minutes. Remove from oven and let cool in pan for about 5 minutes before serving to let them crisp up a bit."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/roasted_garlic_fingerling_potatoes.png"
+    "image_path": "/recipes/roasted_garlic_fingerling_potatoes.jpg"
   },
   {
     "id": 22,
@@ -721,7 +721,7 @@ const recipes = [
       "Allow to cool, then dust with icing sugar to serve."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/hummingbird_cake.png"
+    "image_path": "/recipes/hummingbird_cake.jpg"
   },
   {
     "id": 23,
@@ -761,7 +761,7 @@ const recipes = [
       "Cook until set, about 3 more minutes, then divide into 4 portions and top with diced red bell pepper, feta cheese, and 2 soft-boiled eggs to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/turkey_sweet_potato_hash.png"
+    "image_path": "/recipes/turkey_sweet_potato_hash.jpg"
   },
   {
     "id": 24,
@@ -785,7 +785,7 @@ const recipes = [
       "Serve sprinkled with parsley."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/microwave_omurice.png"
+    "image_path": "/recipes/microwave_omurice.jpg"
   },
   {
     "id": 25,
@@ -822,7 +822,7 @@ const recipes = [
       "Stir the drained pasta, the sauce, the chopped spinach, and the chives into the mushroom pan, cook together for a minute or so, until the spinach has wilted, adding a little of the reserved pasta water if needed. Serve with salt, black pepper, and feta."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mushroom_miso_pasta.png"
+    "image_path": "/recipes/mushroom_miso_pasta.jpg"
   },
   {
     "id": 26,
@@ -854,7 +854,7 @@ const recipes = [
       "Top a bowl of rice with the beef and onions, and then scoop in some extra sauce. Top with sliced scallions and the egg. Break the yolk, lightly mix everything, and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/gyudon.png"
+    "image_path": "/recipes/gyudon.jpg"
   },
   {
     "id": 27,
@@ -898,7 +898,7 @@ const recipes = [
       "Wait for whoopie pies to cool completely before filling. Wrap with wax paper to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/nonna's_whoopie_pies.png"
+    "image_path": "/recipes/nonnas_whoopie_pies.jpg"
   },
   {
     "id": 28,
@@ -909,20 +909,20 @@ const recipes = [
     "calories": 90,
     "ingredients": {
       "Ingredients": [
-        "1 cup old-fashioned rolled oats",
-        "2/3 cup shredded coconut",
-        "1/2 cup peanut butter",
+        "3/4 cup peanut butter",
         "1/3 cup honey",
+        "1 1/2 cups old-fashioned rolled oats",
+        "1/4 cup shredded coconut",
+        "1/4 cup chia seeds",
         "1/4 cup ground flax seed",
-        "1/4 cup white chocolate chips",
-        "1 tsp vanilla extract"
+        "1/3 cup white chocolate chips"
       ]
     },
     "directions": [
       "Combine all ingredients. Cover and refrigerate for at least 1 hour, then roll into balls to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mrs._stair's_energy_bites.png"
+    "image_path": "/recipes/mrs_stairs_energy_bites.jpg"
   },
   {
     "id": 29,
@@ -949,7 +949,7 @@ const recipes = [
       "Space dough circles evenly on a baking sheet, and bake for 10-14 minutes or until golden. Serve hot."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/classic_biscuits.png"
+    "image_path": "/recipes/classic_biscuits.jpg"
   },
   {
     "id": 30,
@@ -985,7 +985,7 @@ const recipes = [
       "Let cool in the pans for 10 minutes, then turn out onto a wire rack and let cool an additional 10 minutes. Serve warm with salted butter."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/pineapple_carrot_cake.png"
+    "image_path": "/recipes/pineapple_carrot_cake.jpg"
   },
   {
     "id": 31,
@@ -1007,7 +1007,7 @@ const recipes = [
       "Let sit for 2 minutes to cool, then top with sliced scallions to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/shin_ramen_broth_eggs.png"
+    "image_path": "/recipes/shin_ramen_broth_eggs.jpg"
   },
   {
     "id": 32,
@@ -1040,7 +1040,7 @@ const recipes = [
       "Bake for 15-18 minutes, then broil for 2 minutes. Let cool for 5 minutes before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/cheese_pizza.png"
+    "image_path": "/recipes/cheese_pizza.jpg"
   },
   {
     "id": 33,
@@ -1068,7 +1068,7 @@ const recipes = [
       "Brush tops of biscuits with melted butter and place in the oven. Reduce oven temperature to 400°F and bake biscuits until deep golden brown on the bottom and golden on top, 20-25 minutes."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/bakeoff_buttermilk_biscuits.png"
+    "image_path": "/recipes/bakeoff_buttermilk_biscuits.jpg"
   },
   {
     "id": 34,
@@ -1096,7 +1096,7 @@ const recipes = [
       "Melt chocolate and wax together. Slice filling into squares, then using toothpicks, coat in the chocolate dip. Place on wax paper on a plate / baking sheet and refrigerate overnight to harden."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/nonna's_needhams.png"
+    "image_path": "/recipes/nonnas_needhams.jpg"
   },
   {
     "id": 35,
@@ -1131,7 +1131,7 @@ const recipes = [
       "Stir in the cooked pasta when ready to serve, and garnish with fresh basil and parmesan cheese to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/pasta_e_fagioli_soup.png"
+    "image_path": "/recipes/pasta_e_fagioli_soup.jpg"
   },
   {
     "id": 36,
@@ -1150,7 +1150,7 @@ const recipes = [
       "Mix oatmeal and water in a microwave-proof bowl. Heat in the microwave (500w) for 1 minute, stir, and serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/oatmeal_'rice'.png"
+    "image_path": "/recipes/oatmeal_rice.jpg"
   },
   {
     "id": 37,
@@ -1182,7 +1182,7 @@ const recipes = [
       "Add noodles and sauce to a bowl. Top with egg, cucumber, and tomato to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/kongguksu.png"
+    "image_path": "/recipes/kongguksu.jpg"
   },
   {
     "id": 38,
@@ -1208,7 +1208,7 @@ const recipes = [
       "Combine both slices of bread and toast in toaster oven for 5 minutes. Slice (diagonally, of course) and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/peanut_butter_jelly_sandwich.png"
+    "image_path": "/recipes/peanut_butter_jelly_sandwich.jpg"
   },
   {
     "id": 39,
@@ -1233,7 +1233,7 @@ const recipes = [
       "Top with seasonings and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/single_serve_mac_and_cheese.png"
+    "image_path": "/recipes/single_serve_mac_and_cheese.jpg"
   },
   {
     "id": 40,
@@ -1267,7 +1267,7 @@ const recipes = [
       "Stir in cheese, then serve topped with parsley."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/one_pot_cajun_chicken_pasta.png"
+    "image_path": "/recipes/one_pot_cajun_chicken_pasta.jpg"
   },
   {
     "id": 41,
@@ -1299,7 +1299,7 @@ const recipes = [
       "Assemble your nachos with a layer of chips first, then cheese, then the beef mixture, then lettuce, and finally tomatoes. Top with salsa, plain greek yogurt, or guacamole if desired, but serve hot nonetheless!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tex_mex_nachos.png"
+    "image_path": "/recipes/tex_mex_nachos.jpg"
   },
   {
     "id": 42,
@@ -1327,7 +1327,7 @@ const recipes = [
       "Alternating sausage, apple, and pepper, thread the kebabs. Grill over medium heat for 4 minutes. Brush both sides with glaze, then cook an additional 3-5 minutes or until hot and lightly charred. Serve immediately!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/sausage_apple_kebabs.png"
+    "image_path": "/recipes/sausage_apple_kebabs.jpg"
   },
   {
     "id": 43,
@@ -1358,7 +1358,7 @@ const recipes = [
       "Drop by teaspoon scoop onto baking sheets. Bake for 9-11 minutes, or until golden. Let cool on the baking sheet for 3 minutes to get crispy on just the outside, then let cool completely on a wire rack."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mama's_chocolate_chip_cookies.png"
+    "image_path": "/recipes/mamas_chocolate_chip_cookies.jpg"
   },
   {
     "id": 44,
@@ -1388,7 +1388,7 @@ const recipes = [
       "Enjoy! Store in the fridge or freezer and reheat in the microwave/toaster oven to eat!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/baked_brownie_oatmeal.png"
+    "image_path": "/recipes/baked_brownie_oatmeal.jpg"
   },
   {
     "id": 45,
@@ -1411,7 +1411,7 @@ const recipes = [
       "Divide into two balls, flatten into disks, then freeze for 15 minutes before rolling."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/scientific_pie_crust.png"
+    "image_path": "/recipes/scientific_pie_crust.jpg"
   },
   {
     "id": 46,
@@ -1449,7 +1449,7 @@ const recipes = [
       "Serve with a drizzle of icing sugar and custard."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/saucy_lemon_pudding.png"
+    "image_path": "/recipes/saucy_lemon_pudding.jpg"
   },
   {
     "id": 47,
@@ -1489,7 +1489,7 @@ const recipes = [
       "While the cake bakes, make the icing - melt butter over med-high heat in a small saucepan, then add milk and cocoa; bring to a boil. Stir in powdered sugar, pecans, and vanilla, stirring until smooth. Spread over the still-warm cake, then let cool for an hour or so before serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/texas_sheet_cake.png"
+    "image_path": "/recipes/texas_sheet_cake.jpg"
   },
   {
     "id": 48,
@@ -1567,7 +1567,7 @@ const recipes = [
       "When ready to bake, bake scones at 400°F for 18-26 minutes or until golden on the edges."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/stone's_scones.png"
+    "image_path": "/recipes/stones_scones.jpg"
   },
   {
     "id": 49,
@@ -1591,7 +1591,7 @@ const recipes = [
       "Top rice with seaweed, marinated salmon, and a fried egg to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/marinated_salmon_donburi.png"
+    "image_path": "/recipes/marinated_salmon_donburi.jpg"
   },
   {
     "id": 50,
@@ -1622,7 +1622,7 @@ const recipes = [
       "Top with salt and pepper to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/no-drain_alfredo_pasta.png"
+    "image_path": "/recipes/no_drain_alfredo_pasta.jpg"
   },
   {
     "id": 51,
@@ -1660,7 +1660,7 @@ const recipes = [
       "Combine chicken and sauce in a pan, top with 90g mozzarella, and stir until chicken is well coated. Divide pasta evenly between 4 containers, then evenly top with sauce and chicken mixture to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/creamy_pesto_chicken_pasta.png"
+    "image_path": "/recipes/creamy_pesto_chicken_pasta.jpg"
   },
   {
     "id": 52,
@@ -1685,7 +1685,7 @@ const recipes = [
       "Add all ingredients to a bowl and mix until smooth. Refrigerate leftovers in a jar."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/caesar_salad_dressing.png"
+    "image_path": "/recipes/caesar_salad_dressing.jpg"
   },
   {
     "id": 53,
@@ -1721,7 +1721,7 @@ const recipes = [
       "Place in the oven and bake for 15 minutes. Remove from the oven and tap the tray sharply on the counter to deflate the cookie. Place the sheet on a wire cooling rack and leave to cool fully to room temperature (around 15-20 minutes) before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/blueberry_cornflake_cookies.png"
+    "image_path": "/recipes/blueberry_cornflake_cookies.jpg"
   },
   {
     "id": 54,
@@ -1750,7 +1750,7 @@ const recipes = [
       "Bake for 35-40 minutes or until golden around the edges. Remove from oven and loosen edges with a knife. Wait 5 minutes, then turn out onto wire rack. Slice while still warm, or your cuts won't be as clean."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/sweet_oatcakes.png"
+    "image_path": "/recipes/sweet_oatcakes.jpg"
   },
   {
     "id": 55,
@@ -1776,7 +1776,7 @@ const recipes = [
       "Bake for 20 minutes or until golden. Let cool for 10 minutes before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/brazilian_cheese_bread.png"
+    "image_path": "/recipes/brazilian_cheese_bread.jpg"
   },
   {
     "id": 56,
@@ -1817,34 +1817,7 @@ const recipes = [
       "Once the cake is done, whisk together the confectioners sugar and milk, and spoon the glaze over the top to serve."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/lemon_poppyseed_bread.png"
-  },
-  {
-    "id": 57,
-    "title": "White Bread",
-    "time": 240,
-    "servings": 24,
-    "calories": 120,
-    "ingredients": {
-      "Ingredients": [
-        "4 1/2 tsp dry active yeast",
-        "1/4 cup honey",
-        "2 1/4 cups warm (110°F) water",
-        "1/4 cup butter, melted",
-        "1 tbsp salt",
-        "6 cups all-purpose flour"
-      ]
-    },
-    "directions": [
-      "Mix yeast, honey, and water in a large bowl. Let bloom for 5 minutes.",
-      "Mix in butter and salt, then slowly mix in flour until a shaggy dough forms.",
-      "Turn out onto the counter top and knead for 7-10 minutes until your dough is smooth and elastic and bounces back when pressed, incorporating up to 1/2 cup extra flour as needed.",
-      "Clean and oil your original large bowl. Return the kneaded dough to the oiled bowl, cover, and let rise for an hour or until doubled in size.",
-      "Knead for a minute, then divide into two loaves. Add to two oiled bread pans and let rise another hour.",
-      "Bake at 375°F for 30 minutes until dark golden. Let cool completely before slicing, about 1 hour."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/white_bread.png"
+    "image_path": "/recipes/lemon_poppyseed_bread.jpg"
   },
   {
     "id": 58,
@@ -1874,32 +1847,7 @@ const recipes = [
       "Bake for 12 minutes, or until cookies are golden around the edges. Let cool on the baking sheets for 4 minutes before transferring to a wire rack. Let cool completely here before frosting, if desired."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/ro's_lemon_cookies.png"
-  },
-  {
-    "id": 59,
-    "title": "PB Banana Donut Holes",
-    "time": 30,
-    "servings": 12,
-    "calories": 100,
-    "ingredients": {
-      "Ingredients": [
-        "2 bananas, mashed",
-        "1/4 cup peanut butter",
-        "2 eggs",
-        "1 cup all-purpose flour",
-        "1/2 tsp baking powder"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 350°F and grease a donut hole pan.",
-      "In a small bowl, mash the bananas, then whisk in the peanut butter and egg.",
-      "In a large bowl, whisk together the flour and baking powder.",
-      "Pour the wet ingredients into the dry and stir until just combined.",
-      "Bake for 10 minutes."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/pb_banana_donut_holes.png"
+    "image_path": "/recipes/ros_lemon_cookies.jpg"
   },
   {
     "id": 60,
@@ -1927,7 +1875,7 @@ const recipes = [
       "Immediately pop the bagels into the preheated oven and bake for about 15 min or until golden brown. Let cool for a good 15 min before slicing and serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/ro's_bagels.png"
+    "image_path": "/recipes/ros_bagels.jpg"
   },
   {
     "id": 61,
@@ -1952,7 +1900,7 @@ const recipes = [
       "Once the oven is preheated, remove the dish from the oven and transfer the bread to the dish with the parchment paper. Bake for 30 minutes covered, then 15 minutes uncovered."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/no-knead_wheat_bread.png"
+    "image_path": "/recipes/no_knead_wheat_bread.jpg"
   },
   {
     "id": 62,
@@ -1978,7 +1926,7 @@ const recipes = [
       "Mash all ingredients together in a small bowl until well-combined. Serve with crackers, in a sandwich, or just as is!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tuna_salad_for_one.png"
+    "image_path": "/recipes/tuna_salad_for_one.jpg"
   },
   {
     "id": 63,
@@ -2013,7 +1961,7 @@ const recipes = [
       "Serve with bread for dipping and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/shakshuka.png"
+    "image_path": "/recipes/shakshuka.jpg"
   },
   {
     "id": 64,
@@ -2039,7 +1987,7 @@ const recipes = [
       "Stir in maple syrup, vanilla, lemon juice, and salt, then let cool to room temperature before refrigerating. Serve cold."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/vegan_oat_milk_yogurt.png"
+    "image_path": "/recipes/vegan_oat_milk_yogurt.jpg"
   },
   {
     "id": 65,
@@ -2063,7 +2011,7 @@ const recipes = [
       "Flatten each ball into a disk, wrap with Saran, and chill in the fridge for 30 minutes/freeze for 15 minutes before rolling."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/brooke's_grandmother's_pie_crust.png"
+    "image_path": "/recipes/brookes_grandmothers_pie_crust.jpg"
   },
   {
     "id": 66,
@@ -2098,7 +2046,7 @@ const recipes = [
       "Pour the mixture into the prepared pan and bake for 25-35 minutes, until edges start to brown and the center is set. Let it cool completely before slicing into 6 equal portions. Serve topped with yogurt, and wrap other portions with foil and freeze for later."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/baked_oatmeal.png"
+    "image_path": "/recipes/baked_oatmeal.jpg"
   },
   {
     "id": 67,
@@ -2137,7 +2085,7 @@ const recipes = [
       "When cakes are completely cooled, frost one layer with about 1/3 of the chocolate buttercream frosting. Stack the other layer on top, then cover the cake with the remaining frosting."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/nonna's_yellow_birthday_cake.png"
+    "image_path": "/recipes/nonnas_yellow_birthday_cake.jpg"
   },
   {
     "id": 68,
@@ -2169,7 +2117,7 @@ const recipes = [
       "Leave to cool to room temperature, then refrigerate for at least 3 hours and top with berries and powdered sugar before serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/gâteau_magique.png"
+    "image_path": "/recipes/gateau_magique.jpg"
   },
   {
     "id": 69,
@@ -2197,7 +2145,7 @@ const recipes = [
       "Even everything out with a rolling pin, using the cookie sheet as a guide. Sit at room temp for a few hours before cutting. Don't be tempted to refrigerate them to speed up the process, as it makes the bars more prone to crumbling. Store in an airtight jar."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/chewy_granola_bars.png"
+    "image_path": "/recipes/chewy_granola_bars.jpg"
   },
   {
     "id": 70,
@@ -2228,7 +2176,7 @@ const recipes = [
       "Transfer the sauce into a blender. Add the silken tofu and blend until smooth. Pour over the pasta, optionally garnish with fresh herbs and enjoy!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/silken_tofu_tomato_pasta.png"
+    "image_path": "/recipes/silken_tofu_tomato_pasta.jpg"
   },
   {
     "id": 71,
@@ -2262,7 +2210,7 @@ const recipes = [
       "Serve beef topped with egg over 1 cup rice."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/beef_bowl.png"
+    "image_path": "/recipes/beef_bowl.jpg"
   },
   {
     "id": 72,
@@ -2291,7 +2239,7 @@ const recipes = [
       "Add cooked pasta to pot and stir in cheese. Top with extra shredded cheese to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/pasta_jambalaya.png"
+    "image_path": "/recipes/pasta_jambalaya.jpg"
   },
   {
     "id": 73,
@@ -2323,7 +2271,7 @@ const recipes = [
       "Combine all ingredients in a rice cooker, adding more water if needed. Enjoy with your protein and fat of choice!"
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/rice.png"
+    "image_path": "/recipes/rice.jpg"
   },
   {
     "id": 74,
@@ -2349,7 +2297,7 @@ const recipes = [
       "Heat the oil in a large frying pan over medium-high heat. Throw in the broccoli, red pepper flakes, salt, and pepper. Cook for 2 more minutes or until heated through. Remove from heat, top with parmesan cheese mixture to serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/upgraded_broccoli.png"
+    "image_path": "/recipes/upgraded_broccoli.jpg"
   },
   {
     "id": 75,
@@ -2376,7 +2324,7 @@ const recipes = [
       "Working quickly so the mixture doesn't dry out, scoop tablespoons onto a lined pan. Refrigerate for at least 3 hours, preferably overnight, before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/nonna's_no_bakes.png"
+    "image_path": "/recipes/nonnas_no_bakes.jpg"
   },
   {
     "id": 76,
@@ -2427,7 +2375,7 @@ const recipes = [
       "Cool & leave to set for 2 hours before slicing and serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/raspberry_custard_crumble_bars.png"
+    "image_path": "/recipes/raspberry_custard_crumble_bars.jpg"
   },
   {
     "id": 77,
@@ -2454,7 +2402,7 @@ const recipes = [
       "Serve with Tostito's Scoops."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/cowboy_dip.png"
+    "image_path": "/recipes/cowboy_dip.jpg"
   },
   {
     "id": 78,
@@ -2481,7 +2429,7 @@ const recipes = [
       "Working quickly so the mixture doesn't dry out, scoop tablespoons onto a lined pan. Refrigerate for at least 2 hours before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mama's_no_bakes.png"
+    "image_path": "/recipes/mamas_no_bakes.jpg"
   },
   {
     "id": 79,
@@ -2510,7 +2458,7 @@ const recipes = [
       "Bake for 10-12 minutes, or until cookies are golden around the edges. Let cool on the baking sheets for 4 minutes before transferring to a wire rack. Let cool completely here before frosting, if desired."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/mary_jane's_sugar_cookies.png"
+    "image_path": "/recipes/mary_janes_sugar_cookies.jpg"
   },
   {
     "id": 80,
@@ -2550,7 +2498,7 @@ const recipes = [
       "Remove tea bags, making sure to squeeze out all the extra tea, then stir in the powdered sugar until it reaches your desired consistency. Allow scones to cool completely before glazing."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/earl_gray_blueberry_scones.png"
+    "image_path": "/recipes/earl_gray_blueberry_scones.jpg"
   },
   {
     "id": 81,
@@ -2582,7 +2530,7 @@ const recipes = [
       "Let cool for 5 minutes before slicing, then serve with jam and butter."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/stone's_english_muffins.png"
+    "image_path": "/recipes/stones_english_muffins.jpg"
   },
   {
     "id": 82,
@@ -2608,7 +2556,7 @@ const recipes = [
       "Add melted chocolate to frosting, then add milk AS NEEDED to achieve your desired consistency. (You may not need the full 1/4 cup!)"
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/nonna's_chocolate_frosting.png"
+    "image_path": "/recipes/nonnas_chocolate_frosting.jpg"
   },
   {
     "id": 83,
@@ -2642,7 +2590,7 @@ const recipes = [
       "While the bread is cooking, melt butter and garlic together in a saucepan until fragrant. Pour/brush over the warm bread, then let it sit for 10 minutes before slicing and serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/phi_tau_focaccia.png"
+    "image_path": "/recipes/phi_tau_focaccia.jpg"
   },
   {
     "id": 84,
@@ -2676,7 +2624,7 @@ const recipes = [
       "Fold in vegetables, then serve."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/no-drain_creamy_mac_and_cheese.png"
+    "image_path": "/recipes/no_drain_creamy_mac_and_cheese.jpg"
   },
   {
     "id": 85,
@@ -2703,7 +2651,7 @@ const recipes = [
       "Once gnocchi float to the top, cook for another minute and finish them with your sauce of choice, basil, and parmesan cheese."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/tofu_gnocchi.png"
+    "image_path": "/recipes/tofu_gnocchi.jpg"
   },
   {
     "id": 86,
@@ -2734,7 +2682,7 @@ const recipes = [
       "Let stand in the pan for 10 minutes before slicing and serving. This is good with carrots and potatoes."
     ],
     "date": "2023-11-11T23:35:29.256Z",
-    "image_path": "/recipes/classic_meatloaf.png"
+    "image_path": "/recipes/classic_meatloaf.jpg"
   },
   {
     "id": 87,
@@ -2757,7 +2705,7 @@ const recipes = [
       "Use a knife to loosen the edges from the container. Slice in half for 2 pieces, if desired."
     ],
     "date": "2023-11-20T17:58:59.563Z",
-    "image_path": "/recipes/emergency_bread.png"
+    "image_path": "/recipes/emergency_bread.jpg"
   },
   {
     "id": 88,
@@ -2789,7 +2737,7 @@ const recipes = [
       "Let cool for 5 minutes in pan, then serve. Bonus: slice in half from the top down, then griddle with butter to revive stale muffins!"
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/stone's_muffins.png"
+    "image_path": "/recipes/stones_muffins.jpg"
   },
   {
     "id": 89,
@@ -2822,7 +2770,7 @@ const recipes = [
       "Let pie cool completely before slicing, about 2 hours."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/apple_pie.png"
+    "image_path": "/recipes/apple_pie.jpg"
   },
   {
     "id": 90,
@@ -2848,7 +2796,7 @@ const recipes = [
       "Add fruit on top, then bake for 25-30 minutes at 400F. Let cool 5 minutes in the pan before removing and serving (preferably topped with yogurt)."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/fluffy_strawberry_cake.png"
+    "image_path": "/recipes/fluffy_strawberry_cake.jpg"
   },
   {
     "id": 91,
@@ -2880,7 +2828,7 @@ const recipes = [
       "Let cool for at least 2 hours before frosting with cream cheese frosting!"
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/divorce_carrot_cake.png"
+    "image_path": "/recipes/divorce_carrot_cake.jpg"
   },
   {
     "id": 92,
@@ -2927,7 +2875,7 @@ const recipes = [
       "Remove buns from oven and immediately brush with garlic butter and flaky salt. Serve warm!"
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "image_path": "/recipes/garlic_butter_dinner_rolls.png"
+    "image_path": "/recipes/garlic_butter_dinner_rolls.jpg"
   },
   {
     "id": 93,
@@ -2957,7 +2905,7 @@ const recipes = [
       "Top with peanut butter, then yogurt, to serve. "
     ],
     "date": "2024-02-02T03:50:39.488Z",
-    "image_path": "/recipes/banana_pancake.png"
+    "image_path": "\\recipes\\banana_pancake.jpg"
   }
 ]
 

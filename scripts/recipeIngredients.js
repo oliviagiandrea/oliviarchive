@@ -1005,7 +1005,7 @@ const recipeIngredients = [
   },
   {
     "recipe_id": 28,
-    "ingredient_id": 186
+    "ingredient_id": 14
   },
   {
     "recipe_id": 29,
@@ -1932,22 +1932,6 @@ const recipeIngredients = [
     "ingredient_id": 95
   },
   {
-    "recipe_id": 57,
-    "ingredient_id": 175
-  },
-  {
-    "recipe_id": 57,
-    "ingredient_id": 82
-  },
-  {
-    "recipe_id": 57,
-    "ingredient_id": 3
-  },
-  {
-    "recipe_id": 57,
-    "ingredient_id": 68
-  },
-  {
     "recipe_id": 58,
     "ingredient_id": 68
   },
@@ -1970,26 +1954,6 @@ const recipeIngredients = [
   {
     "recipe_id": 58,
     "ingredient_id": 186
-  },
-  {
-    "recipe_id": 59,
-    "ingredient_id": 60
-  },
-  {
-    "recipe_id": 59,
-    "ingredient_id": 102
-  },
-  {
-    "recipe_id": 59,
-    "ingredient_id": 58
-  },
-  {
-    "recipe_id": 59,
-    "ingredient_id": 68
-  },
-  {
-    "recipe_id": 59,
-    "ingredient_id": 76
   },
   {
     "recipe_id": 60,

@@ -276,7 +276,7 @@ async function seedRecipeIngredients(client) {
       )
     );
 
-    console.log(`Seeded ${recipeIngredients.length} ratings`);
+    console.log(`Seeded ${recipeIngredients.length} recipe/ingredient pairs`);
 
     return {
       createTable,
@@ -310,7 +310,7 @@ async function seedRecipeCategories(client) {
       )
     );
 
-    console.log(`Seeded ${recipeCategories.length} ratings`);
+    console.log(`Seeded ${recipeCategories.length} recipe/category pairs`);
 
     return {
       createTable,

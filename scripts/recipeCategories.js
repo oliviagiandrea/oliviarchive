@@ -600,28 +600,12 @@ const recipeCategories = [
     "category_id": 14
   },
   {
-    "recipe_id": 57,
-    "category_id": 12
-  },
-  {
     "recipe_id": 58,
     "category_id": 10
   },
   {
     "recipe_id": 58,
     "category_id": 11
-  },
-  {
-    "recipe_id": 59,
-    "category_id": 10
-  },
-  {
-    "recipe_id": 59,
-    "category_id": 28
-  },
-  {
-    "recipe_id": 59,
-    "category_id": 14
   },
   {
     "recipe_id": 60,

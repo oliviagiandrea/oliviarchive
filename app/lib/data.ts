@@ -3,11 +3,11 @@ import {
   IngredientField,
   CategoryField,
   IngredientsTableType,
+  CategoriesTableType,
   RecipeForm,
   RecipesTable,
   User,
 } from './definitions';
-import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchLatestRecipes() {
@@ -54,8 +54,8 @@ export async function fetchCardData() {
     ]);
 
     const numberOfRecipes = Number(data[0].rows[0].count ?? '0');
-    const mostCommonIngredient = Number(data[1].rows[0]?.name);
-    const mostCommonCategory = Number(data[2].rows[0]?.name);
+    const mostCommonIngredient = data[1].rows[0]?.name;
+    const mostCommonCategory = data[2].rows[0]?.name;
 
     return {
       numberOfRecipes,
@@ -78,17 +78,7 @@ export async function fetchFilteredRecipes(
 
   try {
     const recipes = await sql<RecipesTable>`
-      SELECT
-        recipes.id,
-        recipes.title,
-        recipes.notes,
-        recipes.time,
-        recipes.servings,
-        recipes.calories,
-        recipes.ingredients,
-        recipes.directions,
-        recipes.date,
-        recipes.image_path
+      SELECT DISTINCT *
       FROM recipes
       WHERE
         recipes.title ILIKE ${`%${query}%`}
@@ -103,18 +93,13 @@ export async function fetchFilteredRecipes(
   }
 }
 
-// JOIN recipes_ingredients ON recipes_ingredients.recipe_id = recipes.id
-// JOIN ingredients ON recipes_ingredients.ingredient_id = ingredients.id
-// JOIN recipes_categories ON recipes_categories.recipe_id = recipes.id
-// JOIN categories ON recipes_categories.category_id = categories.id
-
 export async function fetchRecipesPages(query: string) {
   noStore();
   try {
     const count = await sql`SELECT COUNT(*)
     FROM recipes
     WHERE
-      ingredients.title ILIKE ${`%${query}%`}
+      recipes.title ILIKE ${`%${query}%`}
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
@@ -131,9 +116,7 @@ export async function fetchRecipeById(id: string) {
     const data = await sql<RecipeForm>`
       SELECT
         recipes.id,
-        recipes.ingredient_id,
-        recipes.amount,
-        recipes.status
+        recipes.title
       FROM recipes
       WHERE recipes.id = ${id};
     `;
@@ -183,27 +166,47 @@ export async function fetchFilteredIngredients(query: string) {
   noStore();
   try {
     const data = await sql<IngredientsTableType>`
-		SELECT
-		  ingredients.id,
-		  ingredients.name,
-		  ingredients.email,
-		  ingredients.image_url,
-		  COUNT(recipes.id) AS total_recipes,
-		  SUM(CASE WHEN recipes.status = 'pending' THEN recipes.amount ELSE 0 END) AS total_pending,
-		  SUM(CASE WHEN recipes.status = 'paid' THEN recipes.amount ELSE 0 END) AS total_paid
-		FROM ingredients
-		LEFT JOIN recipes ON ingredients.id = recipes.ingredient_id
-		WHERE
-		  ingredients.name ILIKE ${`%${query}%`} OR
-        ingredients.email ILIKE ${`%${query}%`}
-		GROUP BY ingredients.id, ingredients.name, ingredients.email, ingredients.image_url
-		ORDER BY ingredients.name ASC
+      SELECT
+        ingredients.id,
+        ingredients.name,
+        ingredients.image_path,
+        COUNT(recipe_ingredients.ingredient_id) AS total_recipes
+      FROM ingredients
+      LEFT JOIN recipe_ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+      WHERE
+        ingredients.name ILIKE '%' || ${query} || '%'
+      GROUP BY ingredients.id, ingredients.name, ingredients.image_path
+      ORDER BY ingredients.name ASC;
 	  `;
 
     return data.rows;
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch ingredient table.');
+  }
+}
+
+export async function fetchFilteredCategories(query: string) {
+  noStore();
+  try {
+    const data = await sql<CategoriesTableType>`
+		  SELECT
+        categories.id,
+        categories.name,
+        categories.image_path,
+        COUNT(recipe_categories.category_id) AS total_recipes
+      FROM categories
+      LEFT JOIN recipe_categories ON categories.id = recipe_categories.category_id
+      WHERE
+        categories.name ILIKE '%' || ${query} || '%'
+      GROUP BY categories.id, categories.name, categories.image_path
+      ORDER BY categories.name ASC;
+	  `;
+
+    return data.rows;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch category table.');
   }
 }
 

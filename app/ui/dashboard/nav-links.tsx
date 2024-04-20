@@ -1,9 +1,10 @@
 'use client';
 
 import {
-  UserGroupIcon,
+  ShoppingCartIcon,
   HomeIcon,
-  DocumentDuplicateIcon,
+  InboxIcon,
+  SwatchIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -16,9 +17,10 @@ const links = [
   {
     name: 'Recipes',
     href: '/dashboard/recipes',
-    icon: DocumentDuplicateIcon,
+    icon: InboxIcon,
   },
-  { name: 'Ingredients', href: '/dashboard/ingredients', icon: UserGroupIcon },
+  { name: 'Ingredients', href: '/dashboard/ingredients', icon: ShoppingCartIcon },
+  { name: 'Categories', href: '/dashboard/categories', icon: SwatchIcon },
 ];
 
 export default function NavLinks() {

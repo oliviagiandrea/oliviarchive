@@ -1,36 +1,33 @@
 import {
-  BanknotesIcon,
-  ClockIcon,
-  UserGroupIcon,
   InboxIcon,
+  SwatchIcon,
+  ShoppingCartIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
 import { fetchCardData } from '@/app/lib/data';
 
 const iconMap = {
-  collected: BanknotesIcon,
-  ingredients: UserGroupIcon,
-  pending: ClockIcon,
+  categories: SwatchIcon,
+  ingredients: ShoppingCartIcon,
   recipes: InboxIcon,
 };
 
 export default async function CardWrapper() {
-  const {
-    numberOfRecipes,
-    numberOfIngredients,
-    totalPaidRecipes,
-    totalPendingRecipes,
-  } = await fetchCardData();
+  const { numberOfRecipes, mostCommonIngredient, mostCommonCategory } =
+    await fetchCardData();
 
   return (
     <>
-      {/* <Card title="Collected" value={totalPaidRecipes} type="collected" />
-      <Card title="Pending" value={totalPendingRecipes} type="pending" /> */}
       <Card title="Total Recipes" value={numberOfRecipes} type="recipes" />
       <Card
-        title="Total Ingredients"
-        value={numberOfIngredients}
+        title="Most Common Ingredient"
+        value={mostCommonIngredient}
         type="ingredients"
+      />
+      <Card
+        title="Most Common Category"
+        value={mostCommonCategory}
+        type="categories"
       />
     </>
   );
@@ -43,7 +40,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: 'recipes' | 'ingredients' | 'pending' | 'collected';
+  type: 'recipes' | 'ingredients' | 'categories';
 }) {
   const Icon = iconMap[type];
 

@@ -27,25 +27,25 @@ export default async function RecipesTable({
                   <div>
                     <div className="mb-2 flex items-center">
                       <Image
-                        src={recipe.image_url}
+                        src={recipe.image_path}
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
-                        alt={`${recipe.name}'s profile picture`}
+                        alt={`${recipe.title}'s picture`}
                       />
-                      <p>{recipe.name}</p>
+                      <p>{recipe.title}</p>
                     </div>
-                    <p className="text-sm text-gray-500">{recipe.email}</p>
+                    {/* <p className="text-sm text-gray-500">{recipe.email}</p> */}
                   </div>
-                  <RecipeStatus status={recipe.status} />
+                  {/* <RecipeStatus status={recipe.status} /> */}
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
-                  <div>
+                  {/* <div>
                     <p className="text-xl font-medium">
                       {formatCurrency(recipe.amount)}
                     </p>
                     <p>{formatDateToLocal(recipe.date)}</p>
-                  </div>
+                  </div> */}
                   <div className="flex justify-end gap-2">
                     <UpdateRecipe id={recipe.id} />
                     <DeleteRecipe id={recipe.id} />
@@ -61,16 +61,7 @@ export default async function RecipesTable({
                   Ingredient
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Email
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Amount
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Date
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Status
+                  Name
                 </th>
                 <th scope="col" className="relative py-3 pl-6 pr-3">
                   <span className="sr-only">Edit</span>
@@ -86,16 +77,16 @@ export default async function RecipesTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
                       <Image
-                        src={recipe.image_url}
+                        src={recipe.image_path}
                         className="rounded-full"
                         width={28}
                         height={28}
-                        alt={`${recipe.name}'s profile picture`}
+                        alt={`${recipe.title}'s picture`}
                       />
-                      <p>{recipe.name}</p>
+                      <p>{recipe.title}</p>
                     </div>
                   </td>
-                  <td className="whitespace-nowrap px-3 py-3">
+                  {/* <td className="whitespace-nowrap px-3 py-3">
                     {recipe.email}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
@@ -106,7 +97,7 @@ export default async function RecipesTable({
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     <RecipeStatus status={recipe.status} />
-                  </td>
+                  </td> */}
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateRecipe id={recipe.id} />

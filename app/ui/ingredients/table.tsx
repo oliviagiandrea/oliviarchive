@@ -30,22 +30,19 @@ export default async function IngredientsTable({
                       <div>
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
-                            <Image
-                              src={ingredient.image_url}
+                            {/* <Image
+                              src={ingredient.image_path}
                               className="rounded-full"
                               alt={`${ingredient.name}'s profile picture`}
                               width={28}
                               height={28}
-                            />
+                            /> */}
                             <p>{ingredient.name}</p>
                           </div>
                         </div>
-                        <p className="text-sm text-gray-500">
-                          {ingredient.email}
-                        </p>
                       </div>
                     </div>
-                    <div className="flex w-full items-center justify-between border-b py-5">
+                    {/* <div className="flex w-full items-center justify-between border-b py-5">
                       <div className="flex w-1/2 flex-col">
                         <p className="text-xs">Pending</p>
                         <p className="font-medium">{ingredient.total_pending}</p>
@@ -54,7 +51,7 @@ export default async function IngredientsTable({
                         <p className="text-xs">Paid</p>
                         <p className="font-medium">{ingredient.total_paid}</p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="pt-4 text-sm">
                       <p>{ingredient.total_recipes} recipes</p>
                     </div>
@@ -68,16 +65,7 @@ export default async function IngredientsTable({
                       Name
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
-                      Email
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
                       Total Recipes
-                    </th>
-                    <th scope="col" className="px-3 py-5 font-medium">
-                      Total Pending
-                    </th>
-                    <th scope="col" className="px-4 py-5 font-medium">
-                      Total Paid
                     </th>
                   </tr>
                 </thead>
@@ -87,27 +75,18 @@ export default async function IngredientsTable({
                     <tr key={ingredient.id} className="group">
                       <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
                         <div className="flex items-center gap-3">
-                          <Image
-                            src={ingredient.image_url}
+                          {/* <Image
+                            src={ingredient.image_path}
                             className="rounded-full"
-                            alt={`${ingredient.name}'s profile picture`}
+                            alt={`${ingredient.name}'s picture`}
                             width={28}
                             height={28}
-                          />
+                          /> */}
                           <p>{ingredient.name}</p>
                         </div>
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {ingredient.email}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
                         {ingredient.total_recipes}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
-                        {ingredient.total_pending}
-                      </td>
-                      <td className="whitespace-nowrap bg-white px-4 py-5 text-sm group-first-of-type:rounded-md group-last-of-type:rounded-md">
-                        {ingredient.total_paid}
                       </td>
                     </tr>
                   ))}

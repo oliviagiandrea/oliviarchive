@@ -62,6 +62,20 @@ export type FormattedIngredientsTable = {
   total_recipes: number;
 };
 
+export type CategoriesTableType = {
+  id: number;
+  name: string;
+  image_path: string;
+  total_recipes: number;
+};
+
+export type FormattedCategoriesTable = {
+  id: number;
+  name: string;
+  image_path: string;
+  total_recipes: number;
+};
+
 export type IngredientField = {
   id: number;
   name: string;
@@ -75,4 +89,5 @@ export type CategoryField = {
 export type RecipeForm = {
   id: number;
   ingredient_id: number;
+  category_id: number;
 };
