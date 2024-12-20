@@ -5,7 +5,7 @@ const {
   ratings,
   favorites,
 } = require('./placeholder-data.js');
-const { recipes } = require('./recipes.js');
+const { recipes } = require('./updatedRecipes.js');
 const { ingredients } = require('./ingredients.js');
 const { recipeIngredients } = require('./recipeIngredients.js');
 const { recipeCategories } = require('./recipeCategories.js');

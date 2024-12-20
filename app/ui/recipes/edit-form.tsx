@@ -27,7 +27,7 @@ export default function EditRecipeForm({
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Ingredient Name */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label htmlFor="ingredient" className="mb-2 block text-sm font-medium">
             Choose ingredient
           </label>
@@ -59,7 +59,7 @@ export default function EditRecipeForm({
                 </p>
               ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Recipe Amount */}
         {/* <div className="mb-4">

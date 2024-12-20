@@ -69,10 +69,7 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 6;
-export async function fetchFilteredRecipes(
-  query: string,
-  currentPage: number,
-) {
+export async function fetchFilteredRecipes(query: string, currentPage: number) {
   noStore();
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -114,10 +111,7 @@ export async function fetchRecipeById(id: string) {
   noStore();
   try {
     const data = await sql<RecipeForm>`
-      SELECT
-        recipes.id,
-        recipes.title
-      FROM recipes
+      SELECT * FROM recipes
       WHERE recipes.id = ${id};
     `;
 

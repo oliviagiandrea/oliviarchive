@@ -33,9 +33,9 @@ export default async function LatestRecipes() {
                     height={32}
                   />
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold md:text-base">
+                    <a className="truncate text-sm font-semibold md:text-base" href={`/dashboard/recipes/${recipe.id}`}>
                       {recipe.title}
-                    </p>
+                    </a>
                     {/* <p className="hidden text-sm text-gray-500 sm:block">
                       {recipe.email}
                     </p> */}

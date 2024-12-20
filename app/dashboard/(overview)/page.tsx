@@ -1,10 +1,8 @@
 import CardWrapper from '@/app/ui/dashboard/cards';
-// import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestRecipes from '@/app/ui/dashboard/latest-recipes';
 import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import {
-  // RevenueChartSkeleton,
   LatestRecipesSkeleton,
   CardsSkeleton,
 } from '@/app/ui/skeletons';

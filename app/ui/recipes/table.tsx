@@ -1,7 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { UpdateRecipe, DeleteRecipe } from '@/app/ui/recipes/buttons';
-import RecipeStatus from '@/app/ui/recipes/status';
-// import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredRecipes } from '@/app/lib/data';
 
 export default async function RecipesTable({
@@ -83,7 +82,7 @@ export default async function RecipesTable({
                         height={28}
                         alt={`${recipe.title}'s picture`}
                       />
-                      <p>{recipe.title}</p>
+                      <Link href={`/dashboard/recipes/${recipe.id}`}>{recipe.title}</Link>
                     </div>
                   </td>
                   {/* <td className="whitespace-nowrap px-3 py-3">

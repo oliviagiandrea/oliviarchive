@@ -15,6 +15,10 @@ export type Category = {
   name: string;
 };
 
+type IngredientsType = {
+  [key: string]: string[];
+};
+
 export type Recipe = {
   id: number;
   title: string;
@@ -22,8 +26,8 @@ export type Recipe = {
   time: number;
   servings: number;
   calories: number;
-  ingredients: object;
-  directions: [string];
+  ingredients: IngredientsType;
+  directions: string[];
   date: Date;
   image_path: string;
 };
@@ -34,7 +38,8 @@ export type LatestRecipe = {
   image_path: string;
 };
 
-// The database returns a number for amount, but we later format it to a string with the formatCurrency function
+// The database returns a number for amount, 
+// but we later format it to a string with the formatCurrency function
 export type LatestRecipeRaw = Omit<LatestRecipe, 'amount'> & {
   amount: number;
 };
@@ -88,6 +93,13 @@ export type CategoryField = {
 
 export type RecipeForm = {
   id: number;
-  ingredient_id: number;
-  category_id: number;
+  title: string;
+  notes: string;
+  time: number;
+  servings: number;
+  calories: number;
+  ingredients: IngredientsType;
+  directions: string[];
+  date: Date;
+  image_path: string;
 };
