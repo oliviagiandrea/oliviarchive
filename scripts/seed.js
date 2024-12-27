@@ -1,12 +1,12 @@
 const { db } = require('@vercel/postgres');
 const {
   users,
-  categories,
   ratings,
   favorites,
 } = require('./placeholder-data.js');
 const { recipes } = require('./updatedRecipes.js');
 const { ingredients } = require('./ingredients.js');
+const { categories } = require('./categories.js');
 const { recipeIngredients } = require('./recipeIngredients.js');
 const { recipeCategories } = require('./recipeCategories.js');
 const bcrypt = require('bcrypt');
@@ -82,7 +82,7 @@ async function seedRecipes(client) {
         ingredients JSONB NOT NULL,
         directions TEXT[] NOT NULL,
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-        image_path TEXT
+        path TEXT
       );
     `;
 
@@ -92,8 +92,8 @@ async function seedRecipes(client) {
       recipes.map(
         async (recipe) => {
           const insertResult = await client.sql`
-            INSERT INTO recipes (id, title, notes, time, servings, calories, ingredients, directions, date, image_path)
-            VALUES (${recipe.id}, ${recipe.title}, ${recipe.notes}, ${recipe.time}, ${recipe.servings}, ${recipe.calories}, ${recipe.ingredients}, ${recipe.directions}, ${recipe.date}, ${recipe.image_path})
+            INSERT INTO recipes (id, title, notes, time, servings, calories, ingredients, directions, date, path)
+            VALUES (${recipe.id}, ${recipe.title}, ${recipe.notes}, ${recipe.time}, ${recipe.servings}, ${recipe.calories}, ${recipe.ingredients}, ${recipe.directions}, ${recipe.date}, ${recipe.path})
             ON CONFLICT (id) DO NOTHING;
           `;
         }
@@ -118,7 +118,7 @@ async function seedIngredients(client) {
       CREATE TABLE IF NOT EXISTS ingredients (
         id SERIAL PRIMARY KEY,
         name VARCHAR(50) NOT NULL UNIQUE,
-        image_path TEXT
+        path TEXT
       );
     `;
 
@@ -127,8 +127,8 @@ async function seedIngredients(client) {
     const insertedIngredients = await Promise.all(
       ingredients.map(
         (ingredient) => client.sql`
-          INSERT INTO ingredients (id, name, image_path)
-          VALUES (${ingredient.id}, ${ingredient.name}, ${ingredient.image_path})
+          INSERT INTO ingredients (id, name, path)
+          VALUES (${ingredient.id}, ${ingredient.name}, ${ingredient.path})
           ON CONFLICT (name) DO NOTHING;
         `,
       ),
@@ -152,7 +152,7 @@ async function seedCategories(client) {
       CREATE TABLE IF NOT EXISTS categories (
         id SERIAL PRIMARY KEY,
         name VARCHAR(50) NOT NULL UNIQUE,
-        image_path TEXT
+        path TEXT
       );
     `;
 
@@ -161,8 +161,8 @@ async function seedCategories(client) {
     const insertedCategories = await Promise.all(
       categories.map(
         (category) => client.sql`
-          INSERT INTO categories (id, name, image_path)
-          VALUES (${category.id}, ${category.name}, ${category.image_path})
+          INSERT INTO categories (id, name, path)
+          VALUES (${category.id}, ${category.name}, ${category.path})
           ON CONFLICT (name) DO NOTHING;
         `,
       ),

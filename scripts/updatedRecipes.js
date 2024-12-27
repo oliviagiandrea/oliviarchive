@@ -26,7 +26,8 @@ const recipes = [
       "Place all ingredients in a large pot over medium heat. Cook uncovered for 30 minutes.",
       "Transfer to blender in 2 batches and blend until smooth. Serve with grilled cheese!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "tomato_soup"
   },
   {
     "id": 1,
@@ -56,7 +57,8 @@ const recipes = [
       "To the now-empty pot, add the shallot and cook until translucent, about 3 minutes. Stir in the beans and peas, then add the wine and cook 1 minute. Stir in the broth and pepper; cook 5 minutes or until beans and peas are tender.",
       "Remove pan from heat; stir in pasta and prosciutto, then add salt, Ricotta, and romano. Top with extra grated romano to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "strozzapreti"
   },
   {
     "id": 2,
@@ -87,7 +89,8 @@ const recipes = [
       "Crumble meat into the now-empty pot. Cook until browned, about 5 minutes, then add diced tomatoes - tomato paste and return the vegetables to the pan. Give it a good stir, then let simmer on low heat, partially covered, for 45 minutes.",
       "Cook pasta according to package directions so it's done at the same time as the sauce. Drain, then scoop pasta into bowls and ladle sauce over. Top with grated parmesan to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "spaghetti_bolognese"
   },
   {
     "id": 3,
@@ -123,7 +126,8 @@ const recipes = [
       "Add rinsed lentils, vegetable stock, tomato puree, and bay leaves. Give it a good stir, then let simmer on low heat, partially covered, for 30 minutes or until the sauce thickens and the lentils are cooked.",
       "Cook pasta according to package directions so it's done at the same time as the sauce. Drain, then scoop pasta into bowls and ladle sauce over. Top with grated parmesan to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "vegetarian_spaghetti_bolognese"
   },
   {
     "id": 4,
@@ -154,7 +158,8 @@ const recipes = [
       "Gradually add the flour mixture, mixing on low speed until combined, then the chocolate chips.",
       "Drop by teaspoon scoop onto baking sheets. Bake for 8-10 minutes or until golden. Let cool on the baking sheet for 3 minutes to get crispy on just the outside, then let cool completely on a wire rack."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "thick_chocolate_chip_cookies"
   },
   {
     "id": 5,
@@ -193,7 +198,8 @@ const recipes = [
       "Once the oats have soaked, add the brown sugar, oil, bananas, vanilla, and eggs (in the largest bowl). Mix briefly, then stir in the dry ingredients (medium bowl) until just combined. Pour into your greased pan and evenly top with streusel (small bowl).",
       "Bake until a wooden toothpick inserted in the center comes out clean, about 1 hour. Cool loaf in the pan on a wire rack for 15 minutes before slicing and serving."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "banana_bread_walnut_streusel"
   },
   {
     "id": 6,
@@ -220,7 +226,8 @@ const recipes = [
       "In a 9 x 13 inch pan, use the back of a measuring cup to spread 1 1/2 cups of Nonna's sauce. Layer 4 noodles over the sauce. Spread half of the cheese mixture over the noodles, then top with another 1 1/2 cups of sauce. Layer 4 more noodles, then top with the other half of the cheese mixture and another 1 1/2 cups of sauce. Top with 4 more sheets of lasagna, then 1 1/2 more cups of sauce. Sprinkle with remaining (1 cup) Mozzarella and (1/4 cup) parmesan.",
       "Tightly wrap the pan with a double layer of foil, then bake for 1 hour. Let rest sealed for 20 minutes before unwrapping, cutting, and serving."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "lasagna"
   },
   {
     "id": 7,
@@ -248,7 +255,8 @@ const recipes = [
       "Combine butter - garlic in a small saucepan and bring to a boil. Cook for 1 minute, then pour over carrots.",
       "Bake for 20 minutes or until carrots can be easily pierced with a fork. Serve straight from the oven."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "roasted_carrots"
   },
   {
     "id": 8,
@@ -280,7 +288,8 @@ const recipes = [
       "Once the crust is done, immediately pour on the lemon filling and bake for another 19-24 minutes.",
       "Let cool completely, cut into 16 bars, and enjoy!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "lemon_bars"
   },
   {
     "id": 9,
@@ -315,7 +324,8 @@ const recipes = [
       "Add the chicken, evaporated milk, and noodles. Cook until noodles are tender, about 10 minutes.",
       "Serve with warm rolls."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "chicken_noodle_soup"
   },
   {
     "id": 10,
@@ -344,7 +354,8 @@ const recipes = [
       "While the tofu cooks, warm your tortillas on a separate small frypan over high heat for a few seconds at a time (don't burn them!).",
       "Once everything is hot, assemble tacos with wraps, lettuce, cheese, then tofu and enjoy!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "tofu_tacos"
   },
   {
     "id": 11,
@@ -369,7 +380,8 @@ const recipes = [
       "Return pan to stove. Add a bit more oil, then sauté the onion until softened, about 2 minutes. Add the garlic and cook until fragrant, about 1 more minute. Add in cooked beef, seasoning, and all tomato cans; give it a good stir.",
       "Simmer, partially covered, for 2 hours on low heat, stirring occasionally, until thickened. Serve with pasta, sandwiches, meatballs, lasagna, etc."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "spaghetti_sauce"
   },
   {
     "id": 12,
@@ -394,7 +406,8 @@ const recipes = [
       "Push the roll to one side of the pan, re-grease the rest of the pan if needed with an oiled paper towel and pour another thin layer of the egg mixture to repeat the rolling process. Continue this until all the mixture is used up.",
       "Once it's all cooked, flip your tamagoyaki out onto a paper towel, and roll it (pressing as you go) to shape it. Let cool for about 5 minutes before slicing into even 1-inch segments."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "tamagoyaki"
   },
   {
     "id": 13,
@@ -424,7 +437,8 @@ const recipes = [
       "Leave to cook until the tops of the pancakes bubble (about 3 min), then flip and cook the other side for another 3 minutes or so, until both sides are golden.",
       "Serve hot!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "buttermilk_pancakes"
   },
   {
     "id": 14,
@@ -448,7 +462,8 @@ const recipes = [
       "Put your tortilla in a 6-inch circular cake pan. Crack your eggs on top of it, then top with vegetables, beans, and cheese.",
       "Bake for 25 minutes or until whites of eggs are set. Serve with honeydew."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "baked_tortilla_eggs"
   },
   {
     "id": 15,
@@ -473,7 +488,8 @@ const recipes = [
       "Line a large sheet pan with foil, then spread potatoes in a single layer. Sprinkle all remaining ingredients over the potatoes, then shuffle them around to ensure they're evenly coated.",
       "Bake for 25 minutes or until potatoes can be easily pierced with a fork, stirring every 10 minutes. Remove from oven and let cool in pan for about 5 minutes before serving to let them crisp up a bit."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "roasted_garlic_potatoes"
   },
   {
     "id": 16,
@@ -505,7 +521,8 @@ const recipes = [
       "Pour into the prepared cake tin. Bake for 43-50 mins until a toothpick inserted into the center of the cake comes out clean.",
       "Allow to cool, then dust with icing sugar to serve."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "hummingbird_cake"
   },
   {
     "id": 17,
@@ -548,7 +565,8 @@ const recipes = [
       "Whip all filling ingredients together until fluffy.",
       "Wait for whoopie pies to cool completely before filling. Wrap with wax paper to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "whoopie_pies"
   },
   {
     "id": 18,
@@ -571,7 +589,8 @@ const recipes = [
     "directions": [
       "Combine all ingredients. Cover and refrigerate for at least 1 hour, then roll into balls to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "energy_bites"
   },
   {
     "id": 19,
@@ -597,7 +616,8 @@ const recipes = [
       "Turn the dough out onto a lightly floured surface, and knead it just until it holds together, about 4-5 times. Again, don't overwork it! Flatten it to about 3/4“ thick, and use a floured cup rim to cut the dough into circles. Reroll scraps as necessary until all the dough has been cut and shaped.",
       "Space dough circles evenly on a baking sheet, and bake for 10-14 minutes or until golden. Serve hot."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "classic_biscuits"
   },
   {
     "id": 20,
@@ -632,7 +652,8 @@ const recipes = [
       "Pour batter into the 5 prepared mini loaf pans. Bake for 30 minutes, then cover with foil and continue to bake for another 15-20 minutes until cakes are browned and a toothpick inserted into their centers comes out clean.",
       "Let cool in the pans for 10 minutes, then turn out onto a wire rack and let cool an additional 10 minutes. Serve warm with salted butter."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "pineapple_carrot_cake"
   },
   {
     "id": 21,
@@ -659,7 +680,8 @@ const recipes = [
       "Cut the dough into 4 pieces. Stack pieces on top of one another, sandwiching any loose dry bits of dough between layers, and press down to flatten. Dust surface with flour, then roll dough into a 1\"-thick rectangle. Cut into a 4x3 grid to make 12 biscuits, then transfer to a parchment-lined baking sheet, spacing 2\" apart; freeze for 10 minutes.",
       "Brush tops of biscuits with melted butter and place in the oven. Reduce oven temperature to 400°F and bake biscuits until deep golden brown on the bottom and golden on top, 20-25 minutes."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "bakeoff_biscuits"
   },
   {
     "id": 22,
@@ -686,7 +708,8 @@ const recipes = [
       "Spread evenly on a 16 inch x 11 inch rimmed baking sheet; set aside.",
       "Melt chocolate and wax together. Slice filling into squares, then using toothpicks, coat in the chocolate dip. Place on wax paper on a plate / baking sheet and refrigerate overnight to harden."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "needhams"
   },
   {
     "id": 23,
@@ -711,7 +734,8 @@ const recipes = [
       "Combine peanut butter and greek yogurt together in a small bowl, then spread on the other slice and top with sliced bananas and honey.",
       "Combine both slices of bread and toast in toaster oven for 5 minutes. Slice (diagonally, of course) and enjoy!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "peanut_butter_jelly_sandwich"
   },
   {
     "id": 24,
@@ -742,7 +766,8 @@ const recipes = [
       "While the beef mixture is finishing cooking, chop your lettuce and tomatoes.",
       "Assemble your nachos with a layer of chips first, then cheese, then the beef mixture, then lettuce, and finally tomatoes. Top with salsa, plain greek yogurt, or guacamole if desired, but serve hot nonetheless!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "tex_mex_nachos"
   },
   {
     "id": 25,
@@ -769,7 +794,8 @@ const recipes = [
       "Heat grill. In a small saucepan, combine all glaze ingredients. Cook over medium heat until boiling and thickened, stirring constantly.",
       "Alternating sausage, apple, and pepper, thread the kebabs. Grill over medium heat for 4 minutes. Brush both sides with glaze, then cook an additional 3-5 minutes or until hot and lightly charred. Serve immediately!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "sausage_apple_kebabs"
   },
   {
     "id": 26,
@@ -799,7 +825,8 @@ const recipes = [
       "Gradually add the flour mixture, mixing on low speed until combined, then the chocolate chips.",
       "Drop by teaspoon scoop onto baking sheets. Bake for 9-11 minutes, or until golden. Let cool on the baking sheet for 3 minutes to get crispy on just the outside, then let cool completely on a wire rack."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "thin_chocolate_chip_cookies"
   },
   {
     "id": 27,
@@ -821,7 +848,8 @@ const recipes = [
       "Blend in ice water with a chilled fork until the dough hangs together when squeezed.",
       "Divide into two balls, flatten into disks, then freeze for 15 minutes before rolling."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "pie_crust"
   },
   {
     "id": 28,
@@ -858,7 +886,8 @@ const recipes = [
       "Bake for 45-50 mins until golden and set, and the sponge springs back when touched.",
       "Serve with a drizzle of icing sugar and custard."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "lemon_pudding_cake"
   },
   {
     "id": 29,
@@ -897,7 +926,8 @@ const recipes = [
       "Pour batter into prepared pan; bake for 17 minutes or until a toothpick inserted into the center of the cake emerges clean. Set aside in the pan on a wire rack.",
       "While the cake bakes, make the icing - melt butter over med-high heat in a small saucepan, then add milk and cocoa; bring to a boil. Stir in powdered sugar, pecans, and vanilla, stirring until smooth. Spread over the still-warm cake, then let cool for an hour or so before serving."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "texas_sheet_cake"
   },
   {
     "id": 30,
@@ -974,7 +1004,8 @@ const recipes = [
       "Freeze scones for at least 1 hour.",
       "When ready to bake, bake scones at 400°F for 18-26 minutes or until golden on the edges."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "stones_scones"
   },
   {
     "id": 31,
@@ -1009,7 +1040,8 @@ const recipes = [
       "Use a cookie scoop to make 85g (around 4 tbsp) portions of dough and place on the prepared baking sheet with an inch or two between them.",
       "Place in the oven and bake for 15 minutes. Remove from the oven and tap the tray sharply on the counter to deflate the cookie. Place the sheet on a wire cooling rack and leave to cool fully to room temperature (around 15-20 minutes) before serving."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "blueberry_cornflake_cookies"
   },
   {
     "id": 32,
@@ -1037,7 +1069,8 @@ const recipes = [
       "Press the dough into your prepared cake pan. Smooth the surface, then prick the dough with a fork in an attractive pattern.",
       "Bake for 35-40 minutes or until golden around the edges. Remove from oven and loosen edges with a knife. Wait 5 minutes, then turn out onto wire rack. Slice while still warm, or your cuts won't be as clean."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "sweet_oatcakes"
   },
   {
     "id": 33,
@@ -1066,7 +1099,8 @@ const recipes = [
       "Flour your surface, then roll out the dough disc to about 1/4 inch thick. Using cookie cutters, cut out cookies and transfer to a baking sheet.",
       "Bake for 12 minutes, or until cookies are golden around the edges. Let cool on the baking sheets for 4 minutes before transferring to a wire rack. Let cool completely here before frosting, if desired."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "lemon_cookies"
   },
   {
     "id": 34,
@@ -1093,7 +1127,8 @@ const recipes = [
       "Preheat your oven to 400°F. In a large, shallow saucepan, bring some water and 2 tbsp molasses to a boil. Turn heat down to a simmer; cook bagels for 30 seconds on each side. Remove bagels from the pot with a slotted spoon and place back on the baking sheet. Sprinkle with everything bagel seasoning at this point, if desired.",
       "Immediately pop the bagels into the preheated oven and bake for about 15 min or until golden brown. Let cool for a good 15 min before slicing and serving."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "bagels"
   },
   {
     "id": 35,
@@ -1127,7 +1162,8 @@ const recipes = [
       "Pour the egg whites on top over everything, then cover and simmer over low heat for 4 minutes or until egg whites are set but egg yolks are still runny.",
       "Serve with bread for dipping and enjoy!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "shakshuka"
   },
   {
     "id": 36,
@@ -1152,7 +1188,8 @@ const recipes = [
       "Cook down your fresh oat milk in a saucepan over med-low heat until thick and creamy.",
       "Stir in maple syrup, vanilla, lemon juice, and salt, then let cool to room temperature before refrigerating. Serve cold."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "oat_milk_yogurt"
   },
   {
     "id": 37,
@@ -1186,7 +1223,8 @@ const recipes = [
       "Add in rolled oats, peanut butter powder, baking powder, cinnamon, and salt until well combined. Gently fold in chopped fruit.",
       "Pour the mixture into the prepared pan and bake for 25-35 minutes, until edges start to brown and the center is set. Let it cool completely before slicing into 6 equal portions. Serve topped with yogurt, and wrap other portions with foil and freeze for later."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "baked_oatmeal"
   },
   {
     "id": 38,
@@ -1221,7 +1259,8 @@ const recipes = [
       "Pour the mixture into the prepared pan and bake for 55-60 minutes or until the center is firm.",
       "Let cool completely before slicing into 6 equal portions. Serve topped with yogurt, and wrap leftovers in foil to freeze for later."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "peanut_butter_baked_oatmeal"
   },
   {
     "id": 39,
@@ -1259,7 +1298,8 @@ const recipes = [
       "Then, beat in the butter and remaining confectioners' sugar at medium-high speed for 1 to 2 minutes, until lightened in color and fluffy, stopping halfway through to scrape the bottom and sides of the bowl. If the frosting seems too stiff, beat in water 1 teaspoon at a time until it's spreadable.",
       "When cakes are completely cooled, frost one layer with about 1/3 of the chocolate buttercream frosting. Stack the other layer on top, then cover the cake with the remaining frosting."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "yellow_birthday_cake"
   },
   {
     "id": 40,
@@ -1287,7 +1327,8 @@ const recipes = [
       "Heat the oil in a large pot over medium-high heat. Add onions, bell pepper, and garlic; sauté 5 minutes. Add Cajun seasoning; sauté 1 minute. Stir in beans, tomatoes, and sausage; bring to a boil. Reduce heat and simmer 10 minutes or until thickened.",
       "Add cooked pasta to pot and stir in cheese. Top with extra shredded cheese to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "pasta_jambalaya"
   },
   {
     "id": 41,
@@ -1318,7 +1359,8 @@ const recipes = [
       "Soak brown rice in water for 2-5 hours before cooking, then rinse it a few times.",
       "Combine all ingredients in a rice cooker, adding more water if needed. Enjoy with your protein and fat of choice!"
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "rice"
   },
   {
     "id": 42,
@@ -1343,7 +1385,8 @@ const recipes = [
       "In a cup, combine the parmesan and brown sugar; set aside.",
       "Heat the oil in a large frying pan over medium-high heat. Throw in the broccoli, red pepper flakes, salt, and pepper. Cook for 2 more minutes or until heated through. Remove from heat, top with parmesan cheese mixture to serve."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "upgraded_broccoli"
   },
   {
     "id": 43,
@@ -1369,7 +1412,8 @@ const recipes = [
       "Stir in vanilla and salt, then pour over oats and coconut in a large bowl.",
       "Working quickly so the mixture doesn't dry out, scoop tablespoons onto a lined pan. Refrigerate for at least 3 hours, preferably overnight, before serving."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "coconut_no_bakes"
   },
   {
     "id": 44,
@@ -1419,7 +1463,8 @@ const recipes = [
       "Make crumble. Add butter, sugar, flour & cardamom to the bowl. Use fingers to rub in butter till it resembles breadcrumbs. Add flaked almonds, mix with a fork. Pour on top of berries & bake at 350°F for 30 mins.",
       "Cool & leave to set for 2 hours before slicing and serving."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "raspberry_custard_crumble_bars"
   },
   {
     "id": 45,
@@ -1445,7 +1490,8 @@ const recipes = [
       "In another small mixing bowl, whisk together the seasoning, oil, and white wine vinegar, then drizzle over the avocado mixture. Stir to coat everything evenly, then stir in cilantro last.",
       "Serve with Tostito's Scoops."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "cowboy_dip"
   },
   {
     "id": 46,
@@ -1471,7 +1517,8 @@ const recipes = [
       "Stir in vanilla and salt, then pour over oats in a large bowl.",
       "Working quickly so the mixture doesn't dry out, scoop tablespoons onto a lined pan. Refrigerate for at least 2 hours before serving."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "peanut_butter_no_bakes"
   },
   {
     "id": 47,
@@ -1499,7 +1546,8 @@ const recipes = [
       "Flour your surface, then roll out the dough disc to about 1/4 inch thick. Using cookie cutters, cut out cookies and transfer to a baking sheet.",
       "Bake for 10-12 minutes, or until cookies are golden around the edges. Let cool on the baking sheets for 4 minutes before transferring to a wire rack. Let cool completely here before frosting, if desired."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "sugar_cookies"
   },
   {
     "id": 48,
@@ -1538,7 +1586,8 @@ const recipes = [
       "While the scones cool, make the glaze; cook the milk and butter in a small saucepan over medium heat until the milk is steaming, but not boiling. Remove from heat, place 4 Earl Grey tea bags into the milk, cover, and let steep for 5 minutes.",
       "Remove tea bags, making sure to squeeze out all the extra tea, then stir in the powdered sugar until it reaches your desired consistency. Allow scones to cool completely before glazing."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "earl_gray_blueberry_scones"
   },
   {
     "id": 49,
@@ -1569,7 +1618,8 @@ const recipes = [
       "Cook on a griddle over medium-high heat (375F) until golden - 6 minutes on one side, flip, 6 minutes on the other side, flip, then 6 more minutes on the first side.",
       "Let cool for 5 minutes before slicing, then serve with jam and butter."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "stones_english_muffins"
   },
   {
     "id": 50,
@@ -1594,7 +1644,8 @@ const recipes = [
       "Melt chocolate in the microwave in 30-second intervals until smooth.",
       "Add melted chocolate to frosting, then add milk AS NEEDED to achieve your desired consistency. (You may not need the full 1/4 cup!)"
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "chocolate_frosting"
   },
   {
     "id": 51,
@@ -1627,7 +1678,8 @@ const recipes = [
       "Drizzle with 1 tbsp olive oil and sprinkle with sea salt. Bake until golden brown all over, 20-30 minutes.",
       "While the bread is cooking, melt butter and garlic together in a saucepan until fragrant. Pour/brush over the warm bread, then let it sit for 10 minutes before slicing and serving."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "phi_tau_focaccia"
   },
   {
     "id": 52,
@@ -1657,7 +1709,8 @@ const recipes = [
       "Pack into an 8 x 4-inch loaf pan. Combine 2 tbsp ketchup and 1 tbsp mustard; spread over the top of the loaf. Bake for 1 hour or until the inside temperature reaches 160°F.",
       "Let stand in the pan for 10 minutes before slicing and serving. This is good with carrots and potatoes."
     ],
-    "date": "2023-11-11T23:35:29.256Z"
+    "date": "2023-11-11T23:35:29.256Z",
+    "path": "meatloaf"
   },
   {
     "id": 53,
@@ -1688,7 +1741,8 @@ const recipes = [
       "Fill muffin tins all the way. Generously sprinkle sugar over each muffin—this will give them a nice crunchy top. Bake at 400F for 10 minutes, then turn temperature down to 350F and bake 30 more minutes, rotating twice through (every 10 minutes).",
       "Let cool for 5 minutes in pan, then serve. Bonus: slice in half from the top down, then griddle with butter to revive stale muffins!"
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "stones_muffins"
   },
   {
     "id": 54,
@@ -1720,7 +1774,8 @@ const recipes = [
       "Brush the crust with the remaining egg wash, then bake for 15 minutes. Reduce the heat to 350°F, tent with aluminum foil, and bake until golden and the juices are bubbling, about 45 minutes more.",
       "Let pie cool completely before slicing, about 2 hours."
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "apple_pie"
   },
   {
     "id": 55,
@@ -1751,7 +1806,8 @@ const recipes = [
       "Pour evenly into cake pans, then bake for 45 minutes.",
       "Let cool for at least 2 hours before frosting with cream cheese frosting!"
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "divorce_carrot_cake"
   },
   {
     "id": 56,
@@ -1797,7 +1853,8 @@ const recipes = [
       "While the rolls bake, cook together the garlic and butter in a small saucepan over medium heat until garlic is lightly golden and butter is melted, about 5 minutes.",
       "Remove buns from oven and immediately brush with garlic butter and flaky salt. Serve warm!"
     ],
-    "date": "2023-11-11T23:35:29.257Z"
+    "date": "2023-11-11T23:35:29.257Z",
+    "path": "garlic_butter_dinner_rolls"
   },
   {
     "id": 57,
@@ -1826,7 +1883,8 @@ const recipes = [
       "Pour batter into hot pan. Cook until golden on one side (about 5 minutes), flip, then cook until golden on the other side as well (about 5 more minutes). ",
       "Top with peanut butter, then yogurt, to serve. "
     ],
-    "date": "2024-02-02T03:50:39.488Z"
+    "date": "2024-02-02T03:50:39.488Z",
+    "path": "banana_pancake"
   },
   {
     "id": 58,
@@ -1851,7 +1909,8 @@ const recipes = [
       "Divide into 5 equal balls. Poke a hole in the center if you'd like to make a bagel shape, or you can leave them as rolls.",
       "Bake on the top rack of the oven for 25 minutes. Let cool at least 15 minutes before cutting."
     ],
-    "date": "2024-10-11T03:50:39.488Z"
+    "date": "2024-10-11T03:50:39.488Z",
+    "path": "cottage_cheese_bagels"
   },
   {
     "id": 59,
@@ -1879,7 +1938,8 @@ const recipes = [
       "Transfer cooked flatbread to a plate, cover with a clean dish towel to keep warm, and then continue with the remaining flatbreads. If the skillet looks dry, add a little more oil before continuing.",
       "Serve with hummus."
     ],
-    "date": "2024-10-11T03:50:39.488Z"
+    "date": "2024-10-11T03:50:39.488Z",
+    "path": "flatbread"
   },
   {
     "id": 60,
@@ -1908,7 +1968,8 @@ const recipes = [
       "Cook until the top of the pancake starts to bubble and edges turn browned and crisp, 2 to 3 minutes. Use a spatula to flip each pancake. The cooked surface should be very crispy, with a dark ring around the edge. Cook until the second side is browned and crisp, 2 to 3 minutes. Repeat to cook the remaining pancakes, adding more clarified butter as needed.",
       "Serve immediately with pats of salted butter and maple syrup. If making a large batch, cooked pancakes can be kept warm on a wire rack set in a rimmed metal baking sheet in a 300-degree oven."
     ],
-    "date": "2024-11-17T04:00:00.000Z"
+    "date": "2024-11-17T04:00:00.000Z",
+    "path": "chez_ma_tantes_pancakes"
   },
   {
     "id": 61,
@@ -1939,7 +2000,8 @@ const recipes = [
       "Bake for 15 to 17 minutes, until scones are golden brown on top. Serve warm.",
       "If freezing: I like to freeze scones unbaked and usually hold any egg wash until I'm ready to bake them. Simply spread the wedges on a baking sheet and chill until frozen solid and will no longer stick to each other, and pack tightly into a freezer bag. You can bake them right from the freezer; you'll only need 2 to 4 minutes extra baking time."
     ],
-    "date": "2024-11-17T04:01:00.000Z"
+    "date": "2024-11-17T04:01:00.000Z",
+    "path": "blueberry_scones"
   },
   {
     "id": 62,
@@ -1969,7 +2031,8 @@ const recipes = [
       "With as few movements as possible, transfer the dough to a well-floured counter, flour the top of the dough and pat it into a 7-inch square about 1-inch tall. With a large knife, divide the dough into 9 even squares. Transfer the scones to prepared baking sheet with a spatula. Bake the scones for about 15 minutes, until lightly golden at the edges. Cool in pan for a minute, then transfer to a cooling rack. It's best to cool them about halfway before eating them, so they can set a bit more. I know, way to be a big meanie, right?",
       "Do ahead: Scones are always best the day they are baked. However, if you wish to get a lead on them, you can make them, arrange them on your parchment-lined sheet and freeze them. If you're prepping just one day in advance, cover the tray with plastic wrap and bake them the day you need them. If you're preparing them more than one day in advance, once they are frozen, transfer them to a freezer bag or container. Bring them back to a parchment-lined sheet when you're ready to bake them. No need to defrost the froze, unbaked scones, just add 2 to 3 minutes to your baking time."
     ],
-    "date": "2024-11-17T04:02:00.000Z"
+    "date": "2024-11-17T04:02:00.000Z",
+    "path": "raspberry_scones"
   },
   {
     "id": 63,
@@ -2000,7 +2063,8 @@ const recipes = [
       "Brush the scones with the egg wash and bake for 18 to 25 minutes, depending on their size.",
       "Remove from the oven and transfer to a wire rack to cool completely. To serve, split the scones in half, spread with jam and fill with cream."
     ],
-    "date": "2024-11-17T04:03:00.000Z"
+    "date": "2024-11-17T04:03:00.000Z",
+    "path": "cream_scones_1"
   },
   {
     "id": 64,
@@ -2040,7 +2104,8 @@ const recipes = [
       "Remove the scones from the oven, and cool briefly on the pan. Serve warm. They're delicious as is, but add butter and/or jam, if you like. ",
       "When the scones are completely cool, wrap them in plastic and store at room temperature for up to several days. To reheat room-temperature scones, place on a baking sheet, tent lightly with foil, and warm in a preheated 350°F oven for about 10 minutes."
     ],
-    "date": "2024-11-17T04:04:00.000Z"
+    "date": "2024-11-17T04:04:00.000Z",
+    "path": "cream_scones_2"
   },
   {
     "id": 65,
@@ -2083,7 +2148,8 @@ const recipes = [
       "Let the muffins cool for another 10-15 minutes, then serve warm!",
       "After the muffins have cooled completely, keep in an air tight container at room temperature for about 2 days. To keep for longer, store in the refrigerator where they will keep for up to 5 days."
     ],
-    "date": "2024-11-17T04:05:00.000Z"
+    "date": "2024-11-17T04:05:00.000Z",
+    "path": "chocolate_chip_muffins"
   },
   {
     "id": 66,
@@ -2116,7 +2182,8 @@ const recipes = [
       "It is helpful to use a large scoop (like an ice cream scoop) to evenly distribute the batter into each well. They will be nearly full. This will help give your muffins a nice puffy dome.",
       "Bake your muffins for 20-22 minutes or until a toothpick inserted into the center of a muffin comes out clean."
     ],
-    "date": "2024-11-17T04:06:00.000Z"
+    "date": "2024-11-17T04:06:00.000Z",
+    "path": "pumpkin_muffins"
   },
   {
     "id": 67,
@@ -2147,7 +2214,8 @@ const recipes = [
       "After oats have finished soaking, stir brown sugar and eggs into the oatmeal/buttermilk mixture. Mix in melted butter and vanilla, and then blend in flour mixture and optional add-ins (if using) until just combined.",
       "Evenly divide batter between prepared muffin cups. Bake for 15 to 20 minutes or until tops of muffins are golden brown and toothpick inserted into center of muffin comes out clean. Cool muffins in pan for a few minutes before turning out onto a cooling rack to finish cooling completely."
     ],
-    "date": "2024-11-17T04:07:00.000Z"
+    "date": "2024-11-17T04:07:00.000Z",
+    "path": "oatmeal_muffins"
   },
   {
     "id": 68,
@@ -2183,7 +2251,8 @@ const recipes = [
       "Cool the muffins in their muffin tin on a wire rack for 15 minutes, then use an offset spatula to run underneath the edges of the blueberry muffin tops to prevent them from sticking in the pan. Be careful to just run the offset spatula under the edges - you don't want to accidentally decapitate the muffin from its top! After unsticking the muffin tops, keep cooling the muffins in the tins completely to room temperature. DO NOT TRY AND TURN THE MUFFINS OUT WHILE THEY ARE STILL WARM. Because these muffins are so top-heavy, you'll run the risk of accidentally pulling the tops and bottoms apart!",
       "Serve at room temperature. The muffins are best on the day that they're made, but can be individually wrapped in plastic and stored at room temperature for up to 2 days."
     ],
-    "date": "2024-11-17T04:08:00.000Z"
+    "date": "2024-11-17T04:08:00.000Z",
+    "path": "blueberry_muffins"
   },
   {
     "id": 69,
@@ -2218,7 +2287,8 @@ const recipes = [
       "Spoon the batter into liners, filling them all the way to the top. Top with coarse sugar, then bake for 5 minutes at 425. Keeping the muffins in the oven, reduce the oven temperature to 350°F (177°C), then bake for an additional 15-16 minutes or until a toothpick inserted in the center comes out clean (for mini muffins, bake 11-13 minutes at 350°F (177°C) the whole time). Allow the muffins to cool for 5 minutes in the muffin pan, then transfer to finish cooling on a wire cooling rack.",
       "These muffins will keep while covered at room temperature for a few days, then transfer to the fridge for up to 1 week."
     ],
-    "date": "2024-11-17T04:09:00.000Z"
+    "date": "2024-11-17T04:09:00.000Z",
+    "path": "banana_muffins"
   },
   {
     "id": 70,
@@ -2252,7 +2322,8 @@ const recipes = [
       "Bake for 20-24 minutes or until a toothpick inserted into the center comes out cleanly.",
       "Let cool for a few minutes in the pan, then transfer to a wire rack to cool fully. You can either refrigerate in an airtight container for up to 5 days, or freeze in a freezer bag with as much air removed as possible for up to 6 months."
     ],
-    "date": "2024-11-17T04:10:00.000Z"
+    "date": "2024-11-17T04:10:00.000Z",
+    "path": "apple_banana_carrot_muffins"
   },
   {
     "id": 71,
@@ -2289,7 +2360,8 @@ const recipes = [
       "Divide batter evenly among the prepared muffin cups, filling each about 3/4 of the way.",
       "Bake at 400 degrees for 10 minutes, then reduce the heat to 350 degrees and bake for an additional 10 minutes, or until a toothpick inserted in the center comes out clean. Cool muffins in the pan for 5 minutes before transferring them to a wire rack."
     ],
-    "date": "2024-11-17T04:11:00.000Z"
+    "date": "2024-11-17T04:11:00.000Z",
+    "path": "morning_glory_muffins"
   },
   {
     "id": 72,
@@ -2331,7 +2403,8 @@ const recipes = [
       "Allow to sit in muffin tin for 5 minutes, then transfer to a cool rack.",
       "While the muffins cool, make the glaze by mixing together the melted butter and honey in a small bowl. Brush the glaze over the top of the warm muffins."
     ],
-    "date": "2024-11-17T04:12:00.000Z"
+    "date": "2024-11-17T04:12:00.000Z",
+    "path": "honey_bran_muffins"
   },
   {
     "id": 73,
@@ -2364,7 +2437,8 @@ const recipes = [
       "Add the flour, ground flax seed, salt, cinnamon, baking soda, and oats to the wet ingredients. Add the bran/water mixture and stir just until combined.",
       "Scoop the batter into the muffin tins, filling each cup almost all the way full. Bake for 25-30 minutes, or until the tops have risen and spring back when touched."
     ],
-    "date": "2024-11-18T04:13:00.000Z"
+    "date": "2024-11-18T04:13:00.000Z",
+    "path": "oat_bran_muffins"
   },
   {
     "id": 74,
@@ -2397,7 +2471,8 @@ const recipes = [
       "Whisk in the flour, cinnamon, baking powder, baking soda, ground ginger and salt until just combined, then gently fold in the zucchini and oats (do not overmix!).",
       "Portion the batter evenly between the 12 baking cups. Sprinkle the top of each muffin with a pinch of sugar, then bake for 16-18 minutes or until a toothpick inserted in the center of the muffin comes out clean. Transfer pan to a wire cooling rack for at least 5 minutes to cool."
     ],
-    "date": "2024-11-18T04:14:00.000Z"
+    "date": "2024-11-18T04:14:00.000Z",
+    "path": "zucchini_muffins"
   },
   {
     "id": 75,
@@ -2435,7 +2510,8 @@ const recipes = [
       "Bake muffins for about 22 minutes or just until a toothpick comes out clean.",
       "Mix together the ingredients for the glaze, then pour glaze over cooled muffins to serve."
     ],
-    "date": "2024-11-18T04:15:00.000Z"
+    "date": "2024-11-18T04:15:00.000Z",
+    "path": "lemon_poppy_seed_muffins"
   }
 ]
 

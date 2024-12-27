@@ -8,7 +8,7 @@ let recipeCategories = [];
 let counter = 0;
 
 recipes.forEach((recipe) => {
-  const { title, notes, time, servings, calories, categories: recipe_categories, ingredients: recipe_ingredients, ingredients_list, directions, date, image_path } = recipe;
+  const { title, notes, time, servings, calories, categories: recipe_categories, ingredients: recipe_ingredients, ingredients_list, directions, date, path } = recipe;
   const updatedRecipe = {
     id: counter,
     title,
@@ -19,7 +19,7 @@ recipes.forEach((recipe) => {
     ingredients: recipe_ingredients,
     directions,
     date,
-    image_path
+    path
   };
   
   updatedRecipes.push(updatedRecipe);

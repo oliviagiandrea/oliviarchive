@@ -29,13 +29,13 @@ export type Recipe = {
   ingredients: IngredientsType;
   directions: string[];
   date: Date;
-  image_path: string;
+  path: string;
 };
 
 export type LatestRecipe = {
   id: string;
   title: string;
-  image_path: string;
+  path: string;
 };
 
 // The database returns a number for amount, 
@@ -50,34 +50,34 @@ export type RecipesTable = {
   servings: number;
   calories: number;
   date: Date;
-  image_path: string;
+  path: string;
 };
 
 export type IngredientsTableType = {
   id: number;
   name: string;
-  image_path: string;
+  path: string;
   total_recipes: number;
 };
 
 export type FormattedIngredientsTable = {
   id: number;
   name: string;
-  image_path: string;
+  path: string;
   total_recipes: number;
 };
 
 export type CategoriesTableType = {
   id: number;
   name: string;
-  image_path: string;
+  path: string;
   total_recipes: number;
 };
 
 export type FormattedCategoriesTable = {
   id: number;
   name: string;
-  image_path: string;
+  path: string;
   total_recipes: number;
 };
 
@@ -101,5 +101,5 @@ export type RecipeForm = {
   ingredients: IngredientsType;
   directions: string[];
   date: Date;
-  image_path: string;
+  path: string;
 };

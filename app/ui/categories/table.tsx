@@ -31,13 +31,13 @@ export default async function CategoriesTable({
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
                             {/* <Image
-                              src={category.image_path}
+                              src={category.path}
                               className="rounded-full"
                               alt={`${category.name}'s profile picture`}
                               width={28}
                               height={28}
                             /> */}
-                            <p>{category.name}</p>
+                            <a href={`/dashboard/recipes?page=1&query=${category.name}`}>{category.name}</a>
                           </div>
                         </div>
                       </div>
@@ -76,13 +76,13 @@ export default async function CategoriesTable({
                       <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
                         <div className="flex items-center gap-3">
                           {/* <Image
-                            src={category.image_path}
+                            src={category.path}
                             className="rounded-full"
                             alt={`${category.name}'s picture`}
                             width={28}
                             height={28}
                           /> */}
-                          <p>{category.name}</p>
+                          <a href={`/dashboard/recipes?page=1&query=${category.name}`}>{category.name}</a>
                         </div>
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">

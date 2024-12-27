@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import {
-  FormattedIngredientsTable,
-} from '@/app/lib/definitions';
+import { FormattedIngredientsTable } from '@/app/lib/definitions';
 
 export default async function IngredientsTable({
   ingredients,
@@ -31,13 +29,17 @@ export default async function IngredientsTable({
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
                             {/* <Image
-                              src={ingredient.image_path}
+                              src={ingredient.path}
                               className="rounded-full"
                               alt={`${ingredient.name}'s profile picture`}
                               width={28}
                               height={28}
                             /> */}
-                            <p>{ingredient.name}</p>
+                            <a
+                              href={`/dashboard/recipes?page=1&query=${ingredient.name}`}
+                            >
+                              {ingredient.name}
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -76,13 +78,15 @@ export default async function IngredientsTable({
                       <td className="whitespace-nowrap bg-white py-5 pl-4 pr-3 text-sm text-black group-first-of-type:rounded-md group-last-of-type:rounded-md sm:pl-6">
                         <div className="flex items-center gap-3">
                           {/* <Image
-                            src={ingredient.image_path}
+                            src={ingredient.path}
                             className="rounded-full"
                             alt={`${ingredient.name}'s picture`}
                             width={28}
                             height={28}
                           /> */}
-                          <p>{ingredient.name}</p>
+                          <a href={`/dashboard/recipes?page=1&query=${ingredient.name}`}>
+                            {ingredient.name}
+                          </a>
                         </div>
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">

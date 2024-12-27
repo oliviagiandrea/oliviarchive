@@ -26,14 +26,14 @@ export default async function LatestRecipes() {
               >
                 <div className="flex items-center">
                   <Image
-                    src={recipe.image_path}
+                    src={`/recipes/${recipe.path}.jpg`}
                     alt={`${recipe.title}'s picture`}
                     className="mr-4 rounded-full"
                     width={32}
                     height={32}
                   />
                   <div className="min-w-0">
-                    <a className="truncate text-sm font-semibold md:text-base" href={`/dashboard/recipes/${recipe.id}`}>
+                    <a className="truncate text-sm font-semibold md:text-base" href={`/dashboard/recipes/${recipe.path}`}>
                       {recipe.title}
                     </a>
                     {/* <p className="hidden text-sm text-gray-500 sm:block">

@@ -14,7 +14,7 @@ export async function fetchLatestRecipes() {
   noStore();
   try {
     const recipes = await sql`
-      SELECT recipes.title, recipes.image_path, recipes.id
+      SELECT recipes.title, recipes.path, recipes.id
       FROM recipes
       ORDER BY recipes.date DESC
       LIMIT 5`;
@@ -68,7 +68,7 @@ export async function fetchCardData() {
   }
 }
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 15;
 export async function fetchFilteredRecipes(query: string, currentPage: number) {
   noStore();
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -122,6 +122,21 @@ export async function fetchRecipeById(id: string) {
   }
 }
 
+export async function fetchRecipeByPath(path: string) {
+  noStore();
+  try {
+    const data = await sql<RecipeForm>`
+      SELECT * FROM recipes
+      WHERE recipes.path = ${path};
+    `;
+
+    return data.rows[0];
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch recipe.');
+  }
+}
+
 export async function fetchIngredients() {
   try {
     const data = await sql<IngredientField>`
@@ -163,13 +178,13 @@ export async function fetchFilteredIngredients(query: string) {
       SELECT
         ingredients.id,
         ingredients.name,
-        ingredients.image_path,
+        ingredients.path,
         COUNT(recipe_ingredients.ingredient_id) AS total_recipes
       FROM ingredients
       LEFT JOIN recipe_ingredients ON ingredients.id = recipe_ingredients.ingredient_id
       WHERE
         ingredients.name ILIKE '%' || ${query} || '%'
-      GROUP BY ingredients.id, ingredients.name, ingredients.image_path
+      GROUP BY ingredients.id, ingredients.name, ingredients.path
       ORDER BY ingredients.name ASC;
 	  `;
 
@@ -187,13 +202,13 @@ export async function fetchFilteredCategories(query: string) {
 		  SELECT
         categories.id,
         categories.name,
-        categories.image_path,
+        categories.path,
         COUNT(recipe_categories.category_id) AS total_recipes
       FROM categories
       LEFT JOIN recipe_categories ON categories.id = recipe_categories.category_id
       WHERE
         categories.name ILIKE '%' || ${query} || '%'
-      GROUP BY categories.id, categories.name, categories.image_path
+      GROUP BY categories.id, categories.name, categories.path
       ORDER BY categories.name ASC;
 	  `;
 

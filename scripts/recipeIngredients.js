@@ -2133,5 +2133,4 @@ const recipeIngredients = [
   }
 ]
 
-
 module.exports = { recipeIngredients };

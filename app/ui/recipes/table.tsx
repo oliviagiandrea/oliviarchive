@@ -26,7 +26,7 @@ export default async function RecipesTable({
                   <div>
                     <div className="mb-2 flex items-center">
                       <Image
-                        src={recipe.image_path}
+                        src={`/recipes/${recipe.path}.jpg`}
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
@@ -76,13 +76,13 @@ export default async function RecipesTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
                       <Image
-                        src={recipe.image_path}
+                        src={`/recipes/${recipe.path}.jpg`}
                         className="rounded-full"
                         width={28}
                         height={28}
                         alt={`${recipe.title}'s picture`}
                       />
-                      <Link href={`/dashboard/recipes/${recipe.id}`}>{recipe.title}</Link>
+                      <Link href={`/dashboard/recipes/${recipe.path}`}>{recipe.title}</Link>
                     </div>
                   </td>
                   {/* <td className="whitespace-nowrap px-3 py-3">
