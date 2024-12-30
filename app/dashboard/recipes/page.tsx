@@ -16,14 +16,18 @@ export default async function Page({
   searchParams,
 }: {
   searchParams?: {
-    query?: string;
+    title?: string;
+    categories?: string;
+    ingredients?: string;
     page?: string;
   };
 }) {
-  const query = searchParams?.query || '';
+  const title = searchParams?.title || '';
+  const categories = searchParams?.categories || '';
+  const ingredients = searchParams?.ingredients || '';
   const currentPage = Number(searchParams?.page) || 1;
 
-  const totalPages = await fetchRecipesPages(query);
+  const totalPages = await fetchRecipesPages(title, categories, ingredients);
 
   return (
     <div className="w-full">
@@ -34,8 +38,8 @@ export default async function Page({
         <Search placeholder="Search recipes..." />
         <CreateRecipe />
       </div>
-      <Suspense key={query + currentPage} fallback={<RecipesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
+      <Suspense key={title + currentPage} fallback={<RecipesTableSkeleton />}>
+        <Table title={title} categories={categories} ingredients={ingredients} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
         <Pagination totalPages={totalPages} />

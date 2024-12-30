@@ -4,11 +4,11 @@ const {
   ratings,
   favorites,
 } = require('./placeholder-data.js');
-const { recipes } = require('./updatedRecipes.js');
+const { recipes } = require('./recipes.js');
 const { ingredients } = require('./ingredients.js');
 const { categories } = require('./categories.js');
-const { recipeIngredients } = require('./recipeIngredients.js');
-const { recipeCategories } = require('./recipeCategories.js');
+// const { recipeIngredients } = require('./recipeIngredients.js');
+// const { recipeCategories } = require('./recipeCategories.js');
 const bcrypt = require('bcrypt');
 
 async function dropTables(client) {
@@ -81,6 +81,8 @@ async function seedRecipes(client) {
         calories INT NOT NULL,
         ingredients JSONB NOT NULL,
         directions TEXT[] NOT NULL,
+        ingredients_list TEXT[] NOT NULL,
+        categories TEXT[] NOT NULL,
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         path TEXT
       );
@@ -92,8 +94,8 @@ async function seedRecipes(client) {
       recipes.map(
         async (recipe) => {
           const insertResult = await client.sql`
-            INSERT INTO recipes (id, title, notes, time, servings, calories, ingredients, directions, date, path)
-            VALUES (${recipe.id}, ${recipe.title}, ${recipe.notes}, ${recipe.time}, ${recipe.servings}, ${recipe.calories}, ${recipe.ingredients}, ${recipe.directions}, ${recipe.date}, ${recipe.path})
+            INSERT INTO recipes (id, title, notes, time, servings, calories, ingredients, directions, ingredients_list, categories, date, path)
+            VALUES (${recipe.id}, ${recipe.title}, ${recipe.notes}, ${recipe.time}, ${recipe.servings}, ${recipe.calories}, ${recipe.ingredients}, ${recipe.directions}, ${recipe.ingredients_list}, ${recipe.categories}, ${recipe.date}, ${recipe.path})
             ON CONFLICT (id) DO NOTHING;
           `;
         }
@@ -333,8 +335,8 @@ async function main() {
   await seedFavorites(client);
   await seedRatings(client);
 
-  await seedRecipeIngredients(client);
-  await seedRecipeCategories(client);
+  // await seedRecipeIngredients(client);
+  // await seedRecipeCategories(client);
 
   await client.end();
 }

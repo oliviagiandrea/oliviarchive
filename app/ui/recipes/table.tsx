@@ -4,13 +4,17 @@ import { UpdateRecipe, DeleteRecipe } from '@/app/ui/recipes/buttons';
 import { fetchFilteredRecipes } from '@/app/lib/data';
 
 export default async function RecipesTable({
-  query,
+  title,
+  categories,
+  ingredients,
   currentPage,
 }: {
-  query: string;
+  title: string;
+  categories: string;
+  ingredients: string;
   currentPage: number;
 }) {
-  const recipes = await fetchFilteredRecipes(query, currentPage);
+  const recipes = await fetchFilteredRecipes(title, categories, ingredients, currentPage);
 
   return (
     <div className="mt-6 flow-root">

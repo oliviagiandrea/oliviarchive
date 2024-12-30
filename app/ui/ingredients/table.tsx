@@ -36,7 +36,7 @@ export default async function IngredientsTable({
                               height={28}
                             /> */}
                             <a
-                              href={`/dashboard/recipes?page=1&query=${ingredient.name}`}
+                              href={`/dashboard/recipes?page=1&ingredients=${ingredient.name}`}
                             >
                               {ingredient.name}
                             </a>
@@ -84,7 +84,7 @@ export default async function IngredientsTable({
                             width={28}
                             height={28}
                           /> */}
-                          <a href={`/dashboard/recipes?page=1&query=${ingredient.name}`}>
+                          <a href={`/dashboard/recipes?page=1&ingredients=${ingredient.name}`}>
                             {ingredient.name}
                           </a>
                         </div>

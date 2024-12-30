@@ -37,7 +37,7 @@ export default async function CategoriesTable({
                               width={28}
                               height={28}
                             /> */}
-                            <a href={`/dashboard/recipes?page=1&query=${category.name}`}>{category.name}</a>
+                            <a href={`/dashboard/recipes?page=1&categories=${category.name}`}>{category.name}</a>
                           </div>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default async function CategoriesTable({
                             width={28}
                             height={28}
                           /> */}
-                          <a href={`/dashboard/recipes?page=1&query=${category.name}`}>{category.name}</a>
+                          <a href={`/dashboard/recipes?page=1&categories=${category.name}`}>{category.name}</a>
                         </div>
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">

@@ -30,8 +30,8 @@ const recipes = [
     "path": "tomato_soup",
     "categories": ["mains", "soups"],
     "ingredients_list": [
-      "tomatoes, crushed",
-      "tofu, silken",
+      "crushed tomatoes",
+      "silken tofu",
       "basil",
       "onion",
       "garlic"
@@ -118,10 +118,10 @@ const recipes = [
       "carrot",
       "celery",
       "turkey",
-      "tomatoes, diced",
+      "diced tomatoes",
       "white wine",
       "basil",
-      "tomatoes, paste",
+      "tomato paste",
       "pasta"
     ]
   },
@@ -167,13 +167,13 @@ const recipes = [
       "garlic",
       "carrot",
       "celery",
-      "tomatoes, paste",
+      "tomato paste",
       "mushrooms",
       "basil",
       "lentils",
       "chicken broth",
-      "tomatoes, crushed",
-      "vinegar, balsamic",
+      "crushed tomatoes",
+      "white vinegar",
       "pasta"
     ]
   },
@@ -210,11 +210,11 @@ const recipes = [
     "path": "thick_chocolate_chip_cookies",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
       "shortening",
-      "sugar, brown",
-      "sugar, granulated",
+      "brown sugar",
+      "granulated sugar",
       "egg",
       "chocolate",
       "white chocolate"
@@ -262,9 +262,9 @@ const recipes = [
     "categories": ["dessert", "quick breads", "fruit"],
     "ingredients_list": [
       "buttermilk",
-      "oats, quick",
-      "flour, all-purpose",
-      "sugar, brown",
+      "quick oats",
+      "all-purpose flour",
+      "brown sugar",
       "banana",
       "egg",
       "walnut",
@@ -340,9 +340,9 @@ const recipes = [
     "ingredients_list": [
       "carrot",
       "butter",
-      "sugar, brown",
+      "brown sugar",
       "honey",
-      "vinegar, balsamic",
+      "white vinegar",
       "garlic",
     ]
   },
@@ -380,8 +380,8 @@ const recipes = [
     "path": "lemon_bars",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "lemon",
       "egg",
@@ -429,7 +429,7 @@ const recipes = [
       "carrot",
       "celery",
       "garlic",
-      "flour, all-purpose",
+      "all-purpose flour",
       "chicken broth",
       "potato",
       "chicken",
@@ -468,7 +468,7 @@ const recipes = [
     "path": "tofu_tacos",
     "categories": ["mains", "quick", "single serve"],
     "ingredients_list": [
-      "tofu, extra firm",
+      "extra firm tofu",
       "salsa",
       "soy sauce",
       "tortilla",
@@ -506,9 +506,9 @@ const recipes = [
       "beef",
       "onion",
       "garlic",
-      "tomatoes, sauce",
-      "tomatoes, paste",
-      "tomatoes, diced"
+      "tomato sauce",
+      "tomato paste",
+      "diced tomatoes"
     ]
   },
   {
@@ -539,7 +539,7 @@ const recipes = [
     "categories": ["breakfast", "single serve"],
     "ingredients_list": [
       "egg",
-      "sugar, granulated",
+      "granulated sugar",
       "mirin",
       "soy sauce"
     ]
@@ -576,8 +576,8 @@ const recipes = [
     "path": "buttermilk_pancakes",
     "categories": ["breakfast"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "buttermilk",
       "egg"
     ]
@@ -682,9 +682,9 @@ const recipes = [
     "categories": ["dessert", "cakes", "fruit"],
     "ingredients_list": [
       "pineapple",
-      "flour, all-purpose",
+      "all-purpose flour",
       "cinnamon",
-      "sugar, brown",
+      "brown sugar",
       "shredded coconut",
       "banana",
       "egg"
@@ -736,13 +736,13 @@ const recipes = [
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
       "shortening",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
-      "flour, all-purpose",
+      "all-purpose flour",
       "milk",
-      "vinegar, white",
+      "white vinegar",
       "chocolate",
-      "sugar, powdered",
+      "powdered sugar",
       "marshmallow fluff"
     ]
   },
@@ -773,7 +773,7 @@ const recipes = [
     "ingredients_list": [
       "peanut butter",
       "honey",
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "shredded coconut",
       "chia seeds",
       "flax seed",
@@ -808,8 +808,8 @@ const recipes = [
     "path": "classic_biscuits",
     "categories": ["breakfast", "pastries", "bread"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "milk"
     ]
@@ -851,10 +851,10 @@ const recipes = [
     "path": "pineapple_carrot_cake",
     "categories": ["dessert", "quick breads", "fruit"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "cinnamon",
       "egg",
-      "sugar, granulated",
+      "granulated sugar",
       "walnut",
       "carrot",
       "pineapple"
@@ -889,8 +889,8 @@ const recipes = [
     "path": "bakeoff_biscuits",
     "categories": ["breakfast", "pastries", "bread"],
     "ingredients_list": [
-      "sugar, granulated",
-      "flour, all-purpose",
+      "granulated sugar",
+      "all-purpose flour",
       "butter",
       "buttermilk"
     ]
@@ -926,7 +926,7 @@ const recipes = [
     "ingredients_list": [
       "potato",
       "butter",
-      "sugar, powdered",
+      "powdered sugar",
       "shredded coconut",
       "chocolate"
     ]
@@ -961,7 +961,7 @@ const recipes = [
       "bread",
       "jam",
       "peanut butter",
-      "peanut butter, powdered",
+      "powdered peanut butter",
       "yogurt",
       "banana",
       "honey"
@@ -1041,10 +1041,10 @@ const recipes = [
     "path": "sausage_apple_kebabs",
     "categories": ["mains", "meat"],
     "ingredients_list": [
-      "sugar, brown",
+      "brown sugar",
       "cornstarch",
       "apple juice",
-      "vinegar, apple cider",
+      "apple cider vinegar",
       "sausage",
       "apple",
       "bell pepper"
@@ -1082,10 +1082,10 @@ const recipes = [
     "path": "thin_chocolate_chip_cookies",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
-      "sugar, granulated",
-      "sugar, brown",
+      "granulated sugar",
+      "brown sugar",
       "egg",
       "chocolate",
       "white chocolate"
@@ -1115,7 +1115,7 @@ const recipes = [
     "path": "pie_crust",
     "categories": ["dessert", "fruit"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
       "shortening"
     ]
@@ -1159,8 +1159,8 @@ const recipes = [
     "path": "lemon_pudding_cake",
     "categories": ["dessert", "cakes"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "milk",
       "yogurt",
       "lemon",
@@ -1208,15 +1208,15 @@ const recipes = [
     "path": "texas_sheet_cake",
     "categories": ["dessert", "cakes"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "cinnamon",
       "butter",
       "cocoa powder",
       "buttermilk",
       "egg",
       "milk",
-      "sugar, powdered",
+      "powdered sugar",
       "pecans"
     ]
   },
@@ -1299,21 +1299,21 @@ const recipes = [
     "path": "stones_scones",
     "categories": ["breakfast", "pastries", "fruit"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, brown",
+      "all-purpose flour",
+      "brown sugar",
       "butter",
       "half-and-half",
       "blueberries",
       "cinnamon",
       "raspberries",
       "white chocolate",
-      "sugar, granulated",
+      "granulated sugar",
       "poppy seeds",
       "lemon",
       "molasses",
       "ginger",
-      "flour, oat",
-      "oats, old-fashioned rolled",
+      "oat flour",
+      "old-fashioned rolled oats",
       "maple syrup",
       "pecans",
       "orange",
@@ -1363,13 +1363,13 @@ const recipes = [
     "categories": ["dessert", "cookies", "fruit"],
     "ingredients_list": [
       "cornflakes",
-      "flour, all-purpose",
+      "all-purpose flour",
       "cornstarch",
       "butter",
-      "sugar, brown",
-      "sugar, granulated",
+      "brown sugar",
+      "granulated sugar",
       "milk",
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "blueberries"
     ]
 
@@ -1405,11 +1405,11 @@ const recipes = [
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
       "butter",
-      "sugar, brown",
-      "flour, all-purpose",
-      "oats, old-fashioned rolled",
-      "oats, quick",
-      "flour, oat"
+      "brown sugar",
+      "all-purpose flour",
+      "old-fashioned rolled oats",
+      "quick oats",
+      "oat flour"
     ]
 
   },
@@ -1444,9 +1444,9 @@ const recipes = [
     "path": "lemon_cookies",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
       "lemon"
     ]
@@ -1482,9 +1482,9 @@ const recipes = [
     "categories": ["breakfast", "bread"],
     "ingredients_list": [
       "molasses",
-      "sugar, granulated",
+      "granulated sugar",
       "yeast",
-      "flour, all-purpose",
+      "all-purpose flour",
       "molasses"
     ]
 
@@ -1527,7 +1527,7 @@ const recipes = [
     "ingredients_list": [
       "onion",
       "bell pepper",
-      "tomatoes, crushed",
+      "crushed tomatoes",
       "garlic",
       "spinach",
       "egg",
@@ -1563,7 +1563,7 @@ const recipes = [
     "path": "oat_milk_yogurt",
     "categories": ["breakfast"],
     "ingredients_list": [
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "maple syrup",
       "lemon juice"
     ]
@@ -1606,10 +1606,10 @@ const recipes = [
     "ingredients_list": [
       "banana",
       "applesauce",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
-      "oats, old-fashioned rolled",
-      "peanut butter, powdered",
+      "old-fashioned rolled oats",
+      "powdered peanut butter",
       "cinnamon",
       "blueberries"
     ]
@@ -1656,10 +1656,10 @@ const recipes = [
       "milk",
       "peanut butter",
       "maple syrup",
-      "peanut butter, powdered",
+      "powdered peanut butter",
       "chia seeds",
       "cinnamon",
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "blueberries"
     ]
   },
@@ -1704,12 +1704,12 @@ const recipes = [
     "categories": ["dessert", "cakes"],
     "ingredients_list": [
       "butter",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
-      "flour, cake",
+      "cake flour",
       "buttermilk",
       "cocoa powder",
-      "sugar, powdered"
+      "powdered sugar"
     ]
   },
   {
@@ -1747,7 +1747,7 @@ const recipes = [
       "bell pepper",
       "garlic",
       "beans",
-      "tomatoes, diced",
+      "diced tomatoes",
       "sausage",
       "cheese"
     ]
@@ -1855,9 +1855,9 @@ const recipes = [
     "ingredients_list": [
       "chocolate",
       "butter",
-      "sugar, granulated",
+      "granulated sugar",
       "milk",
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "shredded coconut"
     ]
   },
@@ -1918,8 +1918,8 @@ const recipes = [
       "milk",
       "egg",
       "cornstarch",
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "almonds"
     ]
   },
@@ -1955,7 +1955,7 @@ const recipes = [
       "tomato",
       "corn",
       "beans",
-      "vinegar, white wine",
+      "white wine vinegar",
       "cilantro"
     ]
   },
@@ -1987,12 +1987,12 @@ const recipes = [
     "path": "peanut_butter_no_bakes",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "sugar, granulated",
+      "granulated sugar",
       "cocoa powder",
       "milk",
       "butter",
       "peanut butter",
-      "oats, quick"
+      "quick oats"
     ]
   },
   {
@@ -2025,9 +2025,9 @@ const recipes = [
     "path": "sugar_cookies",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
-      "sugar, granulated",
+      "granulated sugar",
       "egg"
     ]
   },
@@ -2074,13 +2074,13 @@ const recipes = [
     "ingredients_list": [
       "tea",
       "buttermilk",
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "egg",
       "blueberries",
       "milk",
-      "sugar, powdered"
+      "powdered sugar"
     ]
   },
   {
@@ -2117,10 +2117,10 @@ const recipes = [
     "categories": ["breakfast", "bread"],
     "ingredients_list": [
       "yeast",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
       "butter",
-      "flour, all-purpose",
+      "all-purpose flour",
       "cornmeal"
     ]
   },
@@ -2153,7 +2153,7 @@ const recipes = [
     "ingredients_list": [
       "butter",
       "cream cheese",
-      "sugar, powdered",
+      "powdered sugar",
       "chocolate",
       "milk"
     ]
@@ -2195,7 +2195,7 @@ const recipes = [
     "ingredients_list": [
       "yeast",
       "honey",
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
       "garlic"
     ]
@@ -2277,9 +2277,9 @@ const recipes = [
     "path": "stones_muffins",
     "categories": ["breakfast", "muffins", "fruit"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "egg",
-      "sugar, granulated",
+      "granulated sugar",
       "yogurt",
       "blueberries",
       "raspberries"
@@ -2320,9 +2320,9 @@ const recipes = [
     "categories": ["dessert", "fruit"],
     "ingredients_list": [
       "apple",
-      "sugar, granulated",
-      "sugar, brown",
-      "flour, all-purpose",
+      "granulated sugar",
+      "brown sugar",
+      "all-purpose flour",
       "lemon juice",
       "butter",
       "egg",
@@ -2362,7 +2362,7 @@ const recipes = [
     "path": "divorce_carrot_cake",
     "categories": ["dessert", "cakes"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "cinnamon",
       "honey",
       "egg",
@@ -2421,10 +2421,10 @@ const recipes = [
     "path": "garlic_butter_dinner_rolls",
     "categories": ["bread"],
     "ingredients_list": [
-      "flour, bread",
+      "bread flour",
       "milk",
       "yeast",
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
       "butter",
       "garlic"
@@ -2464,7 +2464,7 @@ const recipes = [
       "banana",
       "egg",
       "cinnamon",
-      "flour, whole wheat",
+      "whole wheat flour",
       "peanut butter",
       "yogurt"
     ]
@@ -2496,8 +2496,8 @@ const recipes = [
     "path": "cottage_cheese_bagels",
     "categories": ["breakfast", "bread"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "flour, whole wheat",
+      "all-purpose flour",
+      "whole wheat flour",
       "cottage cheese"
     ]
   },
@@ -2531,7 +2531,7 @@ const recipes = [
     "path": "flatbread",
     "categories": ["bread"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "honey"
     ]
   },
@@ -2567,9 +2567,9 @@ const recipes = [
     "categories": ["breakfast"],
     "ingredients_list": [
       "egg",
-      "sugar, granulated",
+      "granulated sugar",
       "milk",
-      "flour, all-purpose",
+      "all-purpose flour",
       "butter",
       "maple syrup"
     ]
@@ -2607,10 +2607,10 @@ const recipes = [
     "path": "blueberry_scones",
     "categories": ["breakfast", "pastries", "fruit"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "flour, whole wheat",
+      "all-purpose flour",
+      "whole wheat flour",
       "lemon",
-      "sugar, brown",
+      "brown sugar",
       "butter",
       "blueberries",
       "milk",
@@ -2649,9 +2649,9 @@ const recipes = [
     "path": "raspberry_scones",
     "categories": ["breakfast", "pastries", "fruit"],
     "ingredients_list": [
-      "flour, whole wheat",
-      "flour, all-purpose",
-      "sugar, granulated",
+      "whole wheat flour",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "raspberries",
       "ricotta",
@@ -2691,8 +2691,8 @@ const recipes = [
     "path": "cream_scones_1",
     "categories": ["breakfast", "pastries"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "heavy cream",
       "egg"
@@ -2740,8 +2740,8 @@ const recipes = [
     "path": "cream_scones_2",
     "categories": ["breakfast", "pastries"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "butter",
       "egg",
       "half-and-half",
@@ -2792,8 +2792,8 @@ const recipes = [
     "path": "chocolate_chip_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
+      "all-purpose flour",
+      "granulated sugar",
       "chocolate",
       "egg",
       "sour cream",
@@ -2837,9 +2837,9 @@ const recipes = [
     "path": "pumpkin_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "sugar, granulated",
-      "sugar, brown",
+      "all-purpose flour",
+      "granulated sugar",
+      "brown sugar",
       "cinnamon",
       "egg",
       "pumpkin purée"
@@ -2878,11 +2878,11 @@ const recipes = [
     "path": "oatmeal_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "oats, old-fashioned rolled",
+      "old-fashioned rolled oats",
       "buttermilk",
-      "flour, all-purpose",
+      "all-purpose flour",
       "cinnamon",
-      "sugar, brown",
+      "brown sugar",
       "egg",
       "butter"
     ]
@@ -2925,10 +2925,10 @@ const recipes = [
     "path": "blueberry_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, all-purpose",
-      "flour, almond",
+      "all-purpose flour",
+      "almond flour",
       "milk",
-      "sugar, granulated",
+      "granulated sugar",
       "butter",
       "egg",
       "blueberries"
@@ -2971,8 +2971,8 @@ const recipes = [
     "path": "banana_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, whole wheat",
-      "oats, old-fashioned rolled",
+      "whole wheat flour",
+      "old-fashioned rolled oats",
       "cinnamon",
       "banana",
       "egg",
@@ -3023,8 +3023,8 @@ const recipes = [
       "milk",
       "butter",
       "egg",
-      "flour, whole wheat",
-      "oats, old-fashioned rolled",
+      "whole wheat flour",
+      "old-fashioned rolled oats",
       "cinnamon"
     ]
   },
@@ -3067,9 +3067,9 @@ const recipes = [
     "path": "morning_glory_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, whole wheat",
-      "flour, all-purpose",
-      "sugar, brown",
+      "whole wheat flour",
+      "all-purpose flour",
+      "brown sugar",
       "cinnamon",
       "applesauce",
       "oil",
@@ -3125,13 +3125,13 @@ const recipes = [
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
       "oil",
-      "sugar, brown",
+      "brown sugar",
       "egg",
       "molasses",
       "buttermilk",
       "wheat bran",
-      "flour, whole wheat",
-      "flour, all-purpose",
+      "whole wheat flour",
+      "all-purpose flour",
       "cinnamon",
       "raisins",
       "honey",
@@ -3176,13 +3176,13 @@ const recipes = [
       "wheat bran",
       "egg",
       "oil",
-      "sugar, brown",
+      "brown sugar",
       "molasses",
       "buttermilk",
-      "flour, all-purpose",
+      "all-purpose flour",
       "flax seed",
       "cinnamon",
-      "oats, old-fashioned rolled"
+      "old-fashioned rolled oats"
     ]
   },
   {
@@ -3220,15 +3220,15 @@ const recipes = [
     "path": "zucchini_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "flour, all-purpose",
+      "all-purpose flour",
       "cinnamon",
       "egg",
       "maple syrup",
       "milk",
       "oil",
       "zucchini",
-      "oats, old-fashioned rolled",
-      "sugar, granulated"
+      "old-fashioned rolled oats",
+      "granulated sugar"
     ]
   },
   {
@@ -3271,15 +3271,15 @@ const recipes = [
     "path": "lemon_poppy_seed_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
-      "sugar, granulated",
+      "granulated sugar",
       "egg",
       "oil",
       "milk",
       "poppy seeds",
       "lemon",
-      "flour, all-purpose",
+      "all-purpose flour",
       "sour cream",
-      "sugar, powdered"
+      "powdered sugar"
     ]
   },
   // {

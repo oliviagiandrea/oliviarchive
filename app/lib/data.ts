@@ -33,7 +33,7 @@ export async function fetchCardData() {
     const mostCommonIngredientPromise = sql`
       SELECT name
       FROM ingredients
-      JOIN recipe_ingredients ON recipe_ingredients.ingredient_id = ingredients.id
+      LEFT JOIN recipes ON ingredients.name = ANY(recipes.ingredients_list)
       GROUP BY name
       ORDER BY COUNT(*) DESC
       LIMIT 1
@@ -41,7 +41,7 @@ export async function fetchCardData() {
     const mostCommonCategoryPromise = sql`
       SELECT name
       FROM categories
-      JOIN recipe_categories ON recipe_categories.category_id = categories.id
+      LEFT JOIN recipes ON categories.name = ANY(recipes.categories)
       GROUP BY name
       ORDER BY COUNT(*) DESC
       LIMIT 1
@@ -69,19 +69,94 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 15;
-export async function fetchFilteredRecipes(query: string, currentPage: number) {
+export async function fetchFilteredRecipes(
+  title: string,
+  categories: string,
+  ingredients: string,
+  currentPage: number,
+) {
   noStore();
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-
   try {
-    const recipes = await sql<RecipesTable>`
+    let recipes;
+
+    if (title && categories && ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+          AND recipes.categories && string_to_array(${categories}, ',')::text[]
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else if (!title && categories && ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.categories && string_to_array(${categories}, ',')::text[]
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else if (title && !categories && ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else if (title && categories && !ingredients) {
+      recipes = await sql<RecipesTable>`
       SELECT DISTINCT *
       FROM recipes
       WHERE
-        recipes.title ILIKE ${`%${query}%`}
+        recipes.title ILIKE ${`%${title}%`}
+        AND recipes.categories && string_to_array(${categories}, ',')::text[]
       ORDER BY recipes.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
+    } else if (!title && !categories && ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else if (!title && categories && !ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.categories && string_to_array(${categories}, ',')::text[]
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else if (title && !categories && !ingredients) {
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    } else {
+      // !title && !categories && !ingredients
+      recipes = await sql<RecipesTable>`
+        SELECT DISTINCT *
+        FROM recipes
+        ORDER BY recipes.date DESC
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      `;
+    }
 
     return recipes.rows;
   } catch (error) {
@@ -90,14 +165,73 @@ export async function fetchFilteredRecipes(query: string, currentPage: number) {
   }
 }
 
-export async function fetchRecipesPages(query: string) {
+export async function fetchRecipesPages(
+  title: string,
+  categories: string,
+  ingredients: string,
+) {
   noStore();
   try {
-    const count = await sql`SELECT COUNT(*)
-    FROM recipes
-    WHERE
-      recipes.title ILIKE ${`%${query}%`}
-  `;
+    let count;
+
+    if (title && categories && ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+          AND recipes.categories && string_to_array(${categories}, ',')::text[]
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        `;
+    } else if (!title && categories && ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.categories && string_to_array(${categories}, ',')::text[]
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        `;
+    } else if (title && !categories && ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        `;
+    } else if (title && categories && !ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+          AND recipes.categories && string_to_array(${categories}, ',')::text[]
+        `;
+    } else if (!title && !categories && ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+        `;
+    } else if (!title && categories && !ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.categories && string_to_array(${categories}, ',')::text[]
+        `;
+    } else if (title && !categories && !ingredients) {
+      count = await sql`
+        SELECT COUNT(*)
+        FROM recipes
+        WHERE
+          recipes.title ILIKE ${`%${title}%`}
+        `;
+    } else {
+      // !title && !categories && !ingredients
+      count = await sql`SELECT COUNT(*) FROM recipes`;
+    }
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
     return totalPages;
@@ -171,22 +305,21 @@ export async function fetchCategories() {
   }
 }
 
-export async function fetchFilteredIngredients(query: string) {
+export async function fetchFilteredIngredients(title: string) {
   noStore();
   try {
     const data = await sql<IngredientsTableType>`
       SELECT
-        ingredients.id,
         ingredients.name,
         ingredients.path,
-        COUNT(recipe_ingredients.ingredient_id) AS total_recipes
+        COUNT(*) AS total_recipes
       FROM ingredients
-      LEFT JOIN recipe_ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+      LEFT JOIN recipes ON ingredients.name = ANY(recipes.ingredients_list) 
       WHERE
-        ingredients.name ILIKE '%' || ${query} || '%'
-      GROUP BY ingredients.id, ingredients.name, ingredients.path
+        ingredients.name ILIKE '%' || ${title} || '%'
+      GROUP BY ingredients.name, ingredients.path
       ORDER BY ingredients.name ASC;
-	  `;
+    `;
 
     return data.rows;
   } catch (err) {
@@ -195,20 +328,19 @@ export async function fetchFilteredIngredients(query: string) {
   }
 }
 
-export async function fetchFilteredCategories(query: string) {
+export async function fetchFilteredCategories(title: string) {
   noStore();
   try {
     const data = await sql<CategoriesTableType>`
 		  SELECT
-        categories.id,
         categories.name,
         categories.path,
-        COUNT(recipe_categories.category_id) AS total_recipes
+        COUNT(*) AS total_recipes
       FROM categories
-      LEFT JOIN recipe_categories ON categories.id = recipe_categories.category_id
+      LEFT JOIN recipes ON categories.name = ANY(recipes.categories)
       WHERE
-        categories.name ILIKE '%' || ${query} || '%'
-      GROUP BY categories.id, categories.name, categories.path
+        categories.name ILIKE '%' || ${title} || '%'
+      GROUP BY categories.name, categories.path
       ORDER BY categories.name ASC;
 	  `;
 

@@ -10,13 +10,13 @@ export default async function Page({
   searchParams,
 }: {
   searchParams?: {
-    query?: string;
+    title?: string;
     page?: string;
   };
 }) {
-  const query = searchParams?.query || '';
+  const title = searchParams?.title || '';
 
-  const categories = await fetchFilteredCategories(query);
+  const categories = await fetchFilteredCategories(title);
 
   return (
     <main>
