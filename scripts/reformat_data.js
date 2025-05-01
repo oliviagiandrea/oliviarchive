@@ -1,6 +1,18 @@
+const fs = require('fs');
 const { categories } = require('./categories.js');
 const { recipes } = require('./recipes.js');
 const { ingredients } = require('./ingredients.js');
+
+// let updatedIngredients = [];
+// let counter = 0;
+
+// ingredients.forEach((ingredient) => {
+//   const { name } = ingredient;
+//   updatedIngredients.push({ id: counter, name });
+//   counter = counter + 1;
+// })
+
+// fs.writeFileSync('app/lib/updatedIngredients.json', JSON.stringify(updatedIngredients, null, 2));
 
 let updatedRecipes = [];
 let recipeIngredients = [];
@@ -19,25 +31,26 @@ recipes.forEach((recipe) => {
     ingredients: recipe_ingredients,
     directions,
     date,
-    path
+    path,
+    categories: [],
+    ingredients_list: []
   };
-  
-  updatedRecipes.push(updatedRecipe);
-
-  ingredients_list.forEach(ingredient => {
-    const foundIngredient = ingredients.find(ing => ing.name === ingredient);
-    recipeIngredients.push({recipe_id: counter, ingredient_id: foundIngredient.id});
-  });
 
   recipe_categories.forEach(category => {
     const foundCategory = categories.find(cat => cat.name === category);
-    recipeCategories.push({recipe_id: counter, category_id: foundCategory.id});
+    recipeCategories.push({ recipe_id: counter, category_id: foundCategory.id });
+    updatedRecipe.categories.push(foundCategory.id);
   });
 
+  ingredients_list.forEach(ingredient => {
+    const foundIngredient = ingredients.find(ing => ing.name === ingredient);
+    recipeIngredients.push({ recipe_id: counter, ingredient_id: foundIngredient.id });
+    updatedRecipe.ingredients_list.push(foundIngredient.id);
+  });
+
+  updatedRecipes.push(updatedRecipe);
   counter = counter + 1;
 });
-
-const fs = require('fs');
 
 fs.writeFileSync('app/lib/updatedRecipes.json', JSON.stringify(updatedRecipes, null, 2));
 fs.writeFileSync('app/lib/recipeIngredients.json', JSON.stringify(recipeIngredients, null, 2));

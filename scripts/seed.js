@@ -4,11 +4,11 @@ const {
   ratings,
   favorites,
 } = require('./placeholder-data.js');
-const { recipes } = require('./recipes.js');
+const { recipes } = require('./updatedRecipes.js');
 const { ingredients } = require('./ingredients.js');
 const { categories } = require('./categories.js');
-// const { recipeIngredients } = require('./recipeIngredients.js');
-// const { recipeCategories } = require('./recipeCategories.js');
+const { recipeIngredients } = require('./recipeIngredients.js');
+const { recipeCategories } = require('./recipeCategories.js');
 const bcrypt = require('bcrypt');
 
 async function dropTables(client) {
@@ -16,8 +16,6 @@ async function dropTables(client) {
     const dropTables = await client.sql`
       DROP TABLE IF EXISTS ingredients CASCADE;
       DROP TABLE IF EXISTS categories CASCADE;
-      DROP TABLE IF EXISTS favorites;
-      DROP TABLE IF EXISTS ratings;
       DROP TABLE IF EXISTS users;
       DROP TABLE IF EXISTS recipes CASCADE;
       DROP TABLE IF EXISTS recipe_ingredients;
@@ -182,80 +180,6 @@ async function seedCategories(client) {
   }
 }
 
-async function seedFavorites(client) {
-  try {
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS favorites (
-        recipe_id INT NOT NULL,
-        user_id INT NOT NULL,
-        PRIMARY KEY (recipe_id, user_id),
-        FOREIGN KEY (recipe_id) REFERENCES recipes(id),
-        FOREIGN KEY (user_id) REFERENCES users(id)
-      );
-    `;
-
-    console.log(`Created "favorites" table`);
-
-    const insertedFavorites = await Promise.all(
-      favorites.map(
-        (favorite) => client.sql`
-          INSERT INTO favorites (recipe_id, user_id)
-          VALUES (${favorite.recipe_id}, ${favorite.user_id})
-          ON CONFLICT (recipe_id, user_id) DO NOTHING;
-        `,
-      ),
-    );
-
-    console.log(`Seeded ${insertedFavorites.length} favorites`);
-
-    return {
-      createTable,
-      favorites: insertedFavorites,
-    };
-  } catch (error) {
-    console.error('Error seeding favorites:', error);
-    throw error;
-  }
-}
-
-async function seedRatings(client) {
-  try {
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS ratings (
-        recipe_id INT NOT NULL,
-        user_id INT NOT NULL,
-        rating INT NOT NULL,
-        PRIMARY KEY (recipe_id, user_id),
-        FOREIGN KEY (recipe_id) REFERENCES recipes(id),
-        FOREIGN KEY (user_id) REFERENCES users(id)
-      );
-    `;
-
-    console.log(`Created "ratings" table`);
-
-    const insertedRatings = await Promise.all(
-      ratings.map(
-        (rating) => client.sql`
-          INSERT INTO ratings (recipe_id, user_id, rating)
-          VALUES (${rating.recipe_id}, ${rating.user_id}, ${rating.rating})
-          ON CONFLICT (recipe_id, user_id) DO UPDATE
-          SET rating = EXCLUDED.rating;
-        `
-      )
-    );
-
-    console.log(`Seeded ${insertedRatings.length} ratings`);
-
-    return {
-      createTable,
-      ratings: insertedRatings,
-    };
-  } catch (error) {
-    console.error('Error seeding ratings:', error);
-    throw error;
-  }
-}
-
 async function seedRecipeIngredients(client) {
   try {
     const createTable = await client.sql`
@@ -332,11 +256,8 @@ async function main() {
   await seedCategories(client);
   await seedIngredients(client);
   await seedRecipes(client);
-  await seedFavorites(client);
-  await seedRatings(client);
-
-  // await seedRecipeIngredients(client);
-  // await seedRecipeCategories(client);
+  await seedRecipeIngredients(client);
+  await seedRecipeCategories(client);
 
   await client.end();
 }

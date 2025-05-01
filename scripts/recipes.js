@@ -28,7 +28,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "tomato_soup",
-    "categories": ["mains", "soups"],
+    "categories": ["main", "soup"],
     "ingredients_list": [
       "crushed tomatoes",
       "silken tofu",
@@ -67,17 +67,17 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "strozzapreti",
-    "categories": ["mains", "meat", "pasta"],
+    "categories": ["main", "meat", "pasta"],
     "ingredients_list": [
       "pasta",
       "prosciutto",
       "shallot",
-      "beans",
+      "edamame",
       "peas",
       "white wine",
       "chicken broth",
       "ricotta",
-      "parmesan"
+      "cheese"
     ]
   },
   {
@@ -111,7 +111,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "spaghetti_bolognese",
-    "categories": ["mains", "meat", "pasta"],
+    "categories": ["main", "meat", "pasta"],
     "ingredients_list": [
       "onion",
       "garlic",
@@ -126,93 +126,48 @@ const recipes = [
     ]
   },
   {
-    "id": 4,
-    "title": "Rustic Vegetarian Spaghetti Bolognese",
-    "notes": "",
-    "time": 75,
-    "servings": 4,
-    "calories": 450,
-    "ingredients": {
-      "Ingredients": [
-        "1 tbsp olive oil",
-        "1 small onion, chopped",
-        "3 cloves garlic, minced",
-        "3 carrots, chopped",
-        "2 celery stalks, chopped",
-        "2 tbsp tomato paste",
-        "8 oz mushrooms, diced",
-        "1/2 tsp crushed red pepper",
-        "1 tsp dried basil",
-        "1 tsp dried thyme",
-        "1 tsp salt",
-        "1 cup dried lentils (green or brown), rinsed",
-        "4 cups vegetable stock",
-        "1 (28 oz) can crushed tomatoes",
-        "2 bay leaves",
-        "3 tbsp balsamic vinegar",
-        "1 lb pasta (spaghetti or rigatoni)"
-      ]
-    },
-    "directions": [
-      "Heat the oil in a large pot over medium heat. Cook onion, garlic, carrots, and celery for 3 minutes, stirring often.",
-      "Add in tomato paste, mushrooms, crushed red pepper, basil, thyme, and salt. Cook for 5 minutes, stirring occasionally.",
-      "Add rinsed lentils, vegetable stock, tomato puree, and bay leaves. Give it a good stir, then let simmer on low heat, partially covered, for 30 minutes or until the sauce thickens and the lentils are cooked.",
-      "Cook pasta according to package directions so it's done at the same time as the sauce. Drain, then scoop pasta into bowls and ladle sauce over. Top with grated parmesan to serve."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "vegetarian_spaghetti_bolognese",
-    "categories": ["mains", "pasta"],
-    "ingredients_list": [
-      "onion",
-      "garlic",
-      "carrot",
-      "celery",
-      "tomato paste",
-      "mushrooms",
-      "basil",
-      "lentils",
-      "chicken broth",
-      "crushed tomatoes",
-      "white vinegar",
-      "pasta"
-    ]
-  },
-  {
     "id": 5,
-    "title": "Mike's Chocolate Chip Cookies",
+    "title": "Thick Chocolate Chip Cookies",
     "notes": "Thicker, fluffy chocolate cookies with a crisp edge.",
     "time": 45,
-    "servings": 24,
+    "servings": 12,
     "calories": 180,
     "ingredients": {
       "Ingredients": [
-        "1 1/4 cup all-purpose flour",
-        "1/2 tsp baking soda",
-        "1/4 tsp salt",
-        "1/4 cup unsalted butter, softened",
-        "1/4 cup Crisco",
-        "1/2 cup light brown sugar, packed",
-        "1/4 cup granulated sugar",
-        "1 egg",
-        "3/4 tsp vanilla extract",
-        "1/2 cup milk chocolate chips",
-        "1/2 cup white chocolate chips"
+        "1 cup minus 1 tablespoon (4 1/4 oz) cake flour",
+        "1/2 cup + 1/3 cup (4 1/2 oz) bread flour",
+        "1/2 + 1/8 tsp baking soda",
+        "3/4 tsp baking powder",
+        "3/4 tsp coarse sea salt",
+        "10 tablespoons (1 1/4 sticks) unsalted butter, softened",
+        "1/2 cup + 2 tbsp (5 oz) light brown sugar",
+        "1/2 cup + 1 tbsp (4 oz) granulated sugar",
+        "1 large egg",
+        "1 tsp vanilla extract",
+        "1/3 lb bittersweet chocolate chips",
+        "1/4 lb white chocolate chips"
       ]
     },
     "directions": [
-      "Preheat the oven to 375°F.",
-      "In a medium bowl, whisk together the flour, baking soda, and salt; set aside.",
-      "Using an electric mixer, beat the butter, Crisco, and sugars on medium until fluffy. Add the egg and vanilla and beat well.",
-      "Gradually add the flour mixture, mixing on low speed until combined, then the chocolate chips.",
-      "Drop by teaspoon scoop onto baking sheets. Bake for 8-10 minutes or until golden. Let cool on the baking sheet for 3 minutes to get crispy on just the outside, then let cool completely on a wire rack."
+      "In a medium bowl, sift together flours, baking soda, baking powder, and salt; set aside.",
+      "In the bowl of a stand mixer, cream together butter and sugar until light and fluffy.",
+      "Add eggs, one at a time, mixing well after each addition.",
+      "Mix in vanilla.",
+      "Reduce speed to low, add flour mixture, and mix until just combined.",
+      "Gently fold in chocolate chips.",
+      "Press plastic wrap to dough and refrigerate for at least 24 hours/at most 72 hours.",
+      "When ready to bake, preheat oven to 350°F. Line a baking sheet with parchment paper; set aside.",
+      "Scoop 3 1/2 oz mounds of dough onto baking sheet, 6 at a time. Sprinkle lightly with flaky sea salt.",
+      "Bake for 18-20 minutes or until the edges are golden but the middle is still soft.",
+      "Let cool on the baking sheet for 10 minutes to get crispy on just the outside, then let cool completely on a wire rack."
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "thick_chocolate_chip_cookies",
     "categories": ["dessert", "cookies"],
     "ingredients_list": [
-      "all-purpose flour",
+      "cake flour",
+      "bread flour",
       "butter",
-      "shortening",
       "brown sugar",
       "granulated sugar",
       "egg",
@@ -224,21 +179,21 @@ const recipes = [
     "id": 6,
     "title": "Walnut Streusel Banana Bread",
     "time": 90,
-    "servings": 12,
+    "servings": 6,
     "calories": 200,
     "ingredients": {
       "Banana Bread": [
-        "3/4 cup buttermilk",
-        "1/2 cup quick oats",
-        "1 1/2 cups all-purpose flour",
-        "1 tsp baking powder",
-        "1/4 tsp baking soda",
-        "1/2 tsp salt",
-        "3/4 cup packed light brown sugar",
-        "1/4 cup vegetable oil",
-        "1 1/3 cup mashed ripe bananas (about 3 medium)",
-        "1 1/2 tsp vanilla extract",
-        "2 eggs, lightly beaten"
+        "1/3 cup buttermilk",
+        "1/4 cup quick oats",
+        "3/4 cups all-purpose flour",
+        "1/2 tsp baking powder",
+        "1/8 tsp baking soda",
+        "1/4 tsp salt",
+        "1/3 cup packed light brown sugar",
+        "2 Tablespoons vegetable oil",
+        "2 small bananas, mashed (2/3 cup)",
+        "1 tsp vanilla extract",
+        "1 egg"
       ],
       "Walnut Streusel": [
         "3 tbsp packed light brown sugar",
@@ -251,7 +206,7 @@ const recipes = [
       ]
     },
     "directions": [
-      "Preheat oven to 350°F and grease a 9 x 13 inch baking pan or a 9 x 5 inch loaf pan; set aside.",
+      "Preheat oven to 350°F and grease an 8x8 inch square pan; set aside.",
       "In a large bowl, combine buttermilk and oats; let soak for 10 minutes.",
       "In the meantime, in a medium bowl, combine the flour, baking powder, baking soda, and salt. In a separate small bowl, combine all streusel ingredients.",
       "Once the oats have soaked, add the brown sugar, oil, bananas, vanilla, and eggs (in the largest bowl). Mix briefly, then stir in the dry ingredients (medium bowl) until just combined. Pour into your greased pan and evenly top with streusel (small bowl).",
@@ -259,7 +214,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.257Z",
     "path": "banana_bread_walnut_streusel",
-    "categories": ["dessert", "quick breads", "fruit"],
+    "categories": ["dessert", "quick bread", "fruit"],
     "ingredients_list": [
       "buttermilk",
       "quick oats",
@@ -267,7 +222,7 @@ const recipes = [
       "brown sugar",
       "banana",
       "egg",
-      "walnut",
+      "walnuts",
       "cinnamon",
     ]
   },
@@ -298,26 +253,25 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "lasagna",
-    "categories": ["mains", "meat", "pasta"],
+    "categories": ["main", "meat", "pasta"],
     "ingredients_list": [
       "pasta",
       "ricotta",
-      "mozzarella",
-      "parmesan",
+      "cheese",
       "egg",
-      "sauce, pasta"
+      "pasta sauce"
     ]
   },
   {
     "id": 8,
-    "title": "Herbed Honey-Roasted Carrots",
+    "title": "Honey-Roasted Carrots",
     "notes": "",
     "time": 30,
     "servings": 6,
     "calories": 150,
     "ingredients": {
       "Ingredients": [
-        "1 lb carrots, peeled + cut into 3-inch segments",
+        "1/2 lb carrots, peeled + cut into 3-inch segments",
         "1 tbsp olive oil",
         "Salt + pepper",
         "2 tbsp butter",
@@ -342,50 +296,8 @@ const recipes = [
       "butter",
       "brown sugar",
       "honey",
-      "white vinegar",
+      "balsamic vinegar",
       "garlic",
-    ]
-  },
-  {
-    "id": 9,
-    "title": "Lemon Bars",
-    "time": 45,
-    "servings": 16,
-    "calories": 200,
-    "ingredients": {
-      "Crust": [
-        "1 cup + 2 tbsp all-purpose flour",
-        "1/4 tsp salt",
-        "1/4 cup granulated sugar",
-        "1/2 cup melted butter"
-      ],
-      "Filling": [
-        "2 lemons, zested and juiced",
-        "1 tsp vanilla extract",
-        "5 eggs",
-        "1/4 cup maple syrup",
-        "1/4 cup granulated sugar",
-        "2 tbsp all-purpose flour"
-      ]
-    },
-    "directions": [
-      "Preheat the oven to 350 degrees. Line a 9x9 inch baking pan with parchment paper; set aside.",
-      "Mix the flour, salt, and granulated sugar. Mix in the melted butter.",
-      "Press the crust into the prepared pan and bake for 15 minutes.",
-      "While the crust bakes, whisk the lemon zest and juice, vanilla, eggs, maple syrup, sugar, and flour until completely combined.",
-      "Once the crust is done, immediately pour on the lemon filling and bake for another 19-24 minutes.",
-      "Let cool completely, cut into 16 bars, and enjoy!"
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "lemon_bars",
-    "categories": ["dessert", "cookies"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "granulated sugar",
-      "butter",
-      "lemon",
-      "egg",
-      "maple syrup"
     ]
   },
   {
@@ -423,7 +335,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "chicken_noodle_soup",
-    "categories": ["mains", "meat", "soups"],
+    "categories": ["main", "meat", "soup"],
     "ingredients_list": [
       "onion",
       "carrot",
@@ -456,7 +368,7 @@ const recipes = [
         "1 tsp soy sauce",
         "2 small tortillas",
         "1/4 cup mexican cheese",
-        "1 cup shredded romaine lettuce"
+        "1/2 cup shredded romaine lettuce"
       ]
     },
     "directions": [
@@ -466,7 +378,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "tofu_tacos",
-    "categories": ["mains", "quick", "single serve"],
+    "categories": ["main", "quick", "single serve"],
     "ingredients_list": [
       "extra firm tofu",
       "salsa",
@@ -474,41 +386,6 @@ const recipes = [
       "tortilla",
       "cheese",
       "lettuce"
-    ]
-  },
-  {
-    "id": 12,
-    "title": "Nonna's Spaghetti Sauce",
-    "notes": "",
-    "time": 120,
-    "servings": 8,
-    "calories": 200,
-    "ingredients": {
-      "Ingredients": [
-        "1 lb ground beef, 90% lean",
-        "2 onions, minced",
-        "1 tbsp minced garlic",
-        "1 tbsp Italian seasoning",
-        "2 (15 oz) cans tomato sauce",
-        "2 (12 oz) cans tomato paste",
-        "2 (28 oz) cans diced tomatoes"
-      ]
-    },
-    "directions": [
-      "Heat olive oil in a large pot over medium heat. Add the ground beef; cook until brown. Remove from pan and drain well; set aside.",
-      "Return pan to stove. Add a bit more oil, then sauté the onion until softened, about 2 minutes. Add the garlic and cook until fragrant, about 1 more minute. Add in cooked beef, seasoning, and all tomato cans; give it a good stir.",
-      "Simmer, partially covered, for 2 hours on low heat, stirring occasionally, until thickened. Serve with pasta, sandwiches, meatballs, lasagna, etc."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "spaghetti_sauce",
-    "categories": ["mains", "meat", "pasta"],
-    "ingredients_list": [
-      "beef",
-      "onion",
-      "garlic",
-      "tomato sauce",
-      "tomato paste",
-      "diced tomatoes"
     ]
   },
   {
@@ -521,7 +398,7 @@ const recipes = [
     "ingredients": {
       "Ingredients": [
         "2 eggs",
-        "1/2 tbsp granulated sugar",
+        "1/2 tsp granulated sugar",
         "1/2 tsp mirin",
         "1/4 tsp soy sauce",
         "pinch salt"
@@ -617,61 +494,30 @@ const recipes = [
     ]
   },
   {
-    "id": 16,
-    "title": "Roasted Garlic Fingerling Potatoes",
-    "notes": "",
-    "time": 40,
-    "servings": 6,
-    "calories": 150,
-    "ingredients": {
-      "Ingredients": [
-        "1 1/2 lbs halved small red roasting potatoes",
-        "1 tbsp olive oil",
-        "1/2 tsp salt",
-        "1/4 tsp Italian seasoning",
-        "1/4 tsp smoked paprika",
-        "1/4 tsp pepper",
-        "2 tsp minced garlic"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 500°F.",
-      "Line a large sheet pan with foil, then spread potatoes in a single layer. Sprinkle all remaining ingredients over the potatoes, then shuffle them around to ensure they're evenly coated.",
-      "Bake for 25 minutes or until potatoes can be easily pierced with a fork, stirring every 10 minutes. Remove from oven and let cool in pan for about 5 minutes before serving to let them crisp up a bit."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "roasted_garlic_potatoes",
-    "categories": ["sides"],
-    "ingredients_list": [
-      "potato",
-      "garlic"
-    ]
-  },
-  {
     "id": 17,
     "title": "Hummingbird Cake",
     "time": 90,
     "servings": 8,
-    "calories": 400,
+    "calories": 200,
     "ingredients": {
       "Ingredients": [
-        "440g can crushed pineapple (drained, but reserve the juice)",
-        "1 1/2 cups all-purpose flour",
-        "1/2 tsp baking powder",
-        "1/2 tsp baking soda",
-        "1/2 tsp salt",
-        "1/2 tsp cinnamon",
-        "3/4 cup brown sugar",
-        "1/2 cup shredded coconut",
-        "3 bananas, mashed",
-        "2 eggs",
-        "3/4 cup olive oil"
+        "8oz can crushed pineapple",
+        "3/4 cup all-purpose flour",
+        "1/4 tsp baking powder",
+        "1/4 tsp baking soda",
+        "1/4 tsp salt",
+        "1/4 tsp cinnamon",
+        "1/3 cup brown sugar",
+        "1/4 cup shredded coconut",
+        "1 1/2 bananas, mashed",
+        "1 egg",
+        "1/3 cup olive oil"
       ]
     },
     "directions": [
-      "Preheat oven to 350F. Line an 8x8 inch pan with parchment paper; set aside.",
+      "Preheat oven to 350F. Line a 9x5 inch loaf pan or 4x4 inch square pan with parchment paper; set aside.",
       "Drain pineapple and keep 1/4 cup of the juice.",
-      "Sift flours, baking soda, cinnamon, and brown sugar into a bowl. Add the coconut.",
+      "Sift flours, baking soda, cinnamon, and brown sugar into a bowl. Stir in the coconut.",
       "In a separate bowl combine the bananas, eggs, oil, and pineapple juice.",
       "Add the dry ingredients and pineapple to the wet and combine.",
       "Pour into the prepared cake tin. Bake for 43-50 mins until a toothpick inserted into the center of the cake comes out clean.",
@@ -679,7 +525,7 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.257Z",
     "path": "hummingbird_cake",
-    "categories": ["dessert", "cakes", "fruit"],
+    "categories": ["dessert", "cake", "fruit"],
     "ingredients_list": [
       "pineapple",
       "all-purpose flour",
@@ -693,31 +539,31 @@ const recipes = [
   {
     "id": 18,
     "title": "Nonna's Whoopie Pies",
-    "notes": "Wait for whoopie pies to cool completely before filling. Wrap with wax paper to serve.",
+    "notes": "",
     "time": 120,
     "servings": 24,
     "calories": 300,
     "ingredients": {
       "Whoopie Pies": [
-        "1/2 cup Crisco",
-        "1 cup granulated sugar",
-        "2 eggs",
-        "2 cups all-purpose flour",
-        "1 tsp baking powder",
-        "1 tsp baking soda",
-        "1/2 tsp salt",
-        "1 cup milk",
-        "1 tbsp white vinegar",
-        "2 1/2 squares unsweetened baker's chocolate, melted",
-        "1 tsp vanilla extract"
+        "1/4 cup Crisco",
+        "1/2 cup granulated sugar",
+        "1 egg",
+        "1 cups all-purpose flour",
+        "1/2 tsp baking powder",
+        "1/2 tsp baking soda",
+        "1/4 tsp salt",
+        "1/2 cup milk",
+        "1/2 tbsp white vinegar",
+        "1 1/4 squares unsweetened baker's chocolate, melted",
+        "1/2 tsp vanilla extract"
       ],
       "Filling": [
-        "1 box powdered sugar",
-        "1/2 cup Crisco",
-        "1 tsp vanilla extract",
-        "1/4 tsp salt",
-        "1/2 cup marshmallow fluff",
-        "1/4 cup milk"
+        "1/2 box powdered sugar",
+        "1/4 cup Crisco",
+        "1/2 tsp vanilla extract",
+        "1/8 tsp salt",
+        "1/4 cup marshmallow fluff",
+        "2 tbsp milk"
       ]
     },
     "directions": [
@@ -744,40 +590,6 @@ const recipes = [
       "chocolate",
       "powdered sugar",
       "marshmallow fluff"
-    ]
-  },
-  {
-    "id": 19,
-    "title": "Mrs. Stair's Energy Bites",
-    "notes": "Used to be dinner before middle school XC meets up in the county",
-    "time": 70,
-    "servings": 12,
-    "calories": 90,
-    "ingredients": {
-      "Ingredients": [
-        "3/4 cup peanut butter",
-        "1/3 cup honey",
-        "1 1/2 cups old-fashioned rolled oats",
-        "1/4 cup shredded coconut",
-        "1/4 cup chia seeds",
-        "1/4 cup ground flax seed",
-        "1/3 cup white chocolate chips"
-      ]
-    },
-    "directions": [
-      "Combine all ingredients. Cover and refrigerate for at least 1 hour, then roll into balls to serve."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "energy_bites",
-    "categories": ["breakfast"],
-    "ingredients_list": [
-      "peanut butter",
-      "honey",
-      "old-fashioned rolled oats",
-      "shredded coconut",
-      "chia seeds",
-      "flax seed",
-      "white chocolate"
     ]
   },
   {
@@ -815,52 +627,6 @@ const recipes = [
     ]
   },
   {
-    "id": 21,
-    "title": "Pineapple Carrot Cake",
-    "time": 90,
-    "servings": 18,
-    "calories": 300,
-    "ingredients": {
-      "Dry Ingredients": [
-        "3 cups all-purpose flour",
-        "1 tsp baking soda",
-        "1 tsp salt",
-        "3 tsp cinnamon"
-      ],
-      "Wet Ingredients": [
-        "3 eggs",
-        "1 1/2 cups oil",
-        "2 cups granulated sugar",
-        "3 tsp vanilla extract"
-      ],
-      "Add-Ins": [
-        "1 cup chopped walnuts",
-        "2 cups freshly grated carrots",
-        "1 (8 oz) can crushed pineapples (undrained)"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 350°F. Line 5 mini loaf pans with parchment paper; set aside.",
-      "In a medium bowl, whisk together flour, baking soda, salt, and cinnamon.",
-      "In a large bowl, lightly beat the eggs. Add the oil, sugar, and vanilla; whisk until combined.",
-      "Gently add in the flour mixture; mix until just barely combined. Gently fold in walnuts, carrots, and pineapples.",
-      "Pour batter into the 5 prepared mini loaf pans. Bake for 30 minutes, then cover with foil and continue to bake for another 15-20 minutes until cakes are browned and a toothpick inserted into their centers comes out clean.",
-      "Let cool in the pans for 10 minutes, then turn out onto a wire rack and let cool an additional 10 minutes. Serve warm with salted butter."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "pineapple_carrot_cake",
-    "categories": ["dessert", "quick breads", "fruit"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "cinnamon",
-      "egg",
-      "granulated sugar",
-      "walnut",
-      "carrot",
-      "pineapple"
-    ]
-  },
-  {
     "id": 22,
     "title": "Bakeoff Buttermilk Biscuits",
     "time": 60,
@@ -879,7 +645,7 @@ const recipes = [
       ]
     },
     "directions": [
-      "Preheat oven to 425°F. Pulse baking powder, salt, sugar, baking soda, and 3 1/2 cups flour in a food processor to combine.",
+      "Preheat oven to 425°F. Pulse baking powder, salt, sugar, baking soda, and flour in a food processor to combine.",
       "Add chilled butter and pulse until the largest pieces of butter are the size of a pea. Transfer to a large bowl and gradually drizzle buttermilk over the top, tossing with a fork as you go to incorporate.",
       "Knead the mixture a few times in the bowl until a shaggy dough forms (mixture will look a little dry), then turn out onto a clean surface and pat into a 1\"-thick square.",
       "Cut the dough into 4 pieces. Stack pieces on top of one another, sandwiching any loose dry bits of dough between layers, and press down to flatten. Dust surface with flour, then roll dough into a 1\"-thick rectangle. Cut into a 4x3 grid to make 12 biscuits, then transfer to a parchment-lined baking sheet, spacing 2\" apart; freeze for 10 minutes.",
@@ -904,21 +670,20 @@ const recipes = [
     "calories": 100,
     "ingredients": {
       "Ingredients": [
-        "3/4 cup mashed potatoes",
-        "1/2 tsp salt",
-        "1/2 cup (1 stick) butter, melted",
-        "2 (1 lb) boxes powdered sugar",
-        "1/2 lb sweetened shredded coconut",
-        "2 tsp vanilla extract",
-        "1 (12 oz) package chocolate chips",
-        "4 squares unsweetened baker's chocolate",
-        "1/2 cake paraffin (2 1/2 inch x 2 1/2 inch) Gulf Wax"
+        "1/3 cup mashed potatoes",
+        "1/4 tsp salt",
+        "1/4 cup (1/2 stick) butter, melted",
+        "1 (1 lb) box powdered sugar",
+        "1/4 lb sweetened shredded coconut",
+        "1 tsp vanilla extract",
+        "6 oz chocolate chips",
+        "2 squares unsweetened baker's chocolate"
       ]
     },
     "directions": [
       "In a large mixing bowl, mix the potatoes with salt, then add the melted butter. Stir to combine, then stir in the powdered sugar, coconut, and vanilla.",
-      "Spread evenly on a 16 inch x 11 inch rimmed baking sheet; set aside.",
-      "Melt chocolate and wax together. Slice filling into squares, then using toothpicks, coat in the chocolate dip. Place on wax paper on a plate / baking sheet and refrigerate overnight to harden."
+      "Spread evenly on a 8x6 inch rimmed baking sheet; set aside.",
+      "Melt chocolate. Slice filling into squares, then using toothpicks, coat in the chocolate dip. Place on wax paper on a plate / baking sheet and refrigerate overnight to harden."
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "needhams",
@@ -929,42 +694,6 @@ const recipes = [
       "powdered sugar",
       "shredded coconut",
       "chocolate"
-    ]
-  },
-  {
-    "id": 24,
-    "title": "Peanut Butter Jelly Sandwich",
-    "notes": "",
-    "time": 10,
-    "servings": 1,
-    "calories": 450,
-    "ingredients": {
-      "Ingredients": [
-        "2 slices bread",
-        "2 tbsp chia jam",
-        "1 tbsp peanut butter",
-        "1 tbsp powdered peanut butter",
-        "1 tbsp Greek yogurt",
-        "1/2 banana, sliced",
-        "1 tsp honey"
-      ]
-    },
-    "directions": [
-      "Spread chia jam on one slice of bread.",
-      "Combine peanut butter and greek yogurt together in a small bowl, then spread on the other slice and top with sliced bananas and honey.",
-      "Combine both slices of bread and toast in toaster oven for 5 minutes. Slice (diagonally, of course) and enjoy!"
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "peanut_butter_jelly_sandwich",
-    "categories": ["mains", "quick", "single serve"],
-    "ingredients_list": [
-      "bread",
-      "jam",
-      "peanut butter",
-      "powdered peanut butter",
-      "yogurt",
-      "banana",
-      "honey"
     ]
   },
   {
@@ -982,8 +711,8 @@ const recipes = [
         "1/2 tsp garlic powder",
         "1/4 tsp pepper",
         "1 (16 oz) can dark red kidney beans, rinsed and drained",
-        "1 (8 oz) can sweet corn, rinsed + drained",
-        "Tostito's restaurant style (big) tortilla chips",
+        "1 (8 oz) can sweet corn, rinsed and drained",
+        "1 bag Tostito's restaurant style (big) tortilla chips",
         "1 head iceberg lettuce, shredded",
         "1 tomato, diced",
         "Shredded sharp cheddar cheese",
@@ -998,11 +727,11 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "tex_mex_nachos",
-    "categories": ["mains", "meat"],
+    "categories": ["main", "meat"],
     "ingredients_list": [
       "beef",
       "scallions",
-      "sauce, taco",
+      "taco sauce",
       "beans",
       "corn",
       "tortilla chips",
@@ -1013,49 +742,11 @@ const recipes = [
     ]
   },
   {
-    "id": 26,
-    "title": "Sausage Apple Kebabs",
-    "notes": "",
-    "time": 30,
-    "servings": 4,
-    "calories": 400,
-    "ingredients": {
-      "Glaze": [
-        "1/4 cup packed brown sugar",
-        "1 tbsp cornstarch",
-        "2/3 cup apple juice",
-        "1/4 cup apple cider vinegar",
-        "1 tsp orange zest"
-      ],
-      "Kebabs": [
-        "1 lb kielbasa, cooked + sliced",
-        "2 medium apples, sliced",
-        "1 red bell pepper, sliced"
-      ]
-    },
-    "directions": [
-      "Heat grill. In a small saucepan, combine all glaze ingredients. Cook over medium heat until boiling and thickened, stirring constantly.",
-      "Alternating sausage, apple, and pepper, thread the kebabs. Grill over medium heat for 4 minutes. Brush both sides with glaze, then cook an additional 3-5 minutes or until hot and lightly charred. Serve immediately!"
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "sausage_apple_kebabs",
-    "categories": ["mains", "meat"],
-    "ingredients_list": [
-      "brown sugar",
-      "cornstarch",
-      "apple juice",
-      "apple cider vinegar",
-      "sausage",
-      "apple",
-      "bell pepper"
-    ]
-  },
-  {
     "id": 27,
     "title": "Mama's Chocolate Chip Cookies",
     "notes": "Thin, chewy cookies that are more chocolate than cookie.",
     "time": 60,
-    "servings": 24,
+    "servings": 12,
     "calories": 100,
     "ingredients": {
       "Ingredients": [
@@ -1092,121 +783,44 @@ const recipes = [
     ]
   },
   {
-    "id": 29,
-    "title": "Pie Crust",
-    "time": 30,
-    "servings": 8,
-    "calories": 200,
-    "ingredients": {
-      "Ingredients": [
-        "2 1/2 cups flour",
-        "1 tsp salt",
-        "1 cup (1 stick) butter, cold",
-        "1/2 cup Crisco, cold",
-        "5-7 tbsp ice water"
-      ]
-    },
-    "directions": [
-      "In a large bowl, combine flour and salt. Work in butter and Crisco with your hands until you have small chunks.",
-      "Blend in ice water with a chilled fork until the dough hangs together when squeezed.",
-      "Divide into two balls, flatten into disks, then freeze for 15 minutes before rolling."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "pie_crust",
-    "categories": ["dessert", "fruit"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "butter",
-      "shortening"
-    ]
-  },
-  {
-    "id": 30,
-    "title": "Lemon Pudding Cake",
-    "time": 90,
-    "servings": 9,
-    "calories": 250,
-    "ingredients": {
-      "cakes": [
-        "220g all-purpose flour",
-        "1 1/2 tsp baking powder",
-        "1/2 tsp baking soda",
-        "1/2 tsp salt",
-        "100g granulated sugar",
-        "180ml milk",
-        "65g Greek yogurt",
-        "50g oil",
-        "1 lemon, zested and juiced"
-      ],
-      "Sauce": [
-        "1 lemon, zested and juiced",
-        "2 1/2 tbsp cornstarch",
-        "300ml boiling water",
-        "100g granulated sugar"
-      ]
-    },
-    "directions": [
-      "Preheat the oven to 350F. Line an 8 x 8 inch cake pan with parchment paper; set aside.",
-      "Mix together milk and lemon juice - set aside to thicken and curdle.",
-      "Rub the lemon zest into the sugar. Then, mix the sugar mixture along with the rest of the wet ingredients into the milk mixture.",
-      "Gently fold in dry ingredients until just combined, then pour the full mixture into the tin.",
-      "Mix the lemon juice with the cornstarch in a heatproof bowl to make a smooth paste. Mix the caster sugar with the boiling water in a jug, then pour over the cornflour mix and whisk until smooth.",
-      "Pour this over the sponge.",
-      "Bake for 45-50 mins until golden and set, and the sponge springs back when touched.",
-      "Serve with a drizzle of icing sugar and custard."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "lemon_pudding_cake",
-    "categories": ["dessert", "cakes"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "granulated sugar",
-      "milk",
-      "yogurt",
-      "lemon",
-      "cornstarch"
-    ]
-  },
-  {
     "id": 31,
     "title": "Texas Sheet Cake",
     "time": 60,
     "servings": 12,
     "calories": 200,
     "ingredients": {
-      "cakes": [
-        "2 tsp flour",
-        "2 cups flour",
-        "2 cups granulated sugar",
-        "1 tsp baking soda",
-        "1 tsp cinnamon",
-        "1/4 tsp salt",
-        "1/2 cup (1 stick) unsalted butter",
-        "3/4 cup water",
-        "1/4 cup unsweetened cocoa",
-        "1/2 cup buttermilk",
-        "1 tsp vanilla extract",
-        "2 eggs"
+      "Cake": [
+        "1 cup flour",
+        "1 cup granulated sugar",
+        "1/2 tsp baking soda",
+        "1/2 tsp cinnamon",
+        "1/8 tsp salt",
+        "1/4 cup (1/2 stick) unsalted butter",
+        "1/3 cup water",
+        "2 tbsp unsweetened cocoa",
+        "1/4 cup buttermilk",
+        "1/2 tsp vanilla extract",
+        "1 egg"
       ],
       "Icing": [
-        "6 tbsp unsalted butter",
-        "1/3 cup milk",
-        "1/4 cup unsweetened cocoa powder",
-        "3 cups powdered sugar",
-        "1/4 cup chopped pecans, toasted",
-        "2 tsp vanilla extract"
+        "3 tbsp unsalted butter",
+        "3 tbsp milk",
+        "2 tbsp unsweetened cocoa powder",
+        "1 1/2 cup powdered sugar",
+        "2 tbsp chopped pecans, toasted",
+        "1 tsp vanilla extract"
       ]
     },
     "directions": [
-      "Preheat oven to 375°F. Grease a 15 x 10 inch rimmed baking sheet with cooking spray, then dust with 2 tsp flour.",
-      "In a large mixing bowl, whisk together 2 cups flour, sugar, baking soda, cinnamon, and salt; set aside.",
+      "Preheat oven to 375°F. Grease a 9 x 5 inch rimmed baking sheet with cooking spray, then line with parchment paper.",
+      "In a large mixing bowl, whisk together flour, sugar, baking soda, cinnamon, and salt; set aside.",
       "In a small saucepan, melt butter over med-high heat. Add water and cocoa; bring to a boil, stirring constantly. Remove from heat and pour over flour mixture. Beat on medium speed until blended, then beat in buttermilk, vanilla, and eggs.",
       "Pour batter into prepared pan; bake for 17 minutes or until a toothpick inserted into the center of the cake emerges clean. Set aside in the pan on a wire rack.",
       "While the cake bakes, make the icing - melt butter over med-high heat in a small saucepan, then add milk and cocoa; bring to a boil. Stir in powdered sugar, pecans, and vanilla, stirring until smooth. Spread over the still-warm cake, then let cool for an hour or so before serving."
     ],
     "date": "2023-11-11T23:35:29.257Z",
     "path": "texas_sheet_cake",
-    "categories": ["dessert", "cakes"],
+    "categories": ["dessert", "cake"],
     "ingredients_list": [
       "all-purpose flour",
       "granulated sugar",
@@ -1221,184 +835,30 @@ const recipes = [
     ]
   },
   {
-    "id": 32,
-    "title": "Stone's Scones",
-    "time": 90,
-    "servings": 12,
-    "calories": 300,
-    "ingredients": {
-      "Base": [
-        "3 cups all-purpose flour",
-        "1 tbsp baking powder",
-        "3/4 tsp salt",
-        "3/4 cups brown sugar",
-        "4 oz butter, diced",
-        "1 cup half-and-half",
-        "1/2 cup fruit",
-        "1/2 cup nuts"
-      ],
-      "Blueberry": [
-        "3/4 cup blueberries",
-        "1/2 tsp cinnamon (add with dry ingredients)"
-      ],
-      "Raspberry White Chocolate": [
-        "1/2 cup raspberries",
-        "1/2 cup white chocolate chips",
-        "1/2 tsp cinnamon (add with dry ingredients)"
-      ],
-      "Lemon Poppy": [
-        "3 tbsp granulated sugar",
-        "1 tbsp poppy seeds",
-        "1 lemon, zested and juiced"
-      ],
-      "Gingerbread": [
-        "1 1/2 tbsp molasses",
-        "1/2 tsp grated ginger",
-        "1/4 tsp cinnamon",
-        "1/4 tsp cloves",
-        "1/8 tsp nutmeg"
-      ],
-      "Maple Oat": [
-        "1 cup oat flour",
-        "1/2 cup old-fashioned rolled oats",
-        "1/4 cup maple syrup"
-      ],
-      "Maple Pecan": [
-        "1 cup pecans, finely chopped",
-        "1/4 cup maple syrup"
-      ],
-      "Cranberry Orange": [
-        "1 orange, zested and juiced",
-        "1/2 cup craisins"
-      ],
-      "Pineapple Coconut": [
-        "1/3 cup shredded coconut",
-        "1/2 cup crushed pineapple, drained",
-        "1/4 cup ground macadamia nuts (optional)"
-      ],
-      "Hawaiian": [
-        "1/2 cup ground macadamia nuts (optional)",
-        "3 tbsp shredded coconut",
-        "3 tbsp crushed pineapple, drained"
-      ],
-      "Pumpkin": [
-        "4 oz pumpkin purée",
-        "1/4 tsp cinnamon",
-        "1/4 tsp ginger",
-        "1/4 tsp nutmeg"
-      ]
-    },
-    "directions": [
-      "In a large bowl, whisk together all dry ingredients (flour - sugar) in a mixer, then crumble in the butter with your hands (keep pea-sized chunks to help with the flakiness).",
-      "Stir in cream, then add fruit/nuts last.",
-      "Divide dough in half, knead briefly to form a ball, then roll out to about 1 inch thick. Cut into 6 equal pieces per ball.",
-      "Freeze scones for at least 1 hour.",
-      "When ready to bake, bake scones at 400°F for 18-26 minutes or until golden on the edges."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "stones_scones",
-    "categories": ["breakfast", "pastries", "fruit"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "brown sugar",
-      "butter",
-      "half-and-half",
-      "blueberries",
-      "cinnamon",
-      "raspberries",
-      "white chocolate",
-      "granulated sugar",
-      "poppy seeds",
-      "lemon",
-      "molasses",
-      "ginger",
-      "oat flour",
-      "old-fashioned rolled oats",
-      "maple syrup",
-      "pecans",
-      "orange",
-      "craisins",
-      "shredded coconut",
-      "pineapple",
-      "macadamia nuts",
-      "pumpkin purée",
-    ]
-
-  },
-  {
-    "id": 33,
-    "title": "Blueberry Cornflake Cookies",
-    "notes": "",
-    "time": 60,
-    "servings": 24,
-    "calories": 150,
-    "ingredients": {
-      "Ingredients": [
-        "155g whole (5 1/3 cup) cornflakes",
-        "210g (1 2/3 cups) all-purpose flour",
-        "1 tbsp cornstarch",
-        "1/2 tsp baking powder",
-        "1/2 tsp baking soda",
-        "1/2 tsp fine sea salt",
-        "220g (2 sticks) vegan butter, at room temp",
-        "220g (1 cup) soft light brown sugar",
-        "50g (1/4 cup) granulated sugar",
-        "2 tbsp soy milk, at room temperature",
-        "120g (1 1/3 cups) old-fashioned rolled oats",
-        "160g (1 cup) sweetened dried blueberries (from cheong syrup/store bought)"
-      ]
-    },
-    "directions": [
-      "To make cheong syrup: fill a jar with blueberries, then cover them with sugar. Leave for 1 week or until the berries release their juices, leaving behind blueberry syrup and lovely dried sweetened blueberries.",
-      "Preheat the oven to 340°F. Line a baking sheet with parchment paper.",
-      "Transfer 2 cups (55g) of the cornflakes to a blender and blend until fine. Transfer the blended cornflakes to a medium bowl and add the flour, cornstarch, baking powder, baking soda, and fine sea salt. Whisk together and set aside.",
-      "Place the vegan butter, sugars, and soy milk in the bowl of a stand mixer and beat until light and fluffy (around 3 minutes).",
-      "Add the flour mixture and beat again briefly until just combined. Add the oats and the remaining whole cornflakes and beat again until just combined.",
-      "Remove the bowl from the stand mixer and add the dried blueberries. Mix by hand until combined.",
-      "Use a cookie scoop to make 85g (around 4 tbsp) portions of dough and place on the prepared baking sheet with an inch or two between them.",
-      "Place in the oven and bake for 15 minutes. Remove from the oven and tap the tray sharply on the counter to deflate the cookie. Place the sheet on a wire cooling rack and leave to cool fully to room temperature (around 15-20 minutes) before serving."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "blueberry_cornflake_cookies",
-    "categories": ["dessert", "cookies", "fruit"],
-    "ingredients_list": [
-      "cornflakes",
-      "all-purpose flour",
-      "cornstarch",
-      "butter",
-      "brown sugar",
-      "granulated sugar",
-      "milk",
-      "old-fashioned rolled oats",
-      "blueberries"
-    ]
-
-  },
-  {
     "id": 34,
     "title": "Sweet Oatcakes",
-    "notes": "Slice while still warm, or your cuts won't be as clean.",
+    "notes": "From MnC 2023",
     "time": 60,
-    "servings": 24,
+    "servings": 12,
     "calories": 100,
     "ingredients": {
       "Ingredients": [
-        "1 cup (2 sticks) butter",
-        "1 tsp salt",
-        "3/4 cup + 2 tbsp brown sugar",
-        "1 tsp vanilla extract",
-        "1/4 tsp baking soda",
-        "1 1/2 cups all-purpose flour",
-        "1/4 cup old-fashioned rolled oats",
-        "1/2 cup quick oats",
-        "1/4 cup oat flour"
+        "1/2 cup (1 stick) unsalted butter",
+        "1/2 tsp salt",
+        "1/2 cup brown sugar",
+        "1/2 tsp vanilla extract",
+        "1/8 tsp baking soda",
+        "3/4 cups all-purpose flour",
+        "2 tbsp old-fashioned rolled oats",
+        "1/4 cup quick oats",
+        "2 tbsp oat flour"
       ]
     },
     "directions": [
       "Preheat oven to 300F. Line a 9 inch cake pan with parchment paper; set aside.",
       "Cream together the butter, salt, brown sugar, and vanilla. Then, beat in the baking soda, flour, and oats.",
       "Press the dough into your prepared cake pan. Smooth the surface, then prick the dough with a fork in an attractive pattern.",
-      "Bake for 35-40 minutes or until golden around the edges. Remove from oven and loosen edges with a knife. Wait 5 minutes, then turn out onto wire rack. Slice while still warm, or your cuts won't be as clean."
+      "Bake for 25 minutes or until golden around the edges. Remove from oven and loosen edges with a knife. Wait 5 minutes, then turn out onto wire rack. Slice while still warm, or your cuts won't be as clean."
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "sweet_oatcakes",
@@ -1411,14 +871,13 @@ const recipes = [
       "quick oats",
       "oat flour"
     ]
-
   },
   {
     "id": 35,
     "title": "Ro's Lemon Cookies",
     "notes": "",
     "time": 60,
-    "servings": 24,
+    "servings": 12,
     "calories": 100,
     "ingredients": {
       "Ingredients": [
@@ -1450,13 +909,12 @@ const recipes = [
       "egg",
       "lemon"
     ]
-
   },
   {
     "id": 36,
     "title": "Ro's Bagels",
     "time": 150,
-    "servings": 12,
+    "servings": 6,
     "calories": 270,
     "ingredients": {
       "Ingredients": [
@@ -1487,7 +945,6 @@ const recipes = [
       "all-purpose flour",
       "molasses"
     ]
-
   },
   {
     "id": 37,
@@ -1534,7 +991,6 @@ const recipes = [
       "egg whites",
       "bread"
     ]
-
   },
   {
     "id": 38,
@@ -1565,151 +1021,7 @@ const recipes = [
     "ingredients_list": [
       "old-fashioned rolled oats",
       "maple syrup",
-      "lemon juice"
-    ]
-  },
-  {
-    "id": 39,
-    "title": "Baked Oatmeal",
-    "time": 60,
-    "servings": 6,
-    "calories": 250,
-    "ingredients": {
-      "Wet Ingredients": [
-        "1 banana, mashed",
-        "160g unsweetened applesauce",
-        "1 1/2 cups water",
-        "1 tsp vanilla extract",
-        "1/4 cup sugar",
-        "2 eggs"
-      ],
-      "Dry Ingredients": [
-        "200g old-fashioned rolled oats",
-        "15g peanut butter powder",
-        "1 tsp baking powder",
-        "1 tsp cinnamon",
-        "1/4 tsp salt"
-      ],
-      "Fruit": [
-        "140g frozen blueberries"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 350 F. Line a 7x11 pan with parchment paper; set aside.",
-      "In a large bowl, mix together mashed banana, applesauce, eggs, water, vanilla, and stevia until mostly smooth.",
-      "Add in rolled oats, peanut butter powder, baking powder, cinnamon, and salt until well combined. Gently fold in chopped fruit.",
-      "Pour the mixture into the prepared pan and bake for 25-35 minutes, until edges start to brown and the center is set. Let it cool completely before slicing into 6 equal portions. Serve topped with yogurt, and wrap other portions with foil and freeze for later."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "baked_oatmeal",
-    "categories": ["breakfast"],
-    "ingredients_list": [
-      "banana",
-      "applesauce",
-      "granulated sugar",
-      "egg",
-      "old-fashioned rolled oats",
-      "powdered peanut butter",
-      "cinnamon",
-      "blueberries"
-    ]
-
-  },
-  {
-    "id": 40,
-    "title": "Peanut Butter Baked Oatmeal",
-    "time": 60,
-    "servings": 6,
-    "calories": 250,
-    "ingredients": {
-      "Wet Ingredients": [
-        "3 eggs",
-        "3 1/2 cups milk",
-        "1/4 cup peanut butter",
-        "1/3 cup maple syrup",
-        "1 tsp vanilla",
-        "1/4 tsp salt"
-      ],
-      "Dry Ingredients": [
-        "3/4 cup peanut butter powder",
-        "1 tbsp chia seeds",
-        "1/2 tsp baking powder",
-        "1 tsp cinnamon"
-      ],
-      "Fold-Ins": [
-        "2 1/2 cups old-fashioned rolled oats",
-        "1 cup frozen blueberries"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 350 F. Line an 8x8 inch pan with parchment paper; set aside.",
-      "In a large bowl, whisk together eggs, milk, peanut butter, maple syrup, vanilla, and salt.",
-      "Add in peanut butter powder, chia seeds, baking powder, and cinnamon. Gently fold in oats and fruit.",
-      "Pour the mixture into the prepared pan and bake for 55-60 minutes or until the center is firm.",
-      "Let cool completely before slicing into 6 equal portions. Serve topped with yogurt, and wrap leftovers in foil to freeze for later."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "peanut_butter_baked_oatmeal",
-    "categories": ["breakfast"],
-    "ingredients_list": [
-      "egg",
-      "milk",
-      "peanut butter",
-      "maple syrup",
-      "powdered peanut butter",
-      "chia seeds",
-      "cinnamon",
-      "old-fashioned rolled oats",
-      "blueberries"
-    ]
-  },
-  {
-    "id": 41,
-    "title": "Nonna's Yellow Birthday Cake",
-    "time": 60,
-    "servings": 12,
-    "calories": 400,
-    "ingredients": {
-      "cakes": [
-        "1 cup unsalted butter, softened, room temperature",
-        "2 cups granulated sugar",
-        "2 eggs, separated, room temperature",
-        "3 tsp vanilla extract",
-        "2 cups cake flour",
-        "1 tbsp baking powder",
-        "1 tsp salt",
-        "1 cup buttermilk, room temperature"
-      ],
-      "Frosting": [
-        "1 1/4 cups cocoa powder",
-        "4 cups powdered sugar, divided",
-        "1/4 tsp salt",
-        "1/3 cup hot water",
-        "1 tbsp vanilla extract",
-        "20 tbsp unsalted butter, softened"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 325 F. Grease and flour two 9-inch cake pans. Set aside.",
-      "In a large bowl, cream together butter and sugar. Add in egg yolks and vanilla, mixing until fully incorporated. Set aside.",
-      "In a separate bowl combine flour, baking powder, and salt. Gradually add dry ingredients into wet ingredients, alternating with the buttermilk. Mix until batter is fluffy but be careful not to overmix.",
-      "Beat egg whites until stiff peaks form. Very gently fold egg whites into batter and mix JUST until incorporated.",
-      "Pour batter into prepared pans and spread into even layers, then bake for 30-35 minutes. Remove from oven; let cake cool in pans until pans are warm to the touch, then carefully remove them from the pans and let finish cooling on a wire rack.",
-      "When the cakes are completely cooled, make the frosting: in a large mixing bowl, stir together the cocoa powder, 1 cup (113g) of the powdered sugar, salt, water, and vanilla.",
-      "Then, beat in the butter and remaining confectioners' sugar at medium-high speed for 1 to 2 minutes, until lightened in color and fluffy, stopping halfway through to scrape the bottom and sides of the bowl. If the frosting seems too stiff, beat in water 1 teaspoon at a time until it's spreadable.",
-      "When cakes are completely cooled, frost one layer with about 1/3 of the chocolate buttercream frosting. Stack the other layer on top, then cover the cake with the remaining frosting."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "yellow_birthday_cake",
-    "categories": ["dessert", "cakes"],
-    "ingredients_list": [
-      "butter",
-      "granulated sugar",
-      "egg",
-      "cake flour",
-      "buttermilk",
-      "cocoa powder",
-      "powdered sugar"
+      "lemon"
     ]
   },
   {
@@ -1726,7 +1038,7 @@ const recipes = [
         "1/2 cup diced onion",
         "1/2 cup diced red bell pepper",
         "1 tsp minced garlic",
-        "1 tsp Cajun seasoning",
+        "1 tbsp Cajun seasoning",
         "1 (15 oz) can black beans, rinsed + drained",
         "1 (10 oz) can diced tomatoes",
         "1 smoked turkey kielbasa sausage, sliced",
@@ -1740,9 +1052,10 @@ const recipes = [
     ],
     "date": "2023-11-11T23:35:29.256Z",
     "path": "pasta_jambalaya",
-    "categories": ["mains", "meat", "pasta"],
+    "categories": ["main", "meat", "pasta"],
     "ingredients_list": [
       "pasta",
+      "beans",
       "onion",
       "bell pepper",
       "garlic",
@@ -1756,7 +1069,7 @@ const recipes = [
     "id": 43,
     "title": "Rice",
     "notes": "",
-    "time": 900,
+    "time": 90,
     "servings": 4,
     "calories": 200,
     "ingredients": {
@@ -1795,37 +1108,6 @@ const recipes = [
     ]
   },
   {
-    "id": 44,
-    "title": "Upgraded Broccoli",
-    "notes": "",
-    "time": 15,
-    "servings": 2,
-    "calories": 150,
-    "ingredients": {
-      "Ingredients": [
-        "1 crown broccoli",
-        "3 tbsp grated parmesan",
-        "1 tsp brown sugar",
-        "2 tbsp olive oil",
-        "1 tsp red pepper flakes",
-        "1/4 tsp salt",
-        "⅛ tsp pepper"
-      ]
-    },
-    "directions": [
-      "Bring a pot of water to a boil; add the broccoli florets and cook the broccoli for 3 minutes or until just tender. Immediately strain and immerse the broccoli in a bowl of ice water to stop them from cooking further.",
-      "In a cup, combine the parmesan and brown sugar; set aside.",
-      "Heat the oil in a large frying pan over medium-high heat. Throw in the broccoli, red pepper flakes, salt, and pepper. Cook for 2 more minutes or until heated through. Remove from heat, top with parmesan cheese mixture to serve."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "upgraded_broccoli",
-    "categories": ["sides"],
-    "ingredients_list": [
-      "broccoli",
-      "parmesan"
-    ]
-  },
-  {
     "id": 45,
     "title": "Nonna's No Bakes",
     "notes": "Tall, slightly dry no-bake cookies with coconut",
@@ -1834,14 +1116,14 @@ const recipes = [
     "calories": 70,
     "ingredients": {
       "Ingredients": [
-        "2 squares semi-sweet baker's chocolate",
-        "1/2 cup (1 stick) unsalted butter",
-        "2 cups granulated sugar",
-        "1/2 cup milk",
-        "1 tsp salt",
-        "1 tsp vanilla extract",
-        "3 cups old-fashioned rolled oats",
-        "2 cups shredded sweetened coconut"
+        "1 square semi-sweet baker's chocolate",
+        "1/4 cup (1/2 stick) unsalted butter",
+        "1 cup granulated sugar",
+        "1/4 cup milk",
+        "1/2 tsp salt",
+        "1/2 tsp vanilla extract",
+        "1 1/2 cups old-fashioned rolled oats",
+        "1 cup shredded sweetened coconut"
       ]
     },
     "directions": [
@@ -1869,37 +1151,37 @@ const recipes = [
     "calories": 300,
     "ingredients": {
       "Almond Shortbread Base": [
-        "225g unsalted butter, room temp",
-        "110g granulated sugar",
-        "1 1/2 tsp almond extract",
-        "225g all-purpose flour, sifted",
-        "100g cornstarch, sifted"
+        "112g unsalted butter, room temp",
+        "60g granulated sugar",
+        "3/4 tsp almond extract",
+        "112g all-purpose flour, sifted",
+        "50g cornstarch, sifted"
       ],
       "Raspberry Filling": [
-        "500g raspberries, fresh or frozen",
-        "25g granulated sugar",
-        "1 tsp cornstarch"
+        "250g raspberries, fresh or frozen",
+        "12g granulated sugar",
+        "1/2 tsp cornstarch"
       ],
       "Vanilla Custard": [
-        "500ml whole milk",
-        "2 tsp vanilla extract",
-        "6 egg yolks",
-        "100g granulated sugar",
-        "25g cornstarch",
-        "20g all-purpose flour",
-        "1/2 gelatine sheet or 1/4 tsp agar agar"
+        "250ml whole milk",
+        "1 tsp vanilla extract",
+        "3 egg yolks",
+        "50g granulated sugar",
+        "12g cornstarch",
+        "10g all-purpose flour",
+        "1/4 gelatine sheet or 1/8 tsp agar agar"
       ],
       "Cardamom & Almond Crumble": [
-        "200g all-purpose flour",
-        "100g granulated sugar",
-        "140g unsalted butter, cold, cubed",
-        "3/4 tsp cardamom",
-        "50g sliced almonds"
+        "100g all-purpose flour",
+        "50g granulated sugar",
+        "70g unsalted butter, cold, cubed",
+        "1/2 tsp cardamom",
+        "25g sliced almonds"
       ]
     },
     "directions": [
       "Make the shortbread by creaming together butter. Mix flours in a separate bowl before adding to butter. Mix until combined.",
-      "Line a 7-inch x 11-inch tin. Press in shortbread to the base. Level out using a flat-bottomed glass or cake scraper. Prick the base with a fork, then place in the freezer for 30 mins. Bake at 325°F fan for 35-40 mins. Cover with foil after 30 minutes to avoid too much browning.",
+      "Line an 8x8 inch tin. Press shortbread into the base. Level out using a flat-bottomed glass or cake scraper. Prick the base with a fork, then place in the freezer for 30 mins. Bake at 325°F fan for 35-40 mins. Cover with foil after 30 minutes to avoid too much browning.",
       "Remove and press down on the biscuit to flatten any risen bits.",
       "While baking/cooling, add 3/4 of berries & sugar to a pan and cook over medium heat until berries soften slightly and start to release some juice. Sift in the cornflour, mix. Remove the pan from heat, add the remaining berries. Leave to cool.",
       "Once cool, make custard. Add gelatin sheet to a bowl of cold water. Use a whisk to mix yolks in a bowl with sugar & flours until smooth. Add milk to the saucepan with vanilla and bring to near boil.",
@@ -1968,19 +1250,19 @@ const recipes = [
     "calories": 100,
     "ingredients": {
       "Ingredients": [
-        "2 cups granulated sugar",
-        "3 tbsp cocoa powder",
-        "1/2 cup milk",
-        "1/2 cup butter",
-        "1/2 cup peanut butter",
+        "1 cup granulated sugar",
+        "1 1/2 tbsp cocoa powder",
+        "1/4 cup milk",
+        "1/4 cup unsalted butter",
+        "1/4 cup peanut butter",
         "1/4 tsp salt",
-        "1 tsp vanilla extract",
-        "3 cups quick oats"
+        "1/2 tsp vanilla extract",
+        "1 1/2 cups quick oats"
       ]
     },
     "directions": [
-      "Heat sugar, cocoa, milk, butter, and peanut butter in a saucepan until melted. Bring to a boil and boil for exactly 1 minute, then remove from heat.",
-      "Stir in vanilla and salt, then pour over oats in a large bowl.",
+      "Heat sugar, cocoa, milk, butter, and peanut butter in a saucepan until melted. Bring to a boil for exactly 1 minute, then remove from heat.",
+      "Stir in salt and vanilla, then pour over oats in a large bowl.",
       "Working quickly so the mixture doesn't dry out, scoop tablespoons onto a lined pan. Refrigerate for at least 2 hours before serving."
     ],
     "date": "2023-11-11T23:35:29.256Z",
@@ -1997,8 +1279,8 @@ const recipes = [
   },
   {
     "id": 49,
-    "title": "Mary Jane's Sugar Cookies",
-    "notes": "",
+    "title": "Among Us Cookies",
+    "notes": "Recipe from Mary Jane",
     "time": 90,
     "servings": 24,
     "calories": 70,
@@ -2029,58 +1311,6 @@ const recipes = [
       "butter",
       "granulated sugar",
       "egg"
-    ]
-  },
-  {
-    "id": 50,
-    "title": "Earl Gray Blueberry Scones",
-    "time": 90,
-    "servings": 12,
-    "calories": 300,
-    "ingredients": {
-      "Scones": [
-        "8 bags Earl Grey tea",
-        "3/4 cup buttermilk",
-        "2 1/2 cups all-purpose flour",
-        "2 tbsp granulated sugar",
-        "1 tbsp baking powder",
-        "1/2 tsp salt",
-        "8 tbsp cold butter, cubed",
-        "1 egg",
-        "1 tbsp vanilla extract",
-        "1 1/2 cups fresh blueberries"
-      ],
-      "Glaze": [
-        "1/2 cup unsweetened almond milk",
-        "2 tbsp butter",
-        "4 bags Earl Grey tea",
-        "1 cup powdered sugar"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 400°F. If the Earl Grey tea isn't powdered within the bag, use a coffee grinder to grind 2 bags of Earl Grey tea until fine.",
-      "Slightly warm buttermilk and place 6 tea bags into steep for at least 3 minutes.",
-      "In a mixing bowl, combine flour, sugar, baking powder, powdered tea, and salt.",
-      "Add the butter and toss with the flour.",
-      "Add egg, infused buttermilk, and vanilla. Mix until blended (don't overmix!), then fold in blueberries.",
-      "Remove dough with floured hands and form into a circle. Slice into 8 scones, then space out on a baking sheet lined with parchment paper.",
-      "Bake until golden brown, about 18 minutes.",
-      "While the scones cool, make the glaze; cook the milk and butter in a small saucepan over medium heat until the milk is steaming, but not boiling. Remove from heat, place 4 Earl Grey tea bags into the milk, cover, and let steep for 5 minutes.",
-      "Remove tea bags, making sure to squeeze out all the extra tea, then stir in the powdered sugar until it reaches your desired consistency. Allow scones to cool completely before glazing."
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "earl_gray_blueberry_scones",
-    "categories": ["breakfast", "pastries", "fruit"],
-    "ingredients_list": [
-      "tea",
-      "buttermilk",
-      "all-purpose flour",
-      "granulated sugar",
-      "butter",
-      "egg",
-      "blueberries",
-      "milk",
-      "powdered sugar"
     ]
   },
   {
@@ -2125,40 +1355,6 @@ const recipes = [
     ]
   },
   {
-    "id": 52,
-    "title": "Nonna's Chocolate Frosting",
-    "time": 10,
-    "servings": 12,
-    "calories": 80,
-    "ingredients": {
-      "Ingredients": [
-        "1 tbsp butter, softened",
-        "4 oz cream cheese, softened",
-        "3 cups powdered sugar",
-        "1/4 tsp salt",
-        "1 tsp vanilla extract",
-        "1 oz unsweetened chocolate",
-        "1/4 cup milk"
-      ]
-    },
-    "directions": [
-      "Beat together butter and cream cheese.",
-      "Add powdered sugar, salt, and vanilla; beat until well combined.",
-      "Melt chocolate in the microwave in 30-second intervals until smooth.",
-      "Add melted chocolate to frosting, then add milk AS NEEDED to achieve your desired consistency. (You may not need the full 1/4 cup!)"
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "chocolate_frosting",
-    "categories": ["dessert", "cakes"],
-    "ingredients_list": [
-      "butter",
-      "cream cheese",
-      "powdered sugar",
-      "chocolate",
-      "milk"
-    ]
-  },
-  {
     "id": 53,
     "title": "Phi Tau Focaccia",
     "time": 390,
@@ -2166,12 +1362,12 @@ const recipes = [
     "calories": 200,
     "ingredients": {
       "Dough": [
-        "2 1/4 tsp active dry yeast",
-        "2 tsp honey",
-        "2 1/2 cups warm (110F) water",
-        "625g all-purpose flour",
-        "1 tbsp salt",
-        "4 tbsp unsalted butter"
+        "1 1/8 tsp active dry yeast",
+        "1 tsp honey",
+        "1 1/4 cups warm (110F) water",
+        "313g all-purpose flour",
+        "1/2 tbsp salt",
+        "2 tbsp unsalted butter"
       ],
       "Toppings": [
         "6 tbsp olive oil, divided",
@@ -2183,7 +1379,7 @@ const recipes = [
       "In a large bowl, dissolve honey in water. Whisk in yeast, then let bloom for 5 minutes.",
       "Add flour and salt, then mix until a shaggy dough forms and no dry streaks remain.",
       "Pour 4 tbsp olive oil into another large bowl. Transfer dough to the oiled bowl, turning once to coat. Cover and chill until the dough is doubled in size, at least 8 hours and up to 1 day in the fridge or 4 hours at room temperature.",
-      "Generously butter and oil a 13 x 9 inch or 18 x 13 inch baking pan. Use your hands to fold up edges of the dough farthest from you, lifting up and over into the center of the bowl. Give the bowl a quarter turn and repeat the process. Do this 2 more times, deflating the dough while forming it into a rough ball.",
+      "Generously butter and oil an 8x8-inch baking pan. Use your hands to fold up edges of the dough farthest from you, lifting up and over into the center of the bowl. Give the bowl a quarter turn and repeat the process. Do this 2 more times, deflating the dough while forming it into a rough ball.",
       "Transfer the dough to the prepared pan. Pour any remaining oil in the bowl over and turn the dough to coat it. Let it rise, uncovered, at room temperature until doubled in size again, at least 1 1/2 hours and up to 4 hours.",
       "Preheat oven to 450F. Dimple the focaccia all over with deep depressions reaching to the bottom of the pan with your fingers.",
       "Drizzle with 1 tbsp olive oil and sprinkle with sea salt. Bake until golden brown all over, 20-30 minutes.",
@@ -2201,67 +1397,24 @@ const recipes = [
     ]
   },
   {
-    "id": 54,
-    "title": "Classic Meatloaf",
-    "notes": "",
-    "time": 60,
-    "servings": 8,
-    "calories": 300,
-    "ingredients": {
-      "Ingredients": [
-        "1 cup chopped onion",
-        "6 tbsp ketchup, divided",
-        "2 tbsp dijon mustard, divided",
-        "1 cup shredded mozzarella",
-        "1/2 cup Italian breadcrumbs",
-        "1/4 cup parsley, chopped",
-        "2 tbsp grated parmesan",
-        "1 tsp dried oregano",
-        "1/4 tsp pepper",
-        "1 egg",
-        "1 lb ground beef"
-      ]
-    },
-    "directions": [
-      "Preheat the oven to 375°F.",
-      "In a small nonstick skillet over medium-high heat, cook the onion in olive oil for 3 minutes until softened and golden. Transfer to a large bowl, then add 1/4 cup ketchup, 1 tbsp mustard, and mozzarella - egg. Crumble ground meats over the onion mixture, then stir until just combined.",
-      "Pack into an 8 x 4-inch loaf pan. Combine 2 tbsp ketchup and 1 tbsp mustard; spread over the top of the loaf. Bake for 1 hour or until the inside temperature reaches 160°F.",
-      "Let stand in the pan for 10 minutes before slicing and serving. This is good with carrots and potatoes."
-    ],
-    "date": "2023-11-11T23:35:29.256Z",
-    "path": "meatloaf",
-    "categories": ["mains", "meat"],
-    "ingredients_list": [
-      "onion",
-      "ketchup",
-      "dijon mustard",
-      "mozzarella",
-      "breadcrumbs",
-      "parsley",
-      "parmesan",
-      "egg",
-      "beef"
-    ]
-
-  },
-  {
     "id": 55,
     "title": "Stone's Muffins",
+    "notes": "",
     "time": 60,
-    "servings": 12,
+    "servings": 6,
     "calories": 300,
     "ingredients": {
       "Ingredients": [
-        "2 cups all-purpose flour",
-        "1 tsp baking powder",
-        "1/2 tsp baking soda",
-        "1/2 tsp salt",
-        "2 eggs",
-        "1 cup granulated sugar",
-        "1/2 cup vegetable oil",
-        "1/2 tsp vanilla extract",
-        "1 cup Greek yogurt, full-fat, plain",
-        "1 cup fruit (blueberries, raspberries, etc.)",
+        "1 cup all-purpose flour",
+        "1/2 tsp baking powder",
+        "1/4 tsp baking soda",
+        "1/4 tsp salt",
+        "1 egg",
+        "1/2 cup granulated sugar",
+        "1/4 cup vegetable oil",
+        "1/4 tsp vanilla extract",
+        "1/2 cup Greek yogurt, full-fat, plain",
+        "1/2 cup fruit (blueberries, raspberries, etc.)",
         "2 tbsp sugar (for topping)"
       ]
     },
@@ -2288,10 +1441,18 @@ const recipes = [
   {
     "id": 56,
     "title": "Apple Pie",
+    "notes": "",
     "time": 180,
     "servings": 8,
     "calories": 400,
     "ingredients": {
+      "Crust": [
+        "2 1/2 cups flour",
+        "1 tsp salt",
+        "1 cup (1 stick) butter, cold",
+        "1/2 cup Crisco, cold",
+        "5-7 tbsp ice water"
+      ],
       "Filling": [
         "1 bag Cortland apples, peeled and thinly sliced (about 13 small)",
         "1/3 cup granulated sugar",
@@ -2302,14 +1463,13 @@ const recipes = [
         "1/8 tsp ground allspice",
         "3 tbsp lemon juice",
         "2 tbsp unsalted butter, cubed"
-      ],
-      "Crust": [
-        "1 pie crust recipe (2 disks), chilled",
-        "1 egg"
       ]
     },
     "directions": [
-      "Preheat the oven to 425°F.",
+      "In a large bowl, combine flour and salt. Work in butter and Crisco with your hands until you have small chunks.",
+      "Blend in ice water with a chilled fork until the dough hangs together when squeezed.",
+      "Divide into two balls, flatten into disks, then freeze for 15 minutes before rolling.",
+      "While the crust chills, preheat the oven to 425°F.",
       "In a medium bowl, combine the apples - lemon juice, stirring to coat. Set aside and let sit for 15 minutes, stirring occasionally, to let the juices release.",
       "While the apples are marinating, roll out the pie crusts. Fit one into a 9-inch pie plate. Brush the bottom with egg wash, then fill with the apples, topping with the cubed butter. Top with the other pie crust and cut vents to let steam escape while cooking. Crimp the edges to prevent juices from escaping and to make it look nice!",
       "Brush the crust with the remaining egg wash, then bake for 15 minutes. Reduce the heat to 350°F, tent with aluminum foil, and bake until golden and the juices are bubbling, about 45 minutes more.",
@@ -2323,111 +1483,63 @@ const recipes = [
       "granulated sugar",
       "brown sugar",
       "all-purpose flour",
-      "lemon juice",
+      "lemon",
       "butter",
       "egg",
       "cinnamon"
     ]
-  },
-  {
-    "id": 57,
-    "title": "Divorce Carrot Cake",
+  }, {
+    "id": 56,
+    "title": "Flour Bakery Apple Pie",
+    "notes": "",
     "time": 180,
     "servings": 8,
     "calories": 400,
     "ingredients": {
-      "Ingredients": [
-        "2 cups flour",
-        "2 tsp cinnamon",
-        "2 tsp baking soda",
-        "1 cup oil",
-        "1/2 cup honey",
-        "3 eggs",
-        "1 20 oz can crushed pineapple, drained",
-        "2 cups grated carrots",
-        "1 cup shredded coconut",
-        "1/2 cup walnuts",
-        "1/2 cup raisins"
+      "Crust": [
+        "2 2/3 cups (368 grams) unbleached all-purpose flour",
+        "1 1/2 Tablespoons granulated sugar",
+        "1 1/2 tsp kosher salt",
+        "1 1/2 cups (3 sticks, 342 grams) cold unsalted butter, cut into 12 pieces",
+        "3 egg yolks",
+        "4 1/2 Tablespoons cold milk"
+      ],
+      "Filling": [
+        "4 large Granny Smith apples, peeled, cored, and thinly sliced",
+        "3 medium Macintosh apples, peeled, cored, and thinly sliced",
+        "3/4 cup (165g) packed light brown sugar",
+        "1/4 cup (35g) all-purpose flour",
+        "1/4 tsp kosher salt",
+        "1/4 tsp ground cinnamon",
+        "1 egg, lightly beaten",
+        "2 Tablespoons granulated sugar"
       ]
     },
     "directions": [
-      "Preheat oven to 250F. Line two 8-inch baking pans with parchment paper; set aside.",
-      "Combine flour - baking soda in a medium bowl.",
-      "Combine oil - pineapple in a large bowl.",
-      "Fold dry ingredients into the wet ingredients, then fold in the carrots, coconut, walnuts, and raisins.",
-      "Pour evenly into cake pans, then bake for 45 minutes.",
-      "Let cool for at least 2 hours before frosting with cream cheese frosting!"
+      "First, make the crust: Using a stand mixer fitted with the paddle attachment, mix together the flour, sugar, and salt for 10 to 15 seconds, or until combined.",
+      "Scatter the butter over the top. Mix on low speed for 1 to 1 1/2 minutes, or just until the flour is no longer bright white and holds together when you clump it and lumps of butter the size of pecans are visible throughout.",
+      "In a small bowl, whisk together the egg yolks and milk. Add to the flour mixture all at once. Mix on low speed for about 30 seconds, or until the dough just barely comes together. It will look shaggy and more like a mess than a dough.",
+      "Dump the dough onto an unfloured surface, the gather it together into a tight mound. Using your palm and starting on one side of the mount, smear the dough bit by bit, starting at the top of the mound and then sliding your plan down the side and along the work surface, until most of the butter chunks are smeared into the dough and the dough comes together. Do this once or twice on each part of the dough, moving throughout eh mound until the whole mess has been smeared into a cohesive dough with streaks of butter.",
+      "Gather up the dough, wrap tightly in plastic wrap, and press down to flatten into a disk about 1 inch thick. Refrigerate for at least 4 hours before using. The dough will keep in the refrigerator for up to 4 days or in the freezer for up to 1 month.",
+      "Once the dough is sufficiently chilled, remove the dough from the refrigerator. On a well-floured work surface, flour out three-fourths of the dough into a circle about 12 inches in diameter and 1/8-inch thick. Reserve the remaining dough for the lattice top. Roll the dough circle around the pin and then unfurl it on top of a 9-inch pie pan. Press the dough gently into the bottom and sides of the pan and cut the overhanging edges so that there is a ¼ to ½ lip. Fold this under the and crimp around the circumference of the pie. Refrigerate the pie shell for at least 30 minutes, or tightly wrap in plastic wrap and refrigerate for up to 1 day or freeze for up to 2 weeks. Bake directly from the refrigerator or freezer.",
+      "Position a rack in the center of the oven, and heat the oven to 350°F. Line the pie shell with parchment paper or several overlapping coffee filters and fill with pie weights. Blind bake for about 30 minutes, or until the entire shell is light brown.",
+      "Meanwhile, in a medium bowl, combine the apples, brown sugar, flour, salt, and cinnamon and toss to coat the apples evenly. Let sit at room temperature for about 30 minutes. This softens the apples so that you can pack more of them into the pie.",
+      "When the pie shell is ready, remove it from the oven and leave the oven set at 350°F. Remove the weights and parchment, and pile the apples into the shell, pressing down lightly to compact them.",
+      "On a well-floured work surface, roll out the remaining dough into a rectangle about 10 inches long by 6 inches wide and ¼ inch thick. Using a fluted pastry wheel or pizza wheel, cut lengthwise strips each about ¾ inch wide. Brush the strips with the beaten egg. Drape four of the dough strips on top of the apples, arranging them all in one direction and spacing them about 2 inches apart. Drape the remaining four dough strips at a 45-degree angle to the first four strips, again spacing them about 2 inches apart. Let the lattice strips drape over the edge of the pie shell (you will trim these after the pie bakes). Sprinkle the strips with the sanding sugar.",
+      "Bake for 1 hour and 10 minutes to 1 ½ hours, or until the lattice strips are golden brown all the way through. The apples should be soft and easy to pierce with a small knife. Let cool on a wire rack for at least 1 hour before serving. Using a small knife to trim any lattice overhang, so the strips are flush with the pie edge. Serve warm or at room temperature. The pie can be stored in an airtight container at room temperature for up to 2 days, or in the refrigerator for up to 4 days."
     ],
     "date": "2023-11-11T23:35:29.257Z",
-    "path": "divorce_carrot_cake",
-    "categories": ["dessert", "cakes"],
+    "path": "apple_pie",
+    "categories": ["dessert", "fruit"],
     "ingredients_list": [
-      "all-purpose flour",
-      "cinnamon",
-      "honey",
-      "egg",
-      "pineapple",
-      "carrot",
-      "shredded coconut",
-      "walnut",
-      "raisins"
-    ]
-  },
-  {
-    "id": 58,
-    "title": "Garlic Butter Dinner Rolls",
-    "notes": "From Thanksgiving 2023",
-    "time": 180,
-    "servings": 24,
-    "calories": 150,
-    "ingredients": {
-      "Tangzhong": [
-        "1/4 cup bread flour",
-        "1/4 cup water",
-        "1/2 cup whole milk"
-      ],
-      "Yeast Mixture": [
-        "2 tbsp active dry yeast",
-        "1 cup warm (90F) whole milk"
-      ],
-      "Bread": [
-        "640g bread flour",
-        "1 1/2 tsp sea salt",
-        "1/2 cup granulated sugar",
-        "2 eggs, room temperature",
-        "6 tbsp unsalted butter, softened"
-      ],
-      "Egg Wash": [
-        "1 egg",
-        "2 tbsp whole milk"
-      ],
-      "Garlic Butter": [
-        "1 tbsp minced garlic",
-        "4 tbsp unsalted butter"
-      ]
-    },
-    "directions": [
-      "Add all tangzhong ingredients in a pan over medium heat. Cook, constantly whisking, until it becomes a thick smooth paste. Remove from heat and let cool to room temperature.",
-      "While the tangzhong cools, mix yeast and warm milk together in a small bowl. Let bloom at room temperature for 10 minutes.",
-      "In the meantime, combine flour, salt, and sugar in a stand mixer bowl. Add in the bloomed yeast mixture, the cooled tangzhong mix, and the 2 room temperature eggs. Mix on low speed, scraping the sides occasionally.",
-      "When dough starts coming together, increase speed to medium-low. Gradually add butter, a tablespoon at a time, until incorporated and nothing sticks to the sides (about 5-7 minutes).",
-      "Dump dough onto an unfloured counter top, divide into two pieces, and roll each into a tight ball. Place dough into two lightly greased bowls, cover with damp towels, and let rise at room temperature until doubled in size, for about one hour.",
-      "Lightly grease two 9x13 inch baking dishes. Punch dough down and dump onto an unfloured counter top, and divide into 12 equal pieces. Roll each dough piece into a small tight ball, then place into the baking dish in two 3x4 matrices. Cover with damp towels and let proof again for another 1 hour.",
-      "Preheat oven to 350F. Mix together the egg wash ingredients, then brush onto the risen rolls. Bake for 25 minutes or until golden brown on top.",
-      "While the rolls bake, cook together the garlic and butter in a small saucepan over medium heat until garlic is lightly golden and butter is melted, about 5 minutes.",
-      "Remove buns from oven and immediately brush with garlic butter and flaky salt. Serve warm!"
-    ],
-    "date": "2023-11-11T23:35:29.257Z",
-    "path": "garlic_butter_dinner_rolls",
-    "categories": ["bread"],
-    "ingredients_list": [
-      "bread flour",
-      "milk",
-      "yeast",
+      "apple",
       "granulated sugar",
-      "egg",
+      "brown sugar",
+      "all-purpose flour",
+      "lemon",
       "butter",
-      "garlic"
+      "egg",
+      "cinnamon"
     ]
   },
   {
@@ -2450,12 +1562,12 @@ const recipes = [
       ]
     },
     "directions": [
-      "Set small frying pan over low heat. ",
-      "In a small bowl, mash banana, then beat in egg. ",
-      "Stir in baking powder, baking soda, and cinnamon. ",
-      "Stir in flour until fully incorporated. ",
-      "Pour batter into hot pan. Cook until golden on one side (about 5 minutes), flip, then cook until golden on the other side as well (about 5 more minutes). ",
-      "Top with peanut butter, then yogurt, to serve. "
+      "Set small frying pan over low heat.",
+      "In a small bowl, mash banana, then beat in egg.",
+      "Stir in baking powder, baking soda, and cinnamon.",
+      "Stir in flour until fully incorporated.",
+      "Pour batter into hot pan. Cook until golden on one side (about 5 minutes), flip, then cook until golden on the other side as well (about 5 more minutes).",
+      "Top with peanut butter, then yogurt, to serve."
     ],
     "date": "2024-02-02T03:50:39.488Z",
     "path": "banana_pancake",
@@ -2478,11 +1590,11 @@ const recipes = [
     "calories": 260,
     "ingredients": {
       "Ingredients": [
-        "1/2 cup all purpose flour",
+        "1/2 cup all-purpose flour",
         "1/2 cup whole wheat flour",
         "2 tsp baking powder",
         "1/2 tsp salt",
-        "2 cups 2% cottage cheese"
+        "2 cups cottage cheese"
       ]
     },
     "directions": [
@@ -2502,96 +1614,23 @@ const recipes = [
     ]
   },
   {
-    "id": 61,
-    "title": "Flatbread",
-    "notes": "",
-    "time": 45,
-    "servings": 6,
-    "calories": 200,
-    "ingredients": {
-      "Ingredients": [
-        "2 cups all purpose flour",
-        "1 1/2 tsp baking powder",
-        "1 tsp salt",
-        "1 tsp honey",
-        "2 tbsp olive oil",
-        "3/4 cup water"
-      ]
-    },
-    "directions": [
-      "In a large bowl, whisk together the flour, baking powder, and salt.",
-      "Make a well in the middle of the flour mixture, and then add olive oil, honey, and about 1/2 cup of the water.",
-      "Switch to a rubber spatula and stir the wet ingredients into the flour mixture. If the dough seems dry, add the remaining water. When the dough comes together, transfer to a floured work surface and knead 5 to 10 times until smooth. Cover with a clean dish cloth and leave for 10 minutes.",
-      "Divide the dough into six equal pieces. Dust each piece in flour and roll into a 1/4-inch-thick disk.",
-      "Heat a bit of oil in a skillet placed over medium heat. When the oil looks shimmery, add a flatbread and cook until golden brown on each side (1-2 minutes).",
-      "Transfer cooked flatbread to a plate, cover with a clean dish towel to keep warm, and then continue with the remaining flatbreads. If the skillet looks dry, add a little more oil before continuing.",
-      "Serve with hummus."
-    ],
-    "date": "2024-10-11T03:50:39.488Z",
-    "path": "flatbread",
-    "categories": ["bread"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "honey"
-    ]
-  },
-  {
-    "id": 28,
-    "title": "Chez Ma Tante's Pancakes",
-    "notes": "The almost-too-large, almost-burnt, yet wholly delicious specialty of Brooklyn's Chez Ma Tante Restaurant",
-    "time": 20,
-    "servings": 4,
-    "calories": 400,
-    "ingredients": {
-      "Ingredients": [
-        "1 egg",
-        "1 egg yolk",
-        "2 1/2 tbsp baking powder",
-        "2 tbsp granulated sugar",
-        "1 tsp kosher salt",
-        "1 1/4 cups whole milk",
-        "1 cup all-purpose flour",
-        "1 cup + 2 tbsp clarified butter, melted",
-        "Salted butter, for serving",
-        "Maple syrup, for serving"
-      ]
-    },
-    "directions": [
-      "Whisk egg and yolk together in a medium bowl. Add baking powder, sugar and salt; whisk until smooth and fluffy. Pour in half the milk, then half the flour - stir to combine. Add the remaining milk and flour plus 2 tablespoons clarified butter and stir briefly just until batter comes together but is still somewhat lumpy.",
-      "Heat a large griddle over medium-high for at least 5 minutes. Pour about 1/4 cup clarified butter into the pan. When the surface of the clarified butter starts to shimmer, ladle about 1/3 cup of the batter into the skillet for each pancake, leaving a couple of inches between each pancake. Add more clarified butter as pancakes cook to keep about 1/8 inch of fat in the bottom of the pan at all times.",
-      "Cook until the top of the pancake starts to bubble and edges turn browned and crisp, 2 to 3 minutes. Use a spatula to flip each pancake. The cooked surface should be very crispy, with a dark ring around the edge. Cook until the second side is browned and crisp, 2 to 3 minutes. Repeat to cook the remaining pancakes, adding more clarified butter as needed.",
-      "Serve immediately with pats of salted butter and maple syrup. If making a large batch, cooked pancakes can be kept warm on a wire rack set in a rimmed metal baking sheet in a 300-degree oven."
-    ],
-    "date": "2024-11-17T04:00:00.000Z",
-    "path": "chez_ma_tantes_pancakes",
-    "categories": ["breakfast"],
-    "ingredients_list": [
-      "egg",
-      "granulated sugar",
-      "milk",
-      "all-purpose flour",
-      "butter",
-      "maple syrup"
-    ]
-  },
-  {
     "id": 62,
     "title": "Blueberry Scones",
-    "notes": "Adapted from Deb (Smitten Kitchen)",
+    "notes": "Adapted from Smitten Kitchen",
     "time": 45,
-    "servings": 8,
+    "servings": 4,
     "calories": 250,
     "ingredients": {
       "Ingredients": [
-        "1 cup (125 grams) all-purpose flour",
-        "1 cup (120 grams) whole wheat flour",
+        "1/2 cup (63 grams) all-purpose flour",
+        "1/2 cup (60 grams) whole wheat flour",
         "Zest of 1 lemon, finely grated",
-        "3 tablespoons raw (turbinado) or light brown sugar",
-        "2 teaspoons baking powder",
-        "1/2 teaspoon kosher salt",
-        "5 tablespoons cold unsalted butter, cut into small bits",
-        "1 cup fresh blueberries",
-        "2/3 cup (150 ml) whole milk",
+        "1 1/2 tablespoons light brown sugar",
+        "1 teaspoon baking powder",
+        "1/4 teaspoon kosher salt",
+        "2 1/2 tablespoons cold unsalted butter, cut into small bits",
+        "1/2 cup fresh blueberries",
+        "1/3 cup whole milk",
         "1 large egg, beaten",
         "1 tablespoon raw (turbinado) sugar for finishing"
       ]
@@ -2599,7 +1638,7 @@ const recipes = [
     "directions": [
       "Heat oven to 400°F (205°C). Line a large baking sheet with parchment paper.",
       "In a large bowl, combine flours, zest, sugar, baking powder and salt. Add cold butter and work into the flour mixture until the biggest pieces are the size of small peas with either your fingertips or a pastry blender. Stir in blueberries, then milk, mixing only until large clumps form. Use your hands to reach inside the bowl and gently (so gently) knead the mixture into one mass. The more you knead, the wetter the dough will get as the blueberries break up, so work quickly and knead only a few times, if you can get away with it.",
-      "Transfer dough to a well-floured counter and pat into a roughly 1-inch tall disc. Cut into 8 to 10 wedges, do not fret if the blueberries are now making a mess of the dough; it will all work out in the oven. Transfer wedges to prepared baking sheet, spacing them apart. Brush the tops of each with egg, then sprinkle with coarse sugar.",
+      "Transfer dough to a well-floured counter and pat into a roughly 1-inch tall disc. Cut into 4 wedges, do not fret if the blueberries are now making a mess of the dough; it will all work out in the oven. Transfer wedges to prepared baking sheet, spacing them apart. Brush the tops of each with egg, then sprinkle with coarse sugar.",
       "Bake for 15 to 17 minutes, until scones are golden brown on top. Serve warm.",
       "If freezing: I like to freeze scones unbaked and usually hold any egg wash until I'm ready to bake them. Simply spread the wedges on a baking sheet and chill until frozen solid and will no longer stick to each other, and pack tightly into a freezer bag. You can bake them right from the freezer; you'll only need 2 to 4 minutes extra baking time."
     ],
@@ -2620,21 +1659,21 @@ const recipes = [
   {
     "id": 63,
     "title": "Whole Wheat Raspberry Ricotta Scones",
-    "notes": "Adapted from Deb (Smitten Kitchen)",
+    "notes": "Adapted from Smitten Kitchen",
     "time": 45,
-    "servings": 9,
+    "servings": 4,
     "calories": 250,
     "ingredients": {
       "Ingredients": [
-        "1 cup (120 grams) whole wheat flour",
-        "1 cup (125 grams) all-purpose flour",
-        "1 tablespoon baking powder, preferably aluminum-free",
-        "1/4 cup (50 grams) granulated sugar",
-        "1/2 teaspoon table salt",
-        "6 tablespoons (85 grams) cold unsalted butter",
-        "1 cup (136 grams or 4 3/4 ounces) fresh raspberries",
-        "3/4 cup (189 grams) whole milk ricotta",
-        "1/3 cup (79 ml) heavy cream"
+        "1/2 cup (60 grams) whole wheat flour",
+        "1/2 cup (63 grams) all-purpose flour",
+        "1/2 tablespoon baking powder",
+        "2 Tablespoons (25 grams) granulated sugar",
+        "1/4 teaspoon table salt",
+        "3 tablespoons (43 grams) cold unsalted butter",
+        "1/2 cup (68 grams) fresh raspberries",
+        "1/3 cup (95 grams) whole milk ricotta",
+        "3 Tablespoons heavy cream"
       ]
     },
     "directions": [
@@ -2642,7 +1681,7 @@ const recipes = [
       "Add the butter and use the blender to cut the butter into the flour mixture until the biggest pieces are the size of small peas. Toss in raspberries and use the blender again to break them into halves and quarter berry sized chunks.",
       "If you don't have a pastry blender, you can cut the butter into small pieces with a knife and work the butter into the flour mixture with your fingertips until the mixture resembles a coarse meal. Roughly chop the raspberries on a cutting board and stir them into the butter-flour mixture.",
       "Add the ricotta and heavy cream together and stir them in to form a dough with a flexible spatula.Using your hands, gently knead dough into an even mass, right in the bottom of the bowl. Don't fret if the raspberries get muddled and smudge up the dough. This is a pretty thing.",
-      "With as few movements as possible, transfer the dough to a well-floured counter, flour the top of the dough and pat it into a 7-inch square about 1-inch tall. With a large knife, divide the dough into 9 even squares. Transfer the scones to prepared baking sheet with a spatula. Bake the scones for about 15 minutes, until lightly golden at the edges. Cool in pan for a minute, then transfer to a cooling rack. It's best to cool them about halfway before eating them, so they can set a bit more. I know, way to be a big meanie, right?",
+      "With as few movements as possible, transfer the dough to a well-floured counter, flour the top of the dough and pat it into a 5-inch square about 1-inch tall. With a large knife, divide the dough into 4 even squares. Transfer the scones to prepared baking sheet with a spatula. Bake the scones for about 15 minutes, until lightly golden at the edges. Cool in pan for a minute, then transfer to a cooling rack. It's best to cool them about halfway before eating them, so they can set a bit more. I know, way to be a big meanie, right?",
       "Do ahead: Scones are always best the day they are baked. However, if you wish to get a lead on them, you can make them, arrange them on your parchment-lined sheet and freeze them. If you're prepping just one day in advance, cover the tray with plastic wrap and bake them the day you need them. If you're preparing them more than one day in advance, once they are frozen, transfer them to a freezer bag or container. Bring them back to a parchment-lined sheet when you're ready to bake them. No need to defrost the froze, unbaked scones, just add 2 to 3 minutes to your baking time."
     ],
     "date": "2024-11-17T04:02:00.000Z",
@@ -2660,19 +1699,19 @@ const recipes = [
   },
   {
     "id": 64,
-    "title": "Bakeoff-Winning Cream Scones",
-    "notes": "The esteemed champion of Erica's (PancakePrincess) bakeoff! Excerpted from The Violet Bakery Cookbook.",
+    "title": "Cream Scones",
+    "notes": "Adapted from The Violet Bakery Cookbook.",
     "time": 75,
-    "servings": 12,
+    "servings": 6,
     "calories": 200,
     "ingredients": {
       "Ingredients": [
-        "700g (5 cups) all-purpose flour, plus more for rolling",
-        "2 tbsp baking powder",
-        "100g (1/2 cup) sugar",
-        "1/2 tsp salt",
-        "200g (3/4 cup + 2 tbsp) unsalted butter, chilled",
-        "600g (2½ cups) heavy cream",
+        "350g (2 1/2 cups) all-purpose flour, plus more for rolling",
+        "1 tbsp baking powder",
+        "50g (1/4 cup) sugar",
+        "1/4 tsp salt",
+        "100g (1/3 cup + 1 tbsp) unsalted butter, chilled",
+        "300g (1 1/4 cups) heavy cream",
         "1 egg, lightly beaten, for the egg wash",
         "good-quality jam and freshly whipped or clotted cream, to serve"
       ]
@@ -2699,77 +1738,28 @@ const recipes = [
     ]
   },
   {
-    "id": 65,
-    "title": "Bakeoff-Runner-Up Cream Scones",
-    "notes": "The runner-up to Erica's (PancakePrincess) scone bakeoff. Adapted from King Arthur Baking.",
-    "time": 60,
-    "servings": 8,
-    "calories": 250,
-    "ingredients": {
-      "Ingredients": [
-        "1 cup + 3 tbsp (165g) all-purpose flour",
-        "3 tbsp (33g) granulated sugar",
-        "1/2 teaspoon salt",
-        "1/2 tablespoon baking powder",
-        "4 tablespoons (57g) unsalted butter, cold",
-        "1/2 to 1 cup chopped dried fruit, chocolate chips, nuts, or a combination (optional)",
-        "1 large egg",
-        "1 teaspoon extract (vanilla, almond, lemon, etc.)",
-        "1/4 to 1/3 cup (57g to 75g) half-and-half",
-        "1 tbsp milk, for topping",
-        "1 tbsp coarse sugar, for topping"
-      ]
-    },
-    "directions": [
-      "In a large mixing bowl, whisk together the flour, sugar, salt, and baking powder.",
-      "Work in the butter just until the mixture is unevenly crumbly; it's OK for some larger chunks of butter to remain unincorporated.",
-      "Stir in the fruit, chips, and/or nuts, if you're using them.",
-      "In a separate mixing bowl, whisk together the eggs, vanilla or other flavor, and half-and-half. Add the liquid ingredients to the dry ingredients.",
-      "Using a bowl scraper or a large spoon, stir the dough ingredients until all is moistened and holds together.",
-      "Line a baking sheet with parchment; if you don't have parchment, just use it without greasing it. Sprinkle a bit of flour atop the parchment or pan.",
-      "Scrape the dough onto the floured parchment or pan. Round into a 5-inch circle (if you haven't incorporated any add-ins); or a 6-inch circle (if you've added fruit, nuts, etc.). The circle should be about 3/4-inch thick.",
-      "Using a knife or bench knife that you've run under cold water, slice the circle into 6 wedges.",
-      "Brush each scone with milk, and sprinkle with coarse white sparkling sugar or cinnamon sugar.",
-      "Carefully pull the wedges away from the center to separate them just a bit; there should be about 1/2-inch space between them, at their outer edges.",
-      "For best texture and highest rise, place the pan of scones in the freezer for 30 minutes, uncovered. Chilling the scones relaxes the gluten in the flour, which makes the scones more tender and allows them to rise higher. It also chills the fat, which will make the scones a bit flakier. While the scones are chilling, preheat the oven to 425°F with a rack in the upper third.",
-      "Bake the scones in the upper part of your oven for 18 to 23 minutes, or until they're a light golden brown. When you pull one away from the others, it should look baked all the way through; the edge shouldn't look wet or unbaked.",
-      "Remove the scones from the oven, and cool briefly on the pan. Serve warm. They're delicious as is, but add butter and/or jam, if you like. ",
-      "When the scones are completely cool, wrap them in plastic and store at room temperature for up to several days. To reheat room-temperature scones, place on a baking sheet, tent lightly with foil, and warm in a preheated 350°F oven for about 10 minutes."
-    ],
-    "date": "2024-11-17T04:04:00.000Z",
-    "path": "cream_scones_2",
-    "categories": ["breakfast", "pastries"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "granulated sugar",
-      "butter",
-      "egg",
-      "half-and-half",
-    ]
-  },
-  {
     "id": 66,
     "title": "Chocolate Chip Muffins",
     "notes": "Adapted from Butternut Bakery",
     "time": 90,
-    "servings": 12,
+    "servings": 6,
     "calories": 150,
     "ingredients": {
       "Ingredients": [
-        "2 1/2 cups (320g) all purpose flour",
-        "1 cup (200g) granulated sugar",
-        "2 1/2 tsp baking powder",
-        "1/2 tsp baking soda",
-        "1/2 tsp salt",
-        "1 1/2 cups mini semi sweet chocolate chips, divided",
-        "2 large eggs, room temp",
-        "1/4 cup (65g) sour cream, room temp",
-        "2 tsp vanilla extract",
-        "2 tbsp pure maple syrup",
-        "2 tbsp vegetable oil",
-        "1/2 cup (110g) unsalted butter, melted",
-        "1 cup (255ml) buttermilk, room temp",
-        "2-3 tbsp coarse or raw sugar, for sprinkling",
+        "1 1/4 cups (160g) all purpose flour",
+        "1/2 cup (100g) granulated sugar",
+        "1 1/4 tsp baking powder",
+        "1/4 tsp baking soda",
+        "1/4 tsp salt",
+        "3/4 cups mini semi sweet chocolate chips, divided",
+        "1 large egg, room temp",
+        "2 tbsp (32g) sour cream, room temp",
+        "1 tsp vanilla extract",
+        "1 tbsp pure maple syrup",
+        "1 tbsp vegetable oil",
+        "1/4 cup (60g) unsalted butter, melted",
+        "1/2 cup buttermilk, room temp",
+        "2 tbsp turbinado sugar, for sprinkling",
       ]
     },
     "directions": [
@@ -2803,109 +1793,24 @@ const recipes = [
     ]
   },
   {
-    "id": 67,
-    "title": "Pumpkin Muffins",
-    "notes": "Adapted from Lovely Little Kitchen",
-    "time": 45,
-    "servings": 12,
-    "calories": 150,
-    "ingredients": {
-      "Ingredients": [
-        "1 3/4 cups all purpose flour",
-        "1 cup sugar",
-        "1/2 cup dark brown sugar",
-        "1 teaspoon baking soda",
-        "1/2 teaspoon salt",
-        "2 teaspoons cinnamon",
-        "1/4 teaspoon ground cloves",
-        "1/4 teaspoon nutmeg",
-        "2 eggs",
-        "1 15 ounce can pure pumpkin puree",
-        "1/2 cup coconut oil, melted",
-        "1 teaspoon vanilla extract"
-      ]
-    },
-    "directions": [
-      "Preheat the oven to 375 degrees and place 12 paper liners into each well of your standard size muffin baking pan.",
-      "Measure out the flour, sugars, baking soda, salt and spices in a medium bowl and whisk together. Set aside.",
-      "In another bowl, whisk together the eggs, pumpkin puree, coconut oil and vanilla extract.",
-      "Pour the wet ingredients into the dry ingredients and stir together. Do not over mix, just stir until everything is incorporated into the batter.",
-      "It is helpful to use a large scoop (like an ice cream scoop) to evenly distribute the batter into each well. They will be nearly full. This will help give your muffins a nice puffy dome.",
-      "Bake your muffins for 20-22 minutes or until a toothpick inserted into the center of a muffin comes out clean."
-    ],
-    "date": "2024-11-17T04:06:00.000Z",
-    "path": "pumpkin_muffins",
-    "categories": ["breakfast", "muffins"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "granulated sugar",
-      "brown sugar",
-      "cinnamon",
-      "egg",
-      "pumpkin purée"
-    ]
-  },
-  {
-    "id": 68,
-    "title": "Spiced Oatmeal Muffins",
-    "notes": "Adapted from Five Heart Home",
-    "time": 60,
-    "servings": 12,
-    "calories": 170,
-    "ingredients": {
-      "Ingredients": [
-        "1 cup old-fashioned rolled oats",
-        "1 cup buttermilk",
-        "1 cup flour, all-purpose OR whole wheat pastry flour",
-        "1 teaspoon baking powder",
-        "1/2 teaspoon baking soda",
-        "1/2 teaspoon salt",
-        "1 teaspoon cinnamon",
-        "1/2 teaspoon nutmeg",
-        "1/2 cup packed brown sugar",
-        "1 egg",
-        "1/2 cup (1 stick) unsalted butter, melted & cooled",
-        "1/2 teaspoon pure vanilla extract"
-      ]
-    },
-    "directions": [
-      "In a large bowl, stir together oats and buttermilk. Allow to sit at room temperature for 30 minutes to 1 hour.",
-      "Preheat oven to 400°F and line 22 to 24 muffin cups with paper liners. In a medium bowl, whisk together flour, baking powder, baking soda, salt, cinnamon, and nutmeg; set aside.",
-      "After oats have finished soaking, stir brown sugar and eggs into the oatmeal/buttermilk mixture. Mix in melted butter and vanilla, and then blend in flour mixture and optional add-ins (if using) until just combined.",
-      "Evenly divide batter between prepared muffin cups. Bake for 15 to 20 minutes or until tops of muffins are golden brown and toothpick inserted into center of muffin comes out clean. Cool muffins in pan for a few minutes before turning out onto a cooling rack to finish cooling completely."
-    ],
-    "date": "2024-11-17T04:07:00.000Z",
-    "path": "oatmeal_muffins",
-    "categories": ["breakfast", "muffins"],
-    "ingredients_list": [
-      "old-fashioned rolled oats",
-      "buttermilk",
-      "all-purpose flour",
-      "cinnamon",
-      "brown sugar",
-      "egg",
-      "butter"
-    ]
-  },
-  {
     "id": 69,
     "title": "Levain Bakery Blueberry Muffins",
     "notes": "Adapted from HummingbirdHigh",
     "time": 45,
-    "servings": 9,
+    "servings": 5,
     "calories": 300,
     "ingredients": {
       "Ingredients": [
-        "2 cups (255 grams) all-purpose flour",
-        "1/2 cup (50 grams) almond flour",
-        "2 teaspoons baking powder",
-        "1/2 teaspoon kosher salt",
-        "1/2 cup (113 grams) whole milk, room temperature",
-        "1 teaspoon pure vanilla extract",
-        "1 cup (198 grams) granulated sugar",
-        "1/2 cup (113 grams) unsalted butter, room temperature",
-        "2 large eggs, room temperature",
-        "2 1/2 cups (369 grams) fresh blueberries, room temperature",
+        "1 cup (125 grams) all-purpose flour",
+        "1/4 cup (25 grams) almond flour",
+        "1 teaspoon baking powder",
+        "1/4 teaspoon kosher salt",
+        "1/4 cup (56 grams) whole milk, room temperature",
+        "1/2 teaspoon pure vanilla extract",
+        "1/2 cup (50 grams) granulated sugar",
+        "1/4 cup (56 grams) unsalted butter, room temperature",
+        "1 large egg, room temperature",
+        "1 1/4 cups (185 grams) fresh blueberries, room temperature",
         "9 teaspoons granulated sugar, for topping"
       ]
     },
@@ -2922,8 +1827,8 @@ const recipes = [
       "Serve at room temperature. The muffins are best on the day that they're made, but can be individually wrapped in plastic and stored at room temperature for up to 2 days."
     ],
     "date": "2024-11-17T04:08:00.000Z",
-    "path": "blueberry_muffins",
-    "categories": ["breakfast", "muffins"],
+    "path": "levain_blueberry_muffins",
+    "categories": ["breakfast", "muffins", "fruit"],
     "ingredients_list": [
       "all-purpose flour",
       "almond flour",
@@ -2935,27 +1840,70 @@ const recipes = [
     ]
   },
   {
+    "id": 69,
+    "title": "Classic Blueberry Muffins",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 30,
+    "servings": 9,
+    "calories": 300,
+    "ingredients": {
+      "Ingredients": [
+        "5 tablespoons (70 grams) unsalted butter, cold is fine",
+        "1/2 cup (100 grams) sugar",
+        "Finely grated zest from half a lemon",
+        "3/4 cup (180 grams) plain unsweetened yogurt",
+        "1 large egg",
+        "1 1/2 teaspoons (7 grams) baking powder",
+        "1/4 teaspoon baking soda",
+        "1/4 teaspoon fine sea or table salt",
+        "1 1/2 cups (195 grams) all-purpose flour",
+        "1 1/4 to 1 1/2 cups (215 to 255 grams) blueberries, fresh or frozen (no need to defrost)",
+        "3 tablespoons (35 grams) turbinado sugar"
+      ]
+    },
+    "directions": [
+      "Heat oven to 375°F. Line a muffin tin with 9 paper liners or spray each cup with a nonstick spray.",
+      "Melt butter in the bottom of a large bowl and whisk in sugar, zest, yogurt and egg until smooth.",
+      "Whisk in baking powder, baking soda and salt until fully combined, then lightly fold in flour and berries. Batter will be very thick, like a cookie dough.",
+      "Divide between prepared muffin cups and sprinkle each with 1 teaspoon turbinado sugar.",
+      "Bake for 25 to 30 minutes, until tops are golden and a tester inserted into the center of muffins comes out clean.",
+      "Let cool in pan for 10 minutes then the rest of the way on a rack."
+    ],
+    "date": "2024-11-17T04:09:00.000Z",
+    "path": "blueberry_muffins",
+    "categories": ["breakfast", "muffins", "fruit"],
+    "ingredients_list": [
+      "butter",
+      "granulated sugar",
+      "lemon",
+      "yogurt",
+      "egg",
+      "all-purpose flour",
+      "blueberries"
+    ]
+  },
+  {
     "id": 70,
     "title": "Whole Wheat Banana Walnut Muffins",
     "notes": "Adapted from Sally's Baking Addiction",
     "time": 45,
-    "servings": 12,
+    "servings": 6,
     "calories": 170,
     "ingredients": {
       "Ingredients": [
-        "2 cups (260g) whole wheat flour",
-        "1/2 cup (43g) old-fashioned whole rolled oats",
-        "1 teaspoon ground cinnamon",
-        "1 teaspoon baking soda",
-        "1 teaspoon baking powder",
-        "1/2 teaspoon salt",
-        "3 ripe bananas (about 306g or 1 1/3 cups mashed)",
-        "2 large eggs",
-        "1/3 cup (70g) coconut oil, melted",
-        "1/3 cup (80ml) maple syrup",
-        "1/3 cup (80ml) milk",
-        "1 teaspoon pure vanilla extract",
-        "1 cup (120g) chopped walnuts",
+        "1 cup (130g) whole wheat flour",
+        "1/4 cup (22g) old-fashioned whole rolled oats",
+        "1/2 teaspoon ground cinnamon",
+        "1/2 teaspoon baking soda",
+        "1/2 teaspoon baking powder",
+        "1/4 teaspoon salt",
+        "2 small ripe bananas (150g or 2/3 cups mashed)",
+        "1 large egg",
+        "3 tbsp oil, melted",
+        "3 tbsp maple syrup",
+        "3 tbsp milk",
+        "1/2 teaspoon pure vanilla extract",
+        "1/2 cup (60g) chopped walnuts",
         "3 Tablespoons coarse sugar, for topping",
       ]
     },
@@ -2969,16 +1917,17 @@ const recipes = [
     ],
     "date": "2024-11-17T04:09:00.000Z",
     "path": "banana_muffins",
-    "categories": ["breakfast", "muffins"],
+    "categories": ["breakfast", "muffins", "fruit"],
     "ingredients_list": [
       "whole wheat flour",
       "old-fashioned rolled oats",
       "cinnamon",
       "banana",
       "egg",
+      "oil",
       "maple syrup",
       "milk",
-      "walnut"
+      "walnuts"
     ]
   },
   {
@@ -2990,19 +1939,19 @@ const recipes = [
     "calories": 120,
     "ingredients": {
       "Ingredients": [
-        "1 cup mashed very ripe banana (about 3 small bananas)",
-        "½ cup shredded apple (about 1 small apple)",
-        "¼ cup shredded carrot (about 1 small carrot)",
-        "¾ cup milk",
-        "¼ cup unsalted butter, melted and slightly cooled",
+        "2 medium bananas, mashed (1/2 cup)",
+        "1/2 cup shredded apple (about 1 small apple)",
+        "1/4 cup shredded carrot (about 1 small carrot)",
+        "3/4 cup milk",
+        "1/4 cup unsalted butter, melted",
         "1 large egg",
         "1 teaspoon pure vanilla extract",
         "1 cup whole wheat flour",
-        "½ cup rolled oats",
+        "1/2 cup rolled oats",
         "1 teaspoon cinnamon",
         "1 teaspoon baking powder",
-        "½ teaspoon baking soda",
-        "⅛ teaspoon salt"
+        "1/2 teaspoon baking soda",
+        "1/8 teaspoon salt"
       ]
     },
     "directions": [
@@ -3031,111 +1980,59 @@ const recipes = [
   {
     "id": 72,
     "title": "Morning Glory Muffins",
-    "notes": "Adapted from Baker by Nature",
+    "notes": "Adapted from Sally's Baking",
     "time": 45,
-    "servings": 12,
+    "servings": 8,
     "calories": 280,
     "ingredients": {
       "Ingredients": [
-        "1 1/2 cups whole wheat flour",
-        "1/2 cup all-purpose flour",
-        "3/4 cup brown sugar, packed",
-        "1 tablespoon baking powder",
-        "2 teaspoons baking soda",
-        "2 teaspoons ground cinnamon",
-        "1/2 teaspoon ground ginger",
-        "1/2 teaspoon salt",
-        "3/4 cup unsweetened applesauce",
-        "1/2 cup coconut oil, melted",
-        "1 apple, shredded",
-        "1 tablespoon vanilla extract",
-        "2 cups grated carrot (about 3 medium)",
-        "1/2 cup raisins",
-        "1/2 cup flaked coconut",
-        "1/2 cup walnuts, chopped"
+        "1 cup (130g) whole wheat flour",
+        "1 teaspoon baking soda",
+        "1 teaspoon ground cinnamon",
+        "1/4 teaspoon ground ginger",
+        "1/4 teaspoon salt",
+        "3 tbsp (17g) ground flaxseed",
+        "1 large egg, at room temperature",
+        "1/4 cup (50g) packed light or dark brown sugar",
+        "2 tbsp (43g) honey",
+        "3 tbsp vegetable oil",
+        "1/3 cup (80g) unsweetened applesauce",
+        "Zest and juice of 1 orange (1 tsp, 3 tbsp)",
+        "1/2 teaspoon pure vanilla extract",
+        "1 cup (130g, 2 large) shredded carrots",
+        "1/2 cup (70g, 1 small) shredded apple",
+        "1/4 cup (37g) raisins",
+        "1/4 cup (32g) chopped walnuts"
       ]
     },
     "directions": [
-      "Preheat oven to 400F. Line a muffin tin with paper liners; set aside.",
-      "In a large bowl, whisk together the flours, sugar, baking powder, baking soda, cinnamon, ginger, and salt.",
-      "Whisk in the applesauce, oil, apple and vanilla until just combined.",
-      "Fold in the carrot, raisins, coconut and walnuts.",
-      "Divide batter evenly among the prepared muffin cups, filling each about 3/4 of the way.",
-      "Bake at 400 degrees for 10 minutes, then reduce the heat to 350 degrees and bake for an additional 10 minutes, or until a toothpick inserted in the center comes out clean. Cool muffins in the pan for 5 minutes before transferring them to a wire rack."
+      "Preheat oven to 425F. Line a muffin tin with paper liners; set aside.",
+      "In a large bowl, whisk together the flour, baking soda, cinnamon, ginger, salt, and flaxseed.",
+      "In a medium bowl, whisk together the egg, sugar, honey, oil, applesauce, orange zest, orange juice, and vanilla.",
+      "Fold carrots and apple into the wet ingredients.",
+      "Pour wet ingredients into dry ingredients. Stir to combine, then add the raisins and pecans. Fold everything together until just combined and no pockets of flour remain.",
+      "Divide batter evenly among the prepared muffin cups, filling each about 90%.",
+      "Bake for 5 minutes at 425F, then 18 more minutes at 350F. They're done when a toothpick inserted in the center comes out clean.",
+      "Cool muffins in the pan for 10 minutes before transferring to a wire rack to cool until ready to serve.",
+      "Muffins will keep covered at room temperature for 2 days or in the refrigerator for up to 1 week."
     ],
     "date": "2024-11-17T04:11:00.000Z",
     "path": "morning_glory_muffins",
     "categories": ["breakfast", "muffins"],
     "ingredients_list": [
       "whole wheat flour",
-      "all-purpose flour",
-      "brown sugar",
       "cinnamon",
-      "applesauce",
-      "oil",
-      "apple",
-      "carrot",
-      "raisins",
-      "shredded coconut",
-      "walnut"
-    ]
-  },
-  {
-    "id": 73,
-    "title": "Honey Bran Muffins",
-    "notes": "Adapted from The Cafe Sucre Farine",
-    "time": 45,
-    "servings": 12,
-    "calories": 230,
-    "ingredients": {
-      "Muffins": [
-        "1/2 cup vegetable oil",
-        "1/2 cup brown sugar",
-        "3 eggs",
-        "1/4 cup molasses",
-        "1 1/2 cups buttermilk",
-        "1 teaspoon vanilla extract",
-        "2 cups wheat bran",
-        "1 cup whole wheat flour",
-        "2/3 cup all-purpose flour",
-        "1 teaspoon baking powder",
-        "1 teaspoon baking soda",
-        "1/2 teaspoon salt",
-        "1 teaspoon cinnamon",
-        "1/2 teaspoon ground ginger",
-        "1/4 teaspoon ground cloves",
-        "2/3 cup raisins"
-      ],
-      "Honey Glaze": [
-        "1 tablespoon honey",
-        "1 tablespoon butter"
-      ]
-    },
-    "directions": [
-      "Preheat oven to 400F. Spray a 12-cup muffin pan with nonstick spray.",
-      "In a large bowl, whisk together oil, sugar, and eggs. Stir in molasses, buttermilk, and vanilla.",
-      "Stir in bran, flours, baking powder, baking soda, salt, and spices just until incorporated (do not overmix!).",
-      "Finally, fold in raisins.",
-      "Spoon batter into prepared muffin tins, filling all the way to the top. Bake for 12-15 minutes until firm to touch and a tester comes out clean.",
-      "Allow to sit in muffin tin for 5 minutes, then transfer to a cool rack.",
-      "While the muffins cool, make the glaze by mixing together the melted butter and honey in a small bowl. Brush the glaze over the top of the warm muffins.",
-    ],
-    "date": "2024-11-17T04:12:00.000Z",
-    "path": "honey_bran_muffins",
-    "categories": ["breakfast", "muffins"],
-    "ingredients_list": [
-      "oil",
-      "brown sugar",
+      "flaxseed",
       "egg",
-      "molasses",
-      "buttermilk",
-      "wheat bran",
-      "whole wheat flour",
-      "all-purpose flour",
-      "cinnamon",
-      "raisins",
+      "brown sugar",
       "honey",
-      "butter"
+      "oil",
+      "applesauce",
+      "orange",
+      "carrot",
+      "apple",
+      "raisins",
+      "walnuts"
     ]
   },
   {
@@ -3155,18 +2052,20 @@ const recipes = [
         "1/4 cup molasses",
         "2 cups buttermilk",
         "2 1/4 cups all purpose flour",
-        "1/4 cup ground flax seed",
+        "1/4 cup ground flaxseed",
         "1 tsp salt",
         "1/2 tsp cinnamon",
+        "1/2 teaspoon ground ginger",
+        "1/4 teaspoon ground cloves",
         "2 1/2 tsp baking soda",
-        "2 cups old-fashioned rolled oats"
+        "2 cups old-fashioned rolled oats",
       ]
     },
     "directions": [
       "Preheat oven to 350F. Line a 12-cup muffin tin with paper liners - set aside.",
       "In a small bowl, combine the boiling water with the bran; let stand 10 minutes.",
       "Meanwhile, in a large bowl, whisk the eggs, oil, brown sugar, molasses and buttermilk.",
-      "Add the flour, ground flax seed, salt, cinnamon, baking soda, and oats to the wet ingredients. Add the bran/water mixture and stir just until combined.",
+      "Add the flour, ground flaxseed, salt, cinnamon, ginger, cloves, baking soda, and oats to the wet ingredients. Add the bran/water mixture and stir just until combined.",
       "Scoop the batter into the muffin tins, filling each cup almost all the way full. Bake for 25-30 minutes, or until the tops have risen and spring back when touched."
     ],
     "date": "2024-11-18T04:13:00.000Z",
@@ -3180,55 +2079,9 @@ const recipes = [
       "molasses",
       "buttermilk",
       "all-purpose flour",
-      "flax seed",
+      "flaxseed",
       "cinnamon",
       "old-fashioned rolled oats"
-    ]
-  },
-  {
-    "id": 75,
-    "title": "Zucchini Muffins",
-    "notes": "Adapted from Gimme Some Oven",
-    "time": 45,
-    "servings": 12,
-    "calories": 230,
-    "ingredients": {
-      "Ingredients": [
-        "1 2/3 cups all-purpose flour",
-        "1 1/2 teaspoons ground cinnamon",
-        "1 teaspoon baking powder",
-        "1 teaspoon baking soda",
-        "1/2 teaspoon ground ginger",
-        "1/2 teaspoon salt",
-        "1 egg",
-        "1/2 cup maple syrup",
-        "1/2 cup milk",
-        "1/4 cup melted coconut oil",
-        "1 teaspoon vanilla extract",
-        "1 1/2 cups (6 ounces) grated zucchini (no need to squeeze out excess liquid)",
-        "1/3 cups old-fashioned oats",
-        "turbinado sugar, for sprinkling"
-      ]
-    },
-    "directions": [
-      "Heat oven to 350°F. Line a 12-cup muffin pan with paper liners; set aside.",
-      "In a large mixing bowl, whisk together egg, maple syrup, milk, coconut oil and vanilla extract until combined.",
-      "Whisk in the flour, cinnamon, baking powder, baking soda, ground ginger and salt until just combined, then gently fold in the zucchini and oats (do not overmix!).",
-      "Portion the batter evenly between the 12 baking cups. Sprinkle the top of each muffin with a pinch of sugar, then bake for 16-18 minutes or until a toothpick inserted in the center of the muffin comes out clean. Transfer pan to a wire cooling rack for at least 5 minutes to cool."
-    ],
-    "date": "2024-11-18T04:14:00.000Z",
-    "path": "zucchini_muffins",
-    "categories": ["breakfast", "muffins"],
-    "ingredients_list": [
-      "all-purpose flour",
-      "cinnamon",
-      "egg",
-      "maple syrup",
-      "milk",
-      "oil",
-      "zucchini",
-      "old-fashioned rolled oats",
-      "granulated sugar"
     ]
   },
   {
@@ -3282,6 +2135,1392 @@ const recipes = [
       "powdered sugar"
     ]
   },
+  {
+    "title": "NYT Mac and Cheese",
+    "notes": "Adapted from NYT",
+    "time": 100,
+    "servings": 8,
+    "calories": 450,
+    "ingredients": {
+      "Ingredients": [
+        "1 cup cottage cheese",
+        "2 cups milk",
+        "1 tsp dry mustard",
+        "1/2 tsp kosher salt",
+        "1/4 tsp black pepper",
+        "1/8 tsp ground cayenne",
+        "1/8 tsp ground nutmeg",
+        "1 pound sharp cheddar cheese, grated",
+        "1/2 pound cavatappi pasta, uncooked",
+      ]
+    },
+    "directions": [
+      "Heat oven to 375F and position an oven rack in upper third of oven. Grease a 9-inch round or square baking pan; set aside.",
+      "In a blender, purée cottage cheese, milk, mustard, cayenne, nutmeg, salt, and pepper.",
+      "Reserve 1/4 cup grated Cheddar for topping. In a large bowl, combine remaining grated Cheddar, milk mixture, and uncooked pasta.",
+      "Pour into prepared pan, cover tightly with foil, and bake 30 minutes.",
+      "Uncover pan, stir gently, sprinkle with reserved cheese. Bake, uncovered, 30 minutes more, until browned. Let cool at least 15 minutes before serving."
+    ],
+    "date": "2025-03-31T01:00:00.000Z",
+    "path": "mac_and_cheese_nyt",
+    "categories": ["main", "pasta"],
+    "ingredients_list": [
+      "cottage cheese",
+      "milk",
+      "cheese",
+      "pasta",
+    ]
+  },
+  {
+    "title": "Tini's Mac and Cheese",
+    "notes": "Adapted from Tini",
+    "time": 100,
+    "servings": 8,
+    "calories": 450,
+    "ingredients": {
+      "Ingredients": [
+        "1/2 lb corkscrew pasta",
+        "1/2 lb mozzarella",
+        "1/2 lb colby jack",
+        "1/4 lb sharp cheddar",
+        "1/4 tsp salt",
+        "1/4 tsp black pepper",
+        "1/2 tsp garlic powder",
+        "1/2 tsp paprika",
+        "2 tbsp butter",
+        "2 tbsp flour",
+        "6 oz evaporated milk",
+        "1 cup heavy cream",
+        "1/2 tbsp Dijon mustard"
+      ]
+    },
+    "directions": [
+      "Boil/drain pasta",
+      "Shred all cheeses",
+      "Mix together seasoning in small bowl",
+      "Melt butter in pan, add 1/2 of the seasoning mixture, then add the flour in. Cook, stirring constantly, until the roux is evenly browned.",
+      "Slowly stream in the can of evaporated milk a little at a time, stirring well after each addition.",
+      "Slowly stream in the heavy cream, whisking constantly.",
+      "Stir in the rest of the seasoning, then cook until thickened, about 5 minutes.",
+      "Stir in cheese a handful at a time, waiting for it to melt completely before adding more.",
+      "Mix in pasta. The sauce should be super thick and coat every single noodle.",
+      "In a 9x9 inch pan, layer half the pasta mixture, half the cheese mixture, then the other half of the pasta mixture, then top with the other half of the cheese mixture.",
+      "Cook at 350F for 25-30 minutes, or until the top is golden and melty. Broil for 2 minutes until the top is a darker brown, but be careful not to burn it!",
+      "Let cool for 5-10 minutes before slicing and serving."
+    ],
+    "date": "2025-03-31T01:00:00.000Z",
+    "path": "mac_and_cheese_nyt",
+    "categories": ["main", "pasta"],
+    "ingredients_list": [
+      "pasta",
+      "cheese",
+      "butter",
+      "all-purpose flour",
+      "evaporated milk",
+      "heavy cream",
+      "dijon mustard"
+    ]
+  },
+  {
+    "title": "Japanese Curry",
+    "notes": "Adapted from S&B Foods",
+    "time": 30,
+    "servings": 4,
+    "calories": 450,
+    "ingredients": {
+      "Ingredients": [
+        "1 lb beef or chicken, chopped",
+        "2 medium onions (13oz), minced",
+        "2 medium carrots (3.5oz), chopped",
+        "1 medium potato (5oz), chopped",
+        "2 1/2 cups water",
+        "1 pack S&B Golden Curry Sauce Mix",
+        "4 nests egg noodles or 4 cups rice, cooked"
+      ]
+    },
+    "directions": [
+      "Stir-fry meat and vegetables with oil in a large skillet on medium heat for approx. 5 min.",
+      "Add water and bring to boil. Reduce heat, cover and simmer until ingredients are tender, approx. 15min.",
+      "Turn the heat off, break S&B Golden Curry Sauce Mix into pieces and add them to the skillet. Stir until sauce mixes are completely melted. Simmer approx. 5 min., stirring constantly.",
+      "Serve hot over rice or noodles."
+    ],
+    "date": "2025-03-31T01:01:00.000Z",
+    "path": "japanese_curry",
+    "categories": ["main", "meat", "soup"],
+    "ingredients_list": [
+      "beef",
+      "chicken",
+      "onion",
+      "carrot",
+      "potato",
+      "curry paste/roux",
+      "pasta",
+      "rice"
+    ]
+  },
+  {
+    "title": "Thai Pumpkin Soup",
+    "notes": "From Friendsgiving 2024",
+    "time": 70,
+    "servings": 4,
+    "calories": 300,
+    "ingredients": {
+      "Ingredients": [
+        "2 cans pumpkin purée OR 3 lbs carrots, steamed and puréed",
+        "3 large shallots, chopped (or 1 small yellow onion)",
+        "6 garlic cloves, minced",
+        "2 tsp grated ginger",
+        "2 stalks fresh lemongrass, outer papery layers removed, then smashed and minced",
+        "3/4 tsp ground cumin",
+        "3/4 tsp ground coriander",
+        "1/2 tsp white pepper",
+        "1/4 tsp ground cinnamon",
+        "1/4 tsp ground turmeric",
+        "1 13.5-ounce (400 mL) can full-fat coconut milk",
+        "2 tbsp red curry paste",
+        "3 cups chicken broth",
+        "12 dried lime leaves (or 6 fresh lime leaves)",
+        "1 1/2 tbsp brown sugar, more as needed",
+        "2 tbsp soy sauce",
+        "1/2 cup Thai basil leaves, chopped"
+      ]
+    },
+    "directions": [
+      "Heat a medium saucepan over medium-high heat with a bit of oil. Once hot, add the shallots, garlic, ginger, and lemongrass with a pinch of salt, and cook for 3 to 4 minutes, or until shallots and garlic just start to get some color. If it starts to stick, add a splash of water to scrape up the food bits. Add all spices and stir almost constantly for 30 seconds.",
+      "Add a few tablespoons of coconut milk to deglaze and pick up food bits. Once bubbling, add the curry paste. Fry for a few minutes, tossing frequently to prevent sticking. Pour in the rest of the coconut milk, broth, lime leaves, sugar, and soy sauce. Bring to a boil, then simmer for 10 minutes. Scoop out the lime leaves but keep them for now.",
+      "Add pumpkin/carrot purée to pot; simmer for 15 minutes.",
+      "Serve warm with a bit of chili crisp, dumplings, or bread!"
+    ],
+    "date": "2025-03-31T01:02:00.000Z",
+    "path": "thai_pumpkin_soup",
+    "categories": ["main", "soup"],
+    "ingredients_list": [
+      "pumpkin purée",
+      "carrot",
+      "cinnamon",
+      "shallot",
+      "onion",
+      "garlic",
+      "ginger",
+      "lemongrass",
+      "coconut milk",
+      "curry paste/roux",
+      "chicken broth",
+      "brown sugar",
+      "soy sauce",
+      "basil"
+    ]
+  },
+  {
+    "title": "Mexican Tamales",
+    "notes": "From Christmas 2024",
+    "time": 90,
+    "servings": 24,
+    "calories": 100,
+    "ingredients": {
+      "Dough": [
+        "8 ounce package dried corn husks",
+        "1 1/3 cups butter",
+        "3 cups broth",
+        "4 cups Masa Harina",
+        "2 teaspoons baking powder",
+        "1 teaspoon salt",
+        "1 teaspoon cumin",
+      ],
+      "Filling": [
+        "3 1/2 cups cooked red chili pork",
+        "3/12 cups cooked, shredded chicken + 16 oz salsa verde",
+        "15oz refried beans + 1 1/2 shredded mozzarella cheese"
+      ]
+    },
+    "directions": [
+      "Soak the corn husks in a bowl of very hot water for 30 minutes or until softened.",
+      "While the corn husks are soaking, prepare your desired filling.",
+      "In a large bowl, use an electric mixer to beat the butter and 2 tablespoons of broth until fluffy, about 3-5 minutes.",
+      "Combine the masa flour, baking powder, salt, and cumin in a separate bowl; beat into the butter mixture.",
+      "Add the broth little by little to form a very soft dough. Beat on high speed for several minutes. The dough should spread like creamy peanut butter and be slightly sticky.",
+      "Cover the mixing bowl with a damp paper towel to keep the dough from drying out.",
+      "Lay a corn husk, glossy side up, on the counter with the wide end at the top. Scoop about 1/4 cup of dough onto the top center of the corn husk. Lay a piece of parchment paper over the dough and use your hands to press and spread the masa into a thin layer, about 1/4 inch thick. Keep the dough spread along the top half of the corn husk to allow plenty of room to fold the bottom husk up.",
+      "Place 2 tablespoons of filling in a line down the center of the dough (you don't want too much filling).",
+      "Fold in one long side of the husk over the filling. Fold in the other long side, overlapping the first (like folding a brochure). Fold the bottom of the husk up.",
+      "Add water to the bottom of your steamer or instant pot. (About 1 cup for IP and a few cups for a steamer pot—don't fill above the steamer rack.) Lay a few extra corn husks on the bottom rack to keep the tamales from falling through and any boiling water from directly touching them.",
+      "Place tamales standing upright, with their open end up, just tightly enough to keep them standing. If using a steamer pot, lay a few soaked corn husks or a wet towel over the top of the tamales before closing the lid.",
+      "Steamer: Bring water to a boil, then reduce to a simmer and steam for 1 hour.",
+      "Instant Pot: Cook on Manual/High Pressure for 25 minutes. Allow pressure to naturally release for 10 minutes, and then quick release.",
+      "To test if the tamales are done: Remove one and try to pull the husk off. If the husk pulls away cleanly from the tamale they're done. If the dough is still sticky or wet looking, cook them for 10 minutes longer and try again.",
+      "To store, let tamales cool completely then refrigerate for 5 days or freeze for up to 3 months.",
+      "To reheat, wrap refrigerated/frozen tamales in a dampened paper towel and microwave until warmed through.",
+    ],
+    "date": "2025-03-31T01:03:00.000Z",
+    "path": "tamales",
+    "categories": ["main", "meat"],
+    "ingredients_list": [
+      "butter",
+      "chicken broth",
+      "chicken",
+      "salsa",
+      "beans",
+      "cheese"
+    ]
+  },
+  {
+    "title": "Tofu Egg Rice Bowl",
+    "notes": "",
+    "time": 30,
+    "servings": 1,
+    "calories": 450,
+    "ingredients": {
+      "Sauce": [
+        "1/2 cup water",
+        "1/4 teaspoon dashi powder",
+        "1 teaspoon grated ginger",
+        "1 tablespoon sugar",
+        "2 tablespoons mirin",
+        "2 tablespoons soy sauce"
+      ],
+      "Base": [
+        "200g silken tofu",
+        "1 onion, sliced",
+        "1 scallion, sliced",
+        "2 eggs, whisked",
+        "1/2 cup cooked rice"
+      ]
+    },
+    "directions": [
+      "Bring all sauce ingredients (water, dashi powder, ginger, sugar, mirin, and soy sauce) to a simmer in a small frying pan.",
+      "Add sliced onion to the sauce and cook until soft (5 minutes).",
+      "Add tofu and spring onion to the pan, bring back to a boil, then pour over whisked Eggs but DO NOT stir. Cover with a lid and continue gently simmering until the egg is softly cooked (3 minutes).",
+      "Add rice to a bowl, then cover it with the tofu & egg mixture to serve."
+    ],
+    "date": "2025-03-31T01:04:00.000Z",
+    "path": "tofu_egg_rice_bowl",
+    "categories": ["main", "quick"],
+    "ingredients_list": [
+      "dashi",
+      "ginger",
+      "granulated sugar",
+      "mirin",
+      "soy sauce",
+      "silken tofu",
+      "onion",
+      "scallions",
+      "egg",
+      "rice"
+    ]
+  },
+  {
+    "title": "Sausage Rolls",
+    "notes": "From MnC 23S",
+    "time": 120,
+    "servings": 24,
+    "calories": 200,
+    "ingredients": {
+      "Filling": [
+        "1/2 tbsp olive oil",
+        "2 cloves garlic, minced",
+        "1 onion, finely chopped",
+        "1 celery stalk, finely chopped",
+        "5 oz bacon, finely minced",
+        "1/2 tsp fennel seeds",
+        "1 lb ground turkey",
+        "3/4 cup breadcrumbs",
+        "1 egg",
+        "1/2 tsp salt",
+        "1/4 tsp black pepper"
+      ],
+      "Baking": [
+        "1 package puff pastry, thawed, then cut in half",
+        "1 egg"
+      ]
+    },
+    "directions": [
+      "Heat oil in a non-stick fry pan over medium high heat. Sauté garlic, onion, & celery for 2 minutes, then add bacon. Cook for 4 more minutes then transfer to a bowl and allow to cool for 10 minutes.",
+      "Add remaining filling ingredients (fennel-black pepper) into the bowl. Use your hands to mix well.",
+      "Lay out a rectangle of pastry, long edge closest to you. Brush egg along one long edge.",
+      "Get 1/4th of the filling and shape into a long log down the middle of the pastry. Ensure the meat is nice and compacted without gaps.",
+      "Brush edge of pastry with egg. Then roll up, finishing with the seam side down. Repeat for remaining pastry sheets and filling.",
+      "Refrigerate logs for 1 hour.",
+      "Preheat oven to 350F.",
+      "Cut each log into four equal lengths, or just two if you want full size sausage rolls. Place on 2 baking trays lined with baking paper and brush with whisked egg wash.",
+      "Bake for 30-35 minutes, or until the pastry is deep golden brown.",
+      "Let cool slightly on trays, then serve with tomato sauce or ketchup.",
+    ],
+    "date": "2025-03-31T01:05:00.000Z",
+    "path": "sausage_rolls",
+    "categories": ["main", "meat", "pastries"],
+    "ingredients_list": [
+      "garlic",
+      "onion",
+      "celery",
+      "turkey",
+      "breadcrumbs",
+      "egg",
+    ]
+  },
+  {
+    "title": "Spiced Apple Cake",
+    "notes": "Adapted from Sally's Baking",
+    "time": 120,
+    "servings": 12,
+    "calories": 250,
+    "ingredients": {
+      "Cake": [
+        "1 1/4 cups (156g) all-purpose flour",
+        "1 teaspoon baking powder",
+        "1/2 teaspoon baking soda",
+        "1/4 teaspoon salt",
+        "1 teaspoon ground cinnamon",
+        "1/4 teaspoon ground nutmeg",
+        "1/8 teaspoon ground ginger",
+        "1/8 teaspoon ground allspice",
+        "1/2 cup vegetable oil",
+        "1/2 cup (100g) granulated sugar",
+        "1/4 cup (50g) packed light brown sugar",
+        "1/2 cup (120g) unsweetened applesauce",
+        "2 large eggs, at room temperature",
+        "1/2 teaspoon pure vanilla extract",
+        "1 Tablespoon orange juice",
+        "2 small apples, peeled and chopped into 1/2-inch chunks (1 1/2 cups or 180g)"
+      ],
+      "Glaze": [
+        "2 Tablespoons (28g) unsalted butter",
+        "1/2 cup (100g) packed light brown sugar",
+        "1/4 cup heavy cream",
+        "1/8 teaspoon salt",
+        "1/4 cup (30g) powdered sugar, sifted",
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 350°F (177°C) and grease an 8x8-inch baking pan; set aside",
+      "In a large bowl, whisk the flour, baking powder, baking soda, salt, cinnamon, nutmeg, ginger, and allspice; set aside.",
+      "In a medium bowl, whisk the oil, granulated sugar, brown sugar, applesauce, eggs, vanilla extract, and orange juice.",
+      "Pour the wet ingredients into the dry ingredients and whisk until combined. Gently fold in the chopped apples until everything is coated.",
+      "Pour and spread batter evenly into the prepared pan. Bake for 30 minutes, then loosely tent the cake with aluminum foil to prevent over-browning. Bake for 15-20 minutes more until a toothpick inserted in the center comes out clean.",
+      "Remove the cake from the oven and set the pan on a wire rack. Allow to cool for at least 30 minutes before glazing.",
+      "While the cake cools, prepare the brown sugar glaze: melt the butter in a small saucepan over medium heat.",
+      "Add the brown sugar, heavy cream, and salt and let it come to a rapid boil. Boil for 1 minute, then turn the heat down to low, stir, and simmer for 1 minute.",
+      "Remove from heat and whisk in the sifted powdered sugar, then allow glaze to cool/thicken for 20 minutes. Spoon glaze over the cake right before serving.",
+      "Cover leftovers and store at room temperature for 2 days or in the refrigerator for 5 days."
+    ],
+    "date": "2025-04-26T01:07:00.000Z",
+    "path": "spiced_apple_cake",
+    "categories": ["dessert", "cake", "fruit"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "cinnamon",
+      "oil",
+      "granulated sugar",
+      "brown sugar",
+      "applesauce",
+      "egg",
+      "orange",
+      "apple",
+      "butter",
+      "heavy cream",
+      "powdered sugar",
+    ]
+  },
+  {
+    "title": "Mostly Apples Apple Cake",
+    "notes": "Adapted from King Arthur Baking Company",
+    "time": 90,
+    "servings": 10,
+    "calories": 210,
+    "ingredients": {
+      "Ingredients": [
+        "1/4 cup (30g) sliced almonds",
+        "1/3 cup (45g) all-purpose flour",
+        "2 tbsp (12g) almond flour",
+        "1/2 teaspoon baking powder",
+        "1/4 teaspoon table salt",
+        "3 tablespoons (42g) unsalted butter, melted",
+        "1 large egg, at room temperature",
+        "1/3 cup (80g) light brown sugar, packed",
+        "1/4 teaspoon almond extract",
+        "2 medium apples, peeled and sliced about 1/4 inch thick (2 1/4 cups or 225g)"
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 350°F. Grease the bottom of a 6-inch round cake pan, then line with parchment paper, then grease the parchment. Sprinkle with the sliced almonds, a bit at a time, pressing gently to adhere them to the pan.",
+      "In a medium bowl, whisk together the flours, baking powder, and salt.",
+      "In a large bowl, whisk together the melted butter, eggs, sugar, and extract until creamy, lighter in color, and slightly foamy. Whisk in the dry ingredients until just combined.",
+      "Use a rubber spatula to fold the apples into the batter until evenly coated. It should look like you don't have enough batter - don't worry.",
+      "Scrape the batter into the prepared pan and nudge the apples into a mostly-even layer.",
+      "Bake 50-55 minutes, until the cake is golden-brown on top and a toothpick or paring knife inserted into the center comes out clean.",
+      "Remove the cake from the oven. Let cool in its pan on a wire rack for 15 minutes, then remove and let cool for at least 15 minutes more.",
+      "Slice with a sharp serrated knife to serve, which will help you saw through the apple pieces rather than crushing them.",
+      "This cake is best served the day it's baked, but it can be stored, uncovered at room temperature, for up to 3 days (press parchment or plastic wrap directly to cut surfaces but don’t cover the cake, as it will become damp)."
+    ],
+    "date": "2025-04-26T01:08:00.000Z",
+    "path": "mostly_apples_apple_cake",
+    "categories": ["dessert", "cake", "fruit"],
+    "ingredients_list": [
+      "almonds",
+      "all-purpose flour",
+      "almond flour",
+      "butter",
+      "egg",
+      "brown sugar",
+      "apple"
+    ]
+  },
+  {
+    "title": "Apple Crumb Cake",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 90,
+    "servings": 12,
+    "calories": 250,
+    "ingredients": {
+      "Apples": [
+        "1 pound apples (3 medium or 2 large), peeled and cored, cut into 1/2-inch wedges",
+        "Juice of half a lemon",
+        "1 teaspoon ground cinnamon",
+        "1 tablespoon granulated sugar",
+      ],
+      "Crumbs": [
+        "1/2 cup (4 ounces or 115 grams) unsalted butter, melted",
+        "1/3 cup (65 grams) light or dark brown sugar",
+        "1/3 cup (65 grams) granulated sugar",
+        "1 teaspoon ground cinnamon",
+        "1/4 teaspoon kosher salt",
+        "1 1/3 cups (175 grams) all-purpose flour",
+      ],
+      "Cake": [
+        "6 tablespoons (85 grams) unsalted butter, softened",
+        "1/2 cup (100 grams) granulated sugar",
+        "1 large egg",
+        "1/3 cup (80 grams) sour cream",
+        "1 teaspoon (5 ml) vanilla extract",
+        "1 cup (130 grams) all-purpose flour",
+        "1 1/4 teaspoon baking powder",
+        "3/4 teaspoon kosher salt"
+      ],
+    },
+    "directions": [
+      "Preheat oven to 325°F (165°C). Coat an 8-inch square pan with nonstick spray, then line with parchment paper.",
+      "Prepare the apples: in a medium bowl, toss apples with lemon juice, then cinnamon and sugar and set aside.",
+      "Prepare the crumbs: in a small bowl, whisk butter, sugars, cinnamon, and salt together until evenly mixed. Add flour and mix until it disappears. It's going to be very thick; set it it aside.",
+      "Prepare the cake: In a large bowl, beat butter with sugar until light and fluffy. Beat in egg, sour cream, and vanilla. Beat in baking powder and salt, then mix in flour just until it disappears.",
+      "Scrape batter into prepared cake pan and smooth it flat. Arrange apples on cake, slightly overlapped. I usually fit all but 2 wedges; those are snacks for the chef. Pour any cinnamon-apple juices in bottom of bowl over apples. Sprinkle crumbs over apple slices.",
+      "Bake the cake for 50-55 minutes, or until a toothpick inserted into the apples doesn't hit any crisp spots and you can see juices bubbling around some apples.",
+      "Cool to room temperature before cutting into squares. Dust generously with powdered sugar.",
+      "Cake keeps at room temperature loosely covered (in an airtight container, the crumbs eventually soften) for 3 days or in the fridge, well-wrapped, for 6 days."
+    ],
+    "date": "2025-04-26T01:09:00.000Z",
+    "path": "apple_crumb_cake",
+    "categories": ["dessert", "cake", "fruit"],
+    "ingredients_list": []
+  },
+  {
+    "title": "Pineapple Upside Down Cake",
+    "notes": "Adapted from Shutterbean",
+    "time": 90,
+    "servings": 12,
+    "calories": 250,
+    "ingredients": {
+      "Cake": [
+        "1 cup cake flour",
+        "1/2 cup sugar",
+        "2 1/2 teaspoons baking powder",
+        "1/2 teaspoon salt",
+        "4 egg yolks",
+        "3/4 cup milk",
+        "1/2 tablespoon vanilla",
+        "1 stick unsalted butter, at room temperature",
+      ],
+      "Caramel": [
+        "1 stick unsalted butter",
+        "1 cup brown sugar",
+        "9 slices of canned pineapple rings",
+      ]
+    },
+    "directions": [
+      "Preheat oven to 400F.",
+      "Prepare the cake: in the large bowl of a stand mixer, mix together flour, sugar, baking powder, and salt. Beat the butter into the flour mixture.",
+      "In a small bowl, combine the egg yolks, milk, and vanilla. Save the egg whites for a nice little omelet!",
+      "Gradually add the egg mixture to the butter/flour mixture, continuing to beat until smooth",
+      "To prepare the caramel: in a medium saucepan, bring butter to a light simmer. Add sugar, mixing until mixture is smooth and a light brown color.",
+      "Pour the caramel mixture in an ungreased 8x8 inch square metal pan. Layer 9 slices of pineapple on top of the caramel, then pour in the cake batter. Leave about 1 inch of room at the top of the pan to allow the cake to rise.",
+      "Bake for 50 minutes or until center is cooked. Let rest in the pan for 15 minutes, then invert slowly on a plate to serve!"
+    ],
+    "date": "2025-04-26T01:10:00.000Z",
+    "path": "pineapple_upside_down_cake",
+    "categories": ["dessert", "cake", "fruit"],
+    "ingredients_list": [
+      "cake flour",
+      "granulated sugar",
+      "egg",
+      "milk",
+      "butter",
+      "brown sugar",
+      "pineapple",
+    ]
+  },
+  {
+    "title": "Carrot Cake",
+    "notes": "Adapted from King Arthur Flour",
+    "time": 120,
+    "servings": 16,
+    "calories": 290,
+    "ingredients": {
+      "Cake": [
+        "1/2 cup + 2 Tablespoons (124g) vegetable oil",
+        "1 cup (200g) granulated sugar",
+        "1/2 teaspoon table salt",
+        "2 large eggs",
+        "1/2 tablespoon (4g) cinnamon",
+        "1/4 teaspoon ginger",
+        "1/8 teaspoon cloves",
+        "3/4 teaspoons baking powder",
+        "1/4 teaspoon baking soda",
+        "1 cup (120g) all-purpose flour",
+        "1 1/2 cups (163g) carrots, finely grated",
+        "3/4 cup (85g) chopped walnuts"
+      ],
+      "Frosting": [
+        "4 tablespoons (56g) unsalted butter, room temperature",
+        "4 oz (114g) cream cheese, room temperature",
+        "1/8 teaspoon table salt",
+        "1 teaspoon vanilla extract",
+        "1 1/4 cups (141g) powdered sugar"
+      ]
+    },
+    "directions": [
+      "Preheat oven to 350°F. Grease and line one 9-inch round cake pan or two 6-inch cake pans.",
+      "In the bowl of a stand mixer, beat together the oil, sugar, salt, eggs, spices, baking powder, and baking soda.",
+      "Add the flour, stirring until well blended.",
+      "Add the carrots and nuts, and mix until just blended. Pour into the prepared pan(s).",
+      "Bake the cake(s) for 35-40 minutes, or until a toothpick inserted into the center comes out clean. Allow the cake(s) to cool completely before frosting.",
+      "To make the frosting: In the bowl of a stand mixer, beat the butter and cream cheese together until smooth. Beat in the salt and vanilla, then beat in the sugar as well.",
+      "Frost the cake, then refrigerate the cake until ready to serve.",
+      "An hour before serving, remove the cake from the refrigerator and bring to room temperature. Refrigerate any leftovers, well wrapped, for 2 days; freeze for longer storage."
+    ],
+    "date": "2025-04-26T01:11:00.000Z",
+    "path": "carrot_cake",
+    "categories": ["dessert", "cake"],
+    "ingredients_list": [
+      "oil",
+      "granulated sugar",
+      "egg",
+      "cinnamon",
+      "all-purpose flour",
+      "carrot",
+      "walnuts",
+      "butter",
+      "cream cheese",
+      "powdered sugar"
+    ]
+  },
+  {
+    "title": "Chocolate Mug Cake",
+    "notes": "For Alex",
+    "time": 1,
+    "servings": 1,
+    "calories": 350,
+    "ingredients": {
+      "Ingredients": [
+        "4 tablespoons flour",
+        "3 tablespoons sugar",
+        "2 tablespoons cocoa powder",
+        "1/2 teaspoon baking powder",
+        "3 tablespoons milk",
+        "1 tablespoon vegetable oil",
+        "1 teaspoon vanilla extract"
+      ]
+    },
+    "directions": [
+      "In a 12-ounce (375 ml) mug or larger, mix all ingredients until just combined.",
+      "Microwave for 1.5-2 minutes, watching to make sure it doesn't spill over.",
+      "Let cool one minute before eating."
+    ],
+    "date": "2025-04-26T01:12:00.000Z",
+    "path": "chocolate_mug_cake",
+    "categories": ["dessert", "cake"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "granulated sugar",
+      "cocoa powder",
+      "milk",
+      "oil"
+    ]
+  },
+  {
+    "title": "Chocolate Cake",
+    "notes": "Adapted from Barefoot Contessa",
+    "time": 90,
+    "servings": 12,
+    "calories": 150,
+    "ingredients": {
+      "Cake": [
+        "3/4 cup + 2 Tablespoons all-purpose flour",
+        "1 cup sugar",
+        "1/3 cup cocoa powder",
+        "1 teaspoon baking soda",
+        "1/2 teaspoon baking powder",
+        "1/2 teaspoon kosher salt",
+        "1/2 cup buttermilk",
+        "1/4 cup vegetable oil",
+        "1 egg, at room temperature",
+        "1/2 teaspoon pure vanilla extract",
+        "1/2 cup freshly brewed hot coffee"
+      ],
+      "Frosting": [
+        "1/2 tbsp butter, softened",
+        "2 oz cream cheese, softened",
+        "1 1/2 cups powdered sugar",
+        "1/8 tsp salt",
+        "1/2 tsp vanilla extract",
+        "1/2 oz unsweetened chocolate",
+        "2 Tablespoons milk"
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 350F. Grease one 8-inch round cake pan or two 6-inch round cake pans, line with parchment paper, and grease again.",
+      "Sift the flour, sugar, cocoa, baking soda, baking powder, and salt into the bowl of an electric mixer fitted with the paddle attachment and mix on low speed until combined.",
+      "In another bowl, combine the buttermilk, oil, eggs, and vanilla. With the mixer on low speed, slowly add the wet ingredients to the dry ones.",
+      "With mixer still on low, add the coffee and stir just to combine, scraping the bottom of the bowl with a rubber spatula.",
+      "Pour the batter evenly into the prepared pan and bake for 35-40 minutes, until a cake tester comes out clean.",
+      "Cool in the pan for 30 minutes, then turn out onto a cooling rack and cool completely.",
+      "While the cake cools, make the frosting; in a bowl of a stand mixer, beat together butter and cream cheese.",
+      "Add powdered sugar, salt, and vanilla; beat until well combined.",
+      "Melt chocolate in the microwave in 30-second intervals until smooth.",
+      "Add melted chocolate to frosting, then add milk AS NEEDED to achieve your desired consistency. (You may not need the full 1/4 cup!)",
+      "Frost the cake once it's completely cool. Serve at room temperature."
+    ],
+    "date": "2025-04-26T01:13:00.000Z",
+    "path": "chocolate_cake",
+    "categories": ["dessert", "cake"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "granulated sugar",
+      "cocoa powder",
+      "buttermilk",
+      "oil",
+      "egg",
+      "coffee",
+      "butter",
+      "cream cheese",
+      "powdered sugar",
+      "chocolate",
+      "milk"
+    ]
+  },
+  {
+    "title": "Mini Chocolate Cake",
+    "notes": "Adapted from Sally's Baking",
+    "time": 60,
+    "servings": 4,
+    "calories": 250,
+    "ingredients": {
+      "Cake": [
+        "1/2 cup (63g) all-purpose flour (spooned & leveled)",
+        "1/4 cup (21g) unsweetened natural cocoa powder",
+        "1/4 teaspoon baking soda",
+        "1/2 teaspoon espresso powder",
+        "1/4 teaspoon salt",
+        "1/4 cup (60ml) vegetable oil",
+        "1/2 cup (100g) granulated sugar",
+        "1 large egg, at room temperature",
+        "1/2 teaspoon pure vanilla extract",
+        "1/4 cup (60ml) buttermilk, at room temperature",
+      ],
+      "Ganache": [
+        "1/2 cup (120ml) heavy cream",
+        "4 ounces (113g) semi-sweet or bittersweet chocolate, finely chopped",
+      ]
+    },
+    "directions": [
+      "Preheat oven to 350°F (177°C). Grease a 6-inch round cake pan, line with parchment paper, then grease the parchment paper.",
+      "Make the cake: In a large bowl, whisk together the flour, cocoa powder, baking soda, espresso powder, and salt.",
+      "In a medium bowl, whisk together the oil, sugar, egg, vanilla extract, and buttermilk.",
+      "Pour the oil mixture into the flour mixture and whisk until smooth.",
+      "Pour the cake batter evenly into prepared cake pan.",
+      "Bake for 27-30 minutes or until a toothpick inserted into the center of the cake comes out clean.",
+      "Allow cake to cool in the pan on a wire rack. Cool completely before frosting.",
+      "While the cake cools, make the chocolate ganache: Heat heavy cream in a small saucepan until it begins to gently simmer (don't let it come to a rapid boil!). Pour over chopped chocolate in a medium heat-proof bowl, then let it sit for 2 minutes to soften the chocolate.",
+      "Gently stir the ganache until completely combined. It will be thin, so let it cool and thicken for at least 60 minutes before using. Refrigerating speeds this up, but you'll need to stir it every 5 minutes to ensure it thickens evenly.",
+      "Spread ganache on cooled cake. Slice and serve.",
+      "Cover leftover cake tightly and store at room temperature for 1 day or in the refrigerator for up to 5 days."
+    ],
+    "date": "2025-04-26T01:14:00.000Z",
+    "path": "mini_chocolate_cake",
+    "categories": ["dessert", "cake"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "cocoa powder",
+      "espresso powder",
+      "oil",
+      "granulated sugar",
+      "egg",
+      "buttermilk",
+      "heavy cream",
+      "chocolate"
+    ]
+  },
+  {
+    "title": "Flour Banana Bread",
+    "notes": "Adapted from Flour Bakery",
+    "time": 90,
+    "servings": 8,
+    "calories": 250,
+    "ingredients": {
+      "Ingredients": [
+        "1 2/3 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "1/4 teaspoon ground cinnamon",
+        "1/2 teaspoon salt",
+        "1 cup + 2 tablespoons sugar",
+        "2 eggs",
+        "1/2 cup oil",
+        "3 1/2 bananas, very ripe, mashed",
+        "2 tablespoons sour cream",
+        "1 teaspoon vanilla extract",
+        "2/3 cup walnuts, toasted and chopped",
+      ]
+    },
+    "directions": [
+      "Preheat oven to 350F. Line the bottom of a loaf pan with parchment paper.",
+      "In a medium bowl, sift together the flour, baking soda, cinnamon and salt.",
+      "In the bowl of a stand mixer, beat sugar and eggs until light and fluffy. Drizzle in oil. Add mashed bananas, sour cream, and vanilla. Fold in dry ingredients and nuts.",
+      "Pour into the lined loaf pan and bake for 45-60 minutes or until a toothpick inserted into the center of the loaf comes out clean. Let cool for 30 minutes before slicing and serving."
+    ],
+    "date": "2025-04-26T01:15:00.000Z",
+    "path": "flour_banana_bread",
+    "categories": ["dessert", "quick bread", "fruit"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "cinnamon",
+      "granulated sugar",
+      "egg",
+      "oil",
+      "banana",
+      "sour cream",
+      "walnuts",
+    ]
+  },
+  {
+    "title": "Banana Bread",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 75,
+    "servings": 10,
+    "calories": 250,
+    "ingredients": {
+      "Ingredients": [
+        "1/2 cup (4 ounces or 115 grams) unsalted butter, cut into chunks",
+        "1 cup (190 grams) packed light brown sugar",
+        "4 large bananas, mashed (2 slightly heaped cups or 510 grams)",
+        "2 large eggs",
+        "1 teaspoon vanilla extract",
+        "1 teaspoon salt",
+        "1 heaped teaspoon ground cinnamon",
+        "1/8 tsp nutmeg",
+        "1 teaspoon baking soda",
+        "1 teaspoon baking powder",
+        "2 cups (260 grams) all-purpose flour",
+        "2 tablespoons (25 grams) turbinado sugar (for topping)"
+      ]
+    },
+    "directions": [
+      "Heat oven to 350F. Grease a 6-cup (9x5-inch) loaf pan; set aside.",
+      "Melt butter in a large bowl and whisk in brown sugar until smooth, then stir in mashed banana. Whisk in eggs and vanilla.",
+      "Sprinkle the surface of the batter evenly with salt, cinnamon, nutmeg, baking soda, and baking powder, and whisk thoroughly until the ingredients are fully dispersed in the batter.",
+      "Add flour and stir until combined.",
+      "Scrape batter into prepared loaf pan. It should come to just over 1/2-inch from the top rim. Sprinkle the top of the batter with the raw sugar.",
+      "Bake banana bread for 55-65 minutes. It is done when a toothpick inserted into the bread comes out clean - be sure to check the upper third near the rim of the pan. The bread will get very dark but will not taste burnt.",
+      "Let cool in pan. This banana bread is good on the first day but exceptional on the second and third, if you can bear to wait.",
+      "To store: Leave the banana bread in the pan, uncovered. Once cut, press a piece of foil against the cut side of the remaining loaf but leave the top uncovered — you worked hard for that crunchy top and should not sacrifice it to humidity. It keeps for 5 days at room temperature or 7 days in the fridge.",
+    ],
+    "date": "2025-04-27T01:16:00.000Z",
+    "path": "banana_bread",
+    "categories": ["dessert", "quick bread", "fruit"],
+    "ingredients_list": [
+      "butter",
+      "brown sugar",
+      "banana",
+      "egg",
+      "cinnamon",
+      "all-purpose flour",
+    ]
+  },
+  {
+    "title": "Pumpkin Bread",
+    "notes": "Adapted from Elisabeth Prueitt",
+    "time": 75,
+    "servings": 10,
+    "calories": 250,
+    "ingredients": {
+      "Bread": [
+        "1 3/4 cups (228 grams) all-purpose flour",
+        "1 1/2 teaspoons baking powder",
+        "1/2 teaspoon baking soda",
+        "1 tablespoon + 2 teaspoons ground cinnamon",
+        "2 teaspoons nutmeg, freshly grated",
+        "1/4 teaspoon ground cloves",
+        "1 cup + 2 tablespoons (255 grams) pumpkin purée",
+        "1 cup vegetable oil",
+        "1 1/3 cup (265 grams) granulated sugar",
+        "3/4 teaspoon salt",
+        "3 eggs",
+      ],
+      "Streusel": [
+        "1/4 cup (55g) unsalted butter, melted",
+        "1/2 cup (65g) all-purpose flour",
+        "1/4 cup (50g) packed light brown sugar",
+        "2 tbsp granulated sugar",
+        "1/2 teaspoon ground cinnamon",
+      ],
+    },
+    "directions": [
+      "Preheat oven to 325°F. Grease a 9x5 inch loaf pan, line with parchment paper, then grease again; set aside.",
+      "In a small bowl, mix together all of the streusel ingredients; refrigerate while you make the pumpkin bread.",
+      "Sift together flour, baking powder, baking soda, cinnamon, nutmeg, and cloves. Set aside.",
+      "Use a stand mixer with a whisk attachment or a hand-held whisk to beat together the pumpkin purée, oil, sugar, and salt.",
+      "Add the eggs one at a time, mixing well after each addition.",
+      "Scrape down the sides of the bowl and add the flour mixture all at once. Beat on low speed, until just combined.",
+      "Re-scrape the sides of the bowl and beat on medium speed for 5 to 10 seconds to make a smooth batter. Be sure not to overmix!",
+      "Transfer batter to the loaf pan and smooth the surface with an offset spatula. Sprinkle the top evenly with the streusel.",
+      "Bake for 1 hour, until a toothpick inserted into the center comes out clean.",
+      "Let cool in the loaf pan on a wire rack for 20 minutes then remove from pan and let cool completely.",
+      " The cake will keep, well-wrapped, at room temperature for 4 days or in the refrigerator for about 1 week."
+    ],
+    "date": "2025-04-27T01:17:00.000Z",
+    "path": "pumpkin_bread",
+    "categories": ["dessert", "quick bread"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "cinnamon",
+      "pumpkin purée",
+      "oil",
+      "granulated sugar",
+      "egg",
+      "butter",
+      "brown sugar"
+    ]
+  },
+  {
+    "title": "Zucchini Bread",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 75,
+    "servings": 10,
+    "calories": 250,
+    "ingredients": {
+      "Ingredients": [
+        "2 cups (370 grams) grated, packed zucchini, not wrung out",
+        "2 large eggs",
+        "2/3 cup (160 ml) vegetable oil",
+        "1/2 cup (95 grams) packed dark brown sugar",
+        "1/2 cup (100 grams) granulated sugar",
+        "1 teaspoon vanilla extract",
+        "1 teaspoon fine sea or table salt",
+        "1 1/4 teaspoons ground cinnamon",
+        "1/8 teaspoon ground or freshly grated nutmeg",
+        "3/4 teaspoon baking soda",
+        "1/2 teaspoon baking powder",
+        "2 cups (260 grams) all-purpose flour",
+        "2 tablespoons (25 grams) turbinado sugar"
+      ]
+    },
+    "directions": [
+      "Preheat oven to 350F. Grease a 9x5-inch loaf pan with nonstick spray; set aside.",
+      "In a large bowl, mix together grated zucchini, eggs, oil, sugars, vanilla, and salt.",
+      "Sprinkle cinnamon, nutmeg, baking soda, and baking powder over surface of batter and mix until thoroughly combined.",
+      "Mix in flour until just combined.",
+      "Pour into prepared loaf pan, smooth the top, then sprinkle with turbinado sugar.",
+      "Bake for 55-60 minutes until a toothpick inserted into the middle and the top comes out clean.",
+      "Let cool completely in the pan. Leave in pan, unwrapped, overnight or 24 hours, until removing (carefully, so not to ruin the flaky lid) and serving in slices.",
+      "Zucchini bread keeps for 5 days at room temperature. I wrap only the cut end of the cake in foil, and return it to the baking pan, leaving the top exposed so that it stays crunchy."
+    ],
+    "date": "2025-04-27T01:18:00.000Z",
+    "path": "zucchini_bread",
+    "categories": ["dessert", "quick bread"],
+    "ingredients_list": [
+      "zucchini",
+      "egg",
+      "oil",
+      "brown sugar",
+      "granulated sugar",
+      "cinnamon",
+      "all-purpose flour"
+    ]
+  },
+  {
+    "title": "Blueberry Bread",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 90,
+    "servings": 10,
+    "calories": 250,
+    "ingredients": {
+      "Ingredients": [
+        "8 tablespoons (1/2 cup or 115 grams) unsalted butter, cold is fine",
+        "3/4 cup (150 grams) granulated sugar",
+        "Finely grated zest from one lemon",
+        "1 cup (225 grams) plain unsweetened Greek-style yogurt",
+        "2 large eggs",
+        "2 teaspoons baking powder",
+        "1/2 teaspoon baking soda",
+        "3/4 teaspoon kosher salt",
+        "2 cups (260 grams) all-purpose flour",
+        "2 1/4 cups (320 grams or 11.5 ounces) fresh or frozen blueberries (no need to defrost)",
+        "3 tablespoons (35 grams) turbinado sugar"
+      ]
+    },
+    "directions": [
+      "Heat oven to 375°F. Grease a 9x5 loaf pan with nonstick spray, line with parchment paper, then grease again.",
+      "Melt butter in a large bowl, then whisk in granulated sugar and zest.",
+      "Add yogurt and eggs and whisk to evenly combine.",
+      "Sprinkle surface of batter with baking powder, baking soda, and salt and whisk thoroughly into the batter.",
+      "Fold in flour and berries until no pockets of flour remain. The batter should be very, very thick.",
+      "Spoon into prepared loaf pan and drop it on the counter a few times to make sure there no air pockets. Smooth the top and sprinkle it with turbinado sugar.",
+      "Bake for 60-70 minutes, or until a toothpick inserted into a few places in the loaf come out batter-free. Remove from oven and let cool in pan.",
+      "Store uncovered at room temperature for 4 days, or in the fridge for 7 days. The loaf also freezes well, wrapped tightly.",
+    ],
+    "date": "2025-04-27T01:18:00.000Z",
+    "path": "blueberry_bread",
+    "categories": ["dessert", "quick bread", "fruit"],
+    "ingredients_list": [
+      "butter",
+      "granulated sugar",
+      "lemon",
+      "yogurt",
+      "egg",
+      "all-purpose flour",
+      "blueberries",
+    ]
+  },
+  {
+    "title": "Oatmeal Chocolate Chip Cookies",
+    "notes": "Adapted from Kroll's Korner",
+    "time": 30,
+    "servings": 12,
+    "calories": 300,
+    "ingredients": {
+      "Ingredients": [
+        "1 cup all-purpose flour",
+        "3/4 cup cake flour",
+        "2 cups old-fashioned rolled oats",
+        "1 tsp cornstarch",
+        "1/2 tsp baking powder",
+        "1/2 tsp baking soda",
+        "1/2 tsp salt",
+        "1/4 tsp ground cinnamon",
+        "1/4 tsp ground nutmeg",
+        "1/2 cup cold, unsalted butter, cubed",
+        "1/2 cup light brown sugar, packed",
+        "1/4 cup granulated sugar",
+        "1 Tbsp molasses",
+        "1 large egg",
+        "1 large egg yolk",
+        "1 tsp pure vanilla extract",
+        "2 cups white chocolate chips"
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 400°F. Line two baking sheets with parchment paper; set aside.",
+      "In a large bowl, whisk together the all-purpose flour, cake flour, oats, cornstarch, cinnamon, nutmeg, baking soda, baking powder, and salt. Set aside.",
+      "Cream the cold, cubed butter with a stand mixer's lowest setting for 30 seconds.",
+      "Next, add in the brown sugar and mix for 30 more seconds.",
+      "Then, add in the white sugar and mix until well-incorporated.",
+      "Mix in the egg, egg yolk, molasses, and vanilla.",
+      "Keep the mixer on low speed and gradually add in the dry ingredients, about 1/4 cup at a time.",
+      "Mix in the chocolate chips.",
+      "Measure out 12 large cookies (6 per baking sheet) and gently flatten them.",
+      "Bake the cookies for 7-9 minutes - pull them out before you think they are done.",
+      "Let cookies cool on the baking sheet for 15 minutes, then transfer them to a cooling rack to finish cooling.",
+    ],
+    "date": "2025-04-27T01:19:00.000Z",
+    "path": "oatmeal_cookies",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "cake flour",
+      "old-fashioned rolled oats",
+      "cornstarch",
+      "cinnamon",
+      "butter",
+      "brown sugar",
+      "granulated sugar",
+      "molasses",
+      "egg",
+      "white chocolate"
+    ]
+  },
+  {
+    "title": "Snickerdoodles",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 60,
+    "servings": 18,
+    "calories": 150,
+    "ingredients": {
+      "Ingredients": [
+        "1 1/3 cups (180g) all-purpose flour",
+        "1 teaspoon cream of tartar",
+        "1/2 teaspoon baking soda",
+        "1/8 teaspoon fine sea salt",
+        "8 tablespoons (112g) unsalted butter, at room temperature",
+        "3/4 cup (75g) granulated sugar",
+        "1 large egg",
+        "1/4 cup (25g) granulated sugar",
+        "1 tablespoon ground cinnamon"
+      ]
+    },
+    "directions": [
+      "Preheat oven to 400°F. Line baking sheets with parchment paper; set aside.",
+      "In a medium bowl, whisk together flour, cream of tartar, baking soda, and salt; set aside.",
+      "In the bowl of an electric mixer fitted with a paddle attachment, beat butter and sugar on medium speed until light and fluffy, about 2 minutes.",
+      "Beat in eggs.",
+      "Add dry ingredients, and beat to combine.",
+      "Refrigerate the dough for an hour.",
+      "Once dough has chilled, in a small bowl, combine 1/4 cup sugar and 1 tablespoon ground cinnamon. Use a small ice-cream scoop to form balls of the dough, and roll in cinnamon sugar. Place about two inches apart on the prepared baking sheets.",
+      "Bake for 10 minutes or until the cookies are set in center and begin to crack (they will not brown).",
+      "Let the cookies cool on the sheet for 5 minutes, then transfer the cookies to a wire rack to cool completely.",
+      "Store cookies at room temperature in an airtight container up to one week."
+    ],
+    "date": "2025-04-27T01:20:00.000Z",
+    "path": "snickerdoodles",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "butter",
+      "granulated sugar",
+      "egg",
+      "cinnamon"
+    ]
+  },
+  {
+    "title": "Orange White Chocolate Chip Cookies",
+    "notes": "From MnC 2022",
+    "time": 60,
+    "servings": 36,
+    "calories": 150,
+    "ingredients": {
+      "Ingredients": [
+        "1 cup butter, softened",
+        "1/2 cup white sugar",
+        "1/2 cup packed brown sugar",
+        "1 large egg",
+        "1 tablespoon orange zest",
+        "2 1/4 cups all-purpose flour",
+        "3/4 teaspoon baking soda",
+        "1/2 teaspoon salt",
+        "2 cups white chocolate chips",
+        "1 cup chopped walnuts",
+      ]
+    },
+    "directions": [
+      "Preheat oven to 350F (175C). Line baking sheets with parchment paper.",
+      "Cream butter and both sugars together in a mixing bowl until light and fluffy. Beat in egg and orange zest.",
+      "Stir flour, baking soda, and salt together in a separate bowl. Gradually mix flour mixture into butter mixture. Stir in white chocolate chips and walnuts.",
+      "Drop tablespoonfuls of dough 2 inches apart onto ungreased baking sheets.",
+      "Bake for 10-12 minutes in the preheated oven.",
+      "Remove from the oven and cool briefly on the baking sheets before transferring to a wire rack to cool completely."
+    ],
+    "date": "2025-04-27T01:21:00.000Z",
+    "path": "orange_white_chocolate_chip_cookies",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "butter",
+      "granulated sugar",
+      "brown sugar",
+      "egg",
+      "orange",
+      "all-purpose flour",
+      "white chocolate",
+      "walnuts",
+    ]
+  },
+  {
+    "title": "Chocolate Peanut Butter Cookies",
+    "notes": "Adapted from Jessie Sheehan Bakes",
+    "time": 60,
+    "servings": 12,
+    "calories": 200,
+    "ingredients": {
+      "Ingredients": [
+        "2 cups (260 grams) bread flour",
+        "1 tsp baking soda",
+        "1/4 tsp baking powder",
+        "1 1/4 tsp kosher salt",
+        "1 cup (170 grams) milk chocolate chips",
+        "1 1/2 sticks (168 grams) unsalted butter, melted and cooled",
+        "1 1/4 cup (250 grams) light brown sugar",
+        "1/4 cup (50 grams) granulated sugar",
+        "1/4 cup (49 grams) vegetable oil",
+        "1 Tbsp pure vanilla extract",
+        "1 large egg",
+        "2 egg yolks",
+        "3/4 cup + 2 tablespoons (202 grams) creamy peanut butter",
+        "1 tbsp flaky sea salt"
+      ]
+    },
+    "directions": [
+      "Combine the flour, baking soda and powder, and salt in a medium-large bowl and whisk to fully incorporate the ingredients. Add the chocolate and whisk again. Set aside.",
+      "In the bowl of a stand mixer, fitted with the paddle attachment, beat the butter and sugars on medium to medium high speed until fully incorporated and lightened in color, about 3 to 5 minutes, scraping the bowl, as needed.",
+      "Add the oil and vanilla and beat until incorporated, another minute or two, again, scraping as needed. On low speed, add the egg and yolks all at once and mix until just combined, scraping as needed. Add the peanut butter and mix until just combined, again.",
+      "With the mixer still on low, add the dry ingredients and chocolate chips all at once, and mix until only some of the flour is incorporated into the wet batter (less than a minute). Turn off the machine and continue mixing by hand with a rubber spatula.",
+      "Scoop the dough using a 1/4 cup ice cream scoop (or a 1/4 cup dry measuring cup) and place the scooped dough on a parchment lined baking sheet. cover with plastic wrap and refrigerate for 24 to 48 hours (or even 72).",
+      "When you are ready to bake your cookies, preheat the oven to 375 degrees. Roll your scooped dough in granulated sugar, and sprinkle the tops with Maldon sea salt. Place the cookies on a parchment-lined cookie sheet and bake the cookies for exactly 12 minutes, rotating after 6.",
+      "Place the cookie sheet on a cooling rack and lightly press each cookie with a spatula to flatten. let cool and enjoy. Cookies will keep at room temp tightly covered for up to 3 days or up to a month frozen.",
+    ],
+    "date": "2025-04-27T01:22:00.000Z",
+    "path": "chocolate_peanut_butter_cookies",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "bread flour",
+      "chocolate",
+      "butter",
+      "brown sugar",
+      "granulated sugar",
+      "oil",
+      "egg",
+      "peanut butter"
+    ]
+  },
+  {
+    "title": "Mung Bean Cookies",
+    "notes": "",
+    "time": 30,
+    "servings": 12,
+    "calories": 70,
+    "ingredients": {
+      "Ingredients": [
+        "1/2 cup (1 stick) butter",
+        "1/4 cup powdered sugar",
+        "1/4 teaspoon salt",
+        "3/4 cup all-purpose flour",
+        "1 Tablespoon cornflour",
+        "1/3 cup tapioca flour",
+        "1/4 teaspoon baking powder",
+        "1 egg yolk, for glazing",
+      ]
+    },
+    "directions": [
+      "Cream butter, powdered sugar and salt until creamy.",
+      "Mix in sifted flours and hand knead until a dough is formed.",
+      "Scoop the dough with a teaspoon and roll into a ball.",
+      "Brush the top of each cookie with the yolk glaze.",
+      "Bake in preheated 300F oven for 20 minutes."
+    ],
+    "date": "2025-04-27T01:23:00.000Z",
+    "path": "mung_bean_cookies",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "butter",
+      "powdered sugar",
+      "all-purpose flour",
+      "cornflour",
+      "tapioca flour",
+      "egg",
+    ]
+  },
+  {
+    "title": "Raspberry Coconut Macaroons",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 60,
+    "servings": 16,
+    "calories": 50,
+    "ingredients": {
+      "Ingredients": [
+        "1 1/3 cups (133g) sweetened, flaked coconut",
+        "1/4 cup (25g) granulated sugar",
+        "1 large egg white",
+        "1/8 teaspoon table salt",
+        "1/4 teaspoon almond extract",
+        "1/3 cup (55g) fresh raspberries",
+      ]
+    },
+    "directions": [
+      "Preheat oven to 325°F. Line a baking sheet with parchment paper.",
+      "In a food processor, blend the coconut for a minute.",
+      "Add sugar, blend another minute.",
+      "Add egg whites, salt, and almond extract and blend for another minute.",
+      "Add raspberries and pulse machine until they are largely, but not fully, broken dow, about 13 times.",
+      "Scoop batter into 1-inch mounds.",
+      "Bake cookies for 25-30 minutes, until they look a little toasted on top.",
+      "Let cookies rest on the tray for at least 10 minutes after baking."
+    ],
+    "date": "2025-04-27T01:23:00.000Z",
+    "path": "raspberry_coconut_macaroons",
+    "categories": ["dessert", "cookies", "fruit"],
+    "ingredients_list": [
+      "shredded coconut",
+      "granulated sugar",
+      "egg",
+      "raspberries",
+    ]
+  },
+  {
+    "title": "Small Batch Sugar Cookies",
+    "notes": "",
+    "time": 30,
+    "servings": 6,
+    "calories": 150,
+    "ingredients": {
+      "Ingredients": [
+        "4 tablespoons unsalted butter, melted",
+        "1/3 cup (70 grams) granulated sugar, plus extra for rolling",
+        "1 large egg yolk",
+        "1/2 teaspoon vanilla extract",
+        "1/4 teaspoon baking soda",
+        "1/8 teaspoon table salt",
+        "2/3 cup (76 grams) all-purpose flour"
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 350F. Line a small baking sheet with parchment paper.",
+      "Stir together the melted butter, sugar, egg yolk, and vanilla extract.",
+      "Stir in the baking soda and salt, then the flour.",
+      "Scoop dough with a cookie scoop onto the lined cookie sheet, rolling each in extra granulated sugar.",
+      "Bake for 10-11 minutes, until they spread, start to crackle and appear dry on top.",
+      "Let the cookies rest on the baking sheet for 2 minutes before moving them to a wire rack to cool completely."
+    ],
+    "date": "2025-04-27T01:23:00.000Z",
+    "path": "small_batch_sugar_cookies",
+    "categories": ["dessert", "cookies"],
+    "ingredients_list": [
+      "butter",
+      "granulated sugar",
+      "egg",
+      "all-purpose flour"
+    ]
+  },
+  {
+    "title": "Blueberry Crumb Bars",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 60,
+    "servings": 36,
+    "calories": 150,
+    "ingredients": {
+      "Crumble": [
+        "1 cup (200 grams) granulated sugar",
+        "1 teaspoon baking powder",
+        "3 cups (390 grams) all-purpose flour",
+        "1/4 teaspoon salt",
+        "Zest of one lemon",
+        "1 cup (8 ounces or 225 grams) cold unsalted butter, cut into chunks",
+        "1 large egg"
+      ],
+      "Berries": [
+        "Juice of 1 lemon",
+        "1/2 cup (100 grams) granulated sugar",
+        "4 teaspoons cornstarch",
+        "4 cups fresh blueberries"
+      ]
+    },
+    "directions": [
+      "Preheat the oven to 375 degrees F (190 degrees C). Grease a 9x13 inch pan.",
+      "In a medium bowl, stir together 1 cup sugar, 3 cups flour, baking powder, salt, and lemon zest. Use a fork or pastry cutter to blend in the butter and egg. Dough will be crumbly. Pat half of dough into the prepared pan.",
+      "In another bowl, stir together the sugar, cornstarch and lemon juice. Gently mix in the blueberries. Sprinkle the blueberry mixture evenly over the crust. Crumble remaining dough over the berry layer.",
+      "Bake in preheated oven for 45 minutes, or until top is slightly brown. (This took an extra 10 to 15 minutes in my oven.) Cool completely before cutting into squares."
+    ],
+    "date": "2025-04-28T01:23:00.000Z",
+    "path": "blueberry_crumb_bars",
+    "categories": ["dessert", "fruit"],
+    "ingredients_list": [
+      "granulated sugar",
+      "all-purpose flour",
+      "lemon",
+      "butter",
+      "egg",
+      "cornstarch",
+      "blueberries"
+    ]
+  },
+  {
+    "title": "Apple Crisp",
+    "notes": "Adapted from NYT",
+    "time": 75,
+    "servings": 4,
+    "calories": 300,
+    "ingredients": {
+      "Topping": [
+        "6 tablespoons (85 grams) unsalted butter, melted",
+        "3/4 cup (90 grams) all-purpose flour",
+        "1/2 cup (100 grams) packed dark brown sugar",
+        "1/2 cup (40 grams) old-fashioned rolled oats",
+        "1/2 cup (56 grams) pecans, chopped",
+        "1/2 teaspoon kosher salt"
+      ],
+      "Filling": [
+        "4 medium (1 3/4 pounds) apples, peeled, cored, and cut into 1/2-inch wedges",
+        "1/4 cup (50 grams) packed dark brown sugar",
+        "1/2 tablespoon ground cinnamon",
+        "1 tablespoon fresh lemon juice"
+      ]
+    },
+    "directions": [
+      "Heat the oven to 350 degrees. Grease an 8x8-inch baking dish.",
+      "Melt butter in a small bowl. Add in flour, brown sugar, oats, pecans, and salt, and stir with a fork until the crumbs are evenly moistened.",
+      "Add the apples to the greased baking dish and toss with the remaining ½ cup/100 grams brown sugar, cinnamon and lemon juice. Spread the apples into an even layer.",
+      "Press the crumb mixture together to create clumps of different sizes, and sprinkle on top of the apples.",
+      "Bake until the apples are tender and the crumb topping is crisp and deep golden brown, about 50 to 60 minutes."
+    ],
+    "date": "2025-04-28T01:24:00.000Z",
+    "path": "apple_crisp",
+    "categories": ["dessert", "fruit"],
+    "ingredients_list": [
+      "butter",
+      "all-purpose flour",
+      "brown sugar",
+      "old-fashioned rolled oats",
+      "pecans",
+      "apple",
+      "cinnamon",
+      "lemon"
+    ]
+  },
+  {
+    "title": "Raspberry Breakfast Bars",
+    "notes": "Adapted from Smitten Kitchen",
+    "time": 60,
+    "servings": 12,
+    "calories": 250,
+    "ingredients": {
+      "Crust/Crumb": [
+        "3/4 cups (95 grams) all-purpose flour",
+        "1/2 cup (95 grams) firmly packed dark brown sugar",
+        "2/3 cup (60 grams) rolled oats",
+        "1/2 teaspoon salt",
+        "1/2 teaspoon baking powder",
+        "1/4 teaspoon baking soda",
+        "1/4 teaspoon ground cinnamon",
+        "6 Tablespoons (90 grams) unsalted butter, cut into 1-inch pieces",
+      ],
+      "Filling": [
+        "2 Tablespoons (25 grams) firmly packed dark brown sugar",
+        "1/2 tablespoon grated lemon zest",
+        "1/2 teaspoon ground cinnamon",
+        "1 Tablespoon (7 grams) all-purpose flour",
+        "1/2 pound (228 grams) raspberries, fresh or frozen",
+        "2 Tablespoons lemon juice",
+        "1 Tablespoon (15 grams) unsalted butter, melted and cooled"
+      ],
+    },
+    "directions": [
+      "Preheat the oven to 350°F. Grease the bottom and sides of an 8x8-inch glass baking pan. Put a long piece of parchment paper in the bottom of the pan, letting the parchment extend up sides of the pan and overhang slightly on both ends. Grease the parchment.",
+      "Make the crust/crumb: Combine flour, brown sugar, oats, salt, baking powder, baking soda, and cinnamon in a food processor. Pulse in short bursts until combined.",
+      "Add the butter and pulse until loose crumbs form.",
+      "Reserve 1 1/2 cups of the mixture and set aside.",
+      "Pour the rest of the mixture into the prepared pan and use your hans or the back of a large wooden spoon to push the crust into an even layer at the bottom of the pan. The crust should touch the sides of the pan.",
+      "Bake until golden brown, 12 to 15 minutes. Transfer to a wire rack and let the crust cool. Keep the oven on while you make the raspberry filling.",
+      "Make the raspberry filling: In a medium bowl, whisk the sugar, lemon zest, cinnamon, and flour together.",
+      "Add the raspberries, lemon juice, and butter and toss gently until the raspberries are evenly coated.",
+      "Spread the raspberry filling evenly on top of the cooled crust. Sprinkle the reserved crust mixture evenly on top of the filling.",
+      "Bake for 35 to 45 minutes, rotating the pan every 15 minutes, until the top is golden brown and the filling starts to bubble around the edges.",
+      "Transfer to a wire rack to cool completely, then cut into squares and serve. The bars can be stored in the refrigerator in an airtight container for up to two days."
+    ],
+    "date": "2025-04-28T01:25:00.000Z",
+    "path": "raspberry_breakfast_bars",
+    "categories": ["dessert", "fruit"],
+    "ingredients_list": [
+      "all-purpose flour",
+      "brown sugar",
+      "old-fashioned rolled oats",
+      "cinnamon",
+      "butter",
+      "lemon",
+      "raspberries"
+    ]
+  },
   // {
   //   "title": "",
   //   "notes": "",
@@ -3292,11 +3531,11 @@ const recipes = [
   //     "Ingredients": []
   //   },
   //   "directions": [],
-  //   "date": "2024-11-18T04:16:00.000Z",
+  //   "date": "2025-04-28T01:25:00.000Z",
   //   "path": "",
   //   "categories": [],
   //   "ingredients_list": []
-  // },
+  // }
 ]
 
 module.exports = { recipes };
