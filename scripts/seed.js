@@ -1,10 +1,6 @@
 const { db } = require('@vercel/postgres');
-const {
-  users,
-  ratings,
-  favorites,
-} = require('./placeholder-data.js');
-const { recipes } = require('./updatedRecipes.js');
+const { users } = require('./placeholder-data.js');
+const { recipes } = require('./recipes.js');
 const { ingredients } = require('./ingredients.js');
 const { categories } = require('./categories.js');
 const { recipeIngredients } = require('./recipeIngredients.js');
@@ -72,17 +68,17 @@ async function seedRecipes(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS recipes (
         id SERIAL PRIMARY KEY,
-        title VARCHAR(100) NOT NULL,
+        title VARCHAR(100) NOT NULL UNIQUE,
         notes TEXT,
         time INT NOT NULL,
         servings INT NOT NULL,
         calories INT NOT NULL,
         ingredients JSONB NOT NULL,
         directions TEXT[] NOT NULL,
-        ingredients_list TEXT[] NOT NULL,
-        categories TEXT[] NOT NULL,
+        ingredients_list VARCHAR(50)[] NOT NULL,
+        categories VARCHAR(50)[] NOT NULL,
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-        path TEXT
+        path VARCHAR(50)
       );
     `;
 
@@ -118,7 +114,7 @@ async function seedIngredients(client) {
       CREATE TABLE IF NOT EXISTS ingredients (
         id SERIAL PRIMARY KEY,
         name VARCHAR(50) NOT NULL UNIQUE,
-        path TEXT
+        path VARCHAR(50)
       );
     `;
 
@@ -152,7 +148,7 @@ async function seedCategories(client) {
       CREATE TABLE IF NOT EXISTS categories (
         id SERIAL PRIMARY KEY,
         name VARCHAR(50) NOT NULL UNIQUE,
-        path TEXT
+        path VARCHAR(50)
       );
     `;
 
@@ -256,8 +252,8 @@ async function main() {
   await seedCategories(client);
   await seedIngredients(client);
   await seedRecipes(client);
-  await seedRecipeIngredients(client);
-  await seedRecipeCategories(client);
+  // await seedRecipeIngredients(client);
+  // await seedRecipeCategories(client);
 
   await client.end();
 }

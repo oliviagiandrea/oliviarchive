@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { categories } = require('./categories.js');
 const { recipes } = require('./recipes.js');
+const { categories } = require('./categories.js');
 const { ingredients } = require('./ingredients.js');
 
 // let updatedIngredients = [];
@@ -14,10 +14,10 @@ const { ingredients } = require('./ingredients.js');
 
 // fs.writeFileSync('app/lib/updatedIngredients.json', JSON.stringify(updatedIngredients, null, 2));
 
-let updatedRecipes = [];
-let recipeIngredients = [];
-let recipeCategories = [];
 let counter = 0;
+let updatedRecipes = [];
+// let recipeIngredients = [];
+// let recipeCategories = [];
 
 recipes.forEach((recipe) => {
   const { title, notes, time, servings, calories, categories: recipe_categories, ingredients: recipe_ingredients, ingredients_list, directions, date, path } = recipe;
@@ -32,28 +32,26 @@ recipes.forEach((recipe) => {
     directions,
     date,
     path,
-    categories: [],
-    ingredients_list: []
+    categories: recipe_categories,
+    ingredients_list
   };
 
-  recipe_categories.forEach(category => {
-    const foundCategory = categories.find(cat => cat.name === category);
-    recipeCategories.push({ recipe_id: counter, category_id: foundCategory.id });
-    updatedRecipe.categories.push(foundCategory.id);
-  });
+  // recipe_categories.forEach(category => {
+  //   const foundCategory = categories.find(cat => cat.name === category);
+  //   updatedRecipe.categories.push(foundCategory.id);
+  // });
 
-  ingredients_list.forEach(ingredient => {
-    const foundIngredient = ingredients.find(ing => ing.name === ingredient);
-    recipeIngredients.push({ recipe_id: counter, ingredient_id: foundIngredient.id });
-    updatedRecipe.ingredients_list.push(foundIngredient.id);
-  });
+  // ingredients_list.forEach(ingredient => {
+  //   const foundIngredient = ingredients.find(ing => ing.name === ingredient);
+  //   updatedRecipe.ingredients_list.push(foundIngredient.id);
+  // });
 
   updatedRecipes.push(updatedRecipe);
   counter = counter + 1;
 });
 
 fs.writeFileSync('app/lib/updatedRecipes.json', JSON.stringify(updatedRecipes, null, 2));
-fs.writeFileSync('app/lib/recipeIngredients.json', JSON.stringify(recipeIngredients, null, 2));
-fs.writeFileSync('app/lib/recipeCategories.json', JSON.stringify(recipeCategories, null, 2));
+// fs.writeFileSync('app/lib/recipeIngredients.json', JSON.stringify(recipeIngredients, null, 2));
+// fs.writeFileSync('app/lib/recipeCategories.json', JSON.stringify(recipeCategories, null, 2));
 
 console.log('Files written successfully!');

@@ -86,8 +86,8 @@ export async function fetchFilteredRecipes(
         FROM recipes
         WHERE
           recipes.title ILIKE ${`%${title}%`}
-          AND recipes.categories && string_to_array(${categories}, ',')::text[]
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          AND recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         ORDER BY recipes.date DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
@@ -96,8 +96,8 @@ export async function fetchFilteredRecipes(
         SELECT DISTINCT *
         FROM recipes
         WHERE
-          recipes.categories && string_to_array(${categories}, ',')::text[]
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         ORDER BY recipes.date DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
@@ -107,7 +107,7 @@ export async function fetchFilteredRecipes(
         FROM recipes
         WHERE
           recipes.title ILIKE ${`%${title}%`}
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         ORDER BY recipes.date DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
@@ -117,7 +117,7 @@ export async function fetchFilteredRecipes(
       FROM recipes
       WHERE
         recipes.title ILIKE ${`%${title}%`}
-        AND recipes.categories && string_to_array(${categories}, ',')::text[]
+        AND recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
       ORDER BY recipes.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
@@ -126,7 +126,7 @@ export async function fetchFilteredRecipes(
         SELECT DISTINCT *
         FROM recipes
         WHERE
-          recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         ORDER BY recipes.date DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
@@ -135,7 +135,7 @@ export async function fetchFilteredRecipes(
         SELECT DISTINCT *
         FROM recipes
         WHERE
-          recipes.categories && string_to_array(${categories}, ',')::text[]
+          recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
         ORDER BY recipes.date DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
       `;
@@ -180,16 +180,16 @@ export async function fetchRecipesPages(
         FROM recipes
         WHERE
           recipes.title ILIKE ${`%${title}%`}
-          AND recipes.categories && string_to_array(${categories}, ',')::text[]
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          AND recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         `;
     } else if (!title && categories && ingredients) {
       count = await sql`
         SELECT COUNT(*)
         FROM recipes
         WHERE
-          recipes.categories && string_to_array(${categories}, ',')::text[]
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         `;
     } else if (title && !categories && ingredients) {
       count = await sql`
@@ -197,7 +197,7 @@ export async function fetchRecipesPages(
         FROM recipes
         WHERE
           recipes.title ILIKE ${`%${title}%`}
-          AND recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          AND recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         `;
     } else if (title && categories && !ingredients) {
       count = await sql`
@@ -205,21 +205,21 @@ export async function fetchRecipesPages(
         FROM recipes
         WHERE
           recipes.title ILIKE ${`%${title}%`}
-          AND recipes.categories && string_to_array(${categories}, ',')::text[]
+          AND recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
         `;
     } else if (!title && !categories && ingredients) {
       count = await sql`
         SELECT COUNT(*)
         FROM recipes
         WHERE
-          recipes.ingredients_list && string_to_array(${ingredients}, ',')::text[]
+          recipes.ingredients_list @> string_to_array(${ingredients}, ',')::VARCHAR(50)[]
         `;
     } else if (!title && categories && !ingredients) {
       count = await sql`
         SELECT COUNT(*)
         FROM recipes
         WHERE
-          recipes.categories && string_to_array(${categories}, ',')::text[]
+          recipes.categories @> string_to_array(${categories}, ',')::VARCHAR(50)[]
         `;
     } else if (title && !categories && !ingredients) {
       count = await sql`
