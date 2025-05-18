@@ -50,8 +50,8 @@ export default async function RecipesTable({
                     <p>{formatDateToLocal(recipe.date)}</p>
                   </div> */}
                   <div className="flex justify-end gap-2">
-                    <UpdateRecipe id={recipe.id} />
-                    <DeleteRecipe id={recipe.id} />
+                    <UpdateRecipe path={recipe.path} />
+                    <DeleteRecipe path={recipe.path} />
                   </div>
                 </div>
               </div>
@@ -103,8 +103,8 @@ export default async function RecipesTable({
                   </td> */}
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      <UpdateRecipe id={recipe.id} />
-                      <DeleteRecipe id={recipe.id} />
+                      <UpdateRecipe path={recipe.path} />
+                      <DeleteRecipe path={recipe.path} />
                     </div>
                   </td>
                 </tr>

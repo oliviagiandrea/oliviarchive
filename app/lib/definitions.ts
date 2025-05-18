@@ -1,3 +1,5 @@
+import { ingredients } from '@/scripts/ingredients';
+
 export type User = {
   id: string;
   name: string;
@@ -15,10 +17,6 @@ export type Category = {
   name: string;
 };
 
-type IngredientsType = {
-  [key: string]: string[];
-};
-
 export type Recipe = {
   id: number;
   title: string;
@@ -26,8 +24,10 @@ export type Recipe = {
   time: number;
   servings: number;
   calories: number;
+  categories: string[];
   ingredients: IngredientsType;
   directions: string[];
+  ingredients_list: string[];
   date: Date;
   path: string;
 };
@@ -38,7 +38,7 @@ export type LatestRecipe = {
   path: string;
 };
 
-// The database returns a number for amount, 
+// The database returns a number for amount,
 // but we later format it to a string with the formatCurrency function
 export type LatestRecipeRaw = Omit<LatestRecipe, 'amount'> & {
   amount: number;
@@ -91,6 +91,10 @@ export type CategoryField = {
   name: string;
 };
 
+type IngredientsType = {
+  [key: string]: string[];
+};
+
 export type RecipeForm = {
   id: number;
   title: string;
@@ -98,8 +102,10 @@ export type RecipeForm = {
   time: number;
   servings: number;
   calories: number;
+  categories: string[];
   ingredients: IngredientsType;
   directions: string[];
   date: Date;
+  ingredients_list: string[];
   path: string;
 };

@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: { path: string } }) {
         breadcrumbs={[
           { label: 'Recipes', href: '/dashboard/recipes' },
           {
-            label: `${recipe.path}`,
+            label: `${recipe.title}`,
             href: `/dashboard/recipes/${path}`,
             active: true,
           },

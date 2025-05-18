@@ -14,10 +14,10 @@ export function CreateRecipe() {
   );
 }
 
-export function UpdateRecipe({ id }: { id: number }) {
+export function UpdateRecipe({ path }: { path: string }) {
   return (
     <Link
-      href={`/dashboard/recipes/${id.toString()}/edit`}
+      href={`/dashboard/recipes/${path}/edit`}
       className="rounded-md border p-2 hover:bg-gray-100"
     >
       <PencilIcon className="w-5" />
@@ -25,11 +25,11 @@ export function UpdateRecipe({ id }: { id: number }) {
   );
 }
 
-export function DeleteRecipe({ id }: { id: number }) {
-  const deleteRecipeWithId = deleteRecipe.bind(null, id.toString());
+export function DeleteRecipe({ path }: { path: string }) {
+  const deleteRecipeWithPath = deleteRecipe.bind(null, path);
 
   return (
-    <form action={deleteRecipeWithId}>
+    <form action={deleteRecipeWithPath}>
       <button className="rounded-md border p-2 hover:bg-gray-100">
         <span className="sr-only">Delete</span>
         <TrashIcon className="w-5" />
