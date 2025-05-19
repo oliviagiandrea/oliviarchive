@@ -1,6 +1,8 @@
 'use client';
 
 import { IngredientField, RecipeForm } from '@/app/lib/definitions';
+import { fetchCategories, fetchIngredients } from '@/app/lib/data';
+
 import {
   CheckIcon,
   ClockIcon,
@@ -21,12 +23,12 @@ export default function EditRecipeForm({ recipe }: { recipe: RecipeForm }) {
   const updateRecipeWithId = updateRecipe.bind(
     null,
     recipe.id.toString(),
-    recipe.path,
   );
   const [state, dispatch] = useFormState(updateRecipeWithId, initialState);
   const [recipeIngredients, setRecipeIngredients] = useState<{
     [category: string]: string[];
   }>(recipe.ingredients);
+  const [recipeDirections, setRecipeDirections] = useState<string[]>(recipe.directions);
 
   function handleAddCategory() {
     const name = prompt('Enter a new category:');
@@ -64,6 +66,20 @@ export default function EditRecipeForm({ recipe }: { recipe: RecipeForm }) {
       ...prev,
       [category]: prev[category].map((item, i) => (i === index ? value : item)),
     }));
+  }
+
+  function handleAddDirection() {
+    setRecipeDirections(prev => [...prev, '']);
+  }
+  
+  function handleRemoveDirection(index: number) {
+    setRecipeDirections(prev => prev.filter((_, i) => i !== index));
+  }
+
+  function handleDirectionChange(index: number, value: string) {
+    setRecipeDirections(prev =>
+      prev.map((item, i) => (i === index ? value : item)),
+    );
   }
 
   return (
@@ -292,21 +308,38 @@ export default function EditRecipeForm({ recipe }: { recipe: RecipeForm }) {
           </label>
           <div className="relative">
             <ol>
-              {recipe.directions.map((direction, index) => (
-                <li key={`direction-${index}`}>
-                  <label htmlFor={`direction-${index}`}>
-                    Step {index + 1}:{' '}
+              {recipeDirections.map((direction, index) => (
+                <li key={`direction-${index}`} className="mb-2">
+                  <label htmlFor={`direction-${index}`} className="block text-sm font-medium">
+                    Step {index + 1}
                   </label>
-                  <textarea
-                    id={`direction-${index}`}
-                    name="directions"
-                    defaultValue={direction}
-                    className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
-                    aria-describedby="directions-error"
-                  />
+                  <div className="flex gap-2">
+                    <textarea
+                      id={`direction-${index}`}
+                      name="directions"
+                      value={direction}
+                      onChange={(e) => handleDirectionChange(index, e.target.value)}
+                      className="w-full rounded-md border border-gray-200 p-2 text-sm"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveDirection(index)}
+                      className="text-sm text-red-500"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </li>
               ))}
             </ol>
+
+            <button
+              type="button"
+              onClick={handleAddDirection}
+              className="mt-2 text-sm text-blue-600"
+            >
+              + Add Step
+            </button>
           </div>
           <div id="directions-error" aria-live="polite" aria-atomic="true">
             {state.errors?.directions &&
@@ -318,7 +351,28 @@ export default function EditRecipeForm({ recipe }: { recipe: RecipeForm }) {
           </div>
         </div>
 
-        {/* path */}
+        <div className="mb-4">
+          <label htmlFor="path" className="mb-2 block text-sm font-medium">
+            Path
+          </label>
+          <div className="relative">
+            <input
+              id="path"
+              name="path"
+              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
+              defaultValue={recipe.path}
+              aria-describedby="path-error"
+            />
+          </div>
+          <div id="path-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.path &&
+              state.errors.path.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
+          </div>
+        </div>
 
         <div className="mb-4">
           <label

@@ -1,6 +1,7 @@
 'use client';
 
 import { IngredientField } from '@/app/lib/definitions';
+import { fetchCategories, fetchIngredients } from '@/app/lib/data';
 import Link from 'next/link';
 import {
   CheckIcon,
@@ -16,51 +17,66 @@ import { useState } from 'react';
 import { categories } from '../../../scripts/categories';
 import { ingredients } from '../../../scripts/ingredients';
 
-export default function Form({ ingredients }: { ingredients: IngredientField[] }) {
+export default function Form() {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createRecipe, initialState);
 
   const [recipeIngredients, setRecipeIngredients] = useState<{
-      [category: string]: string[];
-    }>({"Ingredients": [""]});
-  
-    function handleAddCategory() {
-      const name = prompt('Enter a new category:');
-      if (name && !recipeIngredients[name]) {
-        setRecipeIngredients((prev) => ({ ...prev, [name]: [''] }));
-      }
+    [category: string]: string[];
+  }>({"Ingredients": [""]});
+  const [recipeDirections, setRecipeDirections] = useState<string[]>([""]);
+
+  function handleAddCategory() {
+    const name = prompt('Enter a new category:');
+    if (name && !recipeIngredients[name]) {
+      setRecipeIngredients((prev) => ({ ...prev, [name]: [''] }));
     }
+  }
+
+  function handleRemoveCategory(name: string) {
+    const updated = { ...recipeIngredients };
+    delete updated[name];
+    setRecipeIngredients(updated);
+  }
+
+  function handleAddIngredient(category: string) {
+    setRecipeIngredients((prev) => ({
+      ...prev,
+      [category]: [...prev[category], ''],
+    }));
+  }
+
+  function handleRemoveIngredient(category: string, index: number) {
+    setRecipeIngredients((prev) => ({
+      ...prev,
+      [category]: prev[category].filter((_, i) => i !== index),
+    }));
+  }
+
+  function handleIngredientChange(
+    category: string,
+    index: number,
+    value: string,
+  ) {
+    setRecipeIngredients((prev) => ({
+      ...prev,
+      [category]: prev[category].map((item, i) => (i === index ? value : item)),
+    }));
+  }
+
+  function handleAddDirection() {
+    setRecipeDirections(prev => [...prev, '']);
+  }
   
-    function handleRemoveCategory(name: string) {
-      const updated = { ...recipeIngredients };
-      delete updated[name];
-      setRecipeIngredients(updated);
-    }
-  
-    function handleAddIngredient(category: string) {
-      setRecipeIngredients((prev) => ({
-        ...prev,
-        [category]: [...prev[category], ''],
-      }));
-    }
-  
-    function handleRemoveIngredient(category: string, index: number) {
-      setRecipeIngredients((prev) => ({
-        ...prev,
-        [category]: prev[category].filter((_, i) => i !== index),
-      }));
-    }
-  
-    function handleIngredientChange(
-      category: string,
-      index: number,
-      value: string,
-    ) {
-      setRecipeIngredients((prev) => ({
-        ...prev,
-        [category]: prev[category].map((item, i) => (i === index ? value : item)),
-      }));
-    }
+  function handleRemoveDirection(index: number) {
+    setRecipeDirections(prev => prev.filter((_, i) => i !== index));
+  }
+
+  function handleDirectionChange(index: number, value: string) {
+    setRecipeDirections(prev =>
+      prev.map((item, i) => (i === index ? value : item)),
+    );
+  }
 
   return (
     <form action={dispatch}>
@@ -282,18 +298,38 @@ export default function Form({ ingredients }: { ingredients: IngredientField[] }
           </label>
           <div className="relative">
             <ol>
-              <li key={`direction-1`}>
-                <label htmlFor={`direction-1`}>
-                  Step 1:{' '}
-                </label>
-                <textarea
-                  id={`direction-1`}
-                  name="directions"
-                  className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
-                  aria-describedby="directions-error"
-                />
-              </li>
+              {recipeDirections.map((direction, index) => (
+                <li key={`direction-${index}`} className="mb-2">
+                  <label htmlFor={`direction-${index}`} className="block text-sm font-medium">
+                    Step {index + 1}
+                  </label>
+                  <div className="flex gap-2">
+                    <textarea
+                      id={`direction-${index}`}
+                      name="directions"
+                      value={direction}
+                      onChange={(e) => handleDirectionChange(index, e.target.value)}
+                      className="w-full rounded-md border border-gray-200 p-2 text-sm"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveDirection(index)}
+                      className="text-sm text-red-500"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+              ))}
             </ol>
+
+            <button
+              type="button"
+              onClick={handleAddDirection}
+              className="mt-2 text-sm text-blue-600"
+            >
+              + Add Step
+            </button>
           </div>
           <div id="directions-error" aria-live="polite" aria-atomic="true">
             {state.errors?.directions &&
@@ -305,7 +341,27 @@ export default function Form({ ingredients }: { ingredients: IngredientField[] }
           </div>
         </div>
 
-        {/* path */}
+        <div className="mb-4">
+          <label htmlFor="path" className="mb-2 block text-sm font-medium">
+            Path
+          </label>
+          <div className="relative">
+            <input
+              id="path"
+              name="path"
+              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
+              aria-describedby="path-error"
+            />
+          </div>
+          <div id="path-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.path &&
+              state.errors.path.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
+          </div>
+        </div>
 
         <div className="mb-4">
           <label

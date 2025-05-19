@@ -1,4 +1,3 @@
-import { fetchIngredients } from '@/app/lib/data';
 import Form from '@/app/ui/recipes/create-form';
 import Breadcrumbs from '@/app/ui/recipes/breadcrumbs';
 import { Metadata } from 'next';
@@ -8,8 +7,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const ingredients = await fetchIngredients();
-
   return (
     <main>
       <Breadcrumbs
@@ -22,7 +19,7 @@ export default async function Page() {
           },
         ]}
       />
-      <Form ingredients={ingredients} />
+      <Form />
     </main>
   );
 }
