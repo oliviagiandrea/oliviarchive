@@ -35,6 +35,9 @@ const FormSchema = z.object({
     invalid_type_error: 'Please select at least one category.',
   })
   .nonempty('Please select at least one category.'),
+  ingredients: z.record(z.string(), z.array(z.string().min(1)), {
+    invalid_type_error: 'Please enter at least one ingredient.',
+  }),
   directions: z.array(z.string(), {
     invalid_type_error: 'Please enter at least one step.',
   })
@@ -56,6 +59,7 @@ export type State = {
     servings?: string[];
     calories?: string[];
     categories?: string[];
+    ingredients?: string[];
     directions?: string[];
     ingredients_list?: string[];
   };
@@ -70,6 +74,7 @@ export async function createRecipe(prevState: State, formData: FormData) {
     servings: Number(formData.get('servings')),
     calories: Number(formData.get('calories')),
     categories: formData.getAll('categories'),
+    ingredients: JSON.parse(formData.get('ingredients') as string),
     directions: formData.getAll('directions'),
     ingredients_list: formData.getAll('ingredients_list'),
   });
@@ -88,6 +93,7 @@ export async function createRecipe(prevState: State, formData: FormData) {
     servings,
     calories,
     categories,
+    ingredients,
     directions,
     ingredients_list,
   } = validatedFields.data;
@@ -95,7 +101,7 @@ export async function createRecipe(prevState: State, formData: FormData) {
 
   try {
     await sql`
-      INSERT INTO recipes (title, notes, time, servings, calories, categories, directions, ingredients_list, date)
+      INSERT INTO recipes (title, notes, time, servings, calories, categories, ingredients, directions, ingredients_list, date)
       VALUES (
         ${title}, 
         ${notes}, 
@@ -103,6 +109,7 @@ export async function createRecipe(prevState: State, formData: FormData) {
         ${servings}, 
         ${calories}, 
         ${categories as unknown as string}::text[], 
+        ${JSON.stringify(ingredients)}::jsonb,
         ${directions as unknown as string}::text[],
         ${ingredients_list as unknown as string}::text[], 
         ${date}
@@ -131,6 +138,7 @@ export async function updateRecipe(
     servings: Number(formData.get('servings')),
     calories: Number(formData.get('calories')),
     categories: formData.getAll('categories'),
+    ingredients: JSON.parse(formData.get('ingredients') as string),
     directions: formData.getAll('directions'),
     ingredients_list: formData.getAll('ingredients_list'),
   });
@@ -149,6 +157,7 @@ export async function updateRecipe(
     servings,
     calories,
     categories,
+    ingredients,
     directions,
     ingredients_list,
   } = validatedFields.data;
@@ -163,6 +172,7 @@ export async function updateRecipe(
       servings = ${servings}, 
       calories = ${calories}, 
       categories = ${categories as unknown as string}::text[], 
+      ingredients = ${JSON.stringify(ingredients)}::jsonb,
       directions = ${directions as unknown as string}::text[],
       ingredients_list = ${ingredients_list as unknown as string}::text[], 
       date = ${date}

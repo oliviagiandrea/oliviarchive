@@ -10,9 +10,8 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: { params: { path: string } }) {
   const path = params.path;
-  const [recipe, ingredients] = await Promise.all([
+  const [recipe] = await Promise.all([
     fetchRecipeByPath(path),
-    fetchIngredients(),
   ]);
 
   if (!recipe) {
@@ -31,7 +30,7 @@ export default async function Page({ params }: { params: { path: string } }) {
           },
         ]}
       />
-      <Form recipe={recipe} ingredients={ingredients} />
+      <Form recipe={recipe} />
     </main>
   );
 }
